@@ -1,0 +1,45 @@
+.role {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  @include adaptiveValue('height', 150, 120);
+  border-radius: 12px;
+  background: var(--main-bg);
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--text-secondary);
+
+  &:hover {
+    background: var(--btn-primary-bg);
+    color: var(--main-opposite-text);
+  }
+
+  &__intro {
+    margin: 10px 0 27px;
+  }
+
+
+  &__img {
+    position: relative;
+    flex: 0 0 30%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.role-list {
+  width: 100%;
+
+  @include adaptiveValue('margin-bottom', 64, 0);
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+}

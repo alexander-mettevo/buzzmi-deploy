@@ -1,0 +1,124 @@
+.auth-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__header {
+    background: var(--layout-bg);
+    color: var(--main-opposite-text);
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    //right: 0;
+    //z-index: 1;
+
+    &-container {
+      height: 80px;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
+
+    &_m {
+      display: none;
+      height: 60px;
+      padding: 0 16px;
+
+      @media (max-width: $mobileSmall) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__container {
+    width: 500px;
+    padding: 20px 16px 24px;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    //@media (min-width: $tablet) {
+    //  justify-content: flex-start;
+    //  flex: 0;
+    //}
+
+    @media (max-width: $mobileSmall) {
+      height: calc(100vh - 65px);
+      padding: 0 16px 24px;
+    }
+
+    @media (max-width: $mobileSmall) {
+      height: calc(100vh - 60px);
+      width: 100%;
+    }
+
+    &_b {
+      width: 100%;
+      max-width: 1000px;
+    }
+  }
+}
+
+.content-auth {
+
+  &__column {
+    @media (max-width: $mobileSmall) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 40, 15);
+
+    &_login {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    @include adaptiveValue('margin-bottom', 60, 20);
+  }
+
+  &__form {
+    @media (max-width: $mobileSmall) {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__resend-code {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 15px !important;
+    line-height: 18.29px !important;
+
+    @media (max-width: $mobileSmall) {
+      margin-top: 5px;
+    }
+  }
+}

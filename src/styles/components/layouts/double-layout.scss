@@ -1,0 +1,127 @@
+
+.double-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: calc(100vh - 150px);
+
+  &__reverse {
+    flex-direction: row-reverse;
+
+    .double-layout__image {
+      text-align: right;
+    }
+  }
+
+
+  @media (max-width: $tablet) {
+    display: block;
+    max-width: 100%;
+  }
+
+  &__content {
+    flex: 0 0 45%;
+  }
+
+  &__mobile-support {
+    display: none;
+    text-align: right;
+
+    //@media (max-width: $mobileSmall) {
+    //  display: block;
+    //}
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+
+
+    @media (max-width: $tablet) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: $mobileSmall) {
+      padding-top: 30px;
+
+      .h6 {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__intro {
+    flex: 1;
+    position: relative;
+
+
+
+    @media (max-width: $tablet) {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+
+      & > div {
+        flex: 1;
+      }
+
+      .tooltip-trigger {
+        position: absolute;
+        z-index: 100;
+        right: 3px;
+      }
+
+      .tooltip {
+        display: none;
+      }
+
+      &_bg {
+        display: none;
+      }
+    }
+
+    @media (max-width: $mobileSmall) {
+      min-height: 130vw;
+    }
+  }
+
+  &__image {
+    flex: 1;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+      height: 80vw;
+    }
+
+    @media (max-width: $mobileSmall) {
+      height: 100vw;
+
+      .tooltip-trigger {
+        top: -10px;
+      }
+    }
+
+    img {
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: contain;
+    }
+  }
+
+  &__bg-wrapper {
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

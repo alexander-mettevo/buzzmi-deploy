@@ -1,0 +1,60 @@
+{
+  "name": "buzzmi",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "http://alexander-mettevo.github.io/buzzmi-light",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=3f604aa69d50"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@hookform/resolvers": "^2.9.11",
+    "@reduxjs/toolkit": "^1.9.3",
+    "react": "^18.2.0",
+    "react-date-picker": "^9.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.5",
+    "react-indiana-drag-scroll": "^2.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.2",
+    "react-select": "^5.7.0",
+    "react-transition-group": "^4.4.5",
+    "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-interactions": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
+    "@storybook/addon-styling": "^1.0.1",
+    "@storybook/blocks": "^7.0.6",
+    "@storybook/react": "^7.0.6",
+    "@storybook/react-vite": "^7.0.6",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.13",
+    "chromatic": "^6.17.3",
+    "prop-types": "^15.8.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.2",
+    "storybook": "^7.0.6",
+    "vite": "^4.1.0",
+    "vite-plugin-webfont-dl": "^3.6.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "readme": "ERROR: No README data found!",
+  "_id": "buzzmi@0.0.0"
+}

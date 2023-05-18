@@ -1,0 +1,63 @@
+// variables for background colors
+:root {
+  --primary: linear-gradient(86.83deg, #FF9800 -45.01%, #EB4A66 25.91%, #C600CA 101.38%);
+  --logo-color: radial-gradient(75.57% 107.73% at 52.5% 10.85%, #EF8ED5 0%, #EC44D0 52.08%, #C1169C 100%);
+  --accent: #EF8CD5;
+  --bg-secondary: #E4DBF1;
+  --input-border: #7E00E0;
+
+  --error-color: #F02461;
+  --success-color: #25AF4C;
+  --secondary-color: #ff00ff;
+  --warning-color: #FF9800;
+
+  --items-box-shadow: rgba(0, 0, 0, 0.25);
+  --alt-primary-border: linear-gradient(to right, #FF41B3, #7E00E0);
+
+  --main-bg: #fff;
+  --main-opposite-bg: #101010;
+  --layout-bg: linear-gradient(90.58deg, #EF8ED5 1.06%, #EC44D0 52.41%, #C1169C 99.65%);
+
+  // variables for text colors
+  --logo-text: linear-gradient(#555A66, #000000);
+  --main-text: #000000;
+  --main-opposite-text: #ffffff;
+  --text-secondary: #C0BACB;
+  --alt-text-secondary: #584F68;
+  --primary-text: radial-gradient(75.57% 107.73% at 52.5% 10.85%, #EF8ED5 0%, #EC44D0 52.08%, #C1169C 100%);
+  --alter-text: #000072;
+
+  // variables for forms
+  --form-bg: #F4F1F8;
+  --form-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --input-focus-shadow:-4px 0px 8px rgba(247, 32, 131, 0.4), 4px 0px 8px rgba(139, 12, 219, 0.4);
+  --input-error-shadow:-4px 0px 8px #F02461, 4px 0px 8px #F02461;
+  --input-success-shadow:-4px 0px 8px #25AF4C, 4px 0px 8px #25AF4C;
+  --input-warning-shadow:-4px 0px 8px #FF9800, 4px 0px 8px #FF9800;
+
+  // variables for btns
+  --btn-primary-bg: #E12194;
+  --btn-arrow-bg:linear-gradient(#FF41B3, #7E00E0);
+
+  // variables for scroll
+  --scroll-bg: linear-gradient(137.29deg, #FF7F62 21.2%, #FF42B4 88.24%);
+
+
+  // header logo gradient
+  --one-paint: url(#paint0_linear_877_1856);
+  --two-paint: url(#paint1_linear_877_1856);
+  --three-paint: url(#paint2_linear_877_1856);
+
+  // main logo gradient
+  --main-one-paint: url(#paint0_linear_727_7581);
+  --main-two-paint: url(#paint1_linear_727_7581);
+  --main-three-paint: url(#paint2_linear_727_7581);
+}
+
+
+
+
+
+
+
+
