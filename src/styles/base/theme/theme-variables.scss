@@ -1,2 +1,6 @@
 @import "variables/light-theme";
-//@import "variables/dark-theme";
+@import "variables/dark-theme";
+
+:root {
+  --main-bg: var(--light-main-bg);
+}

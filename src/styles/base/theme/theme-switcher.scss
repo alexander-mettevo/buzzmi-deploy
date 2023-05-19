@@ -1,0 +1,15 @@
+#theme-switch:checked ~ .wrapper {
+--main-bg: var(--dark-main-bg);
+}
+
+.theme-handler {
+  &__switch {
+    position: fixed !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    bottom: 0;
+    right: 0;
+  }
+}
