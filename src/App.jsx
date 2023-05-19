@@ -29,6 +29,7 @@ import ProvideEmail from "./components/pages/auth/provideContact/ProvideEmail.js
 import BioPage from "./components/pages/auth/bioPage/BioPage.jsx";
 import CreatePassword from "./components/pages/auth/createPassword/CreatePassword.jsx";
 import FinishRegistration from "./components/pages/auth/finishRegistration/FinishRegistration.jsx";
+import HubMain from './components/pages/hub/hubMain/HubMain.jsx';
 
 const App = () => {
   return (
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/sales/v2" element={<SubscriptionV2/>}/>
           <Route path="/sales/mobile-pay" element={<MobilePay/>}/>
         </Route>
+        <Route path="/hub" element={<HubMain/>}/>
       </Routes>
       <Modal/>
     </>
