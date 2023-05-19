@@ -30,6 +30,7 @@ import BioPage from "./components/pages/auth/bioPage/BioPage.jsx";
 import CreatePassword from "./components/pages/auth/createPassword/CreatePassword.jsx";
 import FinishRegistration from "./components/pages/auth/finishRegistration/FinishRegistration.jsx";
 import HubMain from './components/pages/hub/hubMain/HubMain.jsx';
+import MainLayout from './components/layouts/mainLayout/MainLayout.jsx';
 
 const App = () => {
   return (
@@ -37,6 +38,9 @@ const App = () => {
       <Routes>
         <Route element={<AuthLayout/>}>
           <Route path="/" element={<Dashboard/>}/>
+          <Route element={<MainLayout/>}>
+            <Route path="/hub" element={<HubMain/>}/>
+          </Route>
         </Route>
         <Route path="/login" element={<Login/>}/>
         <Route path="/registration" element={<Registration/>}/>
@@ -70,7 +74,6 @@ const App = () => {
           <Route path="/sales/v2" element={<SubscriptionV2/>}/>
           <Route path="/sales/mobile-pay" element={<MobilePay/>}/>
         </Route>
-        <Route path="/hub" element={<HubMain/>}/>
       </Routes>
       <Modal/>
     </>
