@@ -30,47 +30,62 @@ import BioPage from "./components/pages/auth/bioPage/BioPage.jsx";
 import CreatePassword from "./components/pages/auth/createPassword/CreatePassword.jsx";
 import FinishRegistration from "./components/pages/auth/finishRegistration/FinishRegistration.jsx";
 import HubMain from './components/pages/hub/hubMain/HubMain.jsx';
+import MainLayout from './components/layouts/mainLayout/MainLayout.jsx';
+import ThemeLayout from "./components/layouts/themeLayout/ThemeLayout.jsx";
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route element={<AuthLayout/>}>
+        <Route element={<ThemeLayout/>}>
+          <Route element={<AuthLayout/>}>
+            <Route element={<MainLayout/>}>
+              <Route path="/hub" element={<HubMain/>}/>
+              <Route path="/notifications" element={<HubMain/>}/>
+              <Route path="/messages" element={<HubMain/>}/>
+              <Route path="/" element={<HubMain/>}/>
+              <Route path="/space" element={<HubMain/>}/>
+              <Route path="/subscription" element={<HubMain/>}/>
+              <Route path="/challenges" element={<HubMain/>}/>
+              <Route path="/calendar" element={<HubMain/>}/>
+              <Route path="/wallet" element={<HubMain/>}/>
+              <Route path="/profile" element={<HubMain/>}/>
+            </Route>
+          </Route>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/registration" element={<Registration/>}/>
+          <Route path="/other-services" element={<OtherServices/>}/>
+          <Route path="/support" element={<Support/>}/>
+          <Route path="/auth/finish" element={<FinishRegistration/>}/>
+          <Route element={<BaseLayout bigDesk/>}>
+            <Route path="/sales/pay" element={<Pay/>}/>
+          </Route>
+          <Route element={<BaseLayout/>}>
+            <Route path="/auth/forgot-code" element={<ForgotCode/>}/>
+            <Route path="/auth/forgot-password" element={<ForgotPassword/>}/>
+            <Route path="/auth/reset-password" element={<ResetPassword/>}/>
+            <Route path="/test" element={<Test/>}/>
+
+            <Route path="/auth/provide-email" element={<ProvideEmail/>}/>
+            <Route path="/auth/provide-email-code" element={<ProvideEmailCode/>}/>
+            <Route path="/auth/provide-phone" element={<ProvidePhone/>}/>
+            <Route path="/auth/provide-phone-code" element={<ProvidePhoneCode/>}/>
+
+            <Route path="/auth/bio" element={<BioPage/>}/>
+            <Route path="/auth/create-password" element={<CreatePassword/>}/>
+
+            <Route path="/profile/chose-role" element={<ChoseRole/>}/>
+            <Route path="/profile/add-creators" element={<AddCreators/>}/>
+            <Route path="/profile/add-interest" element={<Interest/>}/>
+            <Route path="/profile/add-contacts" element={<AddContacts/>}/>
+            <Route path="/profile/add-friends" element={<AddFriends/>}/>
+            <Route path="/profile/add-people" element={<AddPeople/>}/>
+            <Route path="/sales" element={<Subscription/>}/>
+            <Route path="/sales/v2" element={<SubscriptionV2/>}/>
+            <Route path="/sales/mobile-pay" element={<MobilePay/>}/>
+          </Route>
           <Route path="/" element={<Dashboard/>}/>
         </Route>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/registration" element={<Registration/>}/>
-        <Route path="/other-services" element={<OtherServices/>}/>
-        <Route path="/support" element={<Support/>}/>
-        <Route path="/auth/finish" element={<FinishRegistration/>}/>
-        <Route element={<BaseLayout bigDesk/>}>
-          <Route path="/sales/pay" element={<Pay/>}/>
-        </Route>
-        <Route element={<BaseLayout/>}>
-          <Route path="/auth/forgot-code" element={<ForgotCode/>}/>
-          <Route path="/auth/forgot-password" element={<ForgotPassword/>}/>
-          <Route path="/auth/reset-password" element={<ResetPassword/>}/>
-          <Route path="/test" element={<Test/>}/>
-
-          <Route path="/auth/provide-email" element={<ProvideEmail/>}/>
-          <Route path="/auth/provide-email-code" element={<ProvideEmailCode/>}/>
-          <Route path="/auth/provide-phone" element={<ProvidePhone/>}/>
-          <Route path="/auth/provide-phone-code" element={<ProvidePhoneCode/>}/>
-
-          <Route path="/auth/bio" element={<BioPage/>}/>
-          <Route path="/auth/create-password" element={<CreatePassword/>}/>
-
-          <Route path="/profile/chose-role" element={<ChoseRole/>}/>
-          <Route path="/profile/add-creators" element={<AddCreators/>}/>
-          <Route path="/profile/add-interest" element={<Interest/>}/>
-          <Route path="/profile/add-contacts" element={<AddContacts/>}/>
-          <Route path="/profile/add-friends" element={<AddFriends/>}/>
-          <Route path="/profile/add-people" element={<AddPeople/>}/>
-          <Route path="/sales" element={<Subscription/>}/>
-          <Route path="/sales/v2" element={<SubscriptionV2/>}/>
-          <Route path="/sales/mobile-pay" element={<MobilePay/>}/>
-        </Route>
-        <Route path="/hub" element={<HubMain/>}/>
       </Routes>
       <Modal/>
     </>

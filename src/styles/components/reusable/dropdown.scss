@@ -1,0 +1,17 @@
+.dropdown {
+  &__button {
+    // Dropdown button styles
+  }
+
+  &__list {
+    // Dropdown list styles
+
+    &__option {
+      // Dropdown option styles
+
+      &--selected {
+        // Selected option styles
+      }
+    }
+  }
+}

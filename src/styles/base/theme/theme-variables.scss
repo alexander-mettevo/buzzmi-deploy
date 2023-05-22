@@ -1,2 +1,10 @@
 @import "variables/light-theme";
-//@import "variables/dark-theme";
+@import "variables/dark-theme";
+
+:root {
+  --main-bg: var(--light-main-bg);
+  --items-bg: var(--light-items-bg);
+
+  --text-secondary: var(--light-text-secondary);
+  --main-text: var(--light-main-text);
+}
