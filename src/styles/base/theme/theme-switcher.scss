@@ -1,5 +1,9 @@
 #theme-switch:checked ~ .wrapper {
---main-bg: var(--dark-main-bg);
+  --main-bg: var(--dark-main-bg);
+  --items-bg: var(--dark-items-bg);
+
+  --text-secondary: var(--dark-text-secondary);
+  --main-text: var(--dark-main-text);
 }
 
 .theme-handler {

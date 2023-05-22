@@ -39,9 +39,17 @@ const App = () => {
       <Routes>
         <Route element={<ThemeLayout/>}>
           <Route element={<AuthLayout/>}>
-            <Route path="/" element={<Dashboard/>}/>
             <Route element={<MainLayout/>}>
               <Route path="/hub" element={<HubMain/>}/>
+              <Route path="/notifications" element={<HubMain/>}/>
+              <Route path="/messages" element={<HubMain/>}/>
+              <Route path="/" element={<HubMain/>}/>
+              <Route path="/space" element={<HubMain/>}/>
+              <Route path="/subscription" element={<HubMain/>}/>
+              <Route path="/challenges" element={<HubMain/>}/>
+              <Route path="/calendar" element={<HubMain/>}/>
+              <Route path="/wallet" element={<HubMain/>}/>
+              <Route path="/profile" element={<HubMain/>}/>
             </Route>
           </Route>
           <Route path="/login" element={<Login/>}/>
@@ -76,6 +84,7 @@ const App = () => {
             <Route path="/sales/v2" element={<SubscriptionV2/>}/>
             <Route path="/sales/mobile-pay" element={<MobilePay/>}/>
           </Route>
+          <Route path="/" element={<Dashboard/>}/>
         </Route>
       </Routes>
       <Modal/>
