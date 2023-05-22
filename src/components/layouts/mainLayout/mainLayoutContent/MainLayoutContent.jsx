@@ -1,5 +1,5 @@
 import React from 'react';
-import MainLayoutRightColumn from "./MainLayoutRightColumn.jsx";
+import MainLayoutRightColumn from "./mainLayoutRightColumn/MainLayoutRightColumn.jsx";
 
 const MainLayoutContent = ({children, rightColumnContent}) => {
   return (
@@ -8,10 +8,9 @@ const MainLayoutContent = ({children, rightColumnContent}) => {
         {children}
       </div>
 
-
-      <MainLayoutRightColumn>
-        {rightColumnContent}
-      </MainLayoutRightColumn>
+        <MainLayoutRightColumn>
+          {rightColumnContent}
+        </MainLayoutRightColumn>
     </div>
   );
 };

@@ -17,11 +17,13 @@
   &__row {
     display: flex;
     height: 100%;
+    margin-top: 20px;
   }
 
   &__mid {
     flex: 1;
   }
+
 
   &__logo {
     margin-bottom: 40px;
@@ -69,19 +71,17 @@
 
   &__content {
     flex: 1;
-    overflow-y: auto;
     margin-left: 60px;
     margin-bottom: 40px;
   }
 
   &__is-right-column {
     display: flex;
-
   }
 
   &__right-column {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 0 20px 20px;
     overflow-y: auto;
     flex: 0 0 305px;
     margin-left: 20px;
@@ -188,6 +188,8 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -199,6 +201,8 @@
   &__control {
     border: none !important;
     min-height: auto !important;
+    cursor: pointer !important;
+
 
     &--menu-is-open,   &--is-focused{
       border: none !important;

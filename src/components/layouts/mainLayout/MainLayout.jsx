@@ -1,6 +1,6 @@
 import {Outlet} from 'react-router-dom';
-import MainLayoutSidebar from "./MainLayoutSidebar.jsx";
-import MainLayoutFooter from "./MainLayoutFooter.jsx";
+import MainLayoutSidebar from "./mainLayoutSidebar/MainLayoutSidebar.jsx";
+import MainLayoutFooter from "./mainLayoutFooter/MainLayoutFooter.jsx";
 
 const MainLayout = () => {
   return (

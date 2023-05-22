@@ -1,5 +1,5 @@
 import React from "react";
-import MainLayoutContent from "../../../layouts/mainLayout/MainLayoutContent.jsx";
+import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx";
 
 const HubMain = () => {
 
@@ -8,7 +8,8 @@ const HubMain = () => {
       rightColumnContent={
         <>
           <h2>Welcome to the Right Column</h2>
-          <p>This is the content for the right column.</p>
+          <p>Классический текст Lorem Ipsum, используемый с XVI века
+          </p>
         </>
       }
     >

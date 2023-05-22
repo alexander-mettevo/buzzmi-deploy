@@ -2,7 +2,6 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 const MainLayoutMenuItem = ({iconSrc, activeIconSrc, name, to, showOnMobile}) => {
-    console.log('MainLayoutMenuItem', showOnMobile)
 
   return (
     <li className={`main-layout__menu-item menu-item ${!showOnMobile ? "menu-item_mobile-hide" : ""}`}>

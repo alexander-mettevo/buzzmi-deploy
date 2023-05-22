@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import MainLayoutMenu from "./MainLayoutMenu.jsx";
-import MainLayoutMenuItem from "./mainLyoutMenuItem/MainLayoutMenuItem.jsx";
-import Logo from "../../reusable/assets/logo/Logo.jsx";
+import Logo from "../../../reusable/assets/logo/Logo.jsx";
 import MainLayoutMenuItemProfile from "./mainLyoutMenuItem/MainLayoutMenuItemProfile.jsx";
+import MainLayoutMenuItem from "./mainLyoutMenuItem/MainLayoutMenuItem.jsx";
+
 
 const items = [
   {
@@ -88,7 +88,7 @@ const MainLayoutSidebar = () => {
       <div className="main-layout__logo">
         <Logo/>
       </div>
-      <MainLayoutMenu>
+      <ul className="main-layout__menu">
         <MainLayoutMenuItemProfile src={avatar}/>
         {
           items.map((item) => (
@@ -96,7 +96,7 @@ const MainLayoutSidebar = () => {
                                 key={item.to} showOnMobile={item?.showOnMobile}/>
           ))
         }
-      </MainLayoutMenu>
+      </ul>
     </div>
   );
 };
