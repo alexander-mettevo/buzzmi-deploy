@@ -1,0 +1,64 @@
+.circle-chart {
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+    font-family: 'SF Pro Display', sans-serif;
+  }
+
+  &__inner-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    & > div:first-child{
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 800;
+    }
+
+    & > div:last-child{
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  &__avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__outer-value {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    text-align: center;
+    background: var(--chart-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+
+    & > div:first-child{
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+    }
+
+    & > div:last-child{
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 300;
+    }
+  }
+}

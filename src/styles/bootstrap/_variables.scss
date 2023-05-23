@@ -1,4 +1,3 @@
-
 // Spacing
 //
 // Control the default styling of most Bootstrap elements by modifying these
@@ -29,8 +28,7 @@ $spacers: (
   18: $spacer * 4.75,
   19: $spacer * 5,
   20: $spacer * 5.25,
-
-
+  21: $spacer * .75,
 ) !default;
 
 // Grid breakpoints
@@ -74,34 +72,34 @@ $container-max-widths: (
 // Quickly modify global styling by enabling or disabling optional features.
 
 
-$enable-grid-classes:         true !default;
-$enable-container-classes:    true !default;
-$enable-cssgrid:              true !default;
-$enable-important-utilities:  true !default;
+$enable-grid-classes: true !default;
+$enable-container-classes: true !default;
+$enable-cssgrid: true !default;
+$enable-important-utilities: true !default;
 
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
-$grid-row-columns:            6 !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+$grid-row-columns: 6 !default;
 
 // Container padding
 
 $container-padding-x: $grid-gutter-width !default;
-$variable-prefix:             bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
-$prefix:                      $variable-prefix !default;
+$variable-prefix: bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix !default;
 
 // Typography
 
-$font-weight-lighter:         lighter !default;
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-medium:          500 !default;
-$font-weight-semibold:        600 !default;
-$font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
 
 // scss-docs-end font-sizes
 $gutters: $spacers !default;

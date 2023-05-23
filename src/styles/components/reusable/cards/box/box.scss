@@ -1,0 +1,47 @@
+.box {
+  background-color: var( --items-bg);
+  box-shadow: 0 1px 4px var(--box-shadow);
+  padding: 10px;
+
+  @media (max-width: $tablet) {
+    padding: 8px;
+  }
+
+  &_rank {
+    padding: 16px 26px;
+
+    @media (max-width: $tablet) {
+      padding: 16px 20px;
+    }
+  }
+
+  &_big {
+    padding: 20px 20px;
+
+    @media (max-width: $tablet) {
+      padding: 16px 16px;
+    }
+  }
+
+  &__top {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 0.5px solid var(--gray);
+
+    @media (max-width: $tablet) {
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__bottom {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 0.5px solid var(--gray);
+
+    @media (max-width: $tablet) {
+      padding-top: 8px;
+      margin-top: 8px;
+    }
+  }
+}

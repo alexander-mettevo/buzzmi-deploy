@@ -16,11 +16,12 @@
 
   --light-items-bg: #ffffff;
   --light-main-bg: #FBF8FF;
+  --light-box-shadow: rgba(111, 29, 244, 0.12);
   --main-opposite-bg: #101010;
   --layout-bg: linear-gradient(90.58deg, #EF8ED5 1.06%, #EC44D0 52.41%, #C1169C 99.65%);
 
   // variables for text colors
-  --logo-text: linear-gradient(#555A66, #000000);
+  --light-logo-text: linear-gradient(#555A66, #000000);
   --light-main-text: #000000;
   --main-opposite-text: #ffffff;
   --light-text-secondary: #C0BACB;
@@ -53,6 +54,12 @@
   --main-one-paint: url(#paint0_linear_727_7581);
   --main-two-paint: url(#paint1_linear_727_7581);
   --main-three-paint: url(#paint2_linear_727_7581);
+
+  // assets
+  --light-chart-bg: #F5EEFE;
+
+  //simple colors
+  --light-gray: #C0BACB;
 }
 
 

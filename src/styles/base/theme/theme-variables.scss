@@ -4,7 +4,14 @@
 :root {
   --main-bg: var(--light-main-bg);
   --items-bg: var(--light-items-bg);
+  --box-shadow: var(--light-box-shadow);
 
   --text-secondary: var(--light-text-secondary);
   --main-text: var(--light-main-text);
+  --logo-text: var(--light-logo-text);
+
+  --chart-bg: var(--light-chart-bg);
+
+  //simple colors
+  --gray: var(--light-gray);
 }

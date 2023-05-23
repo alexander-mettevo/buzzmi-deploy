@@ -1,0 +1,20 @@
+.plan-search {
+  position: relative;
+
+  input {
+    &::placeholder {
+      padding-left: 30px;
+    }
+  }
+
+  input:focus + img {
+    display: none;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+  }
+}

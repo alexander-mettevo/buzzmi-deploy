@@ -1,9 +1,16 @@
 #theme-switch:checked ~ .wrapper {
   --main-bg: var(--dark-main-bg);
   --items-bg: var(--dark-items-bg);
+  --box-shadow: var(--dark-box-shadow);
 
   --text-secondary: var(--dark-text-secondary);
   --main-text: var(--dark-main-text);
+  --logo-text: var(--dark-logo-text);
+
+  --chart-bg: var(--dark-chart-bg);
+
+  //simple colors
+  --gray: var(--dark-gray);
 }
 
 .theme-handler {

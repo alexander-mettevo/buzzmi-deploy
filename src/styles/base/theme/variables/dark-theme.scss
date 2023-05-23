@@ -1,7 +1,15 @@
 :root {
-  --dark-main-bg: #584F68;
+  --dark-main-bg: #1F1B26;
   --dark-items-bg: #000000;
+  --dark-box-shadow: rgba(111, 29, 244, 0.12);
 
-  --dark-main-text: #000000;
+  --dark-main-text: #FFFFFF;
   --dark-text-secondary: #C0BACB;
+  --dark-logo-text:  linear-gradient(#5B5566, #FFFFFF);
+
+  // assets
+  --dark-chart-bg: #584F68;
+
+  //simple colors
+  --dark-gray: #C0BACB;
 }

@@ -1,19 +1,20 @@
 import React from "react";
 import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx";
+import HubMainDesktop from "./hubMainDesktop/HubMainDesktop.jsx";
+import ResizeComponent from "../../../reusable/assets/resizeComponent/ResizeComponent.jsx";
+import AdditionalInformation from "../items/additionalInformation/AdditionalInformation.jsx";
 
 const HubMain = () => {
 
+
   return (
     <MainLayoutContent
-      rightColumnContent={
-        <>
-          <h2>Welcome to the Right Column</h2>
-          <p>Классический текст Lorem Ipsum, используемый с XVI века
-          </p>
-        </>
-      }
+      rightColumnContent={<AdditionalInformation/>}
     >
-      <h1>Hub Main</h1>
+      <ResizeComponent
+        desktopComponent={<HubMainDesktop/>}
+        mobileComponent={<h1>Mobile</h1>}
+      />
     </MainLayoutContent>
   )
 }

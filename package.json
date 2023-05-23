@@ -21,6 +21,7 @@
     "@reduxjs/toolkit": "^1.9.3",
     "@storybook/addon-docs": "^7.0.12",
     "react": "^18.2.0",
+    "react-circle-progress-bar": "^0.1.4",
     "react-date-picker": "^9.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.5",
