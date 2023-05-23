@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const RankTop = () => (
   <div className={'d-flex justify-content-between align-items-center'}>
     <h4 className='h4'>Your Rank</h4>
-    <Link to='/rank-ladder' className='text-alt-primary'>
+    <Link to='/rank-ladder' className='text-alt-primary d-none d-lg-block'>
       View rank ladder
     </Link>
   </div>

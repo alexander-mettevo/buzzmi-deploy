@@ -1,0 +1,2 @@
+import{a as e,j as a}from"./jsx-runtime-ee212120.js";import"./index-f1f749bf.js";import{N as n}from"./index-ee5cb701.js";const i=({src:m})=>e("li",{className:"main-layout__menu-item menu-item menu-item_mobile-hide",children:a(n,{to:"/profile",className:"menu-item__link",children:[e("img",{className:"menu-item__avatar",src:m,alt:"menu-icon"}),e("span",{className:"menu-item__name text-s",children:"Profile"})]})}),l=i;i.__docgenInfo={description:"",methods:[],displayName:"MainLayoutMenuItemProfile"};export{l as M};
+//# sourceMappingURL=MainLayoutMenuItemProfile-c8f85b7e.js.map

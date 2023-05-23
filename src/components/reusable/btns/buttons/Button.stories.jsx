@@ -31,7 +31,19 @@ Default.args = {
 export const Primary = Template.bind({});
 Primary.args = {
   children: 'Primary Button',
-  className: '_fw button_primary btn-text',
+  className: '_fw button_primary',
+}
+
+export const MediumPrimary = Template.bind({});
+MediumPrimary.args = {
+  children: 'Primary Button',
+  className: '_fw button_primary button_m',
+}
+
+export const SmallPrimary = Template.bind({});
+SmallPrimary.args = {
+  children: 'Primary Button',
+  className: '_fw button_primary button_s',
 }
 
 export const Secondary = Template.bind({});
@@ -50,5 +62,4 @@ export const Regular = Template.bind({});
 Regular.args = {
   children: 'Regular Button',
   className: 'button_regular',
-
 }

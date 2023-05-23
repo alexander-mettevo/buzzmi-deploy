@@ -2,18 +2,17 @@ import React from "react";
 import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx";
 import HubMainDesktop from "./hubMainDesktop/HubMainDesktop.jsx";
 import ResizeComponent from "../../../reusable/assets/resizeComponent/ResizeComponent.jsx";
-import AdditionalInformation from "../items/additionalInformation/AdditionalInformation.jsx";
+import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx";
+import HubMainMobile from "./hubMainMobile/HubMainMobile.jsx";
 
 const HubMain = () => {
-
-
   return (
     <MainLayoutContent
       rightColumnContent={<AdditionalInformation/>}
     >
       <ResizeComponent
         desktopComponent={<HubMainDesktop/>}
-        mobileComponent={<h1>Mobile</h1>}
+        mobileComponent={<HubMainMobile/>}
       />
     </MainLayoutContent>
   )

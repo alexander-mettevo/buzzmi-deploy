@@ -1,0 +1,2 @@
+import{j as t,a}from"./jsx-runtime-ee212120.js";import"./index-f1f749bf.js";const n={"plan-search":"_plan-search_bvwqj_1"},e=()=>{const s=c=>{console.log(c.target.value)};return t("div",{className:n["plan-search"],children:[a("input",{onBlur:s,type:"text",className:"input input_simple-text",placeholder:"Search"}),a("img",{src:"/images/assets/search.svg",alt:"search icon"})]})},o=e;e.__docgenInfo={description:"",methods:[],displayName:"PlanSearch"};export{o as P};
+//# sourceMappingURL=PlanSearch-aba92737.js.map

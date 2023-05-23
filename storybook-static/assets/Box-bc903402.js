@@ -1,0 +1,2 @@
+import{j as d,a as i}from"./jsx-runtime-ee212120.js";import{r as o}from"./index-f1f749bf.js";const c=({paddingMode:s,topComponent:a,children:t,bottomComponent:e})=>{const[x,r]=o.useState("");return o.useEffect(()=>{s==="rank"?r("box_rank"):s==="big"&&r("box_big")},[s]),d("div",{className:`box ${x}`,children:[a&&i("div",{className:"box__top",children:a}),t,e&&i("div",{className:"box__bottom",children:e})]})},_=c;c.__docgenInfo={description:"",methods:[],displayName:"Box"};export{_ as B};
+//# sourceMappingURL=Box-bc903402.js.map

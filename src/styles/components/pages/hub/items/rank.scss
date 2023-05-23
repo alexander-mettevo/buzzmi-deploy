@@ -2,20 +2,35 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: $tablet) {
+    justify-content: space-around;
+  }
+
+    @media (max-width: $mobileSmall) {
+        justify-content: space-between;
+    }
+
   &__label {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     text-align: center;
-    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     align-items: center;
-    padding: 20px 0;
     gap: 14px;
 
 
     @media (max-width: $tablet) {
-      padding: 30px 0;
       gap: 4px;
       justify-content: space-between;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: $mobileSmall) {
+     width: 88px;
+    }
+
+    @media (max-width: 350px) {
+      width: 70px;
     }
   }
 

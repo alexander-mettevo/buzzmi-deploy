@@ -17,14 +17,14 @@ const CircleChart = ({progress, withAvatar = true}) => {
   useEffect(() => {
     if (withAvatar) {
       setProgressProps({
-        strokeWidth: 18,
-        size: 145,
+        strokeWidth: 30,
+        size: 400,
         sizeDifference: 5,
       });
     } else {
       setProgressProps({
-        strokeWidth: 5,
-        size: 48,
+        strokeWidth: 50,
+        size: 500,
         sizeDifference: 1,
       });
     }
@@ -36,26 +36,29 @@ const CircleChart = ({progress, withAvatar = true}) => {
 
   return (
     <div className={styles["circle-chart__wrapper"]} ref={ref}>
-      <Progress
-        progress={progress}
-        hideBall
-        hideValue
-        reduction={0}
-        transitionDuration={3}
-        background={chartBg}
-        gradient={[{stop: 0.6, color: '#F498E3'}, {stop: 0.8, color: '#EE6CD3'}, {stop: 1, color: '#B0319B'}]}
-        {...progressProps}
-      />
-      {withAvatar && (
-        <div className={styles["circle-chart__avatar"]}>
-          <Avatar mode={'small'} src={'https://m.media-amazon.com/images/M/MV5BMTM3MzY2MDYwOF5BMl5BanBnXkFtZTcwODQ3MDA0Nw@@._V1_.jpg'}/>
-        </div>
-      )}
+      <div>
+        <Progress
+          progress={progress}
+          hideBall
+          hideValue
+          reduction={0}
+          transitionDuration={3}
+          background={chartBg}
+          gradient={[{stop: 0.6, color: '#F498E3'}, {stop: 0.8, color: '#EE6CD3'}, {stop: 1, color: '#B0319B'}]}
+          {...progressProps}
+        />
+        {withAvatar && (
+          <div className={styles["circle-chart__avatar"]}>
+            <Avatar mode={'small'} src={'https://m.media-amazon.com/images/M/MV5BMTM3MzY2MDYwOF5BMl5BanBnXkFtZTcwODQ3MDA0Nw@@._V1_.jpg'}/>
+          </div>
+        )}
 
-      <div className={withAvatar ?  styles["circle-chart__outer-value"] : styles["circle-chart__inner-value"]}>
-        <div>{progress}%</div>
-        <div>Completed</div>
+        <div className={withAvatar ?  styles["circle-chart__outer-value"] : styles["circle-chart__inner-value"]}>
+          <div>{progress}%</div>
+          <div>Completed</div>
+        </div>
       </div>
+
     </div>
 
   );

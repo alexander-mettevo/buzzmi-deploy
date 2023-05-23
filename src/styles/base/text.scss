@@ -33,8 +33,8 @@
 .h5 {
   font-weight: 700;
 
-  @include adaptiveValue('font-size', 22, 16);
-  @include adaptiveValue('line-height', 28, 20);
+  @include adaptiveValue('font-size', 18, 13);
+  @include adaptiveValue('line-height', 28, 12);
 }
 
 .h6 {
