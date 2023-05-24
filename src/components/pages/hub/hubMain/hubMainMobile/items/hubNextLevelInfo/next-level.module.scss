@@ -1,0 +1,15 @@
+.next-level {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__img {
+
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill:var(--main-opposite-bg);
+    }
+  }
+}

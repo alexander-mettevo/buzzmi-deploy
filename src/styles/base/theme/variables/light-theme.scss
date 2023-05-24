@@ -17,7 +17,7 @@
   --light-items-bg: #ffffff;
   --light-main-bg: #FBF8FF;
   --light-box-shadow: rgba(111, 29, 244, 0.12);
-  --main-opposite-bg: #101010;
+  --light-opposite-bg: #101010;
   --layout-bg: linear-gradient(90.58deg, #EF8ED5 1.06%, #EC44D0 52.41%, #C1169C 99.65%);
 
   // variables for text colors
@@ -26,7 +26,7 @@
   --main-opposite-text: #ffffff;
   --light-text-secondary: #C0BACB;
   --alt-text-secondary: #584F68;
-  --primary-text: radial-gradient(75.57% 107.73% at 52.5% 10.85%, #EF8ED5 0%, #EC44D0 52.08%, #C1169C 100%);
+  --primary-text: linear-gradient(113.36deg, #FF41B3 19.17%, #7E00E0 84.92%);
   --alter-text: #000072;
 
   // variables for forms

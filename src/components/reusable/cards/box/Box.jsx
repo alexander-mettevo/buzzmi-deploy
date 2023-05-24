@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-const Box = ({paddingMode, topComponent, children, bottomComponent}) => {
+const Box = ({paddingMode, topComponent, children, bottomComponent, className}) => {
   const [padding, setPadding] = useState("");
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const Box = ({paddingMode, topComponent, children, bottomComponent}) => {
 
   return (
     <div
-      className={`box ${padding}`}
+      className={`box ${padding} ${className}`}
     >
       {
         topComponent && (

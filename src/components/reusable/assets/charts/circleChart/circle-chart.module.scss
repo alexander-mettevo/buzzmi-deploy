@@ -33,6 +33,14 @@
     }
   }
 
+  &__with-avatar {
+    //background: var(--main-opposite-bg);
+    
+    & > div:first-child {
+      width: 150px !important;
+    }
+  }
+
   &__avatar {
     position: absolute;
     top: 50%;

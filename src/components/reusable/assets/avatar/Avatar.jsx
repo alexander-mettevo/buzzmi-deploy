@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react';
 import styles from './Avatar.module.scss';
 import propTypes from 'prop-types';
 
-const Avatar = ({src, mode = ""}) => {
+const Avatar = ({mode = ""}) => {
   const [avatarMode, setAvatarMode] = useState("");
+  const [avatar, setAvatar] = useState("https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541");
 
   useEffect(() => {
     switch (mode) {
@@ -22,15 +23,25 @@ const Avatar = ({src, mode = ""}) => {
     }
   }, [mode]);
 
+  const getData = async () => {
+    try {
+      const data = "/images/moc/avatar-big.png"
+        setAvatar(data)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  useEffect(() => {getData()}, [])
+
   return (
     <div className={`${styles.avatar} ${avatarMode}`}>
-      <img src={src} alt="avatar" className={styles["avatar__img"]}/>
+      <img src={avatar} alt="avatar" className={styles["avatar__img"]}/>
     </div>
   );
 };
 
 Avatar.propTypes = {
-  src: propTypes.string.isRequired,
   mode: propTypes.string
 }
 export default Avatar;

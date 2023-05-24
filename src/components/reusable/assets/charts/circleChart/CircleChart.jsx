@@ -3,7 +3,7 @@ import styles from './circle-chart.module.scss';
 import Progress from './Progress.jsx';
 import Avatar from "../../avatar/Avatar.jsx";
 
-const CircleChart = ({progress, withAvatar = true}) => {
+const CircleChart = ({progress, withAvatar}) => {
   const [progressProps, setProgressProps] = useState({
     strokeWidth: 5,
     size: 48,
@@ -36,7 +36,7 @@ const CircleChart = ({progress, withAvatar = true}) => {
 
   return (
     <div className={styles["circle-chart__wrapper"]} ref={ref}>
-      <div>
+      <div className={withAvatar ? styles["circle-chart__with-avatar"] : ""}>
         <Progress
           progress={progress}
           hideBall

@@ -1,0 +1,39 @@
+.dropdown {
+  width: 100%;
+  max-width: 500px;
+
+  &__button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__arrow {
+    & > * {
+      transition: transform 0.3s ease;
+      font-size: 16px;
+      color: var(--gray);
+    }
+
+    &-open {
+      & > * {
+        transform: rotate(180deg);
+
+      }
+    }
+  }
+
+  &__content {
+    // your styles here...
+
+    // Variable height
+    height: var(--content-height, 0);
+    transition: height 0.3s ease;
+  }
+
+  &__content--open {
+
+
+  }
+}

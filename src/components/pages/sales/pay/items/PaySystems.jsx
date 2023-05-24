@@ -8,6 +8,7 @@ const PaySystems = () => {
   const [showMore, setShowMore] = useState(false);
   const contentRef = useRef(null);
 
+  console.log('Dropdown', contentRef.current?.scrollHeight)
   const toggleShowMore = () => setShowMore(!showMore);
 
   return (

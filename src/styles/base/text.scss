@@ -26,8 +26,8 @@
 .h4 {
   font-weight: 700;
 
-  @include adaptiveValue('font-size', 28, 20);
-  @include adaptiveValue('line-height', 34, 28);
+  @include adaptiveValue('font-size', 22, 15);
+  @include adaptiveValue('line-height', 26, 16);
 }
 
 .h5 {
