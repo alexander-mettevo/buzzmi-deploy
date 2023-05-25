@@ -6,6 +6,7 @@ const Box = ({paddingMode, topComponent, children, bottomComponent, className}) 
   useEffect(() => {
     if (paddingMode === "rank") setPadding("box_rank");
     else if (paddingMode === "big") setPadding("box_big");
+    else if (paddingMode === "mid") setPadding("box_mid");
   }, [paddingMode]);
 
   return (

@@ -1,0 +1,16 @@
+
+.button_primary {
+  background: var(--btn-primary-bg);
+  color: var(--main-opposite-text);
+  transition: all 0.3s ease-in-out;
+  border: 3px solid var(--btn-primary-bg);
+
+  &:hover {
+    background: var(--main-bg);
+    color: var(--btn-primary-bg) !important;
+
+    * {
+      color: var(--btn-primary-bg) !important;
+    }
+  }
+}

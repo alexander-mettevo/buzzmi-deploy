@@ -1,0 +1,22 @@
+.button_regular {
+  border: 1px solid var(--text-secondary);
+  display: block;
+  align-items: center;
+
+  & > div {
+    display: inline-block;
+    margin-left: 25%;
+
+    @media (max-width: 390px) {
+      margin-left: 19%;
+    }
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: var(--bg-secondary);
+  }
+}

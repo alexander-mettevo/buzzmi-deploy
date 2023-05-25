@@ -1,0 +1,89 @@
+.badge {
+  border-radius: 12px;
+  padding: 5px 12px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  &:hover {
+    font-weight: 600;
+  }
+
+  &_one-color {
+    font-weight: 400 !important;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 3px 8px;
+  }
+
+  &_all {
+    background-color: rgba(255, 173, 193, 0.5);
+
+    &:hover {
+      font-weight: 600;
+      background-color: #FFADC1;
+    }
+  }
+
+  &_presets {
+    background-color: #F5EEFE;
+
+    &:hover {
+      font-weight: 600;
+      background-color: #E4AFFF;
+    }
+  }
+
+  &_workouts {
+    background-color: rgba(185, 240, 255, 0.6);
+
+    &:hover {
+      font-weight: 600;
+      background-color: #99E4FD;
+    }
+  }
+
+  &_habits {
+    background-color: rgba(176, 255, 176, 0.5);
+
+    &:hover {
+      font-weight: 600;
+      background-color: #ADFFB4;
+    }
+  }
+
+  &_program {
+    background-color: rgba(193, 211, 255, 0.5);
+
+    &:hover {
+      font-weight: 600;
+      background-color: #9AB6FF;
+    }
+  }
+
+  &_challenges {
+    background-color: rgba(255, 242, 170, 0.5);
+
+    &:hover {
+      font-weight: 600;
+      background-color: #FFEC85;
+    }
+  }
+
+  &_buzzmi-tasks {
+    background-color: #F5EEFE;
+
+    &:hover {
+      font-weight: 600;
+      background-color: #E4AFFF;
+    }
+  }
+
+  &_completed {
+    background-color: #F5EEFE;
+  }
+}

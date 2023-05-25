@@ -1,0 +1,72 @@
+.button {
+  display: inline-flex;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  @include adaptiveValue('font-size', 22, 16);
+  @include adaptiveValue('line-height', 20, 20);
+  @include adaptiveValue('min-height', 60, 50);
+  @include adaptiveValue('padding-top', 13, 8);
+  @include adaptiveValue('padding-bottom', 13, 8);
+  @include adaptiveValue('padding-left', 10, 5);
+  @include adaptiveValue('padding-right', 10, 5);
+
+  &_m, &_s {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media (max-width: $tablet) {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &_m {
+    @include adaptiveValue('min-height', 44, 28);
+    @include adaptiveValue('padding-top', 12, 6);
+    @include adaptiveValue('padding-bottom', 12, 6);
+  }
+
+  &_s {
+    @include adaptiveValue('min-height', 32, 27);
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+    }
+  }
+
+  &._fw {
+    max-width: 420px;
+    width: 100%;
+  }
+
+  &_inactive {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &_pay {
+    border-radius: 50px;
+    padding: 8px 19px 8px 37.5px;
+    @include adaptiveValue('height', 50, 48);
+
+    &_icon {
+      padding: 8px 19px;
+    }
+  }
+}
+
+@import "alt-primary";
+@import "secondary";
+@import "primary";
+@import "regular";

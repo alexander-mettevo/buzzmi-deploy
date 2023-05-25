@@ -63,3 +63,9 @@ Regular.args = {
   children: 'Regular Button',
   className: 'button_regular',
 }
+
+export const SecondaryDoubleColors = Template.bind({});
+SecondaryDoubleColors.args = {
+  children: 'Secondary Double Colors Button',
+  className: 'button_secondary button_m double-secondary ',
+}

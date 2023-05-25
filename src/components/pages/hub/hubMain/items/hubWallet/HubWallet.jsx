@@ -50,7 +50,7 @@ const HubWallet = () => {
           <span className={'me-1'}>{wallet?.diamonds}</span>
           <img src="/images/hub/wallet/diamond.svg" alt=""/>
         </div>
-        <div className={'d-flex align-items-center me-7'}>
+        <div className={'d-flex align-items-center me-md-7'}>
           <span className={'me-1'}>{wallet?.coins}</span>
           <img src="/images/hub/wallet/coin.svg" alt=""/>
         </div>

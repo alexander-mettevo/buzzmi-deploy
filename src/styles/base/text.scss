@@ -62,7 +62,7 @@
   text-transform: none;
 
   @include adaptiveValue('font-size', 16, 12);
-  @include adaptiveValue('line-height', 18, 15);
+  @include adaptiveValue('line-height', 18, 12);
 }
 
 .text-s {

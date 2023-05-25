@@ -24,6 +24,14 @@
     }
   }
 
+  &_mid {
+    padding: 20px 16px;
+
+    @media (max-width: $tablet) {
+      padding: 10px 16px;
+    }
+  }
+
   &__top {
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -33,6 +41,8 @@
       padding-bottom: 8px;
       margin-bottom: 8px;
     }
+
+
   }
 
   &__bottom {
