@@ -1,5 +1,7 @@
 .box-info-card {
-  overflow: hidden;
+  @media (max-width: $tablet) {
+    overflow: hidden;
+  }
 }
 
 .info-card {
