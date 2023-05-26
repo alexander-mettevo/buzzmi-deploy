@@ -14,11 +14,11 @@
     border-radius: 50%;
 
     &--pink {
-      background: #EF8FD5;
+      background: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     }
 
     &--gray {
-      background: #C0BACB;
+      background: var(--gray);
     }
   }
 
@@ -27,6 +27,35 @@
     font-size: 18px;
     line-height: 28px;
     font-weight: 700;
+    position: relative;
+    transition: color 0.15s linear;
+
+    .fa-arrow-left,
+    .fa-arrow-right {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    &--left {
+      padding-left: 33px;
+
+      .fa-arrow-left {
+        left: 0;
+      }
+    }
+
+    &--right {
+      padding-right: 33px;
+
+      .fa-arrow-right {
+        right: 0;
+      }
+    }
   }
 }
 
@@ -52,7 +81,7 @@
     }
 
     &:hover {
-      color: #EF8FD5;
+      color: var(--accent);
     }
   }
 
@@ -90,5 +119,11 @@
 
   &__navigation__label {
     pointer-events: none;
+  }
+
+  &__navigation__arrow {
+    &:hover {
+      color: var(--accent)
+    }
   }
 }

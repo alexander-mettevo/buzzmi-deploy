@@ -24,12 +24,12 @@ const getType = ({dayList, type, date}) => {
 }
 
 const Calendar = ({
-                      minDate,
-                      maxDate,
-                      dayList,
-                      onChange,
-                      value
-                  }) => {
+    minDate,
+    maxDate,
+    dayList,
+    onChange,
+    value
+}) => {
     const [currentMonth, setCurrentMonth] = useState(moment(value).get("month"));
 
     const renderCellContent = ({date}) => {
@@ -50,10 +50,10 @@ const Calendar = ({
 
     const getPrevLabelText = ({direction}) => {
         if (direction === "down") {
-            return <span className="fa-solid fa-arrow-left calendar__btn-text">{currentMonth - 1 >= 0 ? monthNames[currentMonth - 1] : monthNames[11]}</span>
+            return <span className="calendar__btn-text calendar__btn-text--left"><i className="fa-solid fa-arrow-left"/>{currentMonth - 1 >= 0 ? monthNames[currentMonth - 1] : monthNames[11]}</span>
         }
         if (direction === "up") {
-            return <span className="fa-solid fa-arrow-right calendar__btn-text">{currentMonth + 1 <= 11 ? monthNames[currentMonth + 1] : monthNames[0]}</span>
+            return <span className="calendar__btn-text calendar__btn-text--right"><i className="fa-solid fa-arrow-right"/>{currentMonth + 1 <= 11 ? monthNames[currentMonth + 1] : monthNames[0]}</span>
         }
     }
 
