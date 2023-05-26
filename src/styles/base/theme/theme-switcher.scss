@@ -4,6 +4,7 @@
   --box-shadow: var(--dark-box-shadow);
   --main-opposite-bg: var(--dark-opposite-bg);
   --items-hover-bg: var(--dark-items-hover-bg);
+  --active-tab: var(--light-active-tab);
 
   --text-secondary: var(--dark-text-secondary);
   --main-text: var(--dark-main-text);
@@ -13,7 +14,6 @@
 
   //simple colors
   --gray: var(--dark-gray);
-  --purple: var(--dark-purple);
 }
 
 .theme-handler {

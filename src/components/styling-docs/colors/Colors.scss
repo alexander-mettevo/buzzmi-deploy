@@ -1,0 +1,53 @@
+.colors {
+
+}
+
+.color-section {
+  margin-bottom: 30px;
+}
+
+.color-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-sample {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.color-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-name {
+  font-weight: 600;
+}
+
+.color-name,
+.color-value {
+  font-size: 14px;
+  margin: 2px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
