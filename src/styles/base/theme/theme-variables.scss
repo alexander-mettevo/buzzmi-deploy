@@ -7,14 +7,42 @@
   --box-shadow: var(--light-box-shadow);
   --main-opposite-bg: var(--light-opposite-bg);
   --items-hover-bg: var(--light-items-hover-bg);
-
+  --active-tab: var(--light-active-tab);
   --text-secondary: var(--light-text-secondary);
   --main-text: var(--light-main-text);
   --logo-text: var(--light-logo-text);
-
   --chart-bg: var(--light-chart-bg);
-
-  //simple colors
   --gray: var(--light-gray);
-  --purple: var(--light-purple);
+
+  // More variables
+  --primary: var(--primary);
+  --logo-color: var(--logo-color);
+  --accent: var(--accent);
+  --bg-secondary: var(--bg-secondary);
+  --input-border: var(--input-border);
+  --error-color: var(--error-color);
+  --success-color: var(--success-color);
+  --secondary-color: var(--secondary-color);
+  --warning-color: var(--warning-color);
+  --items-box-shadow: var(--items-box-shadow);
+  --alt-primary-border: var(--alt-primary-border);
+  --main-opposite-text: var(--main-opposite-text);
+  --alt-text-secondary: var(--alt-text-secondary);
+  --primary-text: var(--primary-text);
+  --alter-text: var(--alter-text);
+  --form-bg: var(--form-bg);
+  --form-shadow: var(--form-shadow);
+  --input-focus-shadow: var(--input-focus-shadow);
+  --input-error-shadow: var(--input-error-shadow);
+  --input-success-shadow: var(--input-success-shadow);
+  --input-warning-shadow: var(--input-warning-shadow);
+  --btn-primary-bg: var(--btn-primary-bg);
+  --btn-arrow-bg: var(--btn-arrow-bg);
+  --scroll-bg: var(--scroll-bg);
+  --one-paint: var(--one-paint);
+  --two-paint: var(--two-paint);
+  --three-paint: var(--three-paint);
+  --main-one-paint: var(--main-one-paint);
+  --main-two-paint: var(--main-two-paint);
+  --main-three-paint: var(--main-three-paint);
 }
