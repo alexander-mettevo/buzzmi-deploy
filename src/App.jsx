@@ -47,7 +47,7 @@ const App = () => {
               <Route path="/space" element={<HubMain/>}/>
               <Route path="/subscription" element={<HubMain/>}/>
               <Route path="/challenges" element={<HubMain/>}/>
-              <Route path="/calendar" element={<HubMain/>}/>
+              <Route path="/cale ndar" element={<HubMain/>}/>
               <Route path="/wallet" element={<HubMain/>}/>
               <Route path="/profile" element={<HubMain/>}/>
             </Route>
