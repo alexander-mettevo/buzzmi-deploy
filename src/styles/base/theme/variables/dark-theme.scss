@@ -1,14 +1,66 @@
 :root {
+  // main colors
   --dark-main-bg: #1F1B26;
   --dark-items-bg: #000000;
-  --dark-box-shadow: rgba(111, 29, 244, 0.12);
   --dark-opposite-bg: #FFFFFF;
+  --dark-primary: linear-gradient(86.83deg, #FF9800 -45.01%, #EB4A66 25.91%, #C600CA 101.38%);
+  --dark-logo-color: radial-gradient(75.57% 107.73% at 52.5% 10.85%, #EF8ED5 0%, #EC44D0 52.08%, #C1169C 100%);
+  --dark-accent: #EB4DAC;
+  --dark-bg-secondary: #E4DBF1;
+  --dark-error-color: #F02461;
+  --dark-success-color: #25AF4C;
+  --dark-secondary-color: #ff00ff;
+  --dark-warning-color: #FF9800;
+  //=========================================================================================
+
+  // assets colors
+  --dark-items-box-shadow: rgba(0, 0, 0, 0.25);
+  --dark-alt-primary-border: linear-gradient(to right, #FF41B3, #7E00E0);
+  --dark-box-shadow: rgba(111, 29, 244, 0.12);
   --dark-items-hover-bg: #EAE1FF;
   --dark-active-tab: #3C2956;
+  //=========================================================================================
 
+  // text colors
   --dark-main-text: #FFFFFF;
   --dark-text-secondary: #C0BACB;
-  --dark-logo-text:  linear-gradient(#5B5566, #FFFFFF);
+  --dark-logo-text: linear-gradient(#5B5566, #FFFFFF);
+  --dark-main-opposite-text: #ffffff;
+  --dark-alt-text-secondary: #584F68;
+  --dark-primary-text: linear-gradient(113.36deg, #FF41B3 19.17%, #7E00E0 84.92%);
+  --dark-alter-text: #000072;
+  //=========================================================================================
+
+  // variables for forms
+  --dark-form-bg: #F4F1F8;
+  --dark-form-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --dark-input-focus-shadow: -4px 0px 8px rgba(247, 32, 131, 0.4), 4px 0px 8px rgba(139, 12, 219, 0.4);
+  --dark-input-error-shadow: -4px 0px 8px #F02461, 4px 0px 8px #F02461;
+  --dark-input-success-shadow: -4px 0px 8px #25AF4C, 4px 0px 8px #25AF4C;
+  --dark-input-warning-shadow: -4px 0px 8px #FF9800, 4px 0px 8px #FF9800;
+  --dark-input-border: #7E00E0;
+  //=========================================================================================
+
+  // variables for btns
+  --dark-btn-primary-bg: #E12194;
+  --dark-btn-arrow-bg:linear-gradient(#FF41B3, #7E00E0);
+  //=========================================================================================
+
+  // variables for scroll
+  --dark-scroll-bg: linear-gradient(137.29deg, #FF7F62 21.2%, #FF42B4 88.24%);
+  //=========================================================================================
+
+  // header logo gradient
+  --dark-one-paint: url(#paint0_linear_877_1856);
+  --dark-two-paint: url(#paint1_linear_877_1856);
+  --dark-three-paint: url(#paint2_linear_877_1856);
+  //=========================================================================================
+
+  // main logo gradient
+  --dark-main-one-paint: url(#paint0_linear_727_7581);
+  --dark-main-two-paint: url(#paint1_linear_727_7581);
+  --dark-main-three-paint: url(#paint2_linear_727_7581);
+  //=========================================================================================
 
   // assets
   --dark-chart-bg: #584F68;

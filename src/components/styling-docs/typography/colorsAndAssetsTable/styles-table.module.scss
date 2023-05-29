@@ -1,0 +1,41 @@
+.styles-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+
+  .header {
+    display: flex;
+    background: #007BFF;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .row {
+    display: flex;
+    border-bottom: 1px solid #E5E5E5;
+
+    & > div {
+      font-weight: 600;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .header div, .row div {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .row:nth-child(even) {
+    background-color: #F9F9F9;
+  }
+}

@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=3f604aa69d50"
+    "chromatic": "npx chromatic --project-token=chpt_9d2735e77bf3dd1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",

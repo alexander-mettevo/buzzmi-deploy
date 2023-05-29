@@ -2,47 +2,68 @@
 @import "variables/dark-theme";
 
 :root {
+  // main colors
   --main-bg: var(--light-main-bg);
   --items-bg: var(--light-items-bg);
-  --box-shadow: var(--light-box-shadow);
   --main-opposite-bg: var(--light-opposite-bg);
   --items-hover-bg: var(--light-items-hover-bg);
+  --chart-bg: var(--light-chart-bg);
+  --gray: var(--light-gray);
+  --primary: var(--light-primary);
+  --accent: var(--light-accent);
+  --bg-secondary: var(--light-bg-secondary);
+  --error-color: var(--light-error-color);
+  --success-color: var(--light-success-color);
+  --secondary-color: var(--light-secondary-color);
+  --warning-color: var(--light-warning-color);
+  //=========================================================================================
+
+  // assets colors
+  --items-box-shadow: var(--light-items-box-shadow);
+  --alt-primary-border: var(--light-alt-primary-border);
+  --box-shadow: var(--light-box-shadow);
   --active-tab: var(--light-active-tab);
+  --logo-color: var(--light-logo-color);
+  //=========================================================================================
+
+  // text colors
   --text-secondary: var(--light-text-secondary);
   --main-text: var(--light-main-text);
   --logo-text: var(--light-logo-text);
-  --chart-bg: var(--light-chart-bg);
-  --gray: var(--light-gray);
+  --main-opposite-text: var(--light-main-opposite-text);
+  --alt-text-secondary: var(--light-alt-text-secondary);
+  --primary-text: var(--light-primary-text);
+  --alter-text: var(--light-alter-text);
+  //=========================================================================================
 
-  // More variables
-  --primary: var(--primary);
-  --logo-color: var(--logo-color);
-  --accent: var(--light-accent);
-  --bg-secondary: var(--bg-secondary);
-  --input-border: var(--input-border);
-  --error-color: var(--error-color);
-  --success-color: var(--success-color);
-  --secondary-color: var(--secondary-color);
-  --warning-color: var(--warning-color);
-  --items-box-shadow: var(--items-box-shadow);
-  --alt-primary-border: var(--alt-primary-border);
-  --main-opposite-text: var(--main-opposite-text);
-  --alt-text-secondary: var(--alt-text-secondary);
-  --primary-text: var(--primary-text);
-  --alter-text: var(--alter-text);
-  --form-bg: var(--form-bg);
-  --form-shadow: var(--form-shadow);
-  --input-focus-shadow: var(--input-focus-shadow);
-  --input-error-shadow: var(--input-error-shadow);
-  --input-success-shadow: var(--input-success-shadow);
-  --input-warning-shadow: var(--input-warning-shadow);
-  --btn-primary-bg: var(--btn-primary-bg);
-  --btn-arrow-bg: var(--btn-arrow-bg);
-  --scroll-bg: var(--scroll-bg);
-  --one-paint: var(--one-paint);
-  --two-paint: var(--two-paint);
-  --three-paint: var(--three-paint);
-  --main-one-paint: var(--main-one-paint);
-  --main-two-paint: var(--main-two-paint);
-  --main-three-paint: var(--main-three-paint);
+  // variables for forms
+  --form-bg: var(--light-form-bg);
+  --form-shadow: var(--light-form-shadow);
+  --input-focus-shadow: var(--light-input-focus-shadow);
+  --input-error-shadow: var(--light-input-error-shadow);
+  --input-success-shadow: var(--light-input-success-shadow);
+  --input-warning-shadow: var(--light-input-warning-shadow);
+  --input-border: var(--light-input-border);
+  //=========================================================================================
+
+  // variables for btns
+  --btn-primary-bg: var(--light-btn-primary-bg);
+  --btn-arrow-bg: var(--light-btn-arrow-bg);
+  //=========================================================================================
+
+  // variables for scroll
+  --scroll-bg: var(--light-scroll-bg);
+  //=========================================================================================
+
+  // header logo gradient
+  --one-paint: var(--light-one-paint);
+  --two-paint: var(--light-two-paint);
+  --three-paint: var(--light-three-paint);
+  //=========================================================================================
+
+  // main logo gradient
+  --main-one-paint: var(--light-main-one-paint);
+  --main-two-paint: var(--light-main-two-paint);
+  --main-three-paint: var(--light-main-three-paint);
+  //=========================================================================================
 }
