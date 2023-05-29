@@ -28,7 +28,9 @@ const Calendar = ({
     maxDate,
     dayList,
     onChange,
-    value
+    value,
+    noNavigation,
+    onHeaderBtnHandler
 }) => {
     const [currentMonth, setCurrentMonth] = useState(moment(value).get("month"));
 
@@ -58,7 +60,11 @@ const Calendar = ({
     }
 
     return (
-        <div className="calendar">
+        <div className={"calendar" + (noNavigation ? " calendar--no-navigation" : "")}>
+            {noNavigation && <div className="calendar__header d-flex justify-content-between">
+                <span className="calendar__header-title">Calendar</span>
+                {onHeaderBtnHandler && <button className="calendar__header-btn" onClick={onHeaderBtnHandler}>See today's tasks</button>}
+            </div>}
             <div className="calendar__body">
                 <CalendarComponent defaultActiveStartDate={new Date(value)}
                                    value={value}
@@ -71,6 +77,10 @@ const Calendar = ({
                                    view="month"
                                    minDate={minDate ? new Date(minDate) : null}
                                    maxDate={maxDate ? new Date(maxDate) : null}/>
+            </div>
+            <div className="calendar__footer d-flex">
+                <span className="calendar__footer-item calendar__footer-item--pink-marker">Completed goal</span>
+                <span className="calendar__footer-item calendar__footer-item--gray-marker">Uncompleted goal</span>
             </div>
         </div>
     )
