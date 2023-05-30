@@ -12,6 +12,8 @@ import {Link} from "react-router-dom";
 import Button from "../../../../reusable/btns/buttons/Button.jsx";
 import InfoCardList from "../../../../reusable/cards/infoCard/InfoCardList.jsx";
 import HubAccess from "../items/hubAccess/HubAccess.jsx";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 
 //TODO: mock data
 const infoList = [{
@@ -61,6 +63,12 @@ const infoList = [{
 const HubMainMobile = () => {
   return (
     <>
+      <ul className="react-tabs__tab-list" role="tablist">
+        <Link className="react-tabs__tab react-tabs__tab--selected" to={'/hub'}>Hub
+        </Link>
+        <Link className="react-tabs__tab" to={'/calendar'}>Calendar
+        </Link>
+      </ul>
       <div className='d-flex flex-column align-items-center'>
         <h1 className={'h3 mb-3'}>
           Rise and shine, Jane!
