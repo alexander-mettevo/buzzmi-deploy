@@ -1,36 +1,36 @@
 import React, {useEffect, useState} from 'react';
 import CircleChart from "../../../../../../reusable/assets/charts/circleChart/CircleChart.jsx";
 
+const getData = async (setData) => {
+  try {
+    //TODO get data from server
+    const data = {
+      progress: 35,
+      currentRank: {
+        name: 'Buzz Rookie',
+        image: {
+          src: "/images/moc/buzz-rookie.svg"
+        }
+      },
+      nextRank: {
+        name: 'Social Butterfly',
+        image: {
+          src: "/images/moc/social-butterfly.svg"
+        }
+      }
+    }
+
+    setData(data);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 const RankRow = ({withAvatar}) => {
   const [data, setData] = useState({});
 
-  const getData = async () => {
-    try {
-      //TODO get data from server
-      const data = {
-        progress: 35,
-        currentRank: {
-          name: 'Buzz Rookie',
-          image: {
-            src: "/images/moc/buzz-rookie.svg"
-          }
-        },
-        nextRank: {
-          name: 'Social Butterfly',
-          image: {
-            src: "/images/moc/social-butterfly.svg"
-          }
-        }
-      }
-
-      setData(data);
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
   useEffect(() => {
-    getData();
+    getData(setData);
   }, [])
 
   return (
