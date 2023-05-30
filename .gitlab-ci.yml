@@ -23,7 +23,7 @@ deploy_dev:
       git checkout dev &&
       git pull &&
       npm install &&
-      npm run build &&
-      nohup npm run preview &"
+      npm run build"
+      #npm run preview &"
   only:
     - dev
