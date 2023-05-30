@@ -16,13 +16,14 @@ deploy_dev:
     
   script:
     - echo "Deploy to development server"
-    - ssh -p22 buzzmi@157.90.224.110 "cd /home/buzzmi/buzzmi && 
+    - ssh -p22 buzzmi@157.90.224.110 "killall node &&
+      cd /home/buzzmi/buzzmi && 
       source /home/buzzmi/.nvm/nvm.sh &&
       nvm use 18.14.0 &&
       git checkout dev &&
       git pull &&
       npm install &&
       npm run build &&
-      npm run preview &"
+      nohup npm run preview &"
   only:
     - dev
