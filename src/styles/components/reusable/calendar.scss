@@ -1,4 +1,36 @@
+$pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
+
 .calendar {
+  margin-bottom: 20px;
+
+  &--no-navigation {
+    .react-calendar {
+      &__navigation {
+        display: none;
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__header-btn {
+    background: linear-gradient(113.36deg, #FF41B3 19.17%, #7E00E0 84.92%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__header-title {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+
+  &__body {
+    margin-bottom: 20px;
+  }
+
   &__col {
     width: 14.28%;
     text-align: center;
@@ -14,7 +46,7 @@
     border-radius: 50%;
 
     &--pink {
-      background: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
+      background: $pink-marker-bg;
     }
 
     &--gray {
@@ -57,9 +89,47 @@
       }
     }
   }
+
+  &__footer {
+    margin-left: -40px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  &__footer-item {
+    margin-left: 40px;
+    padding-left: 12px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      top: 50%;
+      margin-top: -3px;
+      border-radius: 50%;
+    }
+
+    &--pink-marker {
+      &:before {
+        background: $pink-marker-bg;
+      }
+    }
+
+    &--gray-marker {
+      &:before {
+        background: var(--gray);
+      }
+    }
+  }
 }
 
 .react-calendar {
+  margin: 0 -10px;
+
   &__tile {
     max-width: calc(14.28% - 20px);
     margin: 10px;
@@ -82,6 +152,10 @@
 
     &:hover {
       color: var(--accent);
+    }
+
+    &--active {
+      background: var(--active-tab);
     }
   }
 

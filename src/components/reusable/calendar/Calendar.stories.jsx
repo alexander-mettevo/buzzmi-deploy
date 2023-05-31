@@ -35,7 +35,7 @@ export const Default = Template.bind({});
 Default.args = {
     dayList: dayList,
     value: dayList[0].date,
-    onChange: (date) => null
+    onChange: () => null
 }
 
 export const oneWeek = Template.bind({});
@@ -44,5 +44,16 @@ oneWeek.args = {
     value: dayList[0].date,
     minDate: dayList[0].date,
     maxDate: dayList[6].date,
-    onChange: (date) => null
+    onChange: () => null
+}
+
+export const oneWeekWithoutNavigation = Template.bind({});
+oneWeekWithoutNavigation.args = {
+    dayList: dayList,
+    value: dayList[0].date,
+    minDate: dayList[0].date,
+    maxDate: dayList[6].date,
+    onHeaderBtnHandler: () => null,
+    noNavigation: true,
+    onChange: () => null
 }

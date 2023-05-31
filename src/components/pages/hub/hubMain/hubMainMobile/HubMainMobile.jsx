@@ -13,6 +13,8 @@ import Button from "../../../../reusable/btns/buttons/Button.jsx";
 import InfoCardList from "../../../../reusable/cards/infoCard/InfoCardList.jsx";
 import HubAccess from "../items/hubAccess/HubAccess.jsx";
 import Message from "../../../../reusable/assets/message/Message.jsx";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 
 //TODO: mock data
 const infoList = [{
@@ -65,6 +67,12 @@ const infoList = [{
 const HubMainMobile = () => {
   return (
     <>
+      <ul className="react-tabs__tab-list" role="tablist">
+        <Link className="react-tabs__tab react-tabs__tab--selected" to={'/hub'}>Hub
+        </Link>
+        <Link className="react-tabs__tab" to={'/calendar'}>Calendar
+        </Link>
+      </ul>
       <div className='d-flex flex-column align-items-center'>
         <Message message={"Your trial will end in 2 days and your membership will automatically upgraded to <a href='/'>Premium Member</a>"}/>
         <h1 className={'h3 mb-3'}>

@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Verified = ({isVerified}) => {
-  if (!isVerified) return null
-
-  return (
+  return !isVerified ? null : (
     <img src="/images/assets/verified.svg" alt="verified"/>
   );
 };
