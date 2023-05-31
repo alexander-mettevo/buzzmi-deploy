@@ -1,4 +1,5 @@
 import InfoCardList from "./InfoCardList.jsx";
+import {withRouter} from "storybook-addon-react-router-v6";
 
 export default {
   title: 'Components/Reusable/Cards/InfoCard/InfoCardList',
@@ -11,13 +12,15 @@ export default {
       },
       description: 'Array of objects with image, badges and info properties'
     }
-  }
+  },
+  decorators: [withRouter]
 }
 
 const Template = (args) => <InfoCardList {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   infoList: [{
+    href: '/hub/add-activity',
     image: {
       src: '/images/hub/main/gym.png',
       alt: 'Placeholder'
@@ -33,6 +36,7 @@ Default.args = {
     }
   },
     {
+      href: '/hub/add-activity',
       image: {
         src: '/images/hub/main/gym.png',
         alt: 'Placeholder'
@@ -48,6 +52,7 @@ Default.args = {
       }
     },
     {
+      href: '/hub/add-activity',
       image: {
         src: '/images/hub/main/gym.png',
         alt: 'Placeholder'

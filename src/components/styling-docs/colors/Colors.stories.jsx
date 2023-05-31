@@ -1,5 +1,4 @@
-import Colors from "./index.jsx";
-
+import Colors from "./Colors.jsx";
 export default {
   title: 'Configuration/Colors',
   component: Colors,

@@ -1,29 +1,19 @@
-image: rastasheep/ubuntu-sshd:18.04
-stages:
-  - deploy
-  
-deploy_dev:
+image: node:18.14.0
+pages:
   stage: deploy
-
-  before_script:
-    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - ssh-keyscan 157.90.224.110 >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    
+  cache:
+    key:
+      files:
+        - package-lock.json
+      prefix: npm
+    paths:
+      - node_modules/
   script:
-    - echo "Deploy to development server"
-    - ssh -p22 buzzmi@157.90.224.110 "killall node &&
-      cd /home/buzzmi/buzzmi && 
-      source /home/buzzmi/.nvm/nvm.sh &&
-      nvm use 18.14.0 &&
-      git checkout dev &&
-      git pull &&
-      npm install &&
-      npm run build"
-      #npm run preview &"
-  only:
-    - dev
+    - npm install
+    - npm run build
+    - cp -a dist/. public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == dev

@@ -32,6 +32,8 @@ import FinishRegistration from "./components/pages/auth/finishRegistration/Finis
 import HubMain from './components/pages/hub/hubMain/HubMain.jsx';
 import MainLayout from './components/layouts/mainLayout/MainLayout.jsx';
 import ThemeLayout from "./components/layouts/themeLayout/ThemeLayout.jsx";
+import HubAddActivity from "./components/pages/hub/hubAddActivity/HubAddActivity.jsx";
+import HubTasks from "./components/pages/hub/hubTasks/HubTasks.jsx";
 
 const App = () => {
   return (
@@ -40,14 +42,18 @@ const App = () => {
         <Route element={<ThemeLayout/>}>
           <Route element={<AuthLayout/>}>
             <Route element={<MainLayout/>}>
-              <Route path="/hub" element={<HubMain/>}/>
+              <Route path="/hub">
+                <Route path="" element={<HubMain/>}/>
+                <Route path="add-activity" element={<HubAddActivity/>}/>
+                <Route path="tasks" element={<HubTasks/>}/>
+              </Route>
               <Route path="/notifications" element={<HubMain/>}/>
               <Route path="/messages" element={<HubMain/>}/>
               <Route path="/" element={<HubMain/>}/>
               <Route path="/space" element={<HubMain/>}/>
               <Route path="/subscription" element={<HubMain/>}/>
               <Route path="/challenges" element={<HubMain/>}/>
-              <Route path="/calendar" element={<HubMain/>}/>
+              <Route path="/cale ndar" element={<HubMain/>}/>
               <Route path="/wallet" element={<HubMain/>}/>
               <Route path="/profile" element={<HubMain/>}/>
             </Route>

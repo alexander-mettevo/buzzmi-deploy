@@ -1,0 +1,19 @@
+.mobile-activity {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--accent);
+  border-radius: 40px 0px 0px 40px;
+  color: var(--main-opposite-text);
+  padding: 9px 12px 9px 16px;
+  width: 87px;
+  font-size: 13px;
+  line-height: 16px;
+  position: fixed;
+  right: 0;
+  bottom: 125px;
+  z-index: 100;
+
+  @media (min-width: 991px) {
+    display: none;
+  }
+}
