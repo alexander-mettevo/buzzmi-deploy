@@ -1,4 +1,5 @@
 import InfoCardList from "./InfoCardList.jsx";
+import {withRouter} from "storybook-addon-react-router-v6";
 
 export default {
   title: 'Components/Reusable/Cards/InfoCard/InfoCardList',
@@ -11,7 +12,8 @@ export default {
       },
       description: 'Array of objects with image, badges and info properties'
     }
-  }
+  },
+  decorators: [withRouter]
 }
 
 const Template = (args) => <InfoCardList {...args} />;

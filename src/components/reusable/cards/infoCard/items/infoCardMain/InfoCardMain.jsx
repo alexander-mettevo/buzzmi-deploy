@@ -6,7 +6,6 @@ const InfoCardMain = ({image, badges, info, type, id}) => {
   const [showMenu, setShowMenu] = useState(false);
 
 
-
   return (
     <div className={`d-flex info-card ${showMenu ? 'show-menu' : ''}`}>
       <div className='me-21'>
@@ -16,7 +15,7 @@ const InfoCardMain = ({image, badges, info, type, id}) => {
         <div className={'info-card__badges'}>
           {badges?.length > 0 && badges.map((badge, index) => (
             <span className={'me-2'} key={index + `${badge.type}`}>
-               <Badge type={badge.type} />
+               <Badge type={badge.type}/>
             </span>
           ))}
         </div>
@@ -25,7 +24,13 @@ const InfoCardMain = ({image, badges, info, type, id}) => {
           <div className={'info-card__text text-r'}>{info.text}</div>
         </div>
       </div>
-        {type === 'menu' && <InfoCardMenu showMenu={showMenu} setShowMenu={setShowMenu} id={id}/> }
+      {type === 'menu' && <InfoCardMenu showMenu={showMenu} setShowMenu={setShowMenu} id={id}/>}
+      {
+        type === 'link' &&
+        <div className='d-flex flex-column justify-content-center align-items-center'>
+          <img src="/images/assets/info-card/arrow-r.svg" alt="arrow-right"/>
+        </div>
+      }
     </div>
   );
 };

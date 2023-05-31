@@ -43,6 +43,11 @@
       width: 0;
     }
   }
+
+  &__arrow:before {
+    color: var(--text-secondary);
+    font-size: 20px;
+  }
 }
 
 @import "menu-card";
