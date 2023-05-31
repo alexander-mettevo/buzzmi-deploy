@@ -15,8 +15,8 @@ const InfoCardMain = ({image, badges, info, type, id}) => {
       <div className={`d-flex info-card__content flex-column ${!badges?.length > 0 ? 'justify-content-center' : ''}`}>
         <div className={'info-card__badges'}>
           {badges?.length > 0 && badges.map((badge, index) => (
-            <span className={'me-2'}>
-               <Badge type={badge.type} key={index + `${badge.type}`}/>
+            <span className={'me-2'} key={index + `${badge.type}`}>
+               <Badge type={badge.type} />
             </span>
           ))}
         </div>

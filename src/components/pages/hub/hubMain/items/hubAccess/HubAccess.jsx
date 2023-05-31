@@ -48,7 +48,7 @@ const HubAccess = () => {
   return (
     <div className={'hub-list-access'}>
       {items.map((item, index) => (
-        <HubAccessItem image={item?.image} title={item?.title} handler={item?.handler}/>
+        <HubAccessItem key={index + 'HubAccessItem'} image={item?.image} title={item?.title} handler={item?.handler}/>
       ))}
     </div>
   );
