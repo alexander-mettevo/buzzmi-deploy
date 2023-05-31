@@ -18,6 +18,7 @@ const Template = (args) => <InfoCard {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   item:{
+    href: '/hub/add-activity',
     image: {
       src: '/images/hub/main/gym.png',
       alt: 'Placeholder'

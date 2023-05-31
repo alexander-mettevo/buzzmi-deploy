@@ -7,6 +7,7 @@ import HubAccess from "../items/hubAccess/HubAccess.jsx";
 
 //TODO: mock data
 const infoList = [{
+  href: '/hub/add-activity',
   image: {
     src: '/images/hub/main/gym.png',
     alt: 'Placeholder'
@@ -22,6 +23,7 @@ const infoList = [{
   }
 },
   {
+    href: '/hub/add-activity',
     image: {
       src: '/images/hub/main/list.png',
       alt: 'Placeholder'
@@ -35,6 +37,7 @@ const infoList = [{
     }
   },
   {
+    href: '/hub/add-activity',
     image: {
       src: '/images/hub/main/drink.png',
       alt: 'Placeholder'

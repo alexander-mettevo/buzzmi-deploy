@@ -12,9 +12,11 @@ import {Link} from "react-router-dom";
 import Button from "../../../../reusable/btns/buttons/Button.jsx";
 import InfoCardList from "../../../../reusable/cards/infoCard/InfoCardList.jsx";
 import HubAccess from "../items/hubAccess/HubAccess.jsx";
+import Message from "../../../../reusable/assets/message/Message.jsx";
 
 //TODO: mock data
 const infoList = [{
+  href: '/hub/add-activity',
   image: {
     src: '/images/hub/main/gym.png',
     alt: 'Placeholder'
@@ -30,6 +32,7 @@ const infoList = [{
   }
 },
   {
+    href: '/hub/add-activity',
     image: {
       src: '/images/hub/main/list.png',
       alt: 'Placeholder'
@@ -43,6 +46,7 @@ const infoList = [{
     }
   },
   {
+    href: '/hub/add-activity',
     image: {
       src: '/images/hub/main/drink.png',
       alt: 'Placeholder'
@@ -62,6 +66,7 @@ const HubMainMobile = () => {
   return (
     <>
       <div className='d-flex flex-column align-items-center'>
+        <Message message={"Your trial will end in 2 days and your membership will automatically upgraded to <a href='/'>Premium Member</a>"}/>
         <h1 className={'h3 mb-3'}>
           Rise and shine, Jane!
         </h1>
@@ -69,7 +74,7 @@ const HubMainMobile = () => {
           mode="border"
           src="/images/moc/avatar-big.png"
         />
-        <p className={'text-b my-3 text-center'}>
+        <p className={'text-r my-3 text-center'}>
           We're here to help you power through your to-do's and make the most of your day.
         </p>
       </div>

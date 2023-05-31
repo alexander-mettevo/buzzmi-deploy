@@ -18,6 +18,7 @@ const Template = (args) => <InfoCardList {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   infoList: [{
+    href: '/hub/add-activity',
     image: {
       src: '/images/hub/main/gym.png',
       alt: 'Placeholder'
@@ -33,6 +34,7 @@ Default.args = {
     }
   },
     {
+      href: '/hub/add-activity',
       image: {
         src: '/images/hub/main/gym.png',
         alt: 'Placeholder'
@@ -48,6 +50,7 @@ Default.args = {
       }
     },
     {
+      href: '/hub/add-activity',
       image: {
         src: '/images/hub/main/gym.png',
         alt: 'Placeholder'

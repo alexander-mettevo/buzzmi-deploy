@@ -1,0 +1,30 @@
+.message {
+  background: var(--alt-primary-border);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1px;
+  margin-bottom: 16px;
+
+  &__wrapper {
+    padding: 8px  31px 8px 12px;
+    border-radius: 10px;
+    background: var(--main-bg);
+    position: relative;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  a {
+    background-image: var(--primary-text);
+    background-clip: text;
+    color: transparent;
+  }
+}
