@@ -13,20 +13,19 @@ const textColor = (type) => {
 }
 
 const GoalList = ({list}) => {
-
     return (
         <div className="goal-list">
             <div className="goal-list__head row">
-                <div className="col-6"/>
-                <div className="col-2 text-center">GOAL</div>
-                <div className="col-2 text-center">ACHIEVED</div>
-                <div className="col-2 text-center">ACTIVE DAYS</div>
+                <div className="col-6 goal-list__row-name"/>
+                <div className="col-2 text-center goal-list__head-cell">GOAL</div>
+                <div className="col-2 text-center goal-list__head-cell">ACHIEVED</div>
+                <div className="col-2 text-center goal-list__head-cell">ACTIVE DAYS</div>
             </div>
             <div className="goal-list__body">
                 {list.map(row => {
                     return (
                         <div className="goal-list__row row" key={row.id}>
-                            <div className="col-6 goal-list__row-name goal-list__cell">{row.name}</div>
+                            <div className="col-xs-4 col-6 goal-list__row-name goal-list__cell">{row.name}</div>
                             <div className="col-2 text-center goal-list__cell">{row.goal}</div>
                             <div className={"col-2 text-center goal-list__cell goal-list__cell--bold " + textColor(row.type)}>{row.achieved}</div>
                             <div className="col-2 text-center goal-list__cell">{row.countActiveDays}</div>

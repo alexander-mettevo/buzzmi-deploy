@@ -38,10 +38,10 @@ const itemsData = {
 
 const Badge = ({type, count, active}) => {
   return (
-    <span className={`${itemsData[type].className} ${active ? 'badge__active' : ''}`}>
-      {itemsData[type].icon && <img src={itemsData[type].icon} alt="" className={'me-1'}/>}
+    <span className={itemsData[type].className}>
+      {itemsData[type].icon && <img src={itemsData[type].icon} alt="" className="me-1"/>}
       {itemsData[type].name}
-      {count && <span className={'badge_count'}>({count})</span>}
+      {count && <span className="badge_count">({count})</span>}
     </span>
   )
 };
