@@ -9,7 +9,6 @@ export const DropdownIndicator = () => {
 
 const CustomSelect = ({className, options, selected, setSelected}) => {
 
-
   return (
     <Select
       components={{DropdownIndicator}}

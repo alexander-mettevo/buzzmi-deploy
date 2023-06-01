@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Select from "react-select";
 import {phoneNumbersCode} from "./mocData.jsx";
-import {DropdownIndicator} from "./CustomSelect.jsx";
+import {DropdownIndicator} from "./customSelect/CustomSelect.jsx";
 import {useNavigate} from "react-router-dom";
 import Form from "../Form.jsx";
 import {useFormValidator} from "../../../../../form-validator/hooks/index.js";
