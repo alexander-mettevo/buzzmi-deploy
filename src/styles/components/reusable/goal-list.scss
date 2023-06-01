@@ -4,20 +4,34 @@
   padding-top: 20px;
   border-top: 1px solid var(--gray);
 
+  @media (max-width: $mobile) {
+    padding-top: 12px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
   &__head {
     font-size: 12px;
     line-height: 14px;
     padding-bottom: 20px;
-  }
 
-  &__row-name {
-    font-weight: 600;
+    @media (max-width: $mobile) {
+      font-size: 10px;
+      line-height: 12px;
+      padding-bottom: 12px;
+    }
   }
 
   &__cell {
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 1px solid var(--gray);
+
+    @media (max-width: $mobile) {
+      width: 23.33%;
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
 
     &--bold {
       font-weight: 600;
@@ -29,6 +43,20 @@
 
     &--red-text {
       color: var(--error-color);
+    }
+  }
+
+  &__row-name {
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+      width: 30%;
+    }
+  }
+
+  &__head-cell {
+    @media (max-width: $mobile) {
+      width: 23.33%;
     }
   }
 }

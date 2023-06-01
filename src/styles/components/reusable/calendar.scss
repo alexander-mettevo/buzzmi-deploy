@@ -15,7 +15,7 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     margin-bottom: 20px;
   }
 
-  &__header-btn {
+  &__btn {
     background: linear-gradient(113.36deg, #FF41B3 19.17%, #7E00E0 84.92%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -25,6 +25,15 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     font-size: 18px;
     line-height: 28px;
     font-weight: 700;
+
+    @media (max-width: $mobile) {
+      font-size: 13px;
+      line-height: 13px;
+    }
+  }
+
+  &__btn-wrapper {
+    margin-bottom: 20px;
   }
 
   &__body {
@@ -45,6 +54,12 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     margin-left: -4px;
     border-radius: 50%;
 
+    @media (max-width: $mobile) {
+      width: 6px;
+      height: 6px;
+      margin-left: -3px;
+    }
+
     &--pink {
       background: $pink-marker-bg;
     }
@@ -62,6 +77,12 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     position: relative;
     transition: color 0.15s linear;
 
+    @media (max-width: $mobile) {
+      overflow: hidden;
+      text-indent: -9999px;
+      display: flex;
+    }
+
     .fa-arrow-left,
     .fa-arrow-right {
       width: 24px;
@@ -71,6 +92,18 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
       transform: translateY(-50%);
       font-size: 24px;
       line-height: 24px;
+      text-align: center;
+
+      @media (max-width: $mobile) {
+        width: 12px;
+        height: 12px;
+        font-size: 12px;
+        line-height: 12px;
+      }
+
+      @media (max-width: $mobile) {
+        text-indent: 0;
+      }
     }
 
     &--left {
@@ -78,6 +111,13 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
 
       .fa-arrow-left {
         left: 0;
+        @media (max-width: $mobile) {
+          left: 10px;
+
+          &:before {
+            content: "\f053";
+          }
+        }
       }
     }
 
@@ -86,15 +126,28 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
 
       .fa-arrow-right {
         right: 0;
+
+        @media (max-width: $mobile) {
+          right: 10px;
+
+          &:before {
+            content: "\f054";
+          }
+        }
       }
     }
   }
 
   &__footer {
-    margin-left: -40px;
-    margin-bottom: 20px;
+    margin: 0 0 20px -40px;
     font-size: 15px;
     line-height: 18px;
+
+    @media (max-width: $mobile) {
+      justify-content: space-between;
+      font-size: 12px;
+      line-height: 12px;
+    }
   }
 
   &__footer-item {
@@ -146,6 +199,15 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     font-weight: bold;
     transition: color 0.15s linear;
 
+    @media (max-width: $mobile) {
+      height: 32px;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 400;
+      margin: 5px;
+      max-width: calc(14.28% - 10px);
+    }
+
     &:disabled {
       display: none;
     }
@@ -156,6 +218,7 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
 
     &--active {
       background: var(--active-tab);
+      font-weight: bold;
     }
   }
 
@@ -167,6 +230,16 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
       text-decoration: none;
       font-size: 17px;
       line-height: 21px;
+
+      @media (max-width: $mobile) {
+        font-size: 0;
+        line-height: 0;
+
+        &:first-letter {
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
     }
   }
 
@@ -174,6 +247,15 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    align-items: center;
+  }
+
+  &__month-view__days {
+    margin: 0 -10px;
+
+    @media (max-width: $mobile) {
+      margin: 0 5px;
+    }
   }
 
   &__month-view__days__day--neighboringMonth {
@@ -189,10 +271,46 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     font-weight: 800;
     font-size: 30px;
     line-height: 36px;
+
+    @media (max-width: $mobile) {
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 600;
+    }
   }
 
   &__navigation__label {
     pointer-events: none;
+
+    @media (max-width: $mobile) {
+      order: 1;
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  &__navigation__prev-button {
+    @media (max-width: $mobile) {
+      order: 2;
+    }
+  }
+
+  &__navigation__next-button {
+    @media (max-width: $mobile) {
+      order: 3;
+      margin-left: 16px;
+    }
+  }
+
+  &__navigation__next-button,
+  &__navigation__prev-button {
+    @media (max-width: $mobile) {
+      width: 35px;
+      height: 32px;
+      background: var(--light-items-bg);
+      box-shadow: 0 1px 4px rgba(111, 29, 244, 0.12);
+      border-radius: 6px;
+    }
   }
 
   &__navigation__arrow {

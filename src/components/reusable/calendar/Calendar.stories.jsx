@@ -1,5 +1,6 @@
 import Calendar from "../calendar/Calendar.jsx";
 import moment from "moment";
+import {useState} from "react";
 
 export default {
     title: "Components/Reusable/Calendar",
@@ -19,8 +20,6 @@ export default {
     }
 }
 
-const Template = (args) => <Calendar {...args} />;
-
 const getDaysInMonth = (month, year) =>
     (new Array(31))
         .fill('')
@@ -29,7 +28,9 @@ const getDaysInMonth = (month, year) =>
             type: i % 3 === 0 ? "completed" : i % 4 === 0 ? "uncompleted" : null,
         }))
         .filter(v=> moment(v.date).get('month') === month - 1)
-const dayList = getDaysInMonth(4, 2023);
+const dayList = getDaysInMonth(moment().get("month") + 1, 2023);
+
+const Template = (args) => <Calendar {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -42,18 +43,24 @@ export const oneWeek = Template.bind({});
 oneWeek.args = {
     dayList: dayList,
     value: dayList[0].date,
-    minDate: dayList[0].date,
-    maxDate: dayList[6].date,
-    onChange: () => null
+    onChange: () => null,
+    period: "week",
+    buttonProps: {
+        isDateAnchor: true,
+        text: "back to current day"
+    },
+    hasFooter: true
 }
 
 export const oneWeekWithoutNavigation = Template.bind({});
 oneWeekWithoutNavigation.args = {
     dayList: dayList,
     value: dayList[0].date,
-    minDate: dayList[0].date,
-    maxDate: dayList[6].date,
-    onHeaderBtnHandler: () => null,
+    period: "week",
+    buttonProps: {
+        handler: () => null,
+        text: "See all"
+    },
     noNavigation: true,
     onChange: () => null
 }

@@ -39,9 +39,9 @@ const itemsData = {
 const Badge = ({type, count}) => {
   return (
     <span className={itemsData[type].className}>
-      {itemsData[type].icon && <img src={itemsData[type].icon} alt="" className={'me-1'}/>}
+      {itemsData[type].icon && <img src={itemsData[type].icon} alt="" className="me-1"/>}
       {itemsData[type].name}
-      {count && <span className={'badge_count'}>({count})</span>}
+      {count && <span className="badge_count">({count})</span>}
     </span>
   )
 };
