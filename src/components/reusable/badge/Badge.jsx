@@ -36,7 +36,7 @@ const itemsData = {
   }
 }
 
-const Badge = ({type, count}) => {
+const Badge = ({type, count, active}) => {
   return (
     <span className={itemsData[type].className}>
       {itemsData[type].icon && <img src={itemsData[type].icon} alt="" className="me-1"/>}

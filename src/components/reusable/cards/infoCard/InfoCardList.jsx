@@ -5,8 +5,8 @@ const InfoCardList = ({infoList}) => {
     <div>
       {infoList?.length > 0 && infoList.map((item) =>
         (
-          <div className={'mb-2 mb-lg-3'}>
-            <InfoCard item={item} key={item?.id} />
+          <div className={'mb-2 mb-lg-3'} key={item?.id}>
+            <InfoCard item={item}  />
           </div>
         ))}
     </div>

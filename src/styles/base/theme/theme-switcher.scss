@@ -1,16 +1,68 @@
 #theme-switch:checked ~ .wrapper {
+
+  // main colors
   --main-bg: var(--dark-main-bg);
   --items-bg: var(--dark-items-bg);
-  --box-shadow: var(--dark-box-shadow);
   --main-opposite-bg: var(--dark-opposite-bg);
+  --chart-bg: var(--dark-chart-bg);
+  --primary: var(--dark-primary);
+  --accent: var(--dark-accent);
+  --bg-secondary: var(--dark-bg-secondary);
+  --error-color: var(--dark-error-color);
+  --success-color: var(--dark-success-color);
+  --secondary-color: var(--dark-secondary-color);
+  --warning-color: var(--dark-warning-color);
+  //=========================================================================================
+
+  // assets colors
+  --box-shadow: var(--dark-box-shadow);
   --items-hover-bg: var(--dark-items-hover-bg);
   --active-tab: var(--light-active-tab);
+  --logo-color: var(--dark-logo-color);
+  --items-box-shadow: var(--dark-items-box-shadow);
+  --alt-primary-border: var(--dark-alt-primary-border);
+  //=========================================================================================
 
+  // text colors
   --text-secondary: var(--dark-text-secondary);
   --main-text: var(--dark-main-text);
   --logo-text: var(--dark-logo-text);
+  --main-opposite-text: var(--dark-main-opposite-text);
+  --alt-text-secondary: var(--dark-alt-text-secondary);
+  --primary-text: var(--dark-primary-text);
+  --alter-text: var(--dark-alter-text);
+  //=========================================================================================
 
-  --chart-bg: var(--dark-chart-bg);
+  // variables for forms
+  --form-bg: var(--dark-form-bg);
+  --form-shadow: var(--dark-form-shadow);
+  --input-focus-shadow: var(--dark-input-focus-shadow);
+  --input-error-shadow: var(--dark-input-error-shadow);
+  --input-success-shadow: var(--dark-input-success-shadow);
+  --input-warning-shadow: var(--dark-input-warning-shadow);
+  --input-border: var(--dark-input-border);
+  //=========================================================================================
+
+  // variables for btns
+  --btn-primary-bg: var(--dark-btn-primary-bg);
+  --btn-arrow-bg: var(--dark-btn-arrow-bg);
+  //=========================================================================================
+
+  // variables for scroll
+  --scroll-bg: var(--dark-scroll-bg);
+  //=========================================================================================
+
+  // header logo gradient
+  --one-paint: var(--dark-one-paint);
+  --two-paint: var(--dark-two-paint);
+  --three-paint: var(--dark-three-paint);
+  //=========================================================================================
+
+  // main logo gradient
+  --main-one-paint: var(--dark-main-one-paint);
+  --main-two-paint: var(--dark-main-two-paint);
+  --main-three-paint: var(--dark-main-three-paint);
+  //=========================================================================================
 
   //simple colors
   --gray: var(--dark-gray);

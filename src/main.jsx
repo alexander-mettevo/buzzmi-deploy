@@ -1,3 +1,4 @@
+import 'react-tabs/style/react-tabs.css';
 import './styles/style.scss'
 import React from 'react'
 import ReactDOM from 'react-dom/client'

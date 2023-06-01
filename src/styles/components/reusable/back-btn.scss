@@ -5,8 +5,10 @@
   margin-top: 23px;
   width: 100%;
 
-
-
+  &_with-title {
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
   &_d {
     @media (max-width: $mobileSmall) {
