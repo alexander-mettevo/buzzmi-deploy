@@ -1,19 +1,22 @@
-image: node:18.14.0
-pages:
+default:
+  image: node:18.14.0
+
+deploy_preview:
   stage: deploy
-  cache:
-    key:
-      files:
-        - package-lock.json
-      prefix: npm
-    paths:
-      - node_modules/
+  except:
+    - main
   script:
-    - npm install
-    - npm run build
-    - cp -a dist/. public/
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - npm install --global vercel
+    - vercel pull --yes --environment=preview --token=A6Moi2cDLGk337rJpG1vZO0d
+    - vercel build --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt  --token=A6Moi2cDLGk337rJpG1vZO0d
+
+deploy_production:
+  stage: deploy
+  only:
+    - main
+  script:
+    - npm install --global vercel
+    - vercel pull --yes --environment=production --token=A6Moi2cDLGk337rJpG1vZO0d
+    - vercel build --prod --token=A6Moi2cDLGk337rJpG1vZO0d
+    - vercel deploy --prebuilt --prod --token=A6Moi2cDLGk337rJpG1vZO0d
