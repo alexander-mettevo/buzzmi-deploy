@@ -33,15 +33,18 @@ const itemsData = {
     name: 'Completed',
     className: 'badge badge_completed badge_one-color',
     icon: '/images/assets/check-circle.svg'
+  },
+  secondary: {
+    className: 'badge  badge_buzzmi-tasks'
   }
 }
 
-const Badge = ({type, count, active}) => {
+const Badge = ({type, count, active, title}) => {
   return (
-    <span className={itemsData[type].className}>
-      {itemsData[type].icon && <img src={itemsData[type].icon} alt="" className="me-1"/>}
-      {itemsData[type].name}
-      {count && <span className="badge_count">({count})</span>}
+    <span className={`${itemsData[type].className} ${active ? 'badge__active' : ''}`}>
+      {!!itemsData[type]?.icon && <img src={itemsData[type].icon} alt="" className='me-1'/>}
+      {!!title ? title : itemsData[type].name }
+      {count && <span className='badge_count'>({count})</span>}
     </span>
   )
 };
