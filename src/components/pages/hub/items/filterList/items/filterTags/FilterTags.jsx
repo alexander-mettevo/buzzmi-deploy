@@ -20,9 +20,10 @@ const FilterTags = ({tags}) => {
   return (
     <div className='badge__row'>
       {tags?.length > 0 && tags.map((tag, index) => (
-        <button  key={index} onClick={() => onTagClick(tag)}>
-          <Badge type={tag} active={selectedTags.includes(tag)}/>
-        </button>))}
+        <Badge active={selectedTags.includes(tag)}
+               type={tag}
+               key={index}
+               onClick={() => onTagClick(tag)} />))}
     </div>
   );
 };

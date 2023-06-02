@@ -4,7 +4,7 @@ import SmallCardList from "../../../reusable/cards/smallCard/SmallCardList.jsx";
 
 const list =  [
   {
-    id: 'vsdvad',
+    id: 'vsdvad 0',
     link: '/hub/add-activity',
     title: 'Profile picture upload',
     img: {
@@ -13,7 +13,7 @@ const list =  [
     }
   },
   {
-    id: 'hgfdhrthrt',
+    id: 'hgfdhrthrt 1',
     link: '/hub/add-activity',
     title: 'Verify account email',
     img: {
@@ -22,7 +22,7 @@ const list =  [
     }
   },
   {
-    id: 'fefwev',
+    id: 'fefwev 2',
     link: '/hub/add-activity',
     title: 'Verify Phone number ',
     img: {
@@ -31,7 +31,7 @@ const list =  [
     }
   },
   {
-    id: 'fefwev',
+    id: 'fefwev 3',
     link: '/hub/add-activity',
     title: 'Setup two factor authentication ',
     img: {
@@ -40,7 +40,7 @@ const list =  [
     }
   },
   {
-    id: 'fefwev',
+    id: 'fefwev 4',
     link: '/hub/add-activity',
     title: 'Define Payout account/s',
     img: {
@@ -53,7 +53,7 @@ const list =  [
 const HubAddActivity = () => {
   return (
     <div className='small-container'>
-      <BackBtnWithTitlePage title='Finish your account setup'/>
+      <BackBtnWithTitlePage title="Add Task" btnText="Back"/>
       <SmallCardList list={list}/>
     </div>
   );
