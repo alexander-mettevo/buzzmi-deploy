@@ -3,6 +3,10 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
 .calendar {
   margin-bottom: 20px;
 
+  &--no-indent {
+    margin-bottom: 0;
+  }
+
   &--no-navigation {
     .react-calendar {
       &__navigation {
@@ -30,10 +34,6 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
       font-size: 13px;
       line-height: 13px;
     }
-  }
-
-  &__btn-wrapper {
-    margin-bottom: 20px;
   }
 
   &__body {
@@ -70,6 +70,7 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
   }
 
   &__btn-text {
+    display: flex;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 28px;
@@ -181,7 +182,9 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
 }
 
 .react-calendar {
-  margin: 0 -10px;
+  &__viewContainer {
+    //margin: 0 -10px;
+  }
 
   &__tile {
     max-width: calc(14.28% - 20px);

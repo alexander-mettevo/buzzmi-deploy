@@ -4,23 +4,18 @@ import InfoCardMain from "./items/infoCardMain/InfoCardMain.jsx";
 import {Link} from "react-router-dom";
 
 const InfoCard = ({item}) => {
-
-  if (item?.type === 'link') {
-    return (
-      <Link to={item?.to}>
-        <Box className='box-info-card box_hover'>
-          <InfoCardMain info={item?.info} image={item.image} badges={item.badges} id={item.id} type='link'/>
+    const isLink = item?.type === "link";
+    const cardMain = (
+        <Box className={`box-info-card ${isLink ? "box_hover" : ""}`}>
+            <InfoCardMain info={item?.info}
+                          image={item.image}
+                          badges={item.badges}
+                          id={item.id}
+                          type={isLink ? "link" : "menu"}/>
         </Box>
-      </Link>
     );
-  } else {
-    return (
-      <Box className='box-info-card'>
-        <InfoCardMain info={item?.info} image={item.image} badges={item.badges} id={item.id} type='menu'/>
-      </Box>
-    );
-  }
 
+    return isLink ? <Link to={item?.to}>{cardMain}</Link> : cardMain;
 };
 
 export default InfoCard;

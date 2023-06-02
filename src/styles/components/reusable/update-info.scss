@@ -1,0 +1,11 @@
+.update-info {
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--light-alt-text-secondary);
+
+  &__btn {
+    width: 20px;
+    height: 20px;
+    color: var(--text-secondary);
+  }
+}

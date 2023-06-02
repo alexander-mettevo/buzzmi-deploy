@@ -39,13 +39,13 @@ const itemsData = {
   }
 }
 
-const Badge = ({type, count, active, title}) => {
+const Badge = ({type, count, active, onClick, title}) => {
   return (
-    <span className={`${itemsData[type].className} ${active ? 'badge__active' : ''}`}>
-      {!!itemsData[type]?.icon && <img src={itemsData[type].icon} alt="" className='me-1'/>}
+    <button onClick={() => onClick ? onClick() : null} className={`${itemsData[type].className} ${active ? 'badge__active' : ''}`}>
+      {!!itemsData[type]?.icon && <img src={itemsData[type].icon} alt="icon" className='me-1'/>}
       {!!title ? title : itemsData[type].name }
       {count && <span className='badge_count'>({count})</span>}
-    </span>
+    </button>
   )
 };
 

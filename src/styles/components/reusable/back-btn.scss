@@ -4,9 +4,11 @@
   align-items: center;
   margin-top: 23px;
   width: 100%;
+  position: relative;
+  padding: 0 80px;
 
   &_with-title {
-    justify-content: space-between;
+    //justify-content: space-between;
     margin-bottom: 20px;
   }
 
@@ -27,11 +29,15 @@
   }
 
   &__content {
-    font-size: 18px;
-    line-height: 22px;
-    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 300;
     display: inline-flex;
     align-items: center;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &__icon {

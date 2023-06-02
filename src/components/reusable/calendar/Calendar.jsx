@@ -23,10 +23,17 @@ const dayIncrement = 6;
 const dateFormat = "YYYY-MM-DD";
 
 const getType = ({dayList, type, date}) => {
+    if(!dayList || dayList.length === 0) {
+        return;
+    }
     return dayList.filter(el => moment(el.date, dateFormat).format() === moment(date, dateFormat).format() && el.type === type)[0]
 }
 
 const renderCellContent = ({date, dayList}) => {
+    if(!dayList || dayList.length === 0) {
+        return;
+    }
+
     const currentGoalIsCompleted = getType({dayList, date, type: "completed"});
     const currentGoalIsNotCompleted = getType({dayList, date, type: "uncompleted"});
 
@@ -45,7 +52,8 @@ const Calendar = ({
     noNavigation,
     buttonProps,
     period,
-    hasFooter
+    hasFooter,
+    noIndent
 }) => {
     const isForWeek = period === "week";
     const [currentMonth, setCurrentMonth] = useState(moment(value).get("month"));
@@ -122,7 +130,7 @@ const Calendar = ({
     }
 
     return (
-        <div className={"calendar" + (noNavigation ? " calendar--no-navigation" : "")}>
+        <div className={"calendar" + (noNavigation ? " calendar--no-navigation" : "") + (noIndent ? " calendar--no-indent" : "")}>
             {noNavigation && <div className="calendar__header d-flex justify-content-between">
                 <span className="calendar__header-title">Calendar</span>
             </div>}
