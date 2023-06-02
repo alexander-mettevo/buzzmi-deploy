@@ -36,14 +36,12 @@
 
   &__icon {
     margin-right: 10px;
-    transform: rotate(180deg);
-    background-image: var(--primary);
-    background-clip: text;
-    color: transparent;
-    font-size: 23px;
+    width: 25px;
+    height: 16px;
 
     @media (max-width: $mobileSmall) {
-      font-size: 33px;
+      width: 33px;
+      height: 21px;
     }
   }
 }

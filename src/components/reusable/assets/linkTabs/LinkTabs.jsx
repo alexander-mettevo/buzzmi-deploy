@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 const LinkTabs = ({list}) => (
-  <ul className="react-tabs__tab-list" role="tablist">
+  <div className="react-tabs__tab-list" role="tablist">
     {list.length > 0 && list.map((item, index) => (
       <NavLink
         className={({isActive}) =>
@@ -14,7 +14,7 @@ const LinkTabs = ({list}) => (
         {item.title}
       </NavLink>
     ))}
-  </ul>
+  </div>
 )
 
 
