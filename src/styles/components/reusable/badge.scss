@@ -93,6 +93,14 @@
     overflow-y: auto;
     max-width: calc(100vw - 32px);
 
+    &_in-block {
+      max-width: calc(100vw - 50px);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .badge {
       margin-right: 6px;
     }

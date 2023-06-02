@@ -7,11 +7,10 @@ const BackBtnWithTitlePage = ({title, btnText}) => {
   return (
     <div className='back-btn back-btn_with-title' >
       <button className="back-btn__content" onClick={() => navigate(-1)}>
-        <i className="back-btn__icon fa-solid fa-arrow-right"></i>
-          {btnText}
+        <img className='back-btn__icon' src="/images/assets/back.svg" alt="arrow left"/>
+        {btnText}
       </button>
       <span className='h3'>{title}</span>
-      <span></span>
     </div>
   );
 };

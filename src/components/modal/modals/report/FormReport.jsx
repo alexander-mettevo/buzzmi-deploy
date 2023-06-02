@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-import CustomSelect from "../../../reusable/form/select/CustomSelect.jsx";
+import CustomSelect from "../../../reusable/form/select/customSelect/CustomSelect.jsx";
 import {options} from "../../../reusable/form/select/mocData.jsx";
 
 const FormReport = () => {

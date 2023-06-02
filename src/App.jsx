@@ -34,6 +34,8 @@ import MainLayout from './components/layouts/mainLayout/MainLayout.jsx';
 import ThemeLayout from "./components/layouts/themeLayout/ThemeLayout.jsx";
 import HubAddActivity from "./components/pages/hub/hubAddActivity/HubAddActivity.jsx";
 import HubTasks from "./components/pages/hub/hubTasks/HubTasks.jsx";
+import HubAddPreset from "./components/pages/hub/hubAddPreset/HubAddPreset.jsx";
+import HubStats from "./components/pages/hub/hubStats/HubStats.jsx";
 
 const App = () => {
   return (
@@ -46,6 +48,8 @@ const App = () => {
                 <Route path="" element={<HubMain/>}/>
                 <Route path="add-activity" element={<HubAddActivity/>}/>
                 <Route path="tasks" element={<HubTasks/>}/>
+                <Route path="stats" element={<HubStats/>}/>
+                <Route path="add-preset" element={<HubAddPreset/>}/>
               </Route>
               <Route path="/notifications" element={<HubMain/>}/>
               <Route path="/messages" element={<HubMain/>}/>

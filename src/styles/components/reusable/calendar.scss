@@ -70,6 +70,7 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
   }
 
   &__btn-text {
+    display: flex;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 28px;
