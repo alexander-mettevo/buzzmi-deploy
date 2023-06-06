@@ -12,13 +12,12 @@ const mockItems = [{
         "src": "/images/hub/main/gym.png",
         "alt": "Placeholder"
       },
+      "type": "link",
+      "to": "/hub/preset-preview",
       "badges": [
         {
           "type": "workouts"
         },
-        {
-          "type": "completed"
-        }
       ],
       "info": {
         "title": "Strength Traning",
@@ -26,8 +25,6 @@ const mockItems = [{
       }
     },
     {
-      "type": "link",
-      "to": "/hub/add-activity",
       "image": {
         "src": "/images/hub/main/list.png",
         "alt": "Placeholder"

@@ -11,7 +11,7 @@ const InfoCard = ({item}) => {
                           image={item.image}
                           badges={item.badges}
                           id={item.id}
-                          type={isLink ? "link" : "menu"}/>
+                          type={item.type !== null ? (isLink ? "link" : "menu") : null}/>
         </Box>
     );
 
