@@ -1,11 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
 import MediaWrapper from "../../assets/mediaWrapper/MediaWrapper.jsx";
 import {useAudioRecorder} from 'react-audio-voice-recorder';
+import AudioPlayer from "../../audioPlayer/AudioPlayer.jsx";
 
 const maxSize = 500 * 1024 * 1024;
 const maxDuration = 90 * 60 * 1000;
 
-const AudioUploader = () => {
+const AudioUploader = ({setValue}) => {
   const [audio, setAudio] = useState();
   const playerRef = useRef(null);
   const [iconSrc, setIconSrc] = useState("/images/assets/forms/voice.svg");
@@ -30,19 +31,16 @@ const AudioUploader = () => {
 
   const removeAudio = () => {
     setAudio(null);
+    setValue('audio', null);
   }
 
   useEffect(() => {
     if (!!recordingBlob) {
       setAudio(recordingBlob);
+      setValue('audio', recordingBlob);
     }
   }, [recordingBlob])
 
-  useEffect(() => {
-    if (!!audio) {
-      playerRef.current.src = URL.createObjectURL(audio)
-    }
-  }, [audio])
 
   useEffect(() => {
     //add listener to video duration
@@ -50,8 +48,10 @@ const AudioUploader = () => {
       playerRef.current.addEventListener('loadedmetadata', () => {
         if (isFinite(playerRef.current.duration) && playerRef.current.duration > maxDuration) {
           setAudio(null);
+          setValue('audio', null);
         } else if (audio?.size > maxSize) {
           setAudio(null);
+          setValue('audio', null);
         }
       })
     }
@@ -64,7 +64,6 @@ const AudioUploader = () => {
     }
   }, [audio])
 
-  console.log('recordingTime', playerRef.current?.duration, maxDuration)
 
   return (
     <>
@@ -80,7 +79,7 @@ const AudioUploader = () => {
       {
         audio &&
         <div className='audio-uploader__player'>
-          <audio ref={playerRef} controls/>
+          <AudioPlayer src={URL.createObjectURL(audio)}/>
           <button className='picture-uploader__delete audio-uploader__delete' onClick={removeAudio}>
             <img src="/images/assets/delete.svg" alt="delete"/>
           </button>

@@ -6,7 +6,6 @@ const PictureUploader = ({parentSetterState, maxNumber = 1}) => {
   const [images, setImages] = React.useState([]);
 
   const onChange = (imageList) => {
-    console.log('onChange', imageList)
 
     parentSetterState(imageList);
     setImages(imageList);

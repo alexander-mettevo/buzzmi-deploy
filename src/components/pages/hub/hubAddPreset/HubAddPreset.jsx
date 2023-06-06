@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx";
 import {useFormValidator} from "../../../../../form-validator/hooks/index.js";
 import ValidationSchema from "../../../../../form-validator/ValidationSchema.js";
@@ -20,12 +20,11 @@ const validationSchema = new ValidationSchema(
       {rule: 'minLength', value: 3},
       {rule: 'maxLength', value: 40},
     ],
-    images: {}
   }
 );
 
 const HubAddPreset = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [showInTask, setShowInTask] = useState(false);
   const [error, setError] = useState(null)
 
 
@@ -39,12 +38,15 @@ const HubAddPreset = () => {
     }
   }
 
-  const {register, handleSubmit, setValue, isValid, values, errors} = useFormValidator(validationSchema, (formData) => {
+  const {register, handleSubmit, setValue, isValid, values} = useFormValidator(validationSchema, (formData) => {
     console.log('useFormValidator', formData)
     sendRequest(formData)
   });
 
-  console.log('values', values)
+  useEffect(() => {
+    setValue('showInTask', showInTask)
+  }, [showInTask])
+
 
   return (
     <div className='main-layout__single-container'>
@@ -58,16 +60,19 @@ const HubAddPreset = () => {
         </Box>
         <Box className='hub-form-box'>
           <h4 className="h4 mb-3 mb-lg-4">Add description</h4>
-          <textarea placeholder='Add a short description of the preset' className='textarea'></textarea>
+          <textarea
+            onChange={e => setValue('description', e.target.value)}
+            placeholder='Add a short description of the preset'
+            className='textarea'/>
         </Box>
         <DropdownToggle title='Add 4 description images' info='Add 4 description images' idChecked='images'>
           <PictureUploaderList setValue={setValue}/>
         </DropdownToggle>
         <DropdownToggle title='Add description video' info='Add description video' idChecked='video'>
-          <VideoUploader/>
+          <VideoUploader setValue={setValue}/>
         </DropdownToggle>
         <DropdownToggle title='Add description audio' info='Add description audio' idChecked='audio'>
-          <AudioUploader/>
+          <AudioUploader setValue={setValue}/>
         </DropdownToggle>
         <Box className='hub-form-box'>
           <div className='mb-3 mb-lg-4 d-flex align-items-center justify-content-between dropdown__button_toggle'>
@@ -76,7 +81,7 @@ const HubAddPreset = () => {
               <h4 className="h4 ms-3">Display in Task Center</h4>
             </div>
 
-            <Checkbox setState={setIsOpen} idChecked='showInTask'/>
+            <Checkbox setState={setShowInTask} idChecked='showInTask'/>
           </div>
           <div>
             <h6 className="h6 mb-2 text-dark-secondary">
@@ -90,7 +95,7 @@ const HubAddPreset = () => {
         </Box>
         <div className='d-flex bottom-mobile-button justify-content-center mt-5'>
           <PrimaryButton className={` ${!isValid ? 'button_inactive' : ''}`} type="submit"
-                         form="input-bio">Continue</PrimaryButton>
+                        >Continue</PrimaryButton>
         </div>
       </Form>
     </div>

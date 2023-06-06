@@ -69,7 +69,7 @@
 .video-uploader {
   &__player {
     width: 100%;
-    height: 100%;
+    height: 500px;
     border-radius: 6px;
     overflow: hidden;
     position: relative;
@@ -80,9 +80,12 @@
     }
 
     video {
-      width: 100%;
-      height: 500px;
+      height: 500px !important;
       object-fit: contain;
+
+      @media (max-width: $mobileSmall) {
+        height: 53vw;
+      }
     }
   }
 }
@@ -105,7 +108,7 @@
     }
 
 
-    audio {
+    & > div:first-child {
       width: 100%;
       height: 48px;
     }

@@ -1,7 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import MediaWrapper from "../../assets/mediaWrapper/MediaWrapper.jsx";
+import VideoPlayer from "../../videoPlayer/VideoPlayer.jsx";
 
-const VideoUploader = () => {
+
+const VideoUploader = ({setValue}) => {
   const [video, setVideo] = useState(null);
   const ref = useRef(null);
   const playerRef = useRef(null);
@@ -10,33 +12,28 @@ const VideoUploader = () => {
 
   const onChange = (event) => {
     let file = event.target.files[0];
-
+    setValue('video', file);
     setVideo(URL.createObjectURL(file));
   }
 
-  useEffect(() => {
-    if (!!video) {
-      playerRef.current.src = video
-    }
-  }, [video]);
-
-  useEffect(() => {
-    //add listener to video duration
-    if (playerRef.current) {
-      playerRef.current.addEventListener('loadedmetadata', () => {
-        if (playerRef.current.duration > maxDuration) {
-          setVideo(null);
-        }
-      })
-    }
-
-    return () => {
-      if (playerRef.current) {
-        playerRef.current.removeEventListener('loadedmetadata', () => {
-        })
-      }
-    }
-  }, [video])
+  // useEffect(() => {
+  //   //add listener to video duration
+  //   if (playerRef.current) {
+  //     playerRef.current.addEventListener('loadedmetadata', () => {
+  //       if (playerRef.current.duration > maxDuration) {
+  //         setVideo(null);
+  //         setValue('video', null);
+  //       }
+  //     })
+  //   }
+  //
+  //   return () => {
+  //     if (playerRef.current) {
+  //       playerRef.current.removeEventListener('loadedmetadata', () => {
+  //       })
+  //     }
+  //   }
+  // }, [video])
 
   const uploadVideo = () => {
     ref.current.click();
@@ -44,6 +41,7 @@ const VideoUploader = () => {
 
   const removeVideo = () => {
     setVideo(null);
+    setValue('video', null);
   }
 
   return (
@@ -64,7 +62,7 @@ const VideoUploader = () => {
       {
         video &&
         <div className='video-uploader__player'>
-          <video ref={playerRef} controls/>
+          <VideoPlayer url={video}/>
           <button className='picture-uploader__delete' onClick={removeVideo}>
             <img src="/images/assets/delete.svg" alt="delete"/>
           </button>
