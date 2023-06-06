@@ -12,6 +12,41 @@
     }
   }
 
+  &__list-dnd {
+    position: relative;
+
+    .small-card {
+      padding-left: 53px;
+
+      @media (max-width: $mobile) {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  &__list-dnd-btn {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+      left: 10px;
+    }
+
+    img {
+      @media (max-width: $mobile) {
+        height: 27px;
+      }
+    }
+
+  }
+
   &__img {
     margin-right: 10px;
     width: 60px;

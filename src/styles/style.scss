@@ -151,6 +151,8 @@ body {
 // Підключення стилів загальних елементів проекту
 @import "common";
 
+@import "libs/libs";
+
 // Підключення стилів окремих блоків
 @import "header";
 @import "footer";
