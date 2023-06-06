@@ -8,7 +8,7 @@ const BackBtnWithTitlePage = ({title, btnText}) => {
     <div className='back-btn back-btn_with-title' >
       <button className="back-btn__content" onClick={() => navigate(-1)}>
         <img className='back-btn__icon' src="/images/assets/back.svg" alt="arrow left"/>
-        {btnText}
+        <span className="back-btn__text">{btnText}</span>
       </button>
       <span className='h3'>{title}</span>
     </div>

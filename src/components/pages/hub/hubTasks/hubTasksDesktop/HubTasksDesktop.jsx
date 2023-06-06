@@ -18,7 +18,7 @@ const tabsLast = [
     }
 ]
 
-const HubTasksDesktop = () => {
+const HubTasksDesktop = ({data}) => {
     const [calendarValue, setCalendarValue] = useState("2023-05-01")
     return (
         <>
@@ -34,7 +34,7 @@ const HubTasksDesktop = () => {
                           period="week"
                           buttonProps={{text: "See todays tasks", handler: () => null}}/>
             </div>
-            <FilterList/>
+            <FilterList data={data}/>
         </>
     );
 };

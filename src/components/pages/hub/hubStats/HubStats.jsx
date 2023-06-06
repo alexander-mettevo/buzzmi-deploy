@@ -22,6 +22,183 @@ const tabsLast = [
     }
 ]
 
+const mockItems = [{
+    title: 'Any time of the day',
+    list: [
+        {
+            "image": {
+                "src": "/images/hub/main/gym.png",
+                "alt": "Placeholder"
+            },
+            "type": "link",
+            "to": "/hub/tread",
+            "badges": [
+                {
+                    "type": "workouts"
+                },
+            ],
+            "info": {
+                "title": "Strength Traning",
+                "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+            }
+        },
+        {
+            "image": {
+                "src": "/images/hub/main/list.png",
+                "alt": "Placeholder"
+            },
+            "badges": [
+                {
+                    "type": "workouts"
+                },
+                {
+                    "type": "completed"
+                }
+            ],
+            "info": {
+                "title": "Strength Traning",
+                "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+            }
+        },
+        {
+            "image": {
+                "src": "/images/hub/main/drink.png",
+                "alt": "Placeholder"
+            },
+            "badges": [
+                {
+                    "type": "workouts"
+                },
+                {
+                    "type": "completed"
+                }
+            ],
+            "info": {
+                "title": "Strength Traning",
+                "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+            }
+        }
+    ]
+},
+    {
+        title: 'Any time of the day',
+        list: [
+            {
+                "image": {
+                    "src": "/images/hub/main/gym.png",
+                    "alt": "Placeholder"
+                },
+                "badges": [
+                    {
+                        "type": "workouts"
+                    },
+                    {
+                        "type": "completed"
+                    }
+                ],
+                "info": {
+                    "title": "Strength Traning",
+                    "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+                }
+            },
+            {
+                "image": {
+                    "src": "/images/hub/main/list.png",
+                    "alt": "Placeholder"
+                },
+                "badges": [
+                    {
+                        "type": "workouts"
+                    },
+                    {
+                        "type": "completed"
+                    }
+                ],
+                "info": {
+                    "title": "Strength Traning",
+                    "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+                }
+            },
+            {
+                "image": {
+                    "src": "/images/hub/main/drink.png",
+                    "alt": "Placeholder"
+                },
+                "badges": [
+                    {
+                        "type": "workouts"
+                    },
+                    {
+                        "type": "completed"
+                    }
+                ],
+                "info": {
+                    "title": "Strength Traning",
+                    "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+                }
+            }
+        ]
+    },
+    {
+        title: 'Any time of the day',
+        list: [
+            {
+                "image": {
+                    "src": "/images/hub/main/gym.png",
+                    "alt": "Placeholder"
+                },
+                "badges": [
+                    {
+                        "type": "workouts"
+                    },
+                    {
+                        "type": "completed"
+                    }
+                ],
+                "info": {
+                    "title": "Strength Traning",
+                    "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+                }
+            },
+            {
+                "image": {
+                    "src": "/images/hub/main/list.png",
+                    "alt": "Placeholder"
+                },
+                "badges": [
+                    {
+                        "type": "workouts"
+                    },
+                    {
+                        "type": "completed"
+                    }
+                ],
+                "info": {
+                    "title": "Strength Traning",
+                    "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+                }
+            },
+            {
+                "image": {
+                    "src": "/images/hub/main/drink.png",
+                    "alt": "Placeholder"
+                },
+                "badges": [
+                    {
+                        "type": "workouts"
+                    },
+                    {
+                        "type": "completed"
+                    }
+                ],
+                "info": {
+                    "title": "Strength Traning",
+                    "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
+                }
+            }
+        ]
+    }]
+
 const HubStats = () => {
     const [calendarValue, setCalendarValue] = useState("2023-05-01")
     return(
@@ -40,7 +217,7 @@ const HubStats = () => {
                                   noIndent
                                   buttonProps={{text: "See todays tasks", handler: () => null}}/>
                     </div>
-                    <FilterList/>
+                    <FilterList data={mockItems}/>
                 </div>
 
                 <MainLayoutRightColumn>

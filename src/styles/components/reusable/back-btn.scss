@@ -50,4 +50,10 @@
       height: 21px;
     }
   }
+
+  &__text {
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
+  }
 }

@@ -22,7 +22,7 @@ const GoalList = ({list}) => {
                 <div className="col-2 text-center goal-list__head-cell">ACTIVE DAYS</div>
             </div>
             <div className="goal-list__body">
-                {list.map(row => {
+                {list && list.length > 0 && list.map(row => {
                     return (
                         <div className="goal-list__row row" key={row.id}>
                             <div className="col-xs-4 col-6 goal-list__row-name goal-list__cell">{row.name}</div>
