@@ -1,8 +1,9 @@
 import InfoCard from "./InfoCard.jsx";
 import {withRouter} from "storybook-addon-react-router-v6";
+import {linkTo} from "@storybook/addon-links";
 
 export default {
-  title: 'Components/Reusable/Cards/InfoCard',
+  title: 'Reusable/Cards/InfoCard',
   component: InfoCard,
   tags: ['autodocs'],
   argTypes: {
@@ -36,3 +37,5 @@ Default.args = {
     }
   }
 }
+
+export const BadgeComponent = () => <button onClick={linkTo('Reusable/Badge')}>Go to Badge Component story</button>

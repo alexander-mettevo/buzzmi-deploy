@@ -1,7 +1,7 @@
 import Box from "./Box.jsx";
 
 export default {
-  title: "Components/Reusable/Cards/Box",
+  title: "Reusable/Cards/Box",
   component: Box,
   tags: ["autodocs"],
   argTypes: {

@@ -2,7 +2,7 @@ import SmallCardList from "./SmallCardList.jsx";
 import {withRouter} from "storybook-addon-react-router-v6";
 
 export default {
-  title: 'Components/Reusable/Cards/SmallCard/SmallCardList',
+  title: 'Reusable/Cards/SmallCard/SmallCardList',
   component: SmallCardList,
   tags: ['autodocs'],
   decorators: [withRouter],

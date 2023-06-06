@@ -1,7 +1,7 @@
 import InfoCardMenuMobile from "./InfoCardMenuMobile.jsx";
 
 export default {
-  title: 'Components/Reusable/Cards/InfoCard/Items/InfoCardMenuMobile',
+  title: 'Reusable/Cards/InfoCard/Items/InfoCardMenuMobile',
   component: InfoCardMenuMobile,
   tags: ['autodocs'],
 }

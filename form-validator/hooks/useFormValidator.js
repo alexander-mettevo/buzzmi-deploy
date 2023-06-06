@@ -39,7 +39,7 @@ const useFormValidator = (validationSchema, onSubmit, config = {}) => {
       const isValid = Object.values(formErrors).every((error) => !error);
 
       setIsValid(isValid);
-
+  console.log('isValid', isValid);
       if (isValid) {
         onSubmit(values);
       }
@@ -52,7 +52,7 @@ const useFormValidator = (validationSchema, onSubmit, config = {}) => {
   useEffect(() => {
     const func = async () => {
       const formErrors = await validationSchema.validate(values);
-      console.log('isSubmitted', formErrors)
+
       const isValid = Object.values(formErrors).every((error) => !error);
       setIsValid(isValid);
     }

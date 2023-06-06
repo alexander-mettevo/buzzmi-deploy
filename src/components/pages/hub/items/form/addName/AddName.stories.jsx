@@ -1,7 +1,7 @@
 import AddName from "./AddName.jsx";
 
 export default {
-  title: 'Components/Pages/Hub/Items/Form/AddName',
+  title: 'Pages/Hub/Items/Form/AddName',
   component: AddName,
   tags: ['autodocs'],
   argTypes: {

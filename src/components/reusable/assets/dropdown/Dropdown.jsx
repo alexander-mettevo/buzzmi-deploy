@@ -1,13 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react';
-import './Dropdown.scss';
 
 const DefaultIcon = () => <i className="fa-solid fa-angle-down"></i>;
+
 const Dropdown = ({ title, Icon, Content }) => {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef(null);
   const IconComponent = Icon || DefaultIcon;
-
-
+  
   return (
     <div className='dropdown'>
       <button className='dropdown__button' onClick={() => setIsOpen(!isOpen)}>

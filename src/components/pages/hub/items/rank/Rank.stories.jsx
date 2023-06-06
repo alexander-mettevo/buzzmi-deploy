@@ -2,7 +2,7 @@ import Rank from "./Rank.jsx";
 import {withRouter} from "storybook-addon-react-router-v6";
 
 export default {
-  title: "Components/Pages/Hub/Items/Rank",
+  title: "Pages/Hub/Items/Rank",
   component: Rank,
   tags: ["autodocs"],
   decorators: [withRouter],

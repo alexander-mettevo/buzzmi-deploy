@@ -1,7 +1,7 @@
 import CircleChart from "./CircleChart.jsx";
 
 export default {
-  title: 'Components/Reusable/Charts/CircleChart',
+  title: 'Reusable/Charts/CircleChart',
   component: CircleChart,
   tags: ["autodocs"],
   argTypes: {

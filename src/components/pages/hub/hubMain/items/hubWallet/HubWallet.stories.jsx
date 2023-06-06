@@ -16,7 +16,7 @@ import {withRouter} from "storybook-addon-react-router-v6";
  * ```
  */
 export default {
-    title: 'Components/Pages/Hub/HubMain/Items/HubWallet',
+    title: 'Pages/Hub/HubMain/Items/HubWallet',
     component: HubWallet,
     tags: ['autodocs'],
     decorators: [withRouter],

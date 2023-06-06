@@ -1,3 +1,17 @@
 .hub-form-box {
-  padding: 16px 20px;
+  padding: 16px 20px !important;
+
+  @media (max-width: $mobile) {
+    padding: 16px !important;
+  }
+}
+
+.hub-form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+    @media (min-width: $tablet) {
+      gap: 16px;
+    }
 }

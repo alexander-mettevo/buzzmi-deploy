@@ -6,7 +6,7 @@ import MainLayoutRightColumn from "./MainLayoutRightColumn.jsx";
  * The right column of the main layout.
  */
 export default {
-  title: 'Components/Layouts/MainLayout/MainLayoutContent/MainLayoutRightColumn',
+  title: 'Layouts/MainLayout/MainLayoutContent/MainLayoutRightColumn',
   component: MainLayoutRightColumn,
   tags: ['autodocs'],
   argTypes: {

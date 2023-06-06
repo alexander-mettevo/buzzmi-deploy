@@ -5,41 +5,92 @@ import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
 import AddName from "../items/form/addName/AddName.jsx";
 import Form from "../../../reusable/form/Form.jsx";
 import PrimaryButton from "../../../reusable/btns/buttons/PrimaryButton.jsx";
+import Box from "../../../reusable/cards/box/Box.jsx";
+import MediaWrapper from "../../../reusable/assets/mediaWrapper/MediaWrapper.jsx";
+import DropdownToggle from "../../../reusable/assets/dropdown/dropdownToggle/DropdownToggle.jsx";
+import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx";
+import VideoUploader from "../../../reusable/uploader/videoUploader/VideoUploader.jsx";
+import AudioUploader from "../../../reusable/uploader/audioUploader/AudioUploader.jsx";
+import Checkbox from "../../../reusable/assets/checkbox/Checkbox.jsx";
 
 const validationSchema = new ValidationSchema(
   {
     name: [
       {rule: 'required'},
-      { rule: 'minLength', value: 3 },
-      { rule: 'maxLength', value: 40 },
+      {rule: 'minLength', value: 3},
+      {rule: 'maxLength', value: 40},
     ],
+    images: {}
   }
 );
 
 const HubAddPreset = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState(null)
+
 
   //TODO example function to send request
   const sendRequest = async (formData) => {
-   try {
+    try {
       //TODO: send request
-   } catch (e) {
+      console.log('formData', formData)
+    } catch (e) {
       setError(e)
-   }
+    }
   }
 
-  const {register, handleSubmit, setValue, isValid} = useFormValidator(validationSchema, (formData) => {
+  const {register, handleSubmit, setValue, isValid, values, errors} = useFormValidator(validationSchema, (formData) => {
+    console.log('useFormValidator', formData)
     sendRequest(formData)
   });
 
-  return (
-    <div>
-      <BackBtnWithTitlePage title='Add Preset'/>
-      <Form error={error} onSubmit={handleSubmit}>
-        <AddName setValue={setValue} title='Add preset name' placeholder='Enter a name' name='name' register={register}/>
+  console.log('values', values)
 
-        <div className='d-flex justify-content-center'>
-          <PrimaryButton className={`mb-7 ${!isValid ? 'button_inactive' : ''}`} type="submit" form="input-bio">Continue</PrimaryButton>
+  return (
+    <div className='main-layout__single-container'>
+      <BackBtnWithTitlePage title='Add Preset'/>
+      <Form error={error} onSubmit={handleSubmit} formClassName='hub-form-wrapper'>
+        <AddName setValue={setValue} title='Add preset name' placeholder='Enter a name' name='name'
+                 register={register}/>
+        <Box className='hub-form-box d-flex justify-content-between align-items-center'>
+          <h4 className="h4">Choose cover image</h4>
+          <MediaWrapper/>
+        </Box>
+        <Box className='hub-form-box'>
+          <h4 className="h4 mb-3 mb-lg-4">Add description</h4>
+          <textarea placeholder='Add a short description of the preset' className='textarea'></textarea>
+        </Box>
+        <DropdownToggle title='Add 4 description images' info='Add 4 description images' idChecked='images'>
+          <PictureUploaderList setValue={setValue}/>
+        </DropdownToggle>
+        <DropdownToggle title='Add description video' info='Add description video' idChecked='video'>
+          <VideoUploader/>
+        </DropdownToggle>
+        <DropdownToggle title='Add description audio' info='Add description audio' idChecked='audio'>
+          <AudioUploader/>
+        </DropdownToggle>
+        <Box className='hub-form-box'>
+          <div className='mb-3 mb-lg-4 d-flex align-items-center justify-content-between dropdown__button_toggle'>
+            <div className='d-flex align-items-center'>
+              <img src="/images/assets/forms/task-center.png" alt="task-center"/>
+              <h4 className="h4 ms-3">Display in Task Center</h4>
+            </div>
+
+            <Checkbox setState={setIsOpen} idChecked='showInTask'/>
+          </div>
+          <div>
+            <h6 className="h6 mb-2 text-dark-secondary">
+              Task view: Preset-based
+            </h6>
+            <p className="text-r">
+              When the toggle is on, view tasks as a preset; when off, see individual tasks in the task center.
+            </p>
+          </div>
+
+        </Box>
+        <div className='d-flex bottom-mobile-button justify-content-center mt-5'>
+          <PrimaryButton className={` ${!isValid ? 'button_inactive' : ''}`} type="submit"
+                         form="input-bio">Continue</PrimaryButton>
         </div>
       </Form>
     </div>

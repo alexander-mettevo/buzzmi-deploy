@@ -1,7 +1,7 @@
 import ResizeComponent from "./ResizeComponent.jsx";
 
 export default {
-  title: 'Components/Reusable/Assets/ResizeComponent',
+  title: 'Reusable/Assets/ResizeComponent',
   component: ResizeComponent,
   tags: ['autodocs'],
   argTypes: {

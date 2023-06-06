@@ -2,7 +2,7 @@ import InfoCardList from "./InfoCardList.jsx";
 import {withRouter} from "storybook-addon-react-router-v6";
 
 export default {
-  title: 'Components/Reusable/Cards/InfoCard/InfoCardList',
+  title: 'Reusable/Cards/InfoCard/InfoCardList',
   component: InfoCardList,
   tags: ['autodocs'],
   argTypes: {

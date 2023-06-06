@@ -5,7 +5,7 @@ import {withRouter} from "storybook-addon-react-router-v6";
  * This component outputs links as tabs. By displaying the active current
  */
 export default {
-  title: 'Components/Reusable/Assets/LinkTabs',
+  title: 'Reusable/Assets/LinkTabs',
   component: LinkTabs,
   tags: ['autodocs'],
   argTypes: {

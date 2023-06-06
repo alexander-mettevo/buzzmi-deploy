@@ -60,6 +60,7 @@
 .text-r {
   font-weight: 400;
   text-transform: none;
+  color: var(--alt-text-secondary);
 
   @include adaptiveValue('font-size', 15, 12);
   @include adaptiveValue('line-height', 18, 12);
@@ -98,6 +99,10 @@
 
 .text-secondary {
   color: var(--text-secondary)  !important;
+}
+
+.text-dark-secondary {
+  color: var(--dark-text-secondary)  !important;
 }
 
 .text-error {

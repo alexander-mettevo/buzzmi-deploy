@@ -1,7 +1,7 @@
 import HubAccessItem from "./HubAccessItem.jsx";
 
 export default {
-  title: 'Components/Pages/Hub/HubMain/Items/HubAccess/HubAccessItem',
+  title: 'Pages/Hub/HubMain/Items/HubAccess/HubAccessItem',
   component: HubAccessItem,
   tags: ['autodocs'],
   argTypes: {

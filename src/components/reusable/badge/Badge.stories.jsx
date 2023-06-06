@@ -1,7 +1,8 @@
 import Badge from "./Badge.jsx";
+import {linkTo} from "@storybook/addon-links";
 
 export default {
-  title: 'Components/Reusable/Badge',
+  title: 'Reusable/Badge',
   component: Badge,
   tags: ['autodocs'],
   argTypes: {
@@ -31,11 +32,15 @@ export default {
   }
 }
 
+
+
 const Template = (args) => <Badge {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   type: 'all'
 }
+
+
 
 export const WithCount = Template.bind({});
 WithCount.args = {

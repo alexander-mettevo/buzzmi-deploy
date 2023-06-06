@@ -9,7 +9,7 @@ import {withRouter} from "storybook-addon-react-router-v6";
  3. Changing the language on large screen sizes (this functionality is located in the footer)
  */
 export default {
-  title: 'Components/Layouts/MainLayout',
+  title: 'Layouts/MainLayout',
   tags: ['autodocs'],
   decorators: [withRouter],
 }

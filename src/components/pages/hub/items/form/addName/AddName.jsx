@@ -33,9 +33,12 @@ const AddName = ({title, register, placeholder, name, setValue}) => {
       </h6>
       <div className='badge__row badge__row_in-block'>
         {popularNames?.length > 0 && popularNames.map((name, index) => (
-          <button key={index} onClick={() => onBadgeClick(name)}>
-            <Badge title={name} type={'secondary'} active={selectedNames.includes(name)}/>
-          </button>))}
+          <Badge
+            key={index}
+            onClick={() => onBadgeClick(name)}
+            title={name} type={'secondary'}
+            active={selectedNames.includes(name)}/>
+        ))}
       </div>
     </Box>
   );

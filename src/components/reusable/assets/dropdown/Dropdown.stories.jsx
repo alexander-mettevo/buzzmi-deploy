@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown.jsx";
 
 export default {
-  title: 'Components/Reusable/Assets/Dropdown',
+  title: 'Reusable/Assets/Dropdown',
   component: Dropdown,
   tags: ['autodocs'],
   argTypes: {
