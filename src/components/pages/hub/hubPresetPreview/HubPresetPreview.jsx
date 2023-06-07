@@ -4,6 +4,7 @@ import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx";
 import SmallCardList from "../../../reusable/cards/smallCard/SmallCardList.jsx";
 import Gallery from "../../../reusable/gallary/Gallery.jsx";
 import AudioPlayer from "../../../reusable/audioPlayer/AudioPlayer.jsx";
+import VideoGallery from "../../../reusable/videoGallery/VideoGallery.jsx";
 
 // mock data
 const infoCardData = {
@@ -17,6 +18,8 @@ const infoCardData = {
     },
     "type": null
 }
+
+const videoSrcLink = "https://v4.cdnpk.net/videvo_files/video/free/video0480/large_watermarked/_import_628b55859ec151.61264002_FPpreview.mp4";
 
 const galleryList = [
     {
@@ -110,8 +113,8 @@ const HubPresetPreview = () => {
                 <div className="hub__holder">
                     <Gallery list={galleryList} isSmall/>
                     <div className="hub__media">
-                        <div className="hub__video">
-
+                        <div className="hub__video mb-3">
+                            <VideoGallery src={videoSrcLink}/>
                         </div>
                         <div className="hub__audio">
                             <AudioPlayer src="/sounds/test-track.mp3"/>

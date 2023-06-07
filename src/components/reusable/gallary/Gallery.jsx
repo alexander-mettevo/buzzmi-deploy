@@ -29,8 +29,7 @@ const Gallery = ({list, isSmall}) => {
                     )
                 })}
             </div>
-            <LightBox activeGalleryItem={activeGalleryItemId}
-                      isOpened={activeGalleryItemId !== null}
+            <LightBox isOpened={activeGalleryItemId !== null}
                       onClose={() => setActiveGalleryItemId(null)}>
                 <GalleryCarousel list={list}
                                  overlineText={overlineText}
