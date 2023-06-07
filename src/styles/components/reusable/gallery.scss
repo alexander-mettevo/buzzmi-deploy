@@ -2,10 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  margin: 0 -6px;
+  margin: -6px;
 
   @media (max-width: $mobile) {
-    margin: 0 -4px;
+    margin: -4px;
     justify-content: center;
   }
 
