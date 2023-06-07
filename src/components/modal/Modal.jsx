@@ -6,14 +6,13 @@ import renderContent from "./renderContent.jsx";
 import {closeModal} from "../../store/slices/modalSlice/modalSlice.js";
 
 function Modal() {
-  const data = useSelector(state => state.modal);
+  const {isOpen, modalName, modalProps, modalType} = useSelector(state => state.modal);
   const dispatch = useDispatch();
   const nodeRef = useRef(null);
 
   const handleClose = () => {
     dispatch(closeModal());
   }
-
 
   useEffect(() => {
     const closeOnEscapeKey = e => e.key === "Escape" ? handleClose() : null;
@@ -24,25 +23,29 @@ function Modal() {
   }, [handleClose]);
 
   useEffect(() => {
-    if (data?.isOpen)  document.body.style.overflow = 'hidden';
+    if (isOpen)  document.body.style.overflow = 'hidden';
     else document.body.style.overflow = 'auto';
-  }, [data?.isOpen]);
+  }, [isOpen]);
+
+
+  const modalClassName = modalType === 'big' ? 'modal__wrapper modal__wrapper_big' : 'modal__wrapper';
 
   return (
     <ReactPortal wrapperId="react-portal-modal-container">
       <CSSTransition
-        in={data?.isOpen}
+        in={isOpen}
         timeout={{entry: 0, exit: 300}}
         unmountOnExit
         classNames="modal"
         nodeRef={nodeRef}
       >
         <div className="modal" ref={nodeRef}>
-          <div className="modal__wrapper">
+          <div className={modalClassName}>
             <div className="modal__close">
               <button onClick={handleClose} className="modal__close-icon"/>
             </div>
-            <div className="modal__content">{renderContent(data?.modalName, data?.modalProps)}</div>
+
+            <div className="modal__content">{renderContent(modalName, modalProps)}</div>
           </div>
           <div onClick={handleClose} className="modal__overlay"/>
         </div>

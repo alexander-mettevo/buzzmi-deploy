@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ImageUploading from 'react-images-uploading';
 import MediaWrapper from "../../assets/mediaWrapper/MediaWrapper.jsx";
 
 const PictureUploader = ({parentSetterState, maxNumber = 1}) => {
-  const [images, setImages] = React.useState([]);
+  const [images, setImages] = useState([]);
 
   const onChange = (imageList) => {
 

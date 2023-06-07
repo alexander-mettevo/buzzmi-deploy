@@ -1,19 +1,18 @@
 import OtherServicesModal from "./modals/otherServicesModal/OtherServicesModal.jsx";
 import Report from "./modals/report/Report.jsx";
+import ChoseImageModal from "./modals/choseImageModal/ChoseImageModal.jsx";
 
 const renderContent = (name, props) => {
 
   const contentMap = {
     OtherServicesModal,
-    Report
+    Report,
+    ChoseImageModal
   }
 
-  return (
-    <>
-      {!!contentMap[name] && contentMap[name](props)}
-    </>
-  )
-   ;
+  const Component = contentMap[name];
+  if (!Component) return null;
+  return <Component {...props}/>
 }
 
 export default renderContent;

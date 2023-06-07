@@ -6,12 +6,12 @@ import AddName from "../items/form/addName/AddName.jsx";
 import Form from "../../../reusable/form/Form.jsx";
 import PrimaryButton from "../../../reusable/btns/buttons/PrimaryButton.jsx";
 import Box from "../../../reusable/cards/box/Box.jsx";
-import MediaWrapper from "../../../reusable/assets/mediaWrapper/MediaWrapper.jsx";
 import DropdownToggle from "../../../reusable/assets/dropdown/dropdownToggle/DropdownToggle.jsx";
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx";
 import VideoUploader from "../../../reusable/uploader/videoUploader/VideoUploader.jsx";
 import AudioUploader from "../../../reusable/uploader/audioUploader/AudioUploader.jsx";
 import Checkbox from "../../../reusable/assets/checkbox/Checkbox.jsx";
+import ChoseImage from "../items/choseImage/ChoseImage.jsx";
 
 const validationSchema = new ValidationSchema(
   {
@@ -54,10 +54,7 @@ const HubAddPreset = () => {
       <Form error={error} onSubmit={handleSubmit} formClassName='hub-form-wrapper'>
         <AddName setValue={setValue} title='Add preset name' placeholder='Enter a name' name='name'
                  register={register}/>
-        <Box className='hub-form-box d-flex justify-content-between align-items-center'>
-          <h4 className="h4">Choose cover image</h4>
-          <MediaWrapper/>
-        </Box>
+        <ChoseImage values={values} setValue={setValue}/>
         <Box className='hub-form-box'>
           <h4 className="h4 mb-3 mb-lg-4">Add description</h4>
           <textarea

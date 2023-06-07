@@ -3,7 +3,6 @@ import SearchInput from "../../../reusable/form/items/inputs/SearchInput.jsx";
 import {useForm} from "react-hook-form";
 
 const ProfileItemsCollection = ({items, selectedItems, setSelectedItems}) => {
-  console.log('selectedItems', selectedItems)
   const handleCheckboxChange = (e) => {
     const {name, checked} = e.target;
     if (checked) {
@@ -14,7 +13,7 @@ const ProfileItemsCollection = ({items, selectedItems, setSelectedItems}) => {
   }
 
   useEffect(() => {
-    console.log(selectedItems);
+
 
   }, [selectedItems]);
 
