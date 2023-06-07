@@ -7,6 +7,7 @@ import MainLayoutRightColumn
     from "../../../layouts/mainLayout/mainLayoutContent/mainLayoutRightColumn/MainLayoutRightColumn.jsx";
 import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx";
 import UpdateInfo from "../../../reusable/updateInfo/UpdateInfo.jsx";
+import PeriodList from "../../../reusable/periodList/PeriodList.jsx";
 
 const tabsLast = [
     {
@@ -197,11 +198,36 @@ const mockItems = [{
                 }
             }
         ]
-    }]
+    }
+]
+
+const periodList = [
+    {
+        id: 0,
+        text: "Last week"
+    },
+    {
+        id: 1,
+        text: "This week"
+    },
+    {
+        id: 2,
+        text: "Last Month"
+    },
+    {
+        id: 3,
+        text: "This month"
+    },
+    {
+        id: 4,
+        text: "Year"
+    },
+]
 
 const HubStats = () => {
-    const [calendarValue, setCalendarValue] = useState("2023-05-01")
-    return(
+    const [calendarValue, setCalendarValue] = useState("2023-05-01");
+    const [periodType, setPeriodType] = useState(null)
+    return (
         <>
             <div className='main-layout__row'>
                 <div className='main-layout__mid'>
@@ -210,6 +236,7 @@ const HubStats = () => {
                     </div>
                     <LinkTabs list={tabsLast}/>
                     <UpdateInfo text="Points last synced on Today, 01:30 pm" onBtnClick={() => null}/>
+                    <PeriodList items={periodList} onClick={periodValue => setPeriodType(periodValue)} value={periodType}/>
                     <div className="box box_big mb-9">
                         <Calendar onChange={setCalendarValue}
                                   value={calendarValue}
