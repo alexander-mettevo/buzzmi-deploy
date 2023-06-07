@@ -100,20 +100,20 @@ const tasksData = [
 
 const HubPresetPreview = () => {
     return(
-        <div className="preset-preview">
-            <div className="preset-preview__content">
+        <div className="hub">
+            <div className="hub__content">
                 <BackBtnWithTitlePage title="Energetic Morning" btnText="Cancel"/>
 
                 <div className="mb-4">
                     <InfoCard item={infoCardData} />
                 </div>
-                <div className="preset-preview__holder">
+                <div className="hub__holder">
                     <Gallery list={galleryList} isSmall/>
-                    <div className="preset-preview__media">
-                        <div className="preset-preview__video">
+                    <div className="hub__media">
+                        <div className="hub__video">
 
                         </div>
-                        <div className="preset-preview__audio">
+                        <div className="hub__audio">
                             <AudioPlayer src="/sounds/test-track.mp3"/>
                         </div>
                     </div>
