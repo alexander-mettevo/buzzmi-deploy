@@ -37,6 +37,7 @@ import HubTasks from "./components/pages/hub/hubTasks/HubTasks.jsx";
 import HubAddPreset from "./components/pages/hub/hubAddPreset/HubAddPreset.jsx";
 import HubStats from "./components/pages/hub/hubStats/HubStats.jsx";
 import HubPresetPreview from "./components/pages/hub/hubPresetPreview/HubPresetPreview.jsx";
+import HubTread from "./components/pages/hub/hubTread/HubTread.jsx";
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
                 <Route path="tasks" element={<HubTasks/>}/>
                 <Route path="stats" element={<HubStats/>}/>
                 <Route path="add-preset" element={<HubAddPreset/>}/>
+                <Route path="tread" element={<HubTread/>}/>
                 <Route path="preset-preview" element={<HubPresetPreview/>}/>
               </Route>
               <Route path="/notifications" element={<HubMain/>}/>

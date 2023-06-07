@@ -27,7 +27,7 @@ const tabsLast = [{
     title: 'Leaderboard'
   }]
 
-const HubTasksMobile = () => {
+const HubTasksMobile = ({data}) => {
     const [calendarValue, setCalendarValue] = useState("2023-05-01")
   return (
     <>
@@ -44,7 +44,7 @@ const HubTasksMobile = () => {
                       noIndent
                       buttonProps={{text: "See todays tasks", handler: () => null}}/>
         </div>
-      <FilterList/>
+      <FilterList data={data}/>
 
     </>
   );

@@ -34,6 +34,7 @@ const GalleryCarousel = ({list, overlineText, goToActiveSlide, onSwiperChange}) 
                     thumbs={{swiper: carouselNav.current}}
                     modules={[FreeMode, Navigation, Thumbs]}
                     className="mySwiper2"
+                    freeMode={true}
                     onSlideChange={onSwiperChange}
                     onSwiper={onSwiperChange}
                 >
@@ -60,7 +61,6 @@ const GalleryCarousel = ({list, overlineText, goToActiveSlide, onSwiperChange}) 
                 onSwiper={setThumbsSwiper}
                 spaceBetween={0}
                 slidesPerView="auto"
-                freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper gallery__carousel-nav"
