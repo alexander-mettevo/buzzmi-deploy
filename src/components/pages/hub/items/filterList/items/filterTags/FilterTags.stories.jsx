@@ -1,7 +1,7 @@
 import FilterTags from "./FilterTags.jsx";
 
 export default {
-  title: 'Components/Pages/Hub/Items/FilterList/Items/FilterTags',
+  title: 'Pages/Hub/Items/FilterList/Items/FilterTags',
   component: FilterTags,
   tags: ['autodocs'],
   argTypes: {

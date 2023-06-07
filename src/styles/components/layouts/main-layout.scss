@@ -51,6 +51,11 @@
     }
   }
 
+  &__single-container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
   &__sidebar {
     width: 250px;
     background-color: var(--items-bg);

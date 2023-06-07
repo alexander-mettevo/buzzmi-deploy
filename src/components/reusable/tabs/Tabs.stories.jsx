@@ -1,7 +1,7 @@
 import Tabs from "../Tabs/Tabs.jsx";
 
 export default {
-    title: "Components/Reusable/Tabs",
+    title: "Reusable/Tabs",
     component: Tabs,
     tags: ["autodocs"],
     argTypes: {

@@ -1,0 +1,39 @@
+.info {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--gray);
+    border: 2px solid var(--gray);
+
+    @media (max-width: $tablet) {
+      color: var(--items-bg);
+      border: none;
+      background: var(--gray);
+    }
+  }
+
+  .tooltip {
+    width: 400px;
+    white-space: normal !important;
+
+    @media (max-width: $tablet) {
+      width: 400px;
+      left: -100px;
+    }
+
+    @media (max-width: $mobileSmall) {
+      width: 250px;
+    }
+  }
+
+}

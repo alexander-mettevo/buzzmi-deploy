@@ -15,7 +15,7 @@ import CustomSelect from "./CustomSelect.jsx";
  * ```
  */
 export default {
-  title: 'Components/Forms/Select/CustomSelect',
+  title: 'Forms/Select/CustomSelect',
   component: CustomSelect,
   tags: ['autodocs'],
   decorators: [story => <div style={{ height: '500px' }}>{story()}</div>],

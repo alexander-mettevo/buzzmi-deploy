@@ -6,7 +6,7 @@ import {withRouter} from "storybook-addon-react-router-v6";
  */
 
 export default {
-  title: 'Components/Layouts/MainLayout/MainLayoutSidebar/MainLayoutMenuItem',
+  title: 'Layouts/MainLayout/MainLayoutSidebar/MainLayoutMenuItem',
   component: MainLayoutMenuItem,
   tags: ['autodocs'],
   decorators: [withRouter],

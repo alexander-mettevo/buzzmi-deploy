@@ -19,7 +19,7 @@ import PlanBio from "./PlanBio.jsx";
  * ```
  */
 export default {
-  title: 'Components/Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan/Items/PlanBio',
+  title: 'Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan/Items/PlanBio',
   component: PlanBio,
   tags: ['autodocs'],
 }

@@ -1,7 +1,7 @@
 import Input from "./Input.jsx";
 
 export default {
-  title: 'Components/Forms/Input',
+  title: 'Forms/Input',
   component: Input,
   tags: ['autodocs'],
   decorators: [story => <div style={{ maxWidth: '500px' }}>{story()}</div>],

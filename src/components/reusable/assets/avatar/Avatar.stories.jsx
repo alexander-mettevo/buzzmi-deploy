@@ -16,7 +16,7 @@ import Avatar from "./Avatar.jsx";
  * ```
  */
 export default {
-  title: "Components/Reusable/Avatar",
+  title: "Reusable/Avatar",
   component: Avatar,
   tags: ["autodocs"],
   argTypes: {

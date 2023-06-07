@@ -12,7 +12,7 @@ import PlanSearch from "./PlanSearch.jsx";
  * ```
  */
 export default {
-  title: 'Components/Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan/Items/PlanSearch',
+  title: 'Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan/Items/PlanSearch',
   component: PlanSearch,
   tags: ['autodocs'],
   argTypes: {},

@@ -1,7 +1,7 @@
 import GoalList from "../goalList/GoalList.jsx";
 
 export default {
-    title: "Components/Reusable/GoalList",
+    title: "Reusable/GoalList",
     component: GoalList,
     tags: ["autodocs"],
     argTypes: {

@@ -38,7 +38,7 @@ import RankRow from "./RankRow.jsx";
  * ```
  */
 export default {
-  title: "Components/Pages/Hub/Items/Rank/Items/RankRow",
+  title: "Pages/Hub/Items/Rank/Items/RankRow",
   component: RankRow,
   tags: ["autodocs"],
   argTypes: {

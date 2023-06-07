@@ -12,7 +12,6 @@ const MainLayout = () => {
         </div>
       </div>
 
-
       <MainLayoutFooter/>
     </div>
   );

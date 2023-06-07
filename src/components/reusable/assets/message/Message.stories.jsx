@@ -1,7 +1,7 @@
 import Message from "./Message.jsx";
 
 export default {
-  title: "Components/Reusable/Assets/Message",
+  title: "Reusable/Assets/Message",
   component: Message,
   tags: ['autodocs'],
   argTypes: {

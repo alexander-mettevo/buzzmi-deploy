@@ -2,7 +2,7 @@ import FilterItems from "./FilterItems.jsx";
 import {withRouter} from "storybook-addon-react-router-v6";
 
 export default {
-  title: 'Components/Pages/Hub/Items/FilterList/Items/FilterItems',
+  title: 'Pages/Hub/Items/FilterList/Items/FilterItems',
   component: FilterItems,
   tags: ['autodocs'],
   decorators: [withRouter],

@@ -21,7 +21,7 @@ import PlanInfo from "./PlanInfo.jsx";
  * ```
  */
 export default {
-  title: 'Components/Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan/Items/PlanInfo',
+  title: 'Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan/Items/PlanInfo',
   component: PlanInfo,
   tags: ['autodocs'],
 }

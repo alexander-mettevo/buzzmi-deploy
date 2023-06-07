@@ -1,7 +1,7 @@
 import Button from "./Button.jsx";
 
 export default {
-  title: 'Components/Buttons/Button',
+  title: 'Buttons/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

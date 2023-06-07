@@ -66,6 +66,18 @@
   }
 }
 
+.bottom-mobile-button {
+  @media (max-width: $tablet) {
+    background: var(--items-bg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 16px 21px;
+  }
+}
+
 @import "alt-primary";
 @import "secondary";
 @import "primary";

@@ -6,7 +6,7 @@ import MainLayoutContent from "./MainLayoutContent.jsx";
  * This is done by setting components with content for the main part and the right column in the appropriate properties.
  */
 export default {
-  title: 'Components/Layouts/MainLayout/MainLayoutContent',
+  title: 'Layouts/MainLayout/MainLayoutContent',
   component: MainLayoutContent,
   tags: ['autodocs'],
   argTypes: {

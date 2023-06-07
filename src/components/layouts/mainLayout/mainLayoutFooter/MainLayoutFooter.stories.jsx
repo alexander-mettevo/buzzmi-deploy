@@ -6,7 +6,7 @@ import MainLayoutFooter from "./MainLayoutFooter.jsx";
  * Footer for the Main Layout. Contains links to pages, the ability to choose a language. As well as additional information.
  */
 export default {
-  title: 'Components/Layouts/MainLayout/MainLayoutFooter',
+  title: 'Layouts/MainLayout/MainLayoutFooter',
   component: MainLayoutFooter,
   tags: ['autodocs'],
   decorators: [

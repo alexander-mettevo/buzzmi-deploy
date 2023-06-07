@@ -1,7 +1,7 @@
 import AdditionalInformationPlan from "./AdditionalInformationPlan.jsx";
 
 export default {
-  title: 'Components/Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan',
+  title: 'Reusable/Assets/AdditionalInformation/Items/AdditionalInformationPlan',
   component: AdditionalInformationPlan,
   tags: ['autodocs'],
   argTypes: {},

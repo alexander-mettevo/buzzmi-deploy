@@ -30,7 +30,6 @@ const useFormValidator = (validationSchema, onSubmit, config = {}) => {
 
   const handleSubmit = useCallback(
     async (event) => {
-
       event.preventDefault();
       setIsSubmitted(true);
 
@@ -52,7 +51,7 @@ const useFormValidator = (validationSchema, onSubmit, config = {}) => {
   useEffect(() => {
     const func = async () => {
       const formErrors = await validationSchema.validate(values);
-      console.log('isSubmitted', formErrors)
+
       const isValid = Object.values(formErrors).every((error) => !error);
       setIsValid(isValid);
     }

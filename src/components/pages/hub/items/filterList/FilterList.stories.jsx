@@ -7,7 +7,7 @@ import {withRouter} from "storybook-addon-react-router-v6";
  * data via the data property to this component.
  */
 export default {
-  title: 'Components/Pages/Hub/Items/FilterList',
+  title: 'Pages/Hub/Items/FilterList',
   component: FilterList,
   tags: ['autodocs'],
   decorators: [withRouter],

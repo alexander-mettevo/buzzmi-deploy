@@ -1,0 +1,20 @@
+.media-wrapper {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $mobileSmall) {
+    width: 72px;
+    height: 72px;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+}

@@ -1,7 +1,7 @@
 import InfoCardMenuDesktop from "./InfoCardMenuDesktop.jsx";
 
 export default {
-  title: 'Components/Reusable/Cards/InfoCard/Items/InfoCardMenuDesktop',
+  title: 'Reusable/Cards/InfoCard/Items/InfoCardMenuDesktop',
   component: InfoCardMenuDesktop,
   tags: ['autodocs'],
 }

@@ -3,7 +3,7 @@ import moment from "moment";
 import {useState} from "react";
 
 export default {
-    title: "Components/Reusable/Calendar",
+    title: "Reusable/Calendar",
     component: Calendar,
     tags: ["autodocs"],
     argTypes: {

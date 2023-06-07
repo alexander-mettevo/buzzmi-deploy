@@ -24,7 +24,7 @@ import MainLayoutFooterSelect from "./MainLayoutFooterSelect.jsx";
  * ```
  */
 export default {
-  title: 'Components/Layouts/MainLayout/MainLayoutFooter/MainLayoutFooterSelect',
+  title: 'Layouts/MainLayout/MainLayoutFooter/MainLayoutFooterSelect',
   component: MainLayoutFooterSelect,
   tags: ['autodocs'],
   decorators: [
