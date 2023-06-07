@@ -1,0 +1,47 @@
+.period-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -10px 40px;
+
+  @media (max-width: $mobile) {
+    overflow-y: hidden;
+    overflow-x: auto;
+    margin: 0 0 23px;
+    justify-content: flex-start;
+    max-width: calc(100vw - 32px);
+    padding-bottom: 10px;
+  }
+
+  &__btn {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 10px;
+    white-space: nowrap;
+
+    @media (max-width: $mobile) {
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      transition: background 0.15s linear;
+    }
+
+    &--active {
+      &:before {
+        background: var(--light-accent);
+      }
+    }
+  }
+}

@@ -60,4 +60,16 @@
     width: 100%;
     height: 100%;
   }
+
+  &__duration {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    background: rgba(#000, 0.8);
+    color: var(--light-main-opposite-text);
+    font-size: 12px;
+    line-height: 12px;
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
 }

@@ -37,8 +37,20 @@
 
   &__audio {
     margin-bottom: 14px;
+    z-index: 2;
+    position: relative;
 
     audio {
+      width: 100%;
+    }
+  }
+
+  &__cup {
+    margin: 0 auto 20px;
+    width: 322px;
+
+    img {
+      display: block;
       width: 100%;
     }
   }
