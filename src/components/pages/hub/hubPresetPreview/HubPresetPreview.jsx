@@ -111,7 +111,6 @@ const HubPresetPreview = () => {
                     <Gallery list={galleryList} isSmall/>
                     <div className="hub__media">
                         <div className="hub__video">
-
                         </div>
                         <div className="hub__audio">
                             <AudioPlayer src="/sounds/test-track.mp3"/>
