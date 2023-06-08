@@ -1,21 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import PictureUploader from "./PictureUploader.jsx";
 
-const PictureUploaderList = ({setValue}) => {
-  const [images, setImages] = useState({
-    0: '',
-    1: '',
-    2: '',
-    3: '',
-  });
+const PictureUploaderList = ({setValue, defaultValues = []}) => {
+  const [images, setImages] = useState(defaultValues);
 
 
   const onChange = (imageList, index) => {
     if (imageList.length === 0) {
-      setImages({...images, [index]: ''});
+      setImages({...images, [index]: null});
       return;
     }
-    setImages({...images, [index]: imageList[0]['data_url']});
+    setImages({...images, [index]: imageList[0].data_url});
   }
 
 
@@ -27,10 +22,10 @@ const PictureUploaderList = ({setValue}) => {
   return (
     <div className='picture-uploader__wrapper'>
       <div className='picture-uploader__row'>
-        <PictureUploader parentSetterState={(imageList) => onChange(imageList, 0)}/>
-        <PictureUploader parentSetterState={(imageList) => onChange(imageList, 1)}/>
-        <PictureUploader parentSetterState={(imageList) => onChange(imageList, 2)}/>
-        <PictureUploader parentSetterState={(imageList) => onChange(imageList, 3)}/>
+        <PictureUploader defaultValue={images[0]} parentSetterState={(imageList) => onChange(imageList, 0)}/>
+        <PictureUploader defaultValue={images[1]} parentSetterState={(imageList) => onChange(imageList, 1)}/>
+        <PictureUploader defaultValue={images[2]} parentSetterState={(imageList) => onChange(imageList, 2)}/>
+        <PictureUploader defaultValue={images[3]} parentSetterState={(imageList) => onChange(imageList, 3)}/>
       </div>
       <div className='text-r'>
         File type Image: <br/>

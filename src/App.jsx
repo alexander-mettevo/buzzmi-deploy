@@ -39,6 +39,7 @@ import HubStats from "./components/pages/hub/hubStats/HubStats.jsx";
 import HubPresetPreview from "./components/pages/hub/hubPresetPreview/HubPresetPreview.jsx";
 import HubTread from "./components/pages/hub/hubTread/HubTread.jsx";
 import HubLeaderBoard from "./components/pages/hub/hubLeaderBoard/HubLeaderBoard.jsx";
+import HubEditPreset from "./components/pages/hub/hubEditPreset/HubEditPreset.jsx";
 import HubLeaders from "./components/pages/hub/hubLeaders/HubLeaders.jsx";
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
                 <Route path="leaderboard" element={<HubLeaderBoard/>}/>
                 <Route path="leaders/:type" element={<HubLeaders/>}/>
                 <Route path="add-preset" element={<HubAddPreset/>}/>
+                <Route path="edit-preset" element={<HubEditPreset/>}/>
                 <Route path="tread" element={<HubTread/>}/>
                 <Route path="preset-preview" element={<HubPresetPreview/>}/>
               </Route>
