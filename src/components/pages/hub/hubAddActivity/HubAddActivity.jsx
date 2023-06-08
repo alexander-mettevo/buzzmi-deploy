@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx";
-import SmallCardList from "../../../reusable/cards/smallCard/SmallCardList.jsx";
 import InfoCardList from "../../../reusable/cards/infoCard/InfoCardList.jsx";
-import Badge from "../../../reusable/badge/Badge.jsx";
 import FilterTags from "../items/filterList/items/filterTags/FilterTags.jsx";
 import LinkTabs from "../../../reusable/assets/linkTabs/LinkTabs.jsx";
-import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx";
-import ResizeComponent from "../../../reusable/assets/resizeComponent/ResizeComponent.jsx";
-import HubTasksDesktop from "../hubTasks/hubTasksDesktop/HubTasksDesktop.jsx";
-import HubTasksMobile from "../hubTasks/hubTasksMobile/HubTasksMobile.jsx";
 import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx";
 
 const mockItems = [
@@ -107,9 +101,8 @@ const HubAddActivityContent = () => {
 }
 
 const HubAddActivity = () => {
-    const additionalInfo = <AdditionalInformation onPresetBtn={() => null} onMyTaskBtn={() => null} />
     return (
-        <MainLayoutContent rightColumnContent={additionalInfo}>
+        <MainLayoutContent>
             <HubAddActivityContent/>
         </MainLayoutContent>
     );

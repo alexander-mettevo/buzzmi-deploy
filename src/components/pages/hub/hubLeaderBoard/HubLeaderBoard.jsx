@@ -1,8 +1,5 @@
 import React from "react";
 import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx";
-import ResizeComponent from "../../../reusable/assets/resizeComponent/ResizeComponent.jsx";
-import HubTasksDesktop from "../hubTasks/hubTasksDesktop/HubTasksDesktop.jsx";
-import HubTasksMobile from "../hubTasks/hubTasksMobile/HubTasksMobile.jsx";
 import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx";
 import Rank from "../items/rank/Rank.jsx";
 import LinkTabs from "../../../reusable/assets/linkTabs/LinkTabs.jsx";
@@ -25,6 +22,7 @@ const boardItems = [
     {
         img: "/images/hub/board/01.svg",
         text: "Personal Plan Leaders",
+        link: "/hub/leaders/personal-plan",
         imgList: [
             "/images/creators/1.jpg",
             "/images/creators/2.jpg",
@@ -37,6 +35,7 @@ const boardItems = [
     {
         img: "/images/hub/board/02.svg",
         text: "Habits Leaders",
+        link: "/hub/leaders/habits",
         imgList: [
             "/images/creators/4.jpg",
             "/images/creators/5.jpg",
@@ -49,6 +48,7 @@ const boardItems = [
     {
         img: "/images/hub/board/03.svg",
         text: "Workouts Leaders",
+        link: "/hub/leaders/workout",
         imgList: [
             "/images/creators/7.jpg",
             "/images/creators/8.jpg",
@@ -61,6 +61,7 @@ const boardItems = [
     {
         img: "/images/hub/board/04.svg",
         text: "Challenges Leaders",
+        link: "/hub/leaders/challenges",
         imgList: [
             "/images/creators/10.jpg",
             "/images/creators/11.jpg",
@@ -73,6 +74,7 @@ const boardItems = [
     {
         img: "/images/hub/board/05.svg",
         text: "Programs Leaders",
+        link: "/hub/leaders/program",
         imgList: [
             "/images/creators/1.jpg",
             "/images/creators/2.jpg",

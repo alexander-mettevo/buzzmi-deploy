@@ -1,7 +1,7 @@
 .period-list {
   display: flex;
   justify-content: space-between;
-  margin: 0 -10px 40px;
+  margin: 0 0 40px;
 
   @media (max-width: $mobile) {
     overflow-y: hidden;
