@@ -71,7 +71,10 @@ const AudioPlayer = ({src}) => {
     <div className="audio-player">
       <button
         className={"audio-player__btn audio-player__btn--"}
-        onClick={handlePlayPause}>
+        onClick={handlePlayPause}
+        type="button"
+      >
+
         {!playing ? <i className="fa-solid fa-play"/> : <i className="fa-solid fa-pause"/>}
       </button>
       <div className="audio-player__wave" id="waveform" ref={waveformRef}/>
