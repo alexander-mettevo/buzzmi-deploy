@@ -12,6 +12,7 @@ import VideoUploader from "../../../reusable/uploader/videoUploader/VideoUploade
 import AudioUploader from "../../../reusable/uploader/audioUploader/AudioUploader.jsx";
 import Checkbox from "../../../reusable/assets/checkbox/Checkbox.jsx";
 import ChoseImage from "../items/choseImage/ChoseImage.jsx";
+import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx";
 
 const validationSchema = new ValidationSchema(
   {
@@ -91,8 +92,7 @@ const HubAddPreset = () => {
 
         </Box>
         <div className='d-flex bottom-mobile-button justify-content-center mt-5'>
-          <PrimaryButton className={` ${!isValid ? 'button_inactive' : ''}`} type="submit"
-                        >Continue</PrimaryButton>
+          <SubmitButton isValid={isValid}/>
         </div>
       </Form>
     </div>
