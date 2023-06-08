@@ -32,12 +32,7 @@ const PlanInfo = () => {
           {planInfo?.title}
         </span>
       </div>
-        <PrimaryButton
-          onClick={() => {
-          }}
-
-          className={`${styles['plan-info__btn']} button_s`}
-        >
+        <PrimaryButton link="/hub/upgrade" className={`${styles['plan-info__btn']} button_s`} >
           Upgrade Now
         </PrimaryButton>
     </div>

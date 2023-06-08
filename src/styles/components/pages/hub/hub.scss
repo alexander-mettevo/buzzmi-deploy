@@ -22,7 +22,7 @@
     }
   }
 
-  &__media  {
+  &__media {
     flex: 1;
     padding-left: 16px;
 
@@ -179,5 +179,70 @@
       bottom: 26px;
       width: 190px;
     }
+  }
+
+  &__subscription-text {
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+
+  &__subscription-openers {
+    display: flex;
+    margin: 0 -5px 22px;
+  }
+
+  &__subscription-opener {
+    padding: 0 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .subscription-opener {
+      flex: 1;
+    }
+  }
+
+  &__subscription-info {
+    padding: 30px 37px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    background: var(--items-bg);
+
+    .description-list {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subscription-bottom {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .button_primary {
+      box-shadow: -8px 2px 12px rgba(247, 32, 131, 0.26), 8px 3px 12px rgba(139, 12, 219, 0.25), inset 0px -2px 2px rgba(255, 255, 255, 0.32);
+    }
+  }
+
+  &__subscription-discount {
+    position: absolute;
+    right: -37px;
+    top: 0;
+  }
+
+  &__subscription-discount-text {
+    padding: 4px 2px 0 0;
+    text-align: right;
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &__subscription-sub-text {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    padding-top: 20px;
   }
 }
