@@ -1,7 +1,7 @@
 import Textarea from "./Textarea.jsx";
 
 export default {
-  title: 'Reusable/Form/Items/Textarea',
+  title: 'Forms/Textarea',
   component: Textarea,
   tags: ['autodocs'],
 }

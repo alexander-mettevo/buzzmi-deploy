@@ -1,17 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ImageUploading from 'react-images-uploading';
 import MediaWrapper from "../../assets/mediaWrapper/MediaWrapper.jsx";
 
-const PictureUploader = ({parentSetterState, maxNumber = 1}) => {
+const PictureUploader = ({parentSetterState, defaultValue, maxNumber = 1}) => {
   const [images, setImages] = useState([]);
 
   const onChange = (imageList) => {
-
     parentSetterState(imageList);
     setImages(imageList);
   };
 
-
+  useEffect(() => {
+    if (defaultValue) {
+      setImages([{
+        data_url: defaultValue
+      }]);
+    }
+  }, [])
 
   return (
     <div>
@@ -26,7 +31,6 @@ const PictureUploader = ({parentSetterState, maxNumber = 1}) => {
         {({
             imageList,
             onImageUpload,
-            onImageRemoveAll,
             onImageUpdate,
             onImageRemove,
             isDragging,
