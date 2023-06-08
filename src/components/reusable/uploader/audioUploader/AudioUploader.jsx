@@ -2,12 +2,14 @@ import React, {useEffect, useRef, useState} from 'react';
 import MediaWrapper from "../../assets/mediaWrapper/MediaWrapper.jsx";
 import {useAudioRecorder} from 'react-audio-voice-recorder';
 import AudioPlayer from "../../audioPlayer/AudioPlayer.jsx";
+import handlerMediaURL from "../../../../assets/handlerMediaURL.js";
 
 const maxSize = 500 * 1024 * 1024;
 const maxDuration = 90 * 60 * 1000;
 
-const AudioUploader = ({setValue}) => {
-  const [audio, setAudio] = useState();
+
+const AudioUploader = ({setValue, defaultValue}) => {
+  const [audio, setAudio] = useState(defaultValue);
   const playerRef = useRef(null);
   const [iconSrc, setIconSrc] = useState("/images/assets/forms/voice.svg");
 
@@ -79,7 +81,7 @@ const AudioUploader = ({setValue}) => {
       {
         audio &&
         <div className='audio-uploader__player'>
-          <AudioPlayer src={URL.createObjectURL(audio)}/>
+          <AudioPlayer src={handlerMediaURL(audio)}/>
           <button className='picture-uploader__delete audio-uploader__delete' onClick={removeAudio}>
             <img src="/images/assets/delete.svg" alt="delete"/>
           </button>

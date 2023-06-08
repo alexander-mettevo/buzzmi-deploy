@@ -27,9 +27,7 @@ const ChoseImage = ({setValue, values}) => {
 
   useEffect(() => {
     if (name === 'ChoseImage' && !!props) setValue('coverImage', props.image);
-    else setValue('coverImage', '');
   }, [name]);
-
 
 
   return (

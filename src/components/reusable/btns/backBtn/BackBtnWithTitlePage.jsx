@@ -1,7 +1,7 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
-const BackBtnWithTitlePage = ({title, btnText}) => {
+const BackBtnWithTitlePage = ({title, btnText, lastItemLink}) => {
   const navigate = useNavigate();
 
   return (
@@ -11,6 +11,13 @@ const BackBtnWithTitlePage = ({title, btnText}) => {
         <span className="back-btn__text">{btnText}</span>
       </button>
       <span className='h3'>{title}</span>
+      {lastItemLink &&
+        <Link
+          className='back-btn__last-link text-alt-primary'
+          to={lastItemLink.href}
+        >
+          {lastItemLink.title}
+        </Link>}
     </div>
   );
 };

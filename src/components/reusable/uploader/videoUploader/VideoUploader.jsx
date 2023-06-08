@@ -3,8 +3,8 @@ import MediaWrapper from "../../assets/mediaWrapper/MediaWrapper.jsx";
 import VideoPlayer from "../../videoPlayer/VideoPlayer.jsx";
 
 
-const VideoUploader = ({setValue}) => {
-  const [video, setVideo] = useState(null);
+const VideoUploader = ({setValue, defaultValue = ''}) => {
+  const [video, setVideo] = useState(defaultValue);
   const ref = useRef(null);
   const playerRef = useRef(null);
   const maxSize = 500 * 1024 * 1024;
