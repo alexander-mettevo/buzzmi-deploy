@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import ValidationSchema from "../../../../../form-validator/ValidationSchema.js";
 import {useFormValidator} from "../../../../../form-validator/hooks/index.js";
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx";
-import PrimaryButton from "../../../reusable/btns/buttons/PrimaryButton.jsx";
-import {Form} from "react-router-dom";
+import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx";
+import Form from "../../../reusable/form/Form.jsx";
 
 const validationSchema = new ValidationSchema(
   {
@@ -31,10 +31,13 @@ const HubEditPreset = () => {
     }
   }
 
-  const {register, handleSubmit, setValue, isValid, values} = useFormValidator(validationSchema, (formData) => {
-    console.log('useFormValidator', formData)
-    sendRequest(formData)
+  const {register, handleSubmit, setValue, isValid, values} = useFormValidator(validationSchema, sendRequest, {
+    defaultValues: {
+      name: 'test',
+    }
   });
+
+  console.log('values', values)
 
   useEffect(() => {
     setValue('showInTask', showInTask)
@@ -46,12 +49,7 @@ const HubEditPreset = () => {
       <Form error={error} onSubmit={handleSubmit} formClassName='hub-form-wrapper'>
 
         <div className='d-flex bottom-mobile-button justify-content-center mt-5'>
-          <PrimaryButton
-            className={` ${!isValid ? 'button_inactive' : ''}`}
-            type="submit"
-          >
-            Continue
-          </PrimaryButton>
+          <SubmitButton isValid={isValid}/>
         </div>
       </Form>
     </div>

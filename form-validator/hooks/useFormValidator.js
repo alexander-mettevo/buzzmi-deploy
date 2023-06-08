@@ -1,9 +1,12 @@
 import {useState, useCallback, useEffect} from 'react';
 
 const useFormValidator = (validationSchema, onSubmit, config = {}) => {
-  const {showErrorsOnSubmit = true} = config;
+  const {
+    showErrorsOnSubmit = true,
+    defaultValues = {},
+  } = config;
 
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState(defaultValues);
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);

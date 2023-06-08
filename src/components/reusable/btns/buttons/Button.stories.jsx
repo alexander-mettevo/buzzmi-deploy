@@ -69,3 +69,4 @@ SecondaryDoubleColors.args = {
   children: 'Secondary Double Colors Button',
   className: 'button_secondary button_m double-secondary ',
 }
+
