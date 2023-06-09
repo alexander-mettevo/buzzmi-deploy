@@ -15,10 +15,22 @@
     padding: 10px;
     .h5 {
       text-align: left;
+      font-size: 16px;
+      line-height: 19px;
     }
 
     .subscription-card__discount-wrapper {
       margin-right: -10px;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
     }
   }
 
@@ -62,11 +74,20 @@
       position: absolute;
       top: 11px;
       left: -17px;
-      width: 22px;
+      width: 21px;
       height: 21px;
       transform: rotate(45deg) translateY(-50%);
       border-radius: 3px;
       background: #FF41B3;
     }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__discount-text {
+    padding: 4px 5px 0 0;
   }
 }

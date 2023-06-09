@@ -11,6 +11,20 @@
     &_a {
       text-align: right;
     }
+
+    &--bottom {
+      margin: 16px 0 6px;
+    }
+  }
+
+  &__label {
+    font-size: 11px;
+    line-height: 13px;
+    padding: 6px 16px;
+    color: var(--gray);
+    text-transform: uppercase;
+    background: var(--chart-bg);
+    border-radius: 16px;
   }
 
   &__btn {
