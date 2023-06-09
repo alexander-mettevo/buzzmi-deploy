@@ -36,16 +36,16 @@
   // variables for forms
   --light-form-bg: #F4F1F8;
   --light-form-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  --light-input-focus-shadow:-4px 0px 8px rgba(247, 32, 131, 0.4), 4px 0px 8px rgba(139, 12, 219, 0.4);
-  --light-input-error-shadow:-4px 0px 8px #F02461, 4px 0px 8px #F02461;
-  --light-input-success-shadow:-4px 0px 8px #25AF4C, 4px 0px 8px #25AF4C;
-  --light-input-warning-shadow:-4px 0px 8px #FF9800, 4px 0px 8px #FF9800;
+  --light-input-focus-shadow: -4px 0px 8px rgba(247, 32, 131, 0.4), 4px 0px 8px rgba(139, 12, 219, 0.4);
+  --light-input-error-shadow: -4px 0px 8px #F02461, 4px 0px 8px #F02461;
+  --light-input-success-shadow: -4px 0px 8px #25AF4C, 4px 0px 8px #25AF4C;
+  --light-input-warning-shadow: -4px 0px 8px #FF9800, 4px 0px 8px #FF9800;
   --light-input-border: #7E00E0;
   //=========================================================================================
 
   // variables for btns
   --light-btn-primary-bg: #E12194;
-  --light-btn-arrow-bg:linear-gradient(#FF41B3, #7E00E0);
+  --light-btn-arrow-bg: linear-gradient(#FF41B3, #7E00E0);
   //=========================================================================================
 
   // variables for scroll
@@ -70,6 +70,8 @@
 
   //simple colors
   --light-gray: #C0BACB;
+  --light-black: #000000;
+  --light-white: #ffffff;
   //=========================================================================================
 
 }

@@ -3,7 +3,7 @@ import Checkbox from "../../checkbox/Checkbox.jsx";
 import Box from "../../../cards/box/Box.jsx";
 import Info from "../../info/Info.jsx";
 
-const DropdownToggle = ({title, children, info, idChecked, defaultValue = false}) => {
+const DropdownToggle = ({icon, title, children, info, idChecked, defaultValue = false}) => {
   const [isOpen, setIsOpen] = useState(defaultValue);
   const contentRef = useRef(null);
 
@@ -11,6 +11,7 @@ const DropdownToggle = ({title, children, info, idChecked, defaultValue = false}
       <Box className='dropdown dropdown_toggle hub-form-box'>
         <div className='dropdown__button dropdown__button_toggle'>
           <div className='dropdown__title'>
+            {icon && <img src={icon} alt="icon" className='dropdown__icon'/>}
             <span className='h4 me-21 me-lg-3'>{title}</span>
             <Info text={info}/>
           </div>

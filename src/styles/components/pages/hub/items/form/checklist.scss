@@ -1,0 +1,59 @@
+.checklist {
+  border-top: 1px solid var(--gray);
+
+  &__task-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray);
+
+    @media (max-width: $mobile) {
+      padding: 16px 0;
+    }
+  }
+
+  &__task {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (min-width: $mobileSmall) {
+      gap: 16px;
+    }
+  }
+
+  &__label {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: 2px solid var(--gray);
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked + .checklist__label {
+      background-color: var(--chart-bg);
+      border: 2px solid var(--chart-bg);
+    }
+  }
+
+  &__task-input {
+    margin-top: 25px;
+
+    @media (max-width: $mobileSmall) {
+      margin-top: 8px;
+    }
+
+    form {
+      gap: 30px;
+
+      @media (max-width: $mobile) {
+        gap: 16px;
+      }
+    }
+  }
+}

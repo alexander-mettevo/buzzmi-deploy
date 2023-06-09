@@ -66,6 +66,18 @@
       }
     }
   }
+
+  &__secondary {
+    .select__control {
+      border: 1px solid var(--text-secondary) !important;
+    }
+
+    .select__arrow {
+        background-image: var(--btn-arrow-bg) !important;
+        background-clip: text !important;
+        color: transparent !important;
+    }
+  }
 }
 
 .phone-select {
