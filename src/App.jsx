@@ -41,6 +41,7 @@ import HubTread from "./components/pages/hub/hubTread/HubTread.jsx";
 import HubLeaderBoard from "./components/pages/hub/hubLeaderBoard/HubLeaderBoard.jsx";
 import HubEditPreset from "./components/pages/hub/hubEditPreset/HubEditPreset.jsx";
 import HubLeaders from "./components/pages/hub/hubLeaders/HubLeaders.jsx";
+import HubSubscription from "./components/pages/hub/hubUpgrade/HubSubscription.jsx";
 
 const App = () => {
   return (
@@ -60,6 +61,7 @@ const App = () => {
                 <Route path="edit-preset" element={<HubEditPreset/>}/>
                 <Route path="tread" element={<HubTread/>}/>
                 <Route path="preset-preview" element={<HubPresetPreview/>}/>
+                <Route path="upgrade" element={<HubSubscription/>}/>
               </Route>
               <Route path="/notifications" element={<HubMain/>}/>
               <Route path="/messages" element={<HubMain/>}/>
