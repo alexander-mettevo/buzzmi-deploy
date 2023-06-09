@@ -3,6 +3,10 @@ import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitl
 import SubscriptionOpener from "./subscriptionOpener/subscriptionOpener.jsx";
 import DescriptionList from "../../../reusable/descriptionList/DescriptionList.jsx";
 import Button from "../../../reusable/btns/buttons/Button.jsx";
+import Discount from "../../../reusable/assets/discount/Discount.jsx";
+import DesktopLayout from "./desktopLayout/DesktopLayout.jsx";
+import ResizeComponent from "../../../reusable/assets/resizeComponent/ResizeComponent.jsx";
+import SubscriptionCard from "../../sales/subscription/items/SubscriptionCard.jsx";
 
 // mocks
 const openers = [
@@ -10,16 +14,19 @@ const openers = [
         name: "Free User",
         id: "free",
         img: "/images/hub/subscription/free.png",
+        discount: null,
         isCurrent: true
     },
     {
         name: "Premium Member",
         id: "premium",
+        discount: 20,
         img: "/images/hub/subscription/premium.png"
     },
     {
         name: "Elite Creator",
         id: "elite",
+        discount: 40,
         img: "/images/hub/subscription/elite.png"
     },
 ]
@@ -74,38 +81,46 @@ const descriptionList = [
 
 const HubSubscription = () => {
     const [current, setCurrent] = useState("free");
+    const [expanded, setExpanded] = useState(null);
     const descriptionCases = {
         "free": descriptionList.slice(-2),
         "premium": descriptionList.slice(0, 4),
         "elite": descriptionList.slice(0, 7),
     }
-    return(
+    const desktopLayout = <DesktopLayout openers={openers}
+                                         current={current}
+                                         setCurrent={setCurrent}
+                                         descriptionCases={descriptionCases}/>
+    return (
         <div className="hub">
             <div className="hub__content">
                 <BackBtnWithTitlePage title="Membership Level"/>
                 <div className="hub__subscription">
-                    <p className="hub__subscription-text text-center">Take your Buzzmi journey to new heights! Upgrade to Premium and access all the best content, tools, and perks the app has to offer.</p>
-                    <div className="hub__subscription-openers">
-                            {openers.map(subscription => {
-                              return(
-                                  <div className="hub__subscription-opener" key={subscription.id}>
-                                    <SubscriptionOpener
-                                        active={current === subscription.id}
-                                        onChange={setCurrent}
-                                        {...subscription}/>
-                                  </div>
-                              )
-                            })}
-                    </div>
-                    <div className="hub__subscription-info">
-                        <DescriptionList items={descriptionCases[current]}/>
-                        <div className="hub__subscription-bottom">
-                            <Button className="button_primary button_m double-secondary px-6 px-lg-14">Subscribe</Button>
-                            <div className="hub__subscription-discount">
-                                <span className="hub__subscription-discount-text text-alt-primary">And Special offer</span>
-                            </div>
-                        </div>
-                    </div>
+                    <p className="hub__subscription-text text-center">Take your Buzzmi journey to new heights! Upgrade
+                        to Premium and access all the best content, tools, and perks the app has to offer.</p>
+                    <ResizeComponent
+                        desktopComponent={desktopLayout}
+                        mobileComponent={
+                            <>
+                                {openers.map(el => {
+                                    return (
+                                        <div className="hub__subscription-item" key={el.id}>
+                                            <SubscriptionCard title={el.name}
+                                                              icon={el.img}
+                                                              discount={el.discount}
+                                                              hideBtn={descriptionCases[el.id].length < 4}
+                                                              current={current === el.id}
+                                                              specialOffer={el.id === "elite" ? "And Special offer" : null}
+                                                              onShowMore={() => setExpanded(expanded === el.id ? null : el.id)}
+                                                              content={<DescriptionList
+                                                                  items={expanded === el.id ? descriptionCases[el.id] : descriptionCases[el.id].slice(0, 3)}/>}
+                                            />
+                                        </div>
+                                    )
+                                })}
+                            </>
+                        }/>
+
                     <span className="hub__subscription-sub-text">Your subscription will automatically renew in 23 days. You can cancel it anytime </span>
                 </div>
             </div>
