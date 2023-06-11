@@ -13,7 +13,7 @@ const DropdownToggle = ({ icon, title, children, info, idChecked, defaultValue =
         <div className="dropdown__title">
           {icon && <img src={icon} alt="icon" className="dropdown__icon" />}
           <span className="h4 me-21 me-lg-3">{title}</span>
-          <Info text={info} />
+          {info && <Info text={info} />}
         </div>
 
         <div className="dropdown__arrow d-flex">

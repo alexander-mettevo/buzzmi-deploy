@@ -1,6 +1,4 @@
 .checklist {
-  border-top: 1px solid var(--gray);
-
   &__task-row {
     display: flex;
     align-items: center;
@@ -48,7 +46,7 @@
       margin-top: 8px;
     }
 
-    form {
+    & > div {
       gap: 30px;
 
       @media (max-width: $mobile) {

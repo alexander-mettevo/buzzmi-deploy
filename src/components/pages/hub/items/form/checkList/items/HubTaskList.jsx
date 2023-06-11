@@ -1,51 +1,41 @@
-import React, {useEffect, useState} from 'react';
-import HubTask from './HubTask';
-import HubTaskInput from './HubTaskInput';
+import React, { useEffect, useState } from "react"
+import HubTask from "./HubTask"
+import HubTaskInput from "./HubTaskInput"
 
-function HubTaskList() {
-  const [tasks, setTasks] = useState([]);
-
+function HubTaskList({ setValues, value = [] }) {
   const addTask = (name) => {
-    const newTask = { id: Date.now(), name, completed: false };
-    setTasks([...tasks, newTask]);
-  };
+    const newTask = { id: Date.now(), name, completed: false }
+    setValues([...value, newTask])
+  }
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
+    setValues(value.filter((task) => task.id !== id))
+  }
 
   const editTask = (id, newName) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, name: newName } : task
-      )
-    );
-  };
+    setValues(value.map((task) => (task.id === id ? { ...task, name: newName } : task)))
+  }
 
   const toggleTask = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
-  };
+    setValues(value.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)))
+  }
 
   // Load tasks from local storage when component mounts
   useEffect(() => {
-    const savedTasks = localStorage.getItem('tasks');
+    const savedTasks = localStorage.getItem("tasks")
     if (savedTasks) {
-      setTasks(JSON.parse(savedTasks));
+      setValues(JSON.parse(savedTasks))
     }
-  }, []);
+  }, [])
 
   // Save tasks to local storage whenever tasks change
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+    localStorage.setItem("tasks", JSON.stringify(value))
+  }, [value])
 
   return (
     <div className="checklist">
-      {tasks.map((task) => (
+      {value.map((task) => (
         <HubTask
           key={task.id}
           id={task.id}
@@ -58,7 +48,7 @@ function HubTaskList() {
       ))}
       <HubTaskInput addTask={addTask} />
     </div>
-  );
+  )
 }
 
-export default HubTaskList;
+export default HubTaskList
