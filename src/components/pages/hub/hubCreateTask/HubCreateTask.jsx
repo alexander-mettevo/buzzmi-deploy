@@ -5,9 +5,9 @@ import DropdownToggle from "../../../reusable/assets/dropdown/dropdownToggle/Dro
 import { useFormValidator } from "../../../../../form-validator/hooks/index.js"
 import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
 import Form from "../../../reusable/form/Form.jsx"
-import HubCheckList from "../items/form/checkList/HubCheckList.jsx"
 import HubTaskList from "../items/form/checkList/items/HubTaskList.jsx"
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx"
+import CheckTags from "../items/form/checkTags/CheckTags.jsx"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
@@ -30,6 +30,8 @@ const HubCreateTask = () => {
     defaultValues: {
       tasks: [],
       images: [],
+      tags: [],
+      note: "",
     },
   })
 
@@ -53,7 +55,13 @@ const HubCreateTask = () => {
           <HubTaskList value={values.tasks} setValues={(value) => setValue("tasks", value)} />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/notes.png" title="Note" idChecked="note">
-          Note
+          <input
+            value={values.note}
+            type="text"
+            className="input input_simple-text"
+            placeholder="Add your note here"
+            onChange={(e) => setValue("note", e.target.value)}
+          />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/photo.png" title="Add photos of your progress" idChecked="photos">
           <PictureUploaderList
@@ -63,7 +71,7 @@ const HubCreateTask = () => {
           />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/hash.png" title="Tags" idChecked="tags">
-          Tags
+          <CheckTags tags={data.tags} value={values.tags} setValue={setValue} valueName="tags" />
         </DropdownToggle>
       </Form>
     </div>

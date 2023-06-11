@@ -1,0 +1,9 @@
+.check-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+
+  &__checkbox {
+    display: none;
+  }
+}
