@@ -6,7 +6,6 @@ export const DropdownIndicator = () => {
 }
 
 const CustomSelect = ({ className, options, selected, setSelected }) => {
-  console.log("CustomSelect.jsx: CustomSelect: options: ", options)
   return (
     <Select
       components={{ DropdownIndicator }}
