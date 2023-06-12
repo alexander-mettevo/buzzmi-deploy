@@ -9,6 +9,7 @@ import HubTaskList from "../items/form/checkList/items/HubTaskList.jsx"
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx"
 import CheckTags from "../items/form/checkTags/CheckTags.jsx"
 import RadioMode from "../items/form/radioMode/RadioMode.jsx"
+import ChoseRepeat from "../items/choseRepeat/ChoseRepeat.jsx"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
@@ -52,7 +53,7 @@ const HubCreateTask = () => {
           <RadioMode setValue={setValue} value={values.when} name="when" variants={when} />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/repeat.png" title="Repeat" idChecked="repeat">
-          Repeat
+          <ChoseRepeat />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/goal.png" title="Set a goal" idChecked="goal">
           Set a goal

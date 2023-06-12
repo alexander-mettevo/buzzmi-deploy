@@ -1,27 +1,25 @@
-import React from 'react';
-import Select from 'react-select';
+import React from "react"
+import Select from "react-select"
 
 export const DropdownIndicator = () => {
-  return (
-    <i className="fa-solid fa-chevron-down select__arrow text-secondary"/>
-  );
-};
+  return <i className="fa-solid fa-chevron-down select__arrow text-secondary" />
+}
 
-const CustomSelect = ({className, options, selected, setSelected}) => {
-
+const CustomSelect = ({ className, options, selected, setSelected }) => {
+  console.log("CustomSelect.jsx: CustomSelect: options: ", options)
   return (
     <Select
-      components={{DropdownIndicator}}
+      components={{ DropdownIndicator }}
       options={options}
       value={selected}
       onChange={setSelected}
       hasSelectAll={false}
       labelledBy="Select"
-      className={`select ${!!className ? className : ''}`}
+      className={`select ${!!className ? className : ""}`}
       disableSearch={true}
-      classNamePrefix='select'
+      classNamePrefix="select"
     />
-  );
-};
+  )
+}
 
-export default CustomSelect;
+export default CustomSelect
