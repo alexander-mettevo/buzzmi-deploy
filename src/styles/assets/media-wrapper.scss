@@ -6,6 +6,10 @@
   justify-content: center;
   align-items: center;
 
+  &:disabled {
+    cursor: default;
+  }
+
   @media (max-width: $mobileSmall) {
     width: 72px;
     height: 72px;
@@ -15,6 +19,4 @@
     width: 40px;
     height: 40px;
   }
-
-
 }

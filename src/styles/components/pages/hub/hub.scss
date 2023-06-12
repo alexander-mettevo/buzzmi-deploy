@@ -12,6 +12,13 @@
     @media (max-width: $mobile) {
       max-width: 375px;
     }
+
+    .checklist__task-row {
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
   }
 
   &__holder {
@@ -187,7 +194,6 @@
     }
   }
 
-
   &__subscription-item {
     margin-bottom: 12px;
   }
@@ -231,7 +237,8 @@
     position: relative;
 
     .button_primary {
-      box-shadow: -8px 2px 12px rgba(247, 32, 131, 0.26), 8px 3px 12px rgba(139, 12, 219, 0.25), inset 0px -2px 2px rgba(255, 255, 255, 0.32);
+      box-shadow: -8px 2px 12px rgba(247, 32, 131, 0.26), 8px 3px 12px rgba(139, 12, 219, 0.25),
+        inset 0px -2px 2px rgba(255, 255, 255, 0.32);
     }
   }
 

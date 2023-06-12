@@ -43,6 +43,7 @@ import HubEditPreset from "./components/pages/hub/hubEditPreset/HubEditPreset.js
 import HubLeaders from "./components/pages/hub/hubLeaders/HubLeaders.jsx"
 import HubSubscription from "./components/pages/hub/hubUpgrade/HubSubscription.jsx"
 import HubCreateTask from "./components/pages/hub/hubCreateTask/HubCreateTask.jsx"
+import HubTaskInfo from "./components/pages/hub/hubTaskInfo/HubTaskInfo.jsx"
 
 const App = () => {
   return (
@@ -62,6 +63,7 @@ const App = () => {
                 <Route path="add-preset" element={<HubAddPreset />} />
                 <Route path="edit-preset" element={<HubEditPreset />} />
                 <Route path="tread" element={<HubTread />} />
+                <Route path="task-info" element={<HubTaskInfo />} />
                 <Route path="preset-preview" element={<HubPresetPreview />} />
                 <Route path="upgrade" element={<HubSubscription />} />
               </Route>

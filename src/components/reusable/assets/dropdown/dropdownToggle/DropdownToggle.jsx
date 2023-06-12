@@ -3,7 +3,17 @@ import Checkbox from "../../checkbox/Checkbox.jsx"
 import Box from "../../../cards/box/Box.jsx"
 import Info from "../../info/Info.jsx"
 
-const DropdownToggle = ({ icon, title, children, info, idChecked, defaultValue = false }) => {
+const DropdownToggle = ({
+  icon,
+  title,
+  children,
+  info,
+  idChecked,
+  defaultValue = false,
+  isEditable = false,
+  onEditBtn,
+  editBtnText,
+}) => {
   const [isOpen, setIsOpen] = useState(defaultValue)
   const contentRef = useRef(null)
 
@@ -17,7 +27,13 @@ const DropdownToggle = ({ icon, title, children, info, idChecked, defaultValue =
         </div>
 
         <div className="dropdown__arrow d-flex">
-          <Checkbox defaultValue={defaultValue} setState={setIsOpen} idChecked={idChecked} />
+          {isEditable ? (
+            <button className="text-alt-primary" onClick={onEditBtn}>
+              {editBtnText}
+            </button>
+          ) : (
+            <Checkbox defaultValue={defaultValue} setState={setIsOpen} idChecked={idChecked} />
+          )}
         </div>
       </div>
       <div

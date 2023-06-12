@@ -19,7 +19,6 @@
     max-width: 100%;
   }
 
-
   &__title {
     display: flex;
     align-items: center;
@@ -69,9 +68,11 @@
   }
 
   &__content--open {
-
-
   }
 
-
+  .checklist__task-row {
+    &:first-child {
+      padding-top: 0;
+    }
+  }
 }
