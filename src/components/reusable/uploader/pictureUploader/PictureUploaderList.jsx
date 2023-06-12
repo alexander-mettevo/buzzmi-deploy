@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import PictureUploader from "./PictureUploader.jsx"
 
-const PictureUploaderList = ({ setValue, classNames = "", defaultValues = [] }) => {
+const PictureUploaderList = ({ setValue, classNames = "", defaultValues = [], locked }) => {
   const [images, setImages] = useState(defaultValues)
 
   const onChange = (imageList, index) => {
@@ -13,16 +13,24 @@ const PictureUploaderList = ({ setValue, classNames = "", defaultValues = [] }) 
   }
 
   useEffect(() => {
-    setValue("images", images)
+    if (setValue) {
+      setValue("images", images)
+    }
   }, [images])
 
   return (
     <div className={`picture-uploader__wrapper ` + classNames}>
       <div className="picture-uploader__row">
-        <PictureUploader defaultValue={images[0]} parentSetterState={(imageList) => onChange(imageList, 0)} />
-        <PictureUploader defaultValue={images[1]} parentSetterState={(imageList) => onChange(imageList, 1)} />
-        <PictureUploader defaultValue={images[2]} parentSetterState={(imageList) => onChange(imageList, 2)} />
-        <PictureUploader defaultValue={images[3]} parentSetterState={(imageList) => onChange(imageList, 3)} />
+        {new Array(4).fill("").map((_, index) => {
+          return (
+            <PictureUploader
+              defaultValue={images[index]}
+              parentSetterState={(imageList) => onChange(imageList, index)}
+              locked={locked}
+              key={index}
+            />
+          )
+        })}
       </div>
       <div className="text-r">
         File type Image: <br />
