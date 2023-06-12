@@ -8,10 +8,18 @@ import Form from "../../../reusable/form/Form.jsx"
 import HubTaskList from "../items/form/checkList/items/HubTaskList.jsx"
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx"
 import CheckTags from "../items/form/checkTags/CheckTags.jsx"
+import RadioMode from "../items/form/radioMode/RadioMode.jsx"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
 })
+
+const when = [
+  { title: "Morning", value: "morning" },
+  { title: "Afternoon", value: "afternoon" },
+  { title: "Evening", value: "evening" },
+  { title: "Any time", value: "anyTime" },
+]
 
 const HubCreateTask = () => {
   const data = mocData
@@ -32,6 +40,7 @@ const HubCreateTask = () => {
       images: [],
       tags: [],
       note: "",
+      when: "anyTime",
     },
   })
 
@@ -40,7 +49,7 @@ const HubCreateTask = () => {
       <BackBtnWithTitlePage title={data?.title} />
       <Form error={error} onSubmit={handleSubmit} formClassName="hub-form-wrapper">
         <DropdownToggle icon="/images/hub/form/calendar.png" title="When?" idChecked="when">
-          Test
+          <RadioMode setValue={setValue} value={values.when} name="when" variants={when} />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/repeat.png" title="Repeat" idChecked="repeat">
           Repeat
