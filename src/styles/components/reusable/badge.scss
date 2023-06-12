@@ -1,14 +1,14 @@
 .badge {
   border-radius: 12px;
   padding: 5px 12px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
 
-  &:hover, &__active {
+  &__active {
     font-weight: 600;
   }
 
@@ -23,68 +23,68 @@
   &_all {
     background-color: rgba(255, 173, 193, 0.5);
 
-    &:hover, &.badge__active {
+    &.badge__active {
       font-weight: 600;
-      background-color: #FFADC1;
+      background-color: #ffadc1;
     }
   }
 
   &_presets {
-    background-color: #F5EEFE;
+    background-color: #f5eefe;
 
-    &:hover, &.badge__active {
+    &.badge__active {
       font-weight: 600;
-      background-color: #E4AFFF;
+      background-color: #e4afff;
     }
   }
 
   &_workouts {
     background-color: rgba(185, 240, 255, 0.6);
 
-    &:hover, &.badge__active {
+    &.badge__active {
       font-weight: 600;
-      background-color: #99E4FD;
+      background-color: #99e4fd;
     }
   }
 
   &_habits {
     background-color: rgba(176, 255, 176, 0.5);
 
-    &:hover, &.badge__active {
+    &.badge__active {
       font-weight: 600;
-      background-color: #ADFFB4;
+      background-color: #adffb4;
     }
   }
 
   &_program {
     background-color: rgba(193, 211, 255, 0.5);
 
-    &:hover, &.badge__active {
+    &.badge__active {
       font-weight: 600;
-      background-color: #9AB6FF;
+      background-color: #9ab6ff;
     }
   }
 
   &_challenges {
     background-color: rgba(255, 242, 170, 0.5);
 
-    &:hover, &.badge__active {
+    &.badge__active {
       font-weight: 600;
-      background-color: #FFEC85;
+      background-color: #ffec85;
     }
   }
 
   &_buzzmi-tasks {
-    background-color: #F5EEFE;
+    background-color: #f5eefe;
 
-    &:hover, &.badge__active {
+    &.badge__active {
       font-weight: 600;
-      background-color: #E4AFFF;
+      background-color: #e4afff;
     }
   }
 
   &_completed {
-    background-color: #F5EEFE;
+    background-color: #f5eefe;
   }
 
   &__row {

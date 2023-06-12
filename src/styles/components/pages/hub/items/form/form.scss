@@ -11,7 +11,12 @@
   grid-template-columns: 1fr;
   gap: 24px;
 
-    @media (min-width: $tablet) {
-      gap: 16px;
-    }
+  @media (min-width: $tablet) {
+    gap: 16px;
+  }
 }
+
+@import "checklist";
+@import "check-tags";
+@import "radio-mode";
+@import "adaptive-module";

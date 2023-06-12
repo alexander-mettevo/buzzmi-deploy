@@ -63,6 +63,58 @@
     display: flex;
     justify-content: space-between;
     gap: 10px;
+
+    &_mod {
+      .picture-uploader__row {
+        width: 100%;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $mobile) {
+          gap: 8px;
+        }
+
+        & > div {
+          flex: 0 0 21%;
+          aspect-ratio: 11/15;
+
+          @media (max-width: $mobile) {
+            flex: 0 0 23%;
+          }
+        }
+      }
+
+      .picture-uploader {
+        width: 100%;
+        height: 100%;
+
+        .upload__image-wrapper {
+          width: 100%;
+          height: 100%;
+
+          .media-wrapper {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 6px;
+          //
+          //@media (max-width: $mobileSmall) {
+          //  width: 72px;
+          //  height: 102px;
+          //}
+        }
+      }
+    }
   }
 }
 
@@ -92,7 +144,6 @@
 }
 
 .audio-uploader {
-
   &__delete {
     position: static;
   }
@@ -107,7 +158,6 @@
     @media (max-width: $mobileSmall) {
       margin-top: 16px;
     }
-
 
     & > div:first-child {
       width: 100%;

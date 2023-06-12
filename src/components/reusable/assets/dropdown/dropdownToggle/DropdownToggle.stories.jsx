@@ -28,6 +28,14 @@ export default {
           summary: 'element',
         }
       }
+    },
+    icon: {
+      description: 'Dropdown icon',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      }
     }
   }
 }
@@ -38,4 +46,12 @@ Base.args = {
   title: 'Dropdown title',
   info: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel diam euismod, tincidunt diam vitae, aliquam nisl. Nulla facilisi.',
   children:  <div>Dropdown content</div>,
+}
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  title: 'Dropdown title',
+  info: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel diam euismod, tincidunt diam vitae, aliquam nisl. Nulla facilisi.',
+  children:  <div>Dropdown content</div>,
+  icon: '/images/hub/form/hash.png'
 }
