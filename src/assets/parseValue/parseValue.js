@@ -4,10 +4,7 @@ const conversionRules = {
     { unit: "s", conversionFactor: 60, nextUnit: "m" },
     { unit: "m", conversionFactor: 60, nextUnit: "h" },
   ],
-  distanceMetric: [
-    { unit: "cm", conversionFactor: 100, nextUnit: "m" },
-    { unit: "m", conversionFactor: 1000, nextUnit: "km" },
-  ],
+  distanceMetric: [{ unit: "km", conversionFactor: 1, nextUnit: "km" }],
   distanceImperial: [
     { unit: "in", conversionFactor: 12, nextUnit: "ft" },
     { unit: "ft", conversionFactor: 5280, nextUnit: "mi" },

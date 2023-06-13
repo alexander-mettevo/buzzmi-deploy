@@ -36,4 +36,30 @@
 
   &__init-value {
   }
+
+  &__button {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--chart-bg);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      background-image: var(--primary-text);
+      background-clip: text;
+      color: transparent;
+      font-size: 16px;
+      font-weight: 700;
+
+      &:before {
+        margin-right: -2px;
+        display: inline-block;
+      }
+    }
+
+    &:active {
+    }
+  }
 }

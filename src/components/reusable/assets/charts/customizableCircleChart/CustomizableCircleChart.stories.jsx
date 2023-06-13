@@ -47,9 +47,9 @@ export default {
 const Template = (args) => <CustomizableCircleChart {...args} />
 export const Default = Template.bind({})
 Default.args = {
-  currentValue: 30,
+  currentValue: 31.1,
   type: "distanceMetric",
-  initValue: 1000001,
+  initValue: 111,
 }
 
 export const Time = Template.bind({})
