@@ -1,0 +1,39 @@
+.customizable-circle {
+  position: relative;
+  display: inline-flex;
+  font-family: "SF Pro Display", sans-serif;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > div {
+    position: relative;
+
+    & > div {
+      width: 198px;
+    }
+  }
+
+  &__inner-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    & > div:first-child {
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 800;
+    }
+
+    & > div:last-child {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  &__init-value {
+  }
+}
