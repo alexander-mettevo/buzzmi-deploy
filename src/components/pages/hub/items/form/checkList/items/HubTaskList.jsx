@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import HubTask from "./HubTask"
 import HubTaskInput from "./HubTaskInput"
 
-function HubTaskList({ setValues, value = [], locked }) {
+function HubTaskList({ setValues, value = [], locked, showAddTask = true }) {
   const addTask = (name) => {
     if (setValues) {
       const newTask = { id: Date.now(), name, completed: false }
@@ -56,7 +56,7 @@ function HubTaskList({ setValues, value = [], locked }) {
           toggleTask={toggleTask}
         />
       ))}
-      {setValues && <HubTaskInput addTask={addTask} />}
+      {showAddTask && <HubTaskInput addTask={addTask} />}
     </div>
   )
 }

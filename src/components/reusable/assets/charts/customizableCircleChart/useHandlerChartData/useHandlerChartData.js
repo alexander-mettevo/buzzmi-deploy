@@ -1,16 +1,13 @@
-// Фишка будет состоять в том что каждое значение будет иметь базовые числа измерений. Например время в миллисекундах, дистанция в метрах и т.д.
 import parseValue from "../../../../../../assets/parseValue/parseValue.js"
 import { useEffect, useState } from "react"
 
 export const parseTime = (value) => {
-  let seconds = Math.floor(value / 1000)
-  let minutes = Math.floor(seconds / 60)
-  let hours = Math.floor(minutes / 60)
+  let hours = value > 0 ? Math.floor(value / 1000 / 60 / 60) % 24 : 0
+  let minutes = value > 0 ? Math.floor(value / 1000 / 60) % 60 : 0
+  let seconds = value > 0 ? Math.floor(value / 1000) % 60 : 0
 
   if (hours < 10) hours = `0${hours}`
-
   if (minutes < 10) minutes = `0${minutes}`
-
   if (seconds < 10) seconds = `0${seconds}`
 
   return `${hours}:${minutes}:${seconds}`

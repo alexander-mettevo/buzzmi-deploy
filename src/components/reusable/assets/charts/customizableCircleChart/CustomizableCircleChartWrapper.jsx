@@ -14,9 +14,40 @@ const calculatePercentage = (initValue, currentValue) => {
 }
 
 const CustomizableCircleChartWrapper = (props) => {
-  const { type, initValue = 0, currentValue = 0, showTypeValue = true } = props
+  const { values, showTypeValue = true, setValues } = props
+  const { type, initValue = 0, currentValue = 0 } = values
+
   const [progress, setProgress] = useState(calculatePercentage(initValue, currentValue))
   const { parsedInitValue, parsedCurrentValue } = useHandlerChartData(type, initValue, currentValue, showTypeValue)
+
+  useEffect(() => {
+    setProgress(calculatePercentage(initValue, currentValue))
+  }, [currentValue])
+
+  const handleChangingValue = (e) => {
+    let value = e.target.value
+    if (type === "time") value = value * 1000
+
+    if (value > initValue) value = initValue
+    if (value < 0 || typeof +value !== "number") value = 0
+
+    setValues({ ...values, currentValue: value })
+    setProgress(calculatePercentage(initValue, value))
+  }
+
+  const handleAddProgress = () => {
+    let result = Math.round(currentValue + initValue / 100)
+    if (result > initValue) result = initValue
+
+    setValues({ ...values, currentValue: result })
+  }
+
+  const handleSubtractProgress = () => {
+    let result = Math.round(currentValue - initValue / 100)
+    if (result < 0) result = 0
+
+    setValues({ ...values, currentValue: result })
+  }
 
   useEffect(() => {
     setProgress(calculatePercentage(initValue, currentValue))
@@ -25,16 +56,21 @@ const CustomizableCircleChartWrapper = (props) => {
   return (
     <div className={styles["customizable-circle__wrapper"]}>
       <div className={styles["customizable-circle__row"]}>
-        <CustomizableCircleChartButton symbol={<i className="fa-solid fa-minus" />} />
+        <CustomizableCircleChartButton symbol={<i className="fa-solid fa-minus" />} onClick={handleSubtractProgress} />
         <CustomizableCircleChart
           progress={progress}
           parsedCurrentValue={parsedCurrentValue}
           parsedInitValue={parsedInitValue}
         />
-        <CustomizableCircleChartButton symbol={<i className="fa-solid fa-plus" />} />
+        <CustomizableCircleChartButton symbol={<i className="fa-solid fa-plus" />} onClick={handleAddProgress} />
       </div>
-      <input type="number" placeholder="Add a value manually" className="input input_simple-text" />
-      <PrimaryButton>Complete</PrimaryButton>
+      <input
+        onChange={handleChangingValue}
+        type="number"
+        placeholder="Add a value manually"
+        className="input input_simple-text"
+      />
+      <PrimaryButton type="submit">Complete</PrimaryButton>
     </div>
   )
 }

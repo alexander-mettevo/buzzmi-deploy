@@ -35,7 +35,7 @@ const HubCreateTask = () => {
     }
   }
 
-  const { register, handleSubmit, setValue, isValid, values } = useFormValidator(validationSchema, sendRequest, {
+  const { handleSubmit, setValue, values } = useFormValidator(validationSchema, sendRequest, {
     defaultValues: {
       tasks: [],
       images: [],
