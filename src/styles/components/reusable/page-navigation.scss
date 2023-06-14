@@ -1,4 +1,10 @@
 .page-navigation {
+  &_mob {
+    @media (max-width: $mobileSmall) {
+      width: calc(100vw - 32px);
+    }
+  }
+
   &__btn {
     width: 100%;
     display: block;
@@ -34,7 +40,6 @@
           }
         }
       }
-
     }
   }
 
@@ -57,7 +62,7 @@
         }
 
         &.swiper-pagination-bullet-active {
-          background: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
+          background: linear-gradient(90deg, #ef8fd5 -0.01%, #eb33cf 100.01%);
         }
       }
     }
