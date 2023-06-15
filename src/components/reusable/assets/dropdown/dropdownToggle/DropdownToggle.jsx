@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Checkbox from "../../checkbox/Checkbox.jsx"
 import Box from "../../../cards/box/Box.jsx"
 import Info from "../../info/Info.jsx"
@@ -16,6 +16,15 @@ const DropdownToggle = ({
 }) => {
   const [isOpen, setIsOpen] = useState(defaultValue)
   const contentRef = useRef(null)
+  const [scrollHeight, setScrollHeight] = useState(0)
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setScrollHeight(contentRef.current?.children[0]?.scrollHeight)
+    } else {
+      setScrollHeight(0)
+    }
+  }, [contentRef])
 
   return (
     <Box className="dropdown dropdown_toggle hub-form-box">
@@ -38,7 +47,7 @@ const DropdownToggle = ({
       </div>
       <div
         className={`dropdown__content ${isOpen ? "dropdown__content--open" : ""}`}
-        style={{ "--content-height": isOpen ? `${contentRef.current?.children[0]?.scrollHeight}px` : 0 }}
+        style={{ "--content-height": isOpen ? `${scrollHeight}px` : 0 }}
         ref={contentRef}
       >
         {isOpen && children}

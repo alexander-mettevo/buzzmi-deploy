@@ -10,6 +10,7 @@ import PictureUploaderList from "../../../reusable/uploader/pictureUploader/Pict
 import CheckTags from "../items/form/checkTags/CheckTags.jsx"
 import RadioMode from "../items/form/radioMode/RadioMode.jsx"
 import ChoseRepeat from "../items/choseRepeat/ChoseRepeat.jsx"
+import HubReminder from "../items/form/hubReminder/HubReminder.jsx"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
@@ -42,6 +43,11 @@ const HubCreateTask = () => {
       tags: [],
       note: "",
       when: "anyTime",
+      reminder: {
+        hours: 12,
+        minutes: 0,
+        ampm: "AM",
+      },
     },
   })
 
@@ -59,7 +65,7 @@ const HubCreateTask = () => {
           Set a goal
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/clock.png" title="Reminder" idChecked="reminder">
-          Reminder
+          <HubReminder values={values.reminder} setValues={(value) => setValue("reminder", value)} />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/check-list.png" title="Checklist" idChecked="checklist">
           <HubTaskList value={values.tasks} setValues={(value) => setValue("tasks", value)} />
