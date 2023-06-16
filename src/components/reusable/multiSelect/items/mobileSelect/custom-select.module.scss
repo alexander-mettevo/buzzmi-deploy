@@ -1,0 +1,9 @@
+.custom-select {
+  &__title {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gray);
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--alt-text-secondary);
+  }
+}

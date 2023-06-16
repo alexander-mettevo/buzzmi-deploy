@@ -7,7 +7,6 @@ import MainLayoutRightColumn from "../../../layouts/mainLayout/mainLayoutContent
 import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx"
 import UpdateInfo from "../../../reusable/updateInfo/UpdateInfo.jsx"
 import PeriodList from "../../../reusable/periodList/PeriodList.jsx"
-import periodList from "../../../reusable/periodList/PeriodList.jsx"
 import { tabsLast } from "../../../../mock-data/hub/hub.js"
 
 const mockItems = [
@@ -186,6 +185,29 @@ const mockItems = [
         },
       },
     ],
+  },
+]
+
+const periodList = [
+  {
+    id: 0,
+    text: "Last week",
+  },
+  {
+    id: 1,
+    text: "This week",
+  },
+  {
+    id: 2,
+    text: "Last Month",
+  },
+  {
+    id: 3,
+    text: "This month",
+  },
+  {
+    id: 4,
+    text: "Year",
   },
 ]
 

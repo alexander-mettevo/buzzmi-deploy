@@ -9,7 +9,8 @@ import HubTaskList from "../items/form/checkList/items/HubTaskList.jsx"
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx"
 import CheckTags from "../items/form/checkTags/CheckTags.jsx"
 import RadioMode from "../items/form/radioMode/RadioMode.jsx"
-import ChoseRepeat from "../items/choseRepeat/ChoseRepeat.jsx"
+import HubReminder from "../items/form/hubReminder/HubReminder.jsx"
+import HubRepeat from "../items/form/hubRepeat/HubRepeat.jsx"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
@@ -42,8 +43,20 @@ const HubCreateTask = () => {
       tags: [],
       note: "",
       when: "anyTime",
+      reminder: {
+        hours: 12,
+        minutes: 0,
+        ampm: "AM",
+      },
+      repeat: {
+        type: null,
+        every: null,
+        value: null,
+      },
     },
   })
+
+  console.log("values", values.repeat)
 
   return (
     <div className="main-layout__single-container">
@@ -53,13 +66,13 @@ const HubCreateTask = () => {
           <RadioMode setValue={setValue} value={values.when} name="when" variants={when} />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/repeat.png" title="Repeat" idChecked="repeat">
-          <ChoseRepeat />
+          <HubRepeat values={values.repeat} setValues={(value) => setValue("repeat", value)} />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/goal.png" title="Set a goal" idChecked="goal">
           Set a goal
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/clock.png" title="Reminder" idChecked="reminder">
-          Reminder
+          <HubReminder values={values.reminder} setValues={(value) => setValue("reminder", value)} />
         </DropdownToggle>
         <DropdownToggle icon="/images/hub/form/check-list.png" title="Checklist" idChecked="checklist">
           <HubTaskList value={values.tasks} setValues={(value) => setValue("tasks", value)} />
