@@ -1,7 +1,7 @@
 import React from "react"
-import MobileSelect from "../../../../../reusable/multiSelect/items/mobileSelect/MobileSelect.jsx"
 import { ampm, ampmWithLabel, hours, hoursWithLabel, minutes, minutesWithLabel } from "./data.js"
 import CustomSelect from "../../../../../reusable/form/select/customSelect/CustomSelect.jsx"
+import MobileCustomSelect from "../../../../../reusable/multiSelect/items/mobileSelect/MobileCustomSelect.jsx"
 
 const HubReminder = ({ values, setValues }) => {
   const onChange = (name, value) => {
@@ -57,7 +57,7 @@ const HubReminder = ({ values, setValues }) => {
         </div>
       </div>
       <div className="d-md-none">
-        <MobileSelect
+        <MobileCustomSelect
           optionGroups={{
             hours,
             minutes,
@@ -65,6 +65,7 @@ const HubReminder = ({ values, setValues }) => {
           }}
           valueGroups={values}
           onChange={onChange}
+          topInfo={`Remind me at ${values.hours}:${values.minutes} ${values.ampm}`}
         />
       </div>
     </div>

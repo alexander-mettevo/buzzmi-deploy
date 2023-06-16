@@ -3,7 +3,6 @@ import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitl
 import { useParams } from "react-router-dom"
 import PeriodList from "../../../reusable/periodList/PeriodList.jsx"
 import PersonalCard from "../../../reusable/cards/personalCard/PersonalCard.jsx"
-import periodList from "../../../reusable/periodList/PeriodList.jsx"
 
 //mocks
 
@@ -13,6 +12,29 @@ const leaders = {
   1: persons[1],
   2: persons[2],
 }
+
+const periodList = [
+  {
+    id: 0,
+    text: "Last week",
+  },
+  {
+    id: 1,
+    text: "This week",
+  },
+  {
+    id: 2,
+    text: "Last Month",
+  },
+  {
+    id: 3,
+    text: "This month",
+  },
+  {
+    id: 4,
+    text: "Year",
+  },
+]
 
 const HubLeaders = () => {
   const { type } = useParams()
