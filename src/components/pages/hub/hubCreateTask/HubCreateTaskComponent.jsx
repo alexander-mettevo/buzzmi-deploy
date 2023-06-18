@@ -9,6 +9,7 @@ import PictureUploaderList from "../../../reusable/uploader/pictureUploader/Pict
 import CheckTags from "../items/form/checkTags/CheckTags.jsx"
 import FormToggleDropdown from "../../../reusable/assets/dropdown/formToggleDropdown/FormToggleDropdown.jsx"
 import MultiBox from "../../../reusable/cards/multiBox/MultiBox.jsx"
+import SetGoal from "../items/form/setGoal/SetGoal.jsx"
 
 const when = [
   { title: "Morning", value: "morning" },
@@ -44,8 +45,14 @@ const HubCreateTaskComponent = ({ values, error, handleSubmit, data, setValue })
         >
           <HubRepeat values={values.repeat} setValues={(value) => setValue("repeat", value)} />
         </FormToggleDropdown>
-        <FormToggleDropdown setValue={setValue} icon="/images/hub/form/goal.png" title="Set a goal" name="goal">
-          Set a goal
+        <FormToggleDropdown
+          defaultValue={{ type: "mins", number: 0 }}
+          setValue={setValue}
+          icon="/images/hub/form/goal.png"
+          title="Set a goal"
+          name="goal"
+        >
+          <SetGoal values={values.goal} setValues={(value) => setValue("goal", value)} />
         </FormToggleDropdown>
         <FormToggleDropdown
           setValue={setValue}
