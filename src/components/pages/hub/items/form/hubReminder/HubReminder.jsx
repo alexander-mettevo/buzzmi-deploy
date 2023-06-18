@@ -2,8 +2,11 @@ import React from "react"
 import { ampm, ampmWithLabel, hours, hoursWithLabel, minutes, minutesWithLabel } from "./data.js"
 import CustomSelect from "../../../../../reusable/form/select/customSelect/CustomSelect.jsx"
 import MobileCustomSelect from "../../../../../reusable/multiSelect/items/mobileSelect/MobileCustomSelect.jsx"
+import useWindowSize from "../../../../../../hooks/useWindowSize.js"
 
 const HubReminder = ({ values, setValues }) => {
+  const { width } = useWindowSize()
+
   const onChange = (name, value) => {
     setValues({
       ...values,
@@ -31,10 +34,11 @@ const HubReminder = ({ values, setValues }) => {
       ampm: value.value,
     })
   }
+  if (!width) return null
 
   return (
     <div>
-      <div className="d-none d-md-block">
+      {width > 768 ? (
         <div className="d-flex justify-content-between align-items-center">
           <CustomSelect
             className="select__secondary w-100 mx-2"
@@ -55,8 +59,7 @@ const HubReminder = ({ values, setValues }) => {
             setSelected={onChangeAmPm}
           />
         </div>
-      </div>
-      <div className="d-md-none">
+      ) : (
         <MobileCustomSelect
           optionGroups={{
             hours,
@@ -67,7 +70,7 @@ const HubReminder = ({ values, setValues }) => {
           onChange={onChange}
           topInfo={`Remind me at ${values.hours}:${values.minutes} ${values.ampm}`}
         />
-      </div>
+      )}
     </div>
   )
 }
