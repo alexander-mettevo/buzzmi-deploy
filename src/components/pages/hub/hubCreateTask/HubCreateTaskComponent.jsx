@@ -8,7 +8,6 @@ import HubTaskList from "../items/form/checkList/items/HubTaskList.jsx"
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx"
 import CheckTags from "../items/form/checkTags/CheckTags.jsx"
 import FormToggleDropdown from "../../../reusable/assets/dropdown/formToggleDropdown/FormToggleDropdown.jsx"
-import Box from "../../../reusable/cards/box/Box.jsx"
 import MultiBox from "../../../reusable/cards/multiBox/MultiBox.jsx"
 
 const when = [

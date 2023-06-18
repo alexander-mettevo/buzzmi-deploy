@@ -53,14 +53,15 @@ const SelectDay = ({ values, setValues }) => {
 
   useEffect(() => {
     setValues({
-      ...days,
+      ...values,
+      value: { ...days },
     })
   }, [days])
 
   useEffect(() => {
     if (values) {
       setDays({
-        ...values,
+        ...values.value,
       })
     }
   }, [])
@@ -69,8 +70,8 @@ const SelectDay = ({ values, setValues }) => {
     <div>
       <h5 className="h5 mb-3 mb-md-4">Choose the days for this activity</h5>
       <div className="select-day">
-        {daysArr.map((day) => (
-          <div>
+        {daysArr.map((day, index) => (
+          <div key={index + "select-week"}>
             <div className="text-r d-none d-md-block text-center mb-1">{day?.title}</div>
             <div className="text-r d-md-none text-center mb-1">{day?.title[0]}</div>
             <label
@@ -86,7 +87,7 @@ const SelectDay = ({ values, setValues }) => {
                 type="checkbox"
                 name={day.name}
                 onChange={handleDay}
-                checked={days[day.name]}
+                value={days[day.name]}
               />
             </label>
           </div>

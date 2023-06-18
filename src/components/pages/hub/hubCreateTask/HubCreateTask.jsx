@@ -24,7 +24,7 @@ const HubCreateTask = () => {
   const { handleSubmit, setValue, values } = useFormValidator(validationSchema, sendRequest, {
     defaultValues: {},
   })
-
+  console.log("HubCreateTask", values)
   return (
     <HubCreateTaskComponent values={values} error={error} handleSubmit={handleSubmit} setValue={setValue} data={data} />
   )
