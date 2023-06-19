@@ -3,10 +3,9 @@ import mocData from "./mocData.js"
 import { useFormValidator } from "../../../../../form-validator/hooks/index.js"
 import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
 import HubCreateTaskComponent from "./HubCreateTaskComponent.jsx"
+import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx"
 
-const validationSchema = new ValidationSchema({
-  name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
-})
+const validationSchema = new ValidationSchema({})
 
 const HubCreateTask = () => {
   const data = mocData
@@ -21,12 +20,21 @@ const HubCreateTask = () => {
     }
   }
 
-  const { handleSubmit, setValue, values } = useFormValidator(validationSchema, sendRequest, {
+  const { handleSubmit, setValue, values, isValid } = useFormValidator(validationSchema, sendRequest, {
     defaultValues: {},
   })
-  console.log("HubCreateTask", values)
+
   return (
-    <HubCreateTaskComponent values={values} error={error} handleSubmit={handleSubmit} setValue={setValue} data={data} />
+    <>
+      <HubCreateTaskComponent
+        values={values}
+        error={error}
+        handleSubmit={handleSubmit}
+        setValue={setValue}
+        data={data}
+        btnTitle="Add task"
+      />
+    </>
   )
 }
 

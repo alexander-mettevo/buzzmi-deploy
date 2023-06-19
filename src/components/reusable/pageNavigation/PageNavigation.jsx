@@ -23,7 +23,7 @@ const PageNavigation = ({ list, value, onChange }) => {
           clickable: true,
         }}
         modules={[Pagination]}
-        watchActiveIndex={true}
+        watchactiveindex="true"
         onSwiper={(swiper) => {
           setSwiper(swiper)
         }}
@@ -31,7 +31,7 @@ const PageNavigation = ({ list, value, onChange }) => {
       >
         {list.map((navItem, index) => {
           return (
-            <SwiperSlide key={navItem.id}>
+            <SwiperSlide key={navItem?.id || index + "nav"}>
               <button className="page-navigation__btn" onClick={() => onBtnClick({ id: navItem.id, index: index })}>
                 {navItem.text}
               </button>

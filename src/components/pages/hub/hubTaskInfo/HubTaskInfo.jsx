@@ -27,6 +27,8 @@ import HubNote from "./items/HubNote.jsx"
 import { useFormValidator } from "../../../../../form-validator/hooks/index.js"
 import Form from "../../../reusable/form/Form.jsx"
 import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
+import HubMedia from "../items/hubMedia/HubMedia.jsx"
+import { useParams } from "react-router-dom"
 
 const validationSchema = new ValidationSchema({})
 
@@ -36,6 +38,8 @@ const HubTaskInfo = () => {
   const [viewTypeId, setViewTypeId] = useState(0)
   const [currentType, setCurrentType] = useState(getCurrentType(pageNav, 0))
   const [error, setError] = useState(null)
+
+  let { id } = useParams()
 
   const sendRequest = async (formData) => {
     try {
@@ -86,23 +90,13 @@ const HubTaskInfo = () => {
         <BackBtnWithTitlePage
           title="Treadmill"
           btnText="Back to stats"
-          lastItemLink={{ href: "/", title: "Edit task" }}
+          lastItemLink={{ href: `/hub/edit-task/${id}`, title: "Edit task" }}
         />
         <Form error={error} onSubmit={handleSubmit}>
           <div className="mb-4">
             <InfoCard item={infoCardData} />
           </div>
-          <div className="hub__holder">
-            <Gallery list={galleryList} isSmall />
-            <div className="hub__media">
-              <div className="hub__video mb-3">
-                <VideoGallery src={videoSrcLink} />
-              </div>
-              <div className="hub__audio">
-                <AudioPlayer src="/sounds/test-track.mp3" />
-              </div>
-            </div>
-          </div>
+          <HubMedia galleryList={galleryList} videoSrcLink={videoSrcLink} audioSrcLink="/sounds/test-track.mp3" />
           <Box className=" hub-form-box mb-4">
             <CustomizableCircleChartWrapper
               values={values.progressInfo}
@@ -115,9 +109,9 @@ const HubTaskInfo = () => {
               icon="/images/hub/form/photo.png"
               title="Add photos of your progress"
               idChecked="photos"
-              isEditable={true}
               defaultValue={true}
-              editBtnText="Edit"
+              // editBtnText="Edit"
+              // isEditable={true}
             >
               <PictureUploaderList setValue={null} classNames="picture-uploader__wrapper_mod" locked={true} />
             </DropdownToggle>
@@ -129,8 +123,8 @@ const HubTaskInfo = () => {
               title="Checklist"
               idChecked="checklist"
               defaultValue={true}
-              isEditable={true}
-              editBtnText="Edit"
+              // isEditable={true}
+              // editBtnText="Edit"
             >
               <HubTaskList
                 showAddTask={false}
