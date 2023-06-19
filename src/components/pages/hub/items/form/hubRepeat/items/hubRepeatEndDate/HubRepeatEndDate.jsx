@@ -2,6 +2,14 @@ import React, { useState } from "react"
 import Checkbox from "../../../../../../../reusable/assets/checkbox/Checkbox.jsx"
 import Calendar from "react-calendar"
 
+/**
+ * В этом компоненте необходимо выбрать день когда задача будет закончена
+ *
+ * @param values - состояние со значениями календаря
+ * @param setValues - функция для изменения состояния принимает данные
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const HubRepeatEndDate = ({ values = {}, setValues }) => {
   const [isOpen, setIsOpen] = useState(!!values?.endDate)
   const [calendarValue, setCalendarValue] = useState(new Date())

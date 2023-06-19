@@ -8,7 +8,7 @@ const HubRepeatSwitcher = ({ values, setValues }) => {
     case "Week":
       return <SelectDay values={values} setValues={setValues} />
     case "Month":
-      return <HubRepeatCalendar />
+      return <HubRepeatCalendar values={values} setValues={setValues} />
     case "Day":
       return <HubRepeatDay values={values} setValues={setValues} />
     default:
