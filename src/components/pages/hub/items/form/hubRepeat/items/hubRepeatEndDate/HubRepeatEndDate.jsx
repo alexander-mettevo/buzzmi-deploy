@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Checkbox from "../../../../../../../reusable/assets/checkbox/Checkbox.jsx"
 import Calendar from "react-calendar"
+import moment from "moment"
 
 /**
  * В этом компоненте необходимо выбрать день когда задача будет закончена
@@ -13,6 +14,13 @@ import Calendar from "react-calendar"
 const HubRepeatEndDate = ({ values = {}, setValues }) => {
   const [isOpen, setIsOpen] = useState(!!values?.endDate)
   const [calendarValue, setCalendarValue] = useState(new Date())
+
+  useEffect(() => {
+    setValues({
+      ...values,
+      endDate: moment(calendarValue).format("LL"),
+    })
+  }, [calendarValue])
 
   //TODO организовать сохранение в values в основной стейт
 
