@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import PictureUploader from "./PictureUploader.jsx"
 
 const PictureUploaderList = ({ setValue, classNames = "", defaultValues = [], locked }) => {
-  const [images, setImages] = useState(defaultValues)
+  const [images, setImages] = useState(defaultValues || [])
 
   const onChange = (imageList, index) => {
     if (imageList.length === 0) {

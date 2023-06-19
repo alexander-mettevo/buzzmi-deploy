@@ -5,6 +5,7 @@ const CheckTag = ({ value, tag, onChange }) => {
   const [checked, setChecked] = useState(false)
 
   useEffect(() => {
+    if (!value) return
     setChecked(value.includes(tag.value))
   }, [value])
 

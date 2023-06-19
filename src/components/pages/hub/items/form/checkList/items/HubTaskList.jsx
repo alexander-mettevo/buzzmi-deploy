@@ -45,17 +45,18 @@ function HubTaskList({ setValues, value = [], locked, showAddTask = true }) {
 
   return (
     <div className="checklist">
-      {value.map((task) => (
-        <HubTask
-          key={task.id}
-          id={task.id}
-          name={task.name}
-          completed={task.completed}
-          deleteTask={locked ? null : deleteTask}
-          editTask={editTask}
-          toggleTask={toggleTask}
-        />
-      ))}
+      {value?.length > 0 &&
+        value.map((task) => (
+          <HubTask
+            key={task.id}
+            id={task.id}
+            name={task.name}
+            completed={task.completed}
+            deleteTask={locked ? null : deleteTask}
+            editTask={editTask}
+            toggleTask={toggleTask}
+          />
+        ))}
       {showAddTask && <HubTaskInput addTask={addTask} />}
     </div>
   )

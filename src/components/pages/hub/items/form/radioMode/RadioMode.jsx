@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import cn from "classnames"
 
-const RadioMode = ({ variants, name, value, setValue }) => {
+const RadioMode = ({ variants, name, value, setValue, defaultValue }) => {
   const handleChange = (event) => {
     setValue(name, event.target.value)
   }
+
+  useEffect(() => {
+    setValue(name, defaultValue)
+  }, [])
 
   return (
     <div className="radio-mode">
