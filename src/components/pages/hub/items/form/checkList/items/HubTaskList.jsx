@@ -45,7 +45,7 @@ function HubTaskList({ setValues, value = [], locked, showAddTask = true }) {
 
   return (
     <div className="checklist">
-      {value?.length > 0 &&
+      {value?.length > 0 ? (
         value.map((task) => (
           <HubTask
             key={task.id}
@@ -56,7 +56,10 @@ function HubTaskList({ setValues, value = [], locked, showAddTask = true }) {
             editTask={editTask}
             toggleTask={toggleTask}
           />
-        ))}
+        ))
+      ) : (
+        <div className="text-center text-s">No assignments</div>
+      )}
       {showAddTask && <HubTaskInput addTask={addTask} />}
     </div>
   )

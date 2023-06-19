@@ -10,6 +10,7 @@ import CheckTags from "../items/form/checkTags/CheckTags.jsx"
 import FormToggleDropdown from "../../../reusable/assets/dropdown/formToggleDropdown/FormToggleDropdown.jsx"
 import MultiBox from "../../../reusable/cards/multiBox/MultiBox.jsx"
 import SetGoal from "../items/form/setGoal/SetGoal.jsx"
+import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx"
 
 const when = [
   { title: "Morning", value: "morning" },
@@ -18,11 +19,11 @@ const when = [
   { title: "Any time", value: "anyTime" },
 ]
 
-const HubCreateTaskComponent = ({ values, error, handleSubmit, data, setValue }) => {
+const HubCreateTaskComponent = ({ values, error, handleSubmit, data, setValue, btnTitle }) => {
   return (
     <div className="main-layout__single-container">
       <BackBtnWithTitlePage title={data?.title} />
-      <Form error={error} onSubmit={handleSubmit} formClassName="hub-form-wrapper">
+      <Form id="task-form" error={error} onSubmit={handleSubmit} formClassName="hub-form-wrapper">
         <MultiBox
           setValue={setValue}
           icon="/images/hub/form/calendar.png"
@@ -109,6 +110,9 @@ const HubCreateTaskComponent = ({ values, error, handleSubmit, data, setValue })
         >
           <CheckTags tags={data.tags} value={values.tags} setValue={setValue} valueName="tags" />
         </FormToggleDropdown>
+        <div className="d-flex justify-content-center mt-12 bottom-mobile-button">
+          <SubmitButton form="task-form" isValid title={btnTitle} />
+        </div>
       </Form>
     </div>
   )
