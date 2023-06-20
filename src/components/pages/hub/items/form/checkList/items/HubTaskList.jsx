@@ -30,7 +30,7 @@ function HubTaskList({ setValues, value = [], locked, showAddTask = true }) {
 
   // Load tasks from local storage when component mounts
   useEffect(() => {
-    if (setValues) {
+    if (setValues && showAddTask) {
       const savedTasks = localStorage.getItem("tasks")
       if (savedTasks) {
         setValues(JSON.parse(savedTasks))

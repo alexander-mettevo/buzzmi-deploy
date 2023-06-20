@@ -29,17 +29,20 @@ import Form from "../../../reusable/form/Form.jsx"
 import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
 import HubMedia from "../items/hubMedia/HubMedia.jsx"
 import { useParams } from "react-router-dom"
+import MultiBox from "../../../reusable/cards/multiBox/MultiBox.jsx"
+import { mocData } from "./mocData.js"
 
 const validationSchema = new ValidationSchema({})
 
 const getCurrentType = (list, id) => list.filter((el) => el.id === id)[0]?.text
 const HubTaskInfo = () => {
+  let { id } = useParams()
+  const data = mocData[id - 1]
+
   const [calendarValue, setCalendarValue] = useState(dayList[0].date)
   const [viewTypeId, setViewTypeId] = useState(0)
   const [currentType, setCurrentType] = useState(getCurrentType(pageNav, 0))
   const [error, setError] = useState(null)
-
-  let { id } = useParams()
 
   const sendRequest = async (formData) => {
     try {
@@ -52,28 +55,8 @@ const HubTaskInfo = () => {
 
   const { handleSubmit, setValue, values } = useFormValidator(validationSchema, sendRequest, {
     defaultValues: {
-      progressInfo: {
-        type: "",
-        initValue: 300,
-        currentValue: 100,
-      },
-      tasks: [
-        {
-          id: 16865620703,
-          name: "First glass of water in the morning",
-          completed: false,
-        },
-        {
-          id: 168656256431,
-          name: "Drink water before thirsty",
-          completed: false,
-        },
-        {
-          id: 16865627431,
-          name: "Drink 8 glass of water",
-          completed: false,
-        },
-      ],
+      progressInfo: data.progressInfo,
+      tasks: data.tasks,
     },
   })
 
@@ -94,9 +77,9 @@ const HubTaskInfo = () => {
         />
         <Form error={error} onSubmit={handleSubmit}>
           <div className="mb-4">
-            <InfoCard item={infoCardData} />
+            <InfoCard item={data.infoCardData} />
           </div>
-          <HubMedia galleryList={galleryList} videoSrcLink={videoSrcLink} audioSrcLink="/sounds/test-track.mp3" />
+          <HubMedia galleryList={data.galleryList} videoSrcLink={data.videoSrcLink} audioSrcLink={data.audioSrcLink} />
           <Box className=" hub-form-box mb-4">
             <CustomizableCircleChartWrapper
               values={values.progressInfo}
@@ -105,46 +88,37 @@ const HubTaskInfo = () => {
           </Box>
 
           <div className="mb-4">
-            <DropdownToggle
-              icon="/images/hub/form/photo.png"
-              title="Add photos of your progress"
-              idChecked="photos"
-              defaultValue={true}
-              // editBtnText="Edit"
-              // isEditable={true}
-            >
-              <PictureUploaderList setValue={null} classNames="picture-uploader__wrapper_mod" locked={true} />
-            </DropdownToggle>
+            <MultiBox icon="/images/hub/form/photo.png" title="Add photos of your progress">
+              <PictureUploaderList
+                defaultValues={data.images}
+                setValue={null}
+                classNames="picture-uploader__wrapper_mod"
+                locked={true}
+              />
+            </MultiBox>
           </div>
 
           <div className="mb-4">
-            <DropdownToggle
-              icon="/images/hub/form/check-list.png"
-              title="Checklist"
-              idChecked="checklist"
-              defaultValue={true}
-              // isEditable={true}
-              // editBtnText="Edit"
-            >
+            <MultiBox icon="/images/hub/form/check-list.png" title="Checklist">
               <HubTaskList
                 showAddTask={false}
                 value={values.tasks}
                 setValues={(value) => setValue("tasks", value)}
                 locked={true}
               />
-            </DropdownToggle>
+            </MultiBox>
           </div>
           <ProgressHeader text="2 complated" />
           <div className="mb-4">
-            <PageNavigation list={pageNav} value={viewTypeId} onChange={onPageNavChange} />
+            <PageNavigation list={data.pageNav} value={viewTypeId} onChange={onPageNavChange} />
           </div>
           <div className="box box_big mb-4">
             <Calendar
               value={calendarValue}
               onChange={setCalendarValue}
-              dayList={dayList}
+              dayList={data.dayList}
               period={
-                currentType === viewTypeList.doneLastWeek || currentType === viewTypeList.doneThisWeek
+                currentType === data.viewTypeList.doneLastWeek || currentType === data.viewTypeList.doneThisWeek
                   ? "week"
                   : undefined
               }
@@ -154,8 +128,8 @@ const HubTaskInfo = () => {
               }}
             />
           </div>
-          <HubBasicInfo reminder={basicInfo.when} repeat={basicInfo.repeat} when={basicInfo.reminder} />
-          {noteData && <HubNote value={noteData} />}
+          <HubBasicInfo reminder={data.basicInfo.when} repeat={data.basicInfo.repeat} when={data.basicInfo.reminder} />
+          {data.noteData && <HubNote value={data.noteData} />}
           <div className="d-flex justify-content-center mt-5 mt-md-7">
             <button className="button button_secondary button_m double-secondary px-6 px-lg-14">Delete</button>
           </div>

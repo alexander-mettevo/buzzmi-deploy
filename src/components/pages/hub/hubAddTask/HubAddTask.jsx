@@ -35,8 +35,6 @@ const HubAddTask = () => {
     },
   })
 
-  console.log("HubOwnHabit", values)
-
   return (
     <div className="hub">
       <div className="hub__content">
