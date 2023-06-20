@@ -1,0 +1,23 @@
+.bottom-btns {
+  height: 100px;
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    background-color: var(--items-bg);
+    width: 100vw;
+    z-index: 1000;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import VideoGallery from "../../../reusable/videoGallery/VideoGallery.jsx"
 // mock data
 import { infoCardData, tasksData } from "../../../../mock-data/hub/hub.js"
 import { galleryList, videoSrcLink } from "../../../../mock-data/gallery/gallery.js"
+import SmallCardDispatcher from "../../../reusable/cards/smallCard/SmallCardDispatcher.jsx"
 
 const HubPresetPreview = () => {
   return (
@@ -39,7 +40,7 @@ const HubPresetPreview = () => {
         </div>
         <div className="present-preview__cards">
           <h2 className="h4 mb-2">Tasks</h2>
-          <SmallCardList list={tasksData} dnd={true} />
+          <SmallCardDispatcher list={tasksData} dnd={true} />
         </div>
       </div>
     </div>
