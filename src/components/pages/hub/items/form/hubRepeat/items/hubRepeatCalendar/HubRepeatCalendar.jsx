@@ -1,18 +1,15 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Calendar from "../../../../../../../reusable/calendar/Calendar.jsx"
+import moment from "moment"
 
-/**
- * В этом компоненте необходимо выбрать дни для повторения задачи
- *
- * @param values - состояние со значениями календаря
- * @param setValues - функция для изменения состояния принимает данные
- * @returns {JSX.Element}
- * @constructor
- */
 const HubRepeatCalendar = ({ values, setValues }) => {
-  const [calendarValue, setCalendarValue] = useState(new Date())
+  const [calendarValue, setCalendarValue] = useState(new Date(moment(values?.value).format()))
 
-  //TODO организовать сохранение в values в основной стейт
+  useEffect(() => {
+    if (values?.value !== calendarValue) {
+      setValues({ ...values, value: calendarValue })
+    }
+  }, [calendarValue])
 
   return <Calendar onChange={setCalendarValue} value={calendarValue} noIndent period="month" />
 }

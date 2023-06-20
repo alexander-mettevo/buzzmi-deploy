@@ -1,19 +1,18 @@
 import React, { useState } from "react"
-import { galleryList, videoSrcLink } from "../../../../mock-data/gallery/gallery.js"
-import HubMedia from "../items/hubMedia/HubMedia.jsx"
-import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import { useParams } from "react-router-dom"
 import mocData from "../hubCreateTask/mocData.js"
 import { useFormValidator } from "../../../../../form-validator/hooks/index.js"
-import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
+import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import HubTaskForm from "../items/form/hubTaskForm/HubTaskForm.jsx"
+import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
+import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
+import { infoCardData } from "../../../../mock-data/hub/hub.js"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
 })
 
-const HubEditTask = () => {
-  let { id } = useParams()
+const HubOwnHabit = () => {
   const data = mocData
   const [error, setError] = useState(null)
 
@@ -27,28 +26,37 @@ const HubEditTask = () => {
   }
 
   const { handleSubmit, setValue, values } = useFormValidator(validationSchema, sendRequest, {
-    defaultValues: {},
+    defaultValues: {
+      repeat: {
+        type: "Week",
+        every: "01",
+        value: {
+          friday: true,
+          saturday: true,
+        },
+      },
+      tags: ["cycling", "gym", "swimming"],
+    },
   })
+
   return (
     <div className="hub">
       <div className="hub__content">
-        <BackBtnWithTitlePage
-          title="Treadmill"
-          btnText="Back to stats"
-          lastItemLink={{ href: `/hub/task-info/${id}`, title: "Cancel" }}
-        />
-        <HubMedia galleryList={galleryList} videoSrcLink={videoSrcLink} audioSrcLink="/sounds/test-track.mp3" />
+        <BackBtnWithTitlePage title="Cycling" btnText="Cancel" />
+        <div className="mb-4">
+          <InfoCard item={infoCardData} />
+        </div>
         <HubTaskForm
           values={values}
           error={error}
           handleSubmit={handleSubmit}
           setValue={setValue}
           data={data}
-          btnTitle="Save"
+          btnTitle="Add task"
         />
       </div>
     </div>
   )
 }
 
-export default HubEditTask
+export default HubOwnHabit

@@ -46,6 +46,9 @@ import HubCreateTask from "./components/pages/hub/hubCreateTask/HubCreateTask.js
 import HubTaskInfo from "./components/pages/hub/hubTaskInfo/HubTaskInfo.jsx"
 import HubEditTask from "./components/pages/hub/hubEditTask/HubEditTask.jsx"
 import HubTaskPresetEdit from "./components/pages/hub/hubTaskPresetEdit/HubTaskPresetEdit.jsx"
+import HubFinishAccount from "./components/pages/hub/hubFinishAccount/HubFinishAccount.jsx"
+import HubOwnHabit from "./components/pages/hub/hubOwnHabit/hubOwnHabit.jsx"
+import HubAddTask from "./components/pages/hub/hubAddTask/HubAddTask.jsx"
 
 const App = () => {
   return (
@@ -70,6 +73,9 @@ const App = () => {
                 <Route path="task-info/:id" element={<HubTaskInfo />} />
                 <Route path="preset-preview" element={<HubPresetPreview />} />
                 <Route path="upgrade" element={<HubSubscription />} />
+                <Route path="finish-account" element={<HubFinishAccount />} />
+                <Route path="own-habit" element={<HubOwnHabit />} />
+                <Route path="add-task" element={<HubAddTask />} />
               </Route>
               <Route path="/notifications" element={<HubMain />} />
               <Route path="/messages" element={<HubMain />} />

@@ -12,11 +12,12 @@ const FormToggleDropdown = ({
   editBtnText,
   setValue,
   name,
+  values,
 }) => {
   const [isOpen, setIsOpen] = useState(!!defaultValue)
 
   useEffect(() => {
-    if (!!defaultValue) {
+    if (!!defaultValue && !values) {
       setValue(name, defaultValue)
     }
   }, [])
@@ -24,6 +25,8 @@ const FormToggleDropdown = ({
   useEffect(() => {
     if (!isOpen) {
       setValue(name, null)
+    } else if (isOpen && !!values) {
+      setValue(name, values)
     } else {
       setValue(name, defaultValue)
     }

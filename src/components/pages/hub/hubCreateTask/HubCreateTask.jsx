@@ -2,8 +2,9 @@ import React, { useState } from "react"
 import mocData from "./mocData.js"
 import { useFormValidator } from "../../../../../form-validator/hooks/index.js"
 import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
-import HubCreateTaskComponent from "./HubCreateTaskComponent.jsx"
+import HubTaskForm from "../items/form/hubTaskForm/HubTaskForm.jsx"
 import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx"
+import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 
 const validationSchema = new ValidationSchema({})
 
@@ -25,8 +26,9 @@ const HubCreateTask = () => {
   })
 
   return (
-    <>
-      <HubCreateTaskComponent
+    <div className="main-layout__single-container">
+      <BackBtnWithTitlePage title={data?.title} />
+      <HubTaskForm
         values={values}
         error={error}
         handleSubmit={handleSubmit}
@@ -34,7 +36,7 @@ const HubCreateTask = () => {
         data={data}
         btnTitle="Add task"
       />
-    </>
+    </div>
   )
 }
 
