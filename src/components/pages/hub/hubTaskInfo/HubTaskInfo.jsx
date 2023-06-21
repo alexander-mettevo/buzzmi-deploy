@@ -1,24 +1,11 @@
 import React, { useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
-import Gallery from "../../../reusable/gallary/Gallery.jsx"
-import VideoGallery from "../../../reusable/videoGallery/VideoGallery.jsx"
-import AudioPlayer from "../../../reusable/audioPlayer/AudioPlayer.jsx"
 import Calendar from "../../../reusable/calendar/Calendar.jsx"
 import ProgressHeader from "../hubTread/header/ProgressHeader.jsx"
 import PageNavigation from "../../../reusable/pageNavigation/PageNavigation.jsx"
-import {
-  dayList,
-  infoCardData,
-  pageNav,
-  viewTypeList,
-  progressData,
-  basicInfo,
-  noteData,
-} from "../../../../mock-data/hub/hub.js"
-import { galleryList, videoSrcLink } from "../../../../mock-data/gallery/gallery.js"
+import { pageNav } from "../../../../mock-data/hub/hub.js"
 import HubTaskList from "../items/form/checkList/items/HubTaskList.jsx"
-import DropdownToggle from "../../../reusable/assets/dropdown/dropdownToggle/DropdownToggle.jsx"
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx"
 import CustomizableCircleChartWrapper from "../../../reusable/assets/charts/customizableCircleChart/CustomizableCircleChartWrapper.jsx"
 import Box from "../../../reusable/cards/box/Box.jsx"
@@ -39,7 +26,7 @@ const HubTaskInfo = () => {
   let { id } = useParams()
   const data = mocData[id - 1]
 
-  const [calendarValue, setCalendarValue] = useState(dayList[0].date)
+  const [calendarValue, setCalendarValue] = useState(data?.dayList[0]?.date || null)
   const [viewTypeId, setViewTypeId] = useState(0)
   const [currentType, setCurrentType] = useState(getCurrentType(pageNav, 0))
   const [error, setError] = useState(null)
@@ -79,7 +66,11 @@ const HubTaskInfo = () => {
           <div className="mb-4">
             <InfoCard item={data.infoCardData} />
           </div>
-          <HubMedia galleryList={data.galleryList} videoSrcLink={data.videoSrcLink} audioSrcLink={data.audioSrcLink} />
+          <HubMedia
+            galleryList={data?.galleryList}
+            videoSrcLink={data?.videoSrcLink}
+            audioSrcLink={data?.audioSrcLink}
+          />
           <Box className=" hub-form-box mb-4">
             <CustomizableCircleChartWrapper
               values={values.progressInfo}
@@ -118,8 +109,8 @@ const HubTaskInfo = () => {
               onChange={setCalendarValue}
               dayList={data.dayList}
               period={
-                currentType === data.viewTypeList.doneLastWeek || currentType === data.viewTypeList.doneThisWeek
-                  ? "week"
+                currentType === data.viewTypeList.doneLastMonth || currentType === data.viewTypeList.donePastMonth
+                  ? "month"
                   : undefined
               }
               buttonProps={{

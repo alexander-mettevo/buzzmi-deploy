@@ -4,7 +4,7 @@ import Box from "../../../../reusable/cards/box/Box.jsx"
 const TopComponent = () => (
   <div className="h4 d-flex align-items-center ">
     <img className="dropdown__icon" src="/images/hub/form/notes.png" alt="note-icon" />
-    Note
+    <span className="ms-3">Note</span>
   </div>
 )
 

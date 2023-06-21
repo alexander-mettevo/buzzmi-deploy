@@ -36,14 +36,14 @@ const CustomizableCircleChartWrapper = (props) => {
   }
 
   const handleAddProgress = () => {
-    let result = Math.round(currentValue + initValue / 100)
+    let result = currentValue + initValue / 100
     if (result > initValue) result = initValue
 
     setValues({ ...values, currentValue: result })
   }
 
   const handleSubtractProgress = () => {
-    let result = Math.round(currentValue - initValue / 100)
+    let result = currentValue - initValue / 100
     if (result < 0) result = 0
 
     setValues({ ...values, currentValue: result })

@@ -4,16 +4,47 @@ import VideoGallery from "../../../../reusable/videoGallery/VideoGallery.jsx"
 import AudioPlayer from "../../../../reusable/audioPlayer/AudioPlayer.jsx"
 
 const HubMedia = ({ galleryList, videoSrcLink, audioSrcLink }) => {
+  if (!audioSrcLink && !!videoSrcLink) {
+    return (
+      <div className="hub__holder hub-media hub-media__without-audio">
+        <Gallery list={galleryList} isSmall />
+
+        <div className="hub__media">
+          <div className="hub__video mb-3">
+            <VideoGallery src={videoSrcLink} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (!videoSrcLink && !!galleryList) {
+    return (
+      <div className="hub__holder hub-media hub-media__without-video">
+        {galleryList && <Gallery list={galleryList} isSmall />}
+        {audioSrcLink && (
+          <div className="hub__audio">
+            <AudioPlayer src={audioSrcLink} />
+          </div>
+        )}
+      </div>
+    )
+  }
+
   return (
-    <div className="hub__holder">
-      <Gallery list={galleryList} isSmall />
+    <div className="hub__holder hub-media">
+      {galleryList && <Gallery list={galleryList} isSmall />}
       <div className="hub__media">
-        <div className="hub__video mb-3">
-          <VideoGallery src={videoSrcLink} />
-        </div>
-        <div className="hub__audio">
-          <AudioPlayer src={audioSrcLink} />
-        </div>
+        {videoSrcLink && (
+          <div className="hub__video mb-3">
+            <VideoGallery src={videoSrcLink} />
+          </div>
+        )}
+        {audioSrcLink && (
+          <div className="hub__audio">
+            <AudioPlayer src={audioSrcLink} />
+          </div>
+        )}
       </div>
     </div>
   )
