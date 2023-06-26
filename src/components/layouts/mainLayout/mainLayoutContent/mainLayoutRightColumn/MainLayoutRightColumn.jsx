@@ -1,15 +1,8 @@
-import React from 'react';
-import Sticky from 'react-stickynode';
+import React from "react"
+import Sticky from "react-stickynode"
 
-const MainLayoutRightColumn = ({children}) => {
+const MainLayoutRightColumn = ({ children }) => {
+  return <div className="main-layout__right-column">{children}</div>
+}
 
-  return (
-    <div className="main-layout__right-column">
-      <Sticky bottomBoundary={'footer'}>
-        {children}
-      </Sticky>
-    </div>
-  );
-};
-
-export default MainLayoutRightColumn;
+export default MainLayoutRightColumn
