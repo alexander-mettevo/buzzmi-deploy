@@ -18,7 +18,9 @@ const AdditionalInformation = ({ onPresetBtn, onMyTaskBtn }) => {
       )}
       {onMyTaskBtn && (
         <div className="additional-information__btn mt-3">
-          <Button className="button_primary w-100 button_m double-secondary px-6 px-lg-7">Add My Own Task</Button>
+          <Button className="button_primary w-100 button_m double-secondary px-6 px-lg-7">
+            <Link to="/hub/add-preset">Add My Own Task</Link>
+          </Button>
         </div>
       )}
     </div>
