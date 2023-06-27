@@ -1,26 +1,24 @@
-import React from "react"
 import AdditionalInformationPlan from "./items/additionalInformationPlan/AdditionalInformationPlan.jsx"
 import HubWallet from "../../../pages/hub/hubMain/items/hubWallet/HubWallet.jsx"
-import Button from "../../btns/buttons/Button.jsx"
-import { Link } from "react-router-dom"
+import PrimaryLink from "../../btns/links/PrimaryLink.jsx"
 
-const AdditionalInformation = ({ onPresetBtn, onMyTaskBtn }) => {
+const AdditionalInformation = ({ onPresetBtn = false, onMyTaskBtn = false }) => {
   return (
     <div>
       <AdditionalInformationPlan />
       <HubWallet />
       {onPresetBtn && (
         <div className="additional-information__btn mt-3">
-          <Button className="button_primary w-100 button_m double-secondary px-6 px-lg-7">
-            <Link to="/hub/add-preset">Add My Own Preset</Link>
-          </Button>
+          <PrimaryLink className="w-100 button_m double-secondary" to="/hub/add-preset">
+            Add My Own Preset
+          </PrimaryLink>
         </div>
       )}
       {onMyTaskBtn && (
         <div className="additional-information__btn mt-3">
-          <Button className="button_primary w-100 button_m double-secondary px-6 px-lg-7">
-            <Link to="/hub/add-preset">Add My Own Task</Link>
-          </Button>
+          <PrimaryLink className="w-100 button_m double-secondary" to="/hub/add-preset-suggested">
+            Add My Own Task
+          </PrimaryLink>
         </div>
       )}
     </div>

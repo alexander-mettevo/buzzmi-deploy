@@ -3,6 +3,10 @@ import { useFormValidator } from "../../../../../../form-validator/hooks/index.j
 import ValidationSchema from "../../../../../../form-validator/ValidationSchema.js"
 import HubPresetForm from "../HubPresetForm.jsx"
 
+const data = {
+  initPopularNames: ["Meditate", "Workout", "Drink water", "Dance", "Sleep better"],
+}
+
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
 })
@@ -30,6 +34,7 @@ const HubAddPreset = () => {
       values={values}
       isValid={isValid}
       register={register}
+      data={data}
     />
   )
 }

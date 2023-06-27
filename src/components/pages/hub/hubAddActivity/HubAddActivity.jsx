@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import InfoCardList from "../../../reusable/cards/infoCard/InfoCardList.jsx"
 import FilterTags from "../items/filterList/items/filterTags/FilterTags.jsx"
@@ -18,12 +18,12 @@ const HubAddActivityContent = () => {
   }
 
   return (
-    <div className="small-container">
+    <div>
       <BackBtnWithTitlePage title="Add Task" btnText="Back" />
       <div className="pb-6">
         <LinkTabs list={tabsLastMod} activeTabId={activeTab} onChange={setActiveTab} />
       </div>
-      <FilterTags tags={mockTags} />
+      <FilterTags wrapMode tags={mockTags} />
       <InfoCardList infoList={currentList[activeTab]} />
     </div>
   )

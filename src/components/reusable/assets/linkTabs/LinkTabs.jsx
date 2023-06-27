@@ -1,6 +1,5 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import button from "../../btns/buttons/Button.jsx"
 
 const LinkTabs = ({ list, onChange, activeTabId }) => {
   return (

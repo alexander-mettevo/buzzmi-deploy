@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import Form from "../../../reusable/form/Form.jsx"
 import AddName from "../items/form/addName/AddName.jsx"
@@ -11,7 +11,7 @@ import AudioUploader from "../../../reusable/uploader/audioUploader/AudioUploade
 import Checkbox from "../../../reusable/assets/checkbox/Checkbox.jsx"
 import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx"
 
-const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, register }) => {
+const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, register, data = {} }) => {
   const [showInTask, setShowInTask] = useState(false)
 
   useEffect(() => {
@@ -28,6 +28,8 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
           placeholder="Enter a name"
           name="name"
           register={register}
+          value={values?.name || ""}
+          initPopularNames={data?.initPopularNames}
         />
         <ChoseImage values={values} setValue={setValue} />
         <MultiBox title="Add description">

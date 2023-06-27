@@ -1,4 +1,3 @@
-import React from "react"
 import { Route, Routes } from "react-router-dom"
 import Login from "./components/pages/auth/login/Login.jsx"
 import OtherServices from "./components/pages/auth/otherServices/OtherServices.jsx"
@@ -47,7 +46,7 @@ import HubTaskInfo from "./components/pages/hub/hubTaskInfo/HubTaskInfo.jsx"
 import HubEditTask from "./components/pages/hub/hubEditTask/HubEditTask.jsx"
 import HubTaskPresetEdit from "./components/pages/hub/hubTaskPresetEdit/HubTaskPresetEdit.jsx"
 import HubFinishAccount from "./components/pages/hub/hubFinishAccount/HubFinishAccount.jsx"
-import HubOwnHabit from "./components/pages/hub/hubOwnHabit/hubOwnHabit.jsx"
+import HubOwnHabit from "./components/pages/hub/hubOwnHabit/HubOwnHabit.jsx"
 import HubAddTask from "./components/pages/hub/hubAddTask/HubAddTask.jsx"
 
 const App = () => {
