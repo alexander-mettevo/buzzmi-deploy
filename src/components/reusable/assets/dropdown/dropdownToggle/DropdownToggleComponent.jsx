@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import DropdownRightSide from "./items/dropdownRightSide/DropdownRightSide.jsx"
 import MultiBox from "../../../cards/multiBox/MultiBox.jsx"
 
@@ -38,7 +38,7 @@ const DropdownToggleComponent = ({
   )
 
   return (
-    <MultiBox icon={icon} info={info} title={title} rightSide={dropdownRightSide}>
+    <MultiBox icon={icon} info={info} title={title} rightSide={dropdownRightSide} isHideMode={!isOpen}>
       <div
         className={`dropdown__content ${isOpen ? "dropdown__content--open" : ""}`}
         style={{ "--content-height": isOpen ? `${scrollHeight}px` : 0 }}
