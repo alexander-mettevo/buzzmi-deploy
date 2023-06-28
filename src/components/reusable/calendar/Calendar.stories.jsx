@@ -1,66 +1,90 @@
-import Calendar from "../calendar/Calendar.jsx";
-import moment from "moment";
-import {useState} from "react";
+import Calendar from "../calendar/Calendar.jsx"
+import moment from "moment"
+import { useState } from "react"
 
 export default {
-    title: "Reusable/Calendar",
-    component: Calendar,
-    tags: ["autodocs"],
-    argTypes: {
-        mode: {
-            description: "Calendar",
-            table: {
-                type: {
-                    summary: "string",
-                }
-            },
-            options: [],
-            //control: { type: 'radio' }
-        }
-    }
+  title: "Reusable/Calendar",
+  component: Calendar,
+  tags: ["autodocs"],
+  argTypes: {
+    mode: {
+      description: "Calendar",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      options: [],
+      //control: { type: 'radio' }
+    },
+    className: {
+      description: "Calendar",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    view: {
+      description: "Calendar",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+  },
 }
 
 const getDaysInMonth = (month, year) =>
-    (new Array(31))
-        .fill('')
-        .map((v,i)=> ({
-            date: moment([year, month-1, i + 1]).format("YYYY-MM-DD"),
-            type: i % 3 === 0 ? "completed" : i % 4 === 0 ? "uncompleted" : null,
-        }))
-        .filter(v=> moment(v.date).get('month') === month - 1)
-const dayList = getDaysInMonth(moment().get("month") + 1, 2023);
+  new Array(31)
+    .fill("")
+    .map((v, i) => ({
+      date: moment([year, month - 1, i + 1]).format("YYYY-MM-DD"),
+      type: i % 3 === 0 ? "completed" : i % 4 === 0 ? "uncompleted" : null,
+    }))
+    .filter((v) => moment(v.date).get("month") === month - 1)
+const dayList = getDaysInMonth(moment().get("month") + 1, 2023)
 
-const Template = (args) => <Calendar {...args}/>;
+const Template = (args) => <Calendar {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-    dayList: dayList,
-    value: dayList[0].date,
-    onChange: () => null
+  dayList: dayList,
+  value: dayList[0].date,
+  onChange: () => null,
 }
 
-export const oneWeek = Template.bind({});
+export const oneWeek = Template.bind({})
 oneWeek.args = {
-    dayList: dayList,
-    value: dayList[0].date,
-    onChange: () => null,
-    period: "week",
-    buttonProps: {
-        isDateAnchor: true,
-        text: "back to current day"
-    },
-    hasFooter: true
+  dayList: dayList,
+  value: dayList[0].date,
+  onChange: () => null,
+  period: "week",
+  buttonProps: {
+    isDateAnchor: true,
+    text: "back to current day",
+  },
+  hasFooter: true,
 }
 
-export const oneWeekWithoutNavigation = Template.bind({});
+export const oneWeekWithoutNavigation = Template.bind({})
 oneWeekWithoutNavigation.args = {
-    dayList: dayList,
-    value: dayList[0].date,
-    period: "week",
-    buttonProps: {
-        handler: () => null,
-        text: "See all"
-    },
-    noNavigation: true,
-    onChange: () => null
+  dayList: dayList,
+  value: dayList[0].date,
+  period: "week",
+  buttonProps: {
+    handler: () => null,
+    text: "See all",
+  },
+  noNavigation: true,
+  onChange: () => null,
+}
+
+export const withSwitchDisplayMode = Template.bind({})
+withSwitchDisplayMode.args = {
+  value: dayList[0].date,
+  onChange: () => null,
+  className: "date-picker date-picker_mode-switch",
+  view: "",
 }

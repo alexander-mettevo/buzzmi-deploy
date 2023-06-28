@@ -1,4 +1,4 @@
-import { basicInfo, dayList, infoCardData, noteData, pageNav } from "../../../../mock-data/hub/hub.js"
+import { basicInfo, infoCardData, noteData, pageNav } from "../../../../mock-data/hub/hub.js"
 import { galleryList, videoSrcLink } from "../../../../mock-data/gallery/gallery.js"
 
 const viewTypeList = {

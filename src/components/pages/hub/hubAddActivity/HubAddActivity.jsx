@@ -1,12 +1,13 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import InfoCardList from "../../../reusable/cards/infoCard/InfoCardList.jsx"
 import FilterTags from "../items/filterList/items/filterTags/FilterTags.jsx"
 import LinkTabs from "../../../reusable/assets/linkTabs/LinkTabs.jsx"
 import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx"
+import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx"
 
 // mock data
-import { mockItems, mockTags, presetList, tabsLast } from "../../../../mock-data/hub/hub.js"
+import { mockItems, mockTags, presetList, tabsLastMod } from "../../../../mock-data/hub/hub.js"
 
 const HubAddActivityContent = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -17,12 +18,12 @@ const HubAddActivityContent = () => {
   }
 
   return (
-    <div className="small-container">
+    <div>
       <BackBtnWithTitlePage title="Add Task" btnText="Back" />
       <div className="pb-6">
-        <LinkTabs list={tabsLast} activeTabId={activeTab} onChange={setActiveTab} />
+        <LinkTabs list={tabsLastMod} activeTabId={activeTab} onChange={setActiveTab} />
       </div>
-      <FilterTags tags={mockTags} />
+      <FilterTags wrapMode tags={mockTags} />
       <InfoCardList infoList={currentList[activeTab]} />
     </div>
   )
@@ -30,7 +31,7 @@ const HubAddActivityContent = () => {
 
 const HubAddActivity = () => {
   return (
-    <MainLayoutContent>
+    <MainLayoutContent rightColumnContent={<AdditionalInformation onPresetBtn onMyTaskBtn />}>
       <HubAddActivityContent />
     </MainLayoutContent>
   )

@@ -1,7 +1,5 @@
-import React, { useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
-import SmallCardList from "../../../reusable/cards/smallCard/SmallCardList.jsx"
 import Gallery from "../../../reusable/gallary/Gallery.jsx"
 import AudioPlayer from "../../../reusable/audioPlayer/AudioPlayer.jsx"
 import VideoGallery from "../../../reusable/videoGallery/VideoGallery.jsx"
@@ -31,7 +29,7 @@ const HubPresetPreview = () => {
           <Gallery list={galleryList} isSmall />
           <div className="hub__media">
             <div className="hub__video mb-3">
-              <VideoGallery src={videoSrcLink} />
+              <VideoGallery title="Energetic Morning" src={videoSrcLink} />
             </div>
             <div className="hub__audio">
               <AudioPlayer src="/sounds/test-track.mp3" />

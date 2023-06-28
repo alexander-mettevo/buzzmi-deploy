@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { useParams } from "react-router-dom"
 import mocData from "../hubCreateTask/mocData.js"
 import { useFormValidator } from "../../../../../form-validator/hooks/index.js"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"

@@ -7,12 +7,21 @@
   position: relative;
   padding: 0 80px;
 
+  &_simple {
+    .back-btn__content {
+      position: static;
+
+      .fa-solid {
+        height: 22px;
+      }
+    }
+  }
+
   @media (max-width: $mobileSmall) {
     padding: 0 20px;
   }
 
   &_with-title {
-    //justify-content: space-between;
     margin-bottom: 20px;
   }
 
@@ -66,5 +75,19 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .fa-arrow-left {
+    background-image: var(--primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    &,
+    & + span {
+      font-size: 23px;
+      line-height: 22px;
+      font-weight: 600;
+    }
   }
 }

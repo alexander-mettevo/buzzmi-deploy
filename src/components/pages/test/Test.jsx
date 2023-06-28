@@ -16,8 +16,6 @@ const Test = () => {
     secondName: "Jordan",
   })
 
-  console.log("valueGroups", valueGroups)
-
   const onChange = (name, value) => {
     setValueGroups({
       ...valueGroups,

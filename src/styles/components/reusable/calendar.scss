@@ -1,4 +1,4 @@
-$pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
+$pink-marker-bg: linear-gradient(90deg, #ef8fd5 -0.01%, #eb33cf 100.01%);
 
 .calendar {
   margin-bottom: 20px;
@@ -20,7 +20,7 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
   }
 
   &__btn {
-    background: linear-gradient(113.36deg, #FF41B3 19.17%, #7E00E0 84.92%);
+    background: linear-gradient(113.36deg, #ff41b3 19.17%, #7e00e0 84.92%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -157,7 +157,7 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     position: relative;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       width: 6px;
@@ -194,7 +194,7 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
     align-items: center;
     height: 68px;
     position: relative;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0 1px 4px rgba(111, 29, 244, 0.12);
     border-radius: 6px;
     font-size: 18px;
@@ -318,7 +318,15 @@ $pink-marker-bg: linear-gradient(90deg, #EF8FD5 -0.01%, #EB33CF 100.01%);
 
   &__navigation__arrow {
     &:hover {
-      color: var(--accent)
+      color: var(--accent);
+    }
+  }
+}
+
+.date-picker {
+  &_mode-switch {
+    .react-calendar__navigation__label {
+      pointer-events: auto;
     }
   }
 }

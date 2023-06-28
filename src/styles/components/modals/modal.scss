@@ -41,9 +41,22 @@
       }
     }
 
+    &_video {
+      height: 100vh;
+      width: 100vw;
+      padding-bottom: 20px !important;
+      padding-top: 20px !important;
+      border-radius: 0 !important;
+      background: rgba(0, 0, 0, 0.8) !important;
 
-    @include adaptiveValue('padding-top', 40, 20);
-    @include adaptiveValue('padding-bottom', 40, 20);
+      .modal__content {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    @include adaptiveValue("padding-top", 40, 20);
+    @include adaptiveValue("padding-bottom", 40, 20);
 
     @media (max-width: $tablet) {
       width: 100vw;
@@ -56,16 +69,18 @@
     flex: 1;
     overflow-y: auto;
 
-    @include adaptiveValue('padding-left', 40, 20);
-    @include adaptiveValue('padding-right', 40, 20);
+    @include adaptiveValue("padding-left", 40, 20);
+    @include adaptiveValue("padding-right", 40, 20);
   }
 
   &__close {
-    text-align: right;
     margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
 
-    @include adaptiveValue('padding-left', 40, 20);
-    @include adaptiveValue('padding-right', 40, 20);
+    @include adaptiveValue("padding-left", 40, 20);
+    @include adaptiveValue("padding-right", 40, 20);
 
     &-icon {
       margin: 0;
@@ -78,7 +93,7 @@
 
       &:before,
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         top: calc((30px - 1px) / 2);
         left: 0;
@@ -114,5 +129,5 @@
   }
 }
 
-
 @import "reports";
+@import "video-modal";

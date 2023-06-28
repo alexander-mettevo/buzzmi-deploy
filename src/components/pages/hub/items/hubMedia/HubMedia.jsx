@@ -1,9 +1,8 @@
-import React from "react"
 import Gallery from "../../../../reusable/gallary/Gallery.jsx"
 import VideoGallery from "../../../../reusable/videoGallery/VideoGallery.jsx"
 import AudioPlayer from "../../../../reusable/audioPlayer/AudioPlayer.jsx"
 
-const HubMedia = ({ galleryList, videoSrcLink, audioSrcLink }) => {
+const HubMedia = ({ galleryList, videoSrcLink, audioSrcLink, title }) => {
   if (!audioSrcLink && !!videoSrcLink) {
     return (
       <div className="hub__holder hub-media hub-media__without-audio">
@@ -11,7 +10,7 @@ const HubMedia = ({ galleryList, videoSrcLink, audioSrcLink }) => {
 
         <div className="hub__media">
           <div className="hub__video mb-3">
-            <VideoGallery src={videoSrcLink} />
+            <VideoGallery title={title} src={videoSrcLink} />
           </div>
         </div>
       </div>
@@ -37,7 +36,7 @@ const HubMedia = ({ galleryList, videoSrcLink, audioSrcLink }) => {
       <div className="hub__media">
         {videoSrcLink && (
           <div className="hub__video mb-3">
-            <VideoGallery src={videoSrcLink} />
+            <VideoGallery title={title} src={videoSrcLink} />
           </div>
         )}
         {audioSrcLink && (

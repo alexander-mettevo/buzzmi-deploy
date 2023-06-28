@@ -47,7 +47,18 @@ const renderCellContent = ({ date, dayList }) => {
   }
 }
 
-const Calendar = ({ dayList, onChange, value, noNavigation, buttonProps, period, hasFooter, noIndent }) => {
+const Calendar = ({
+  dayList,
+  onChange,
+  value,
+  noNavigation,
+  buttonProps,
+  period,
+  hasFooter,
+  noIndent,
+  className,
+  view = "month",
+}) => {
   const isForWeek = period === "week"
   const [currentMonth, setCurrentMonth] = useState(moment(value).get("month"))
   const [firstDayOfCurrentWeek, setFirstDayOfCurrentWeek] = useState(0)
@@ -156,10 +167,11 @@ const Calendar = ({ dayList, onChange, value, noNavigation, buttonProps, period,
             prevLabel={getLabelText({ direction: "down" })}
             nextLabel={getLabelText({ direction: "up" })}
             locale="en-EN"
-            view="month"
+            view={view}
             allowPartialRange={true}
             minDate={isForWeek ? minAndMaxDate["min"] : null}
             maxDate={isForWeek ? minAndMaxDate["max"] : null}
+            className={className}
           />
         )}
       </div>
@@ -183,4 +195,4 @@ const Calendar = ({ dayList, onChange, value, noNavigation, buttonProps, period,
   )
 }
 
-export default Calendar;
+export default Calendar
