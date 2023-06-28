@@ -16,7 +16,7 @@ const AdditionalInformation = ({ onPresetBtn = false, onMyTaskBtn = false }) => 
       )}
       {onMyTaskBtn && (
         <div className="additional-information__btn mt-3">
-          <PrimaryLink className="w-100 button_m double-secondary" to="/hub/add-preset-suggested">
+          <PrimaryLink className="w-100 button_m double-secondary" to="/hub/add-task">
             Add My Own Task
           </PrimaryLink>
         </div>
