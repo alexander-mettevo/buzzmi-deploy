@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import DropdownRightSide from "./items/dropdownRightSide/DropdownRightSide.jsx"
 import MultiBox from "../../../cards/multiBox/MultiBox.jsx"
 
@@ -14,6 +14,7 @@ const DropdownToggleComponent = ({
   isEditable = false,
   onEditBtn,
   editBtnText,
+  text,
 }) => {
   const contentRef = useRef(null)
   const [scrollHeight, setScrollHeight] = useState(0)
@@ -24,7 +25,7 @@ const DropdownToggleComponent = ({
     } else {
       setScrollHeight(0)
     }
-  }, [contentRef])
+  }, [contentRef?.current])
 
   const dropdownRightSide = (
     <DropdownRightSide
@@ -38,10 +39,10 @@ const DropdownToggleComponent = ({
   )
 
   return (
-    <MultiBox icon={icon} info={info} title={title} rightSide={dropdownRightSide}>
+    <MultiBox icon={icon} info={info} title={title} rightSide={dropdownRightSide} isHideMode={!isOpen} text={text}>
       <div
         className={`dropdown__content ${isOpen ? "dropdown__content--open" : ""}`}
-        style={{ "--content-height": isOpen ? `${scrollHeight}px` : 0 }}
+        style={{ minHeight: isOpen ? `${scrollHeight}px` : 0 }}
         ref={contentRef}
       >
         {isOpen && children}

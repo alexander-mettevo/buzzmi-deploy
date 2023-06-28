@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import DropdownToggleComponent from "../dropdownToggle/DropdownToggleComponent.jsx"
 
 const FormToggleDropdown = ({
@@ -13,6 +13,7 @@ const FormToggleDropdown = ({
   setValue,
   name,
   values,
+  text,
 }) => {
   const [isOpen, setIsOpen] = useState(!!defaultValue)
 
@@ -44,6 +45,7 @@ const FormToggleDropdown = ({
       editBtnText={editBtnText}
       isOpen={isOpen}
       setIsOpen={setIsOpen}
+      text={text}
     >
       {children}
     </DropdownToggleComponent>

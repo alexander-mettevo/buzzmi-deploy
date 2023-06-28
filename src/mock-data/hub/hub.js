@@ -75,7 +75,7 @@ export const noteData =
 
 export const tasksData = [
   {
-    link: "",
+    link: "/hub/task-info/1",
     title: "Yoga",
     img: {
       src: "/images/hub/main/drink.png",
@@ -84,7 +84,7 @@ export const tasksData = [
     id: 0,
   },
   {
-    link: "",
+    link: "/hub/task-info/1",
     title: "Cycling",
     img: {
       src: "/images/hub/main/gym.png",
@@ -93,7 +93,7 @@ export const tasksData = [
     id: 1,
   },
   {
-    link: "",
+    link: "/hub/task-info/1",
     title: "Drink water",
     img: {
       src: "/images/hub/main/drink.png",
@@ -102,7 +102,7 @@ export const tasksData = [
     id: 2,
   },
   {
-    link: "",
+    link: "/hub/task-info/1",
     title: "Coffee with family",
     img: {
       src: "/images/hub/main/gym.png",
@@ -111,7 +111,7 @@ export const tasksData = [
     id: 3,
   },
   {
-    link: "",
+    link: "/hub/task-info/1",
     title: "Brush teeth",
     img: {
       src: "/images/hub/main/drink.png",
@@ -120,7 +120,7 @@ export const tasksData = [
     id: 4,
   },
   {
-    link: "/",
+    link: "/hub/task-info/1",
     title: "Take medicine",
     img: {
       src: "/images/hub/main/gym.png",
@@ -132,8 +132,6 @@ export const tasksData = [
 
 export const mockItems = [
   {
-    type: "link",
-    to: "/hub/add-activity",
     image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
@@ -149,8 +147,6 @@ export const mockItems = [
     },
   },
   {
-    type: "link",
-    to: "/hub/add-activity",
     image: {
       src: "/images/hub/main/list.png",
       alt: "Placeholder",
@@ -166,8 +162,6 @@ export const mockItems = [
     },
   },
   {
-    type: "link",
-    to: "/hub/add-activity",
     image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
@@ -191,18 +185,9 @@ export const presetList = mockItems.map((el) => ({
 }))
 export const mockTags = ["all", "presets", "workouts", "habits", "program", "challenges"]
 export const tabsLastMod = [
-  {id: 0,
-    href: "/hub/tasks",
-    title: "Tasks",
-  },
-  {id: 1,
-    href: "/hub/stats",
-    title: "Stats",
-  },
-  {id: 2,
-    href: "/hub/leaderboard",
-    title: "Leaderboard",
-  },
+  { id: 0, href: "/hub/tasks", title: "Tasks" },
+  { id: 1, href: "/hub/stats", title: "Stats" },
+  { id: 2, href: "/hub/leaderboard", title: "Leaderboard" },
 ]
 
 export const tabsLast = [
@@ -220,7 +205,20 @@ export const tabsLast = [
   },
 ]
 
-
+export const addActivityTabs = [
+  {
+    id: 0,
+    title: "All",
+  },
+  {
+    id: 1,
+    title: "Presets",
+  },
+  {
+    id: 2,
+    title: "Workouts",
+  },
+]
 
 export const boardItems = [
   {
