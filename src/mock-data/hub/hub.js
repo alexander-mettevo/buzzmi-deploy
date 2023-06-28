@@ -132,8 +132,6 @@ export const tasksData = [
 
 export const mockItems = [
   {
-    type: "link",
-    to: "/hub/add-activity",
     image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
@@ -149,8 +147,6 @@ export const mockItems = [
     },
   },
   {
-    type: "link",
-    to: "/hub/add-activity",
     image: {
       src: "/images/hub/main/list.png",
       alt: "Placeholder",
@@ -166,8 +162,6 @@ export const mockItems = [
     },
   },
   {
-    type: "link",
-    to: "/hub/add-activity",
     image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
@@ -222,7 +216,7 @@ export const addActivityTabs = [
   },
   {
     id: 2,
-    title: "My Preset",
+    title: "Workouts",
   },
 ]
 

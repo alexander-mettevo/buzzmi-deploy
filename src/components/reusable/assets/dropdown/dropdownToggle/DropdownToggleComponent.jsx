@@ -24,7 +24,7 @@ const DropdownToggleComponent = ({
     } else {
       setScrollHeight(0)
     }
-  }, [contentRef])
+  }, [contentRef?.current])
 
   const dropdownRightSide = (
     <DropdownRightSide
@@ -41,7 +41,7 @@ const DropdownToggleComponent = ({
     <MultiBox icon={icon} info={info} title={title} rightSide={dropdownRightSide} isHideMode={!isOpen}>
       <div
         className={`dropdown__content ${isOpen ? "dropdown__content--open" : ""}`}
-        style={{ "--content-height": isOpen ? `${scrollHeight}px` : 0 }}
+        style={{ minHeight: isOpen ? `${scrollHeight}px` : 0 }}
         ref={contentRef}
       >
         {isOpen && children}
