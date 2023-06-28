@@ -56,7 +56,7 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
           info="Add description video"
           name="video"
         >
-          <VideoUploader defaultValue={values?.video} setValue={setValue} />
+          <VideoUploader title={values?.name || ""} defaultValue={values?.video} setValue={setValue} />
         </FormToggleDropdown>
         <FormToggleDropdown
           defaultValue={values?.audio}

@@ -1,55 +1,55 @@
 // variables for background colors
 :root {
   // main colors
-  --light-primary: linear-gradient(86.83deg, #FF9800 -45.01%, #EB4A66 25.91%, #C600CA 101.38%);
-  --light-logo-color: radial-gradient(75.57% 107.73% at 52.5% 10.85%, #EF8ED5 0%, #EC44D0 52.08%, #C1169C 100%);
-  --light-bg-secondary: #E4DBF1;
-  --light-error-color: #F02461;
-  --light-success-color: #25AF4C;
+  --light-primary: linear-gradient(86.83deg, #ff9800 -45.01%, #eb4a66 25.91%, #c600ca 101.38%);
+  --light-logo-color: radial-gradient(75.57% 107.73% at 52.5% 10.85%, #ef8ed5 0%, #ec44d0 52.08%, #c1169c 100%);
+  --light-bg-secondary: #e4dbf1;
+  --light-error-color: #f02461;
+  --light-success-color: #25af4c;
   --light-secondary-color: #ff00ff;
-  --light-warning-color: #FF9800;
-  --light-items-hover-bg: #EAE1FF;
+  --light-warning-color: #ff9800;
+  --light-items-hover-bg: #eae1ff;
   --light-items-bg: #ffffff;
-  --light-main-bg: #FBF8FF;
+  --light-main-bg: #fbf8ff;
   --light-opposite-bg: #101010;
-  --layout-bg: linear-gradient(90.58deg, #EF8ED5 1.06%, #EC44D0 52.41%, #C1169C 99.65%);
+  --layout-bg: linear-gradient(90.58deg, #ef8ed5 1.06%, #ec44d0 52.41%, #c1169c 99.65%);
   //=========================================================================================
 
   // assets colors
-  --light-accent: #EB4DAC;
-  --light-active-tab: #E4AFFF;
+  --light-accent: #eb4dac;
+  --light-active-tab: #e4afff;
   --light-items-box-shadow: rgba(0, 0, 0, 0.25);
   --light-box-shadow: rgba(111, 29, 244, 0.12);
-  --light-alt-primary-border: linear-gradient(to right, #FF41B3, #7E00E0);
+  --light-alt-primary-border: linear-gradient(to right, #ff41b3, #7e00e0);
   //=========================================================================================
 
   // variables for text colors
-  --light-logo-text: linear-gradient(#555A66, #000000);
+  --light-logo-text: linear-gradient(#555a66, #000000);
   --light-main-text: #000000;
-  --light-text-secondary: #C0BACB;
+  --light-text-secondary: #c0bacb;
   --light-main-opposite-text: #ffffff;
-  --light-alt-text-secondary: #584F68;
-  --light-primary-text: linear-gradient(113.36deg, #FF41B3 19.17%, #7E00E0 84.92%);
+  --light-alt-text-secondary: #584f68;
+  --light-primary-text: linear-gradient(113.36deg, #ff41b3 19.17%, #7e00e0 84.92%);
   --light-alter-text: #000072;
   //=========================================================================================
 
   // variables for forms
-  --light-form-bg: #F4F1F8;
+  --light-form-bg: #f4f1f8;
   --light-form-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   --light-input-focus-shadow: -4px 0px 8px rgba(247, 32, 131, 0.4), 4px 0px 8px rgba(139, 12, 219, 0.4);
-  --light-input-error-shadow: -4px 0px 8px #F02461, 4px 0px 8px #F02461;
-  --light-input-success-shadow: -4px 0px 8px #25AF4C, 4px 0px 8px #25AF4C;
-  --light-input-warning-shadow: -4px 0px 8px #FF9800, 4px 0px 8px #FF9800;
-  --light-input-border: #7E00E0;
+  --light-input-error-shadow: -4px 0px 8px #f02461, 4px 0px 8px #f02461;
+  --light-input-success-shadow: -4px 0px 8px #25af4c, 4px 0px 8px #25af4c;
+  --light-input-warning-shadow: -4px 0px 8px #ff9800, 4px 0px 8px #ff9800;
+  --light-input-border: #7e00e0;
   //=========================================================================================
 
   // variables for btns
-  --light-btn-primary-bg: #E12194;
-  --light-btn-arrow-bg: linear-gradient(#FF41B3, #7E00E0);
+  --light-btn-primary-bg: #eb4dac;
+  --light-btn-arrow-bg: linear-gradient(#ff41b3, #7e00e0);
   //=========================================================================================
 
   // variables for scroll
-  --light-scroll-bg: linear-gradient(137.29deg, #FF7F62 21.2%, #FF42B4 88.24%);
+  --light-scroll-bg: linear-gradient(137.29deg, #ff7f62 21.2%, #ff42b4 88.24%);
   //=========================================================================================
 
   // header logo gradient
@@ -65,21 +65,12 @@
   //=========================================================================================
 
   // assets
-  --light-chart-bg: #F5EEFE;
+  --light-chart-bg: #f5eefe;
   //=========================================================================================
 
   //simple colors
-  --light-gray: #C0BACB;
+  --light-gray: #c0bacb;
   --light-black: #000000;
   --light-white: #ffffff;
   //=========================================================================================
-
 }
-
-
-
-
-
-
-
-

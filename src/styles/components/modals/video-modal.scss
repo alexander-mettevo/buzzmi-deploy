@@ -1,0 +1,7 @@
+.video-modal {
+  &__fullscreen {
+    @media (max-width: $tablet) {
+      display: none !important;
+    }
+  }
+}

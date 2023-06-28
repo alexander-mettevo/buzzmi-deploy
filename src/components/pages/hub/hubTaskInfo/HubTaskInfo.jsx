@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
 import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
 import Calendar from "../../../reusable/calendar/Calendar.jsx"
@@ -67,6 +67,7 @@ const HubTaskInfo = () => {
             <InfoCard item={data.infoCardData} />
           </div>
           <HubMedia
+            title="Treadmill"
             galleryList={data?.galleryList}
             videoSrcLink={data?.videoSrcLink}
             audioSrcLink={data?.audioSrcLink}
