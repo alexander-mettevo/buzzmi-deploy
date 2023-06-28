@@ -7,7 +7,7 @@ import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/Mai
 import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx"
 
 // mock data
-import { mockItems, mockTags, presetList, tabsLastMod } from "../../../../mock-data/hub/hub.js"
+import { mockItems, mockTags, presetList, addActivityTabs } from "../../../../mock-data/hub/hub.js"
 
 const HubAddActivityContent = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -21,7 +21,7 @@ const HubAddActivityContent = () => {
     <div>
       <BackBtnWithTitlePage title="Add Task" btnText="Back" />
       <div className="pb-6">
-        <LinkTabs list={tabsLastMod} activeTabId={activeTab} onChange={setActiveTab} />
+        <LinkTabs list={addActivityTabs} activeTabId={activeTab} onChange={setActiveTab} />
       </div>
       <FilterTags wrapMode tags={mockTags} />
       <InfoCardList infoList={currentList[activeTab]} />

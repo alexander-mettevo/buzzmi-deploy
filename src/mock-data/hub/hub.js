@@ -191,18 +191,9 @@ export const presetList = mockItems.map((el) => ({
 }))
 export const mockTags = ["all", "presets", "workouts", "habits", "program", "challenges"]
 export const tabsLastMod = [
-  {id: 0,
-    href: "/hub/tasks",
-    title: "Tasks",
-  },
-  {id: 1,
-    href: "/hub/stats",
-    title: "Stats",
-  },
-  {id: 2,
-    href: "/hub/leaderboard",
-    title: "Leaderboard",
-  },
+  { id: 0, href: "/hub/tasks", title: "Tasks" },
+  { id: 1, href: "/hub/stats", title: "Stats" },
+  { id: 2, href: "/hub/leaderboard", title: "Leaderboard" },
 ]
 
 export const tabsLast = [
@@ -220,7 +211,20 @@ export const tabsLast = [
   },
 ]
 
-
+export const addActivityTabs = [
+  {
+    id: 0,
+    title: "All",
+  },
+  {
+    id: 1,
+    title: "Presets",
+  },
+  {
+    id: 2,
+    title: "My Preset",
+  },
+]
 
 export const boardItems = [
   {
