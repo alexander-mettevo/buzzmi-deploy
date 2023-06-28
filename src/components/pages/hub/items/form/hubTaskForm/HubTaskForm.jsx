@@ -33,6 +33,7 @@ const HubTaskForm = ({ values, error, handleSubmit, data, setValue, btnTitle }) 
         setValue={setValue}
         icon="/images/hub/form/repeat.png"
         title="Repeat"
+        text="set a cycle for your plan"
         name="repeat"
         values={values.repeat}
         defaultValue={{
