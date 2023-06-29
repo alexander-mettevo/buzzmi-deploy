@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import ValidationSchema from "../../../../../../form-validator/ValidationSchema.js"
 import { useFormValidator } from "../../../../../../form-validator/hooks/index.js"
 import HubPresetForm from "../HubPresetForm.jsx"
+import { useParams } from "react-router-dom"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
 })
 
 const HubEditPreset = () => {
+  const { id } = useParams()
   const [showInTask, setShowInTask] = useState(false)
   const [error, setError] = useState(null)
 
@@ -38,6 +40,8 @@ const HubEditPreset = () => {
       audio: "/sounds/test-track.mp3",
       showInTask: true,
     },
+
+    showErrorsOnSubmit: false,
   })
 
   useEffect(() => {

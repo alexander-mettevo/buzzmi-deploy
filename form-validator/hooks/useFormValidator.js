@@ -1,96 +1,88 @@
-import {useState, useCallback, useEffect} from 'react';
+import { useState, useCallback, useEffect } from "react"
 
 const useFormValidator = (validationSchema, onSubmit, config = {}) => {
-  const {
-    showErrorsOnSubmit = true,
-    defaultValues = {},
-  } = config;
+  const { showErrorsOnSubmit = true, defaultValues = {} } = config
 
-  const [values, setValues] = useState(defaultValues);
-  const [errors, setErrors] = useState({});
-  const [isValid, setIsValid] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [values, setValues] = useState(defaultValues)
+  const [errors, setErrors] = useState({})
+  const [isValid, setIsValid] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleChange = useCallback(
     async (name, value) => {
       setValues((prevValues) => ({
         ...prevValues,
         [name]: value,
-      }));
+      }))
 
       if (!showErrorsOnSubmit || isSubmitted) {
-        const fieldErrors = await validationSchema.validateField(name, value, values);
+        const fieldErrors = await validationSchema.validateField(name, value, values)
         setErrors((prevErrors) => ({
           ...prevErrors,
           [name]: fieldErrors.length > 0 ? fieldErrors : undefined,
-        }));
+        }))
 
-        setIsValid(Object.values(errors).every((error) => !error));
+        setIsValid(Object.values(errors).every((error) => !error))
       }
     },
-    [isSubmitted, validationSchema, values]
-  );
+    [isSubmitted, validationSchema, values],
+  )
 
   const handleSubmit = useCallback(
     async (event) => {
-      event.preventDefault();
-      setIsSubmitted(true);
+      event.preventDefault()
+      setIsSubmitted(true)
 
-      const formErrors = await validationSchema.validate(values);
+      const formErrors = await validationSchema.validate(values)
 
-      const isValid = Object.values(formErrors).every((error) => !error);
+      const isValid = Object.values(formErrors).every((error) => !error)
 
-      setIsValid(isValid);
+      setIsValid(isValid)
 
       if (isValid) {
-        onSubmit(values);
+        onSubmit(values)
       }
     },
-    [validationSchema, values, onSubmit, isValid]
-  );
-
-
+    [validationSchema, values, onSubmit, isValid],
+  )
 
   useEffect(() => {
     const func = async () => {
-      const formErrors = await validationSchema.validate(values);
+      const formErrors = await validationSchema.validate(values)
 
-      const isValid = Object.values(formErrors).every((error) => !error);
-      setIsValid(isValid);
+      const isValid = Object.values(formErrors).every((error) => !error)
+      setIsValid(isValid)
     }
 
-    func();
-
+    func()
   }, [isSubmitted, validationSchema, values])
-
 
   const register = (name, options = {}) => {
     const handleFieldChange = async (event) => {
-      await handleChange(name, event.target.value);
-    };
+      await handleChange(name, event.target.value)
+    }
 
     return {
       name,
-      value: values[name] || '',
+      value: values[name] || "",
       onChange: handleFieldChange,
       errors: errors[name],
       ...options,
-    };
-  };
+    }
+  }
 
   const getFieldMessages = (fieldName) => {
-    return validationSchema.getFieldMessages(fieldName);
-  };
+    return validationSchema.getFieldMessages(fieldName)
+  }
 
   const setValue = (fieldName, fieldValue) => {
     setValues((prevValues) => ({
       ...prevValues,
       [fieldName]: fieldValue,
-    }));
+    }))
 
-    handleChange(fieldName, fieldValue);
-
-  };
+    handleChange(fieldName, fieldValue)
+  }
 
   return {
     values,
@@ -99,9 +91,8 @@ const useFormValidator = (validationSchema, onSubmit, config = {}) => {
     register,
     getFieldMessages,
     handleSubmit,
-    setValue
-  };
-};
+    setValue,
+  }
+}
 
-
-export default useFormValidator;
+export default useFormValidator
