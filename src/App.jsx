@@ -66,7 +66,7 @@ const App = () => {
                 <Route path="leaderboard" element={<HubLeaderBoard />} />
                 <Route path="leaders/:type" element={<HubLeaders />} />
                 <Route path="add-preset" element={<HubAddPreset />} />
-                <Route path="edit-preset" element={<HubEditPreset />} />
+                <Route path="edit-preset/:id" element={<HubEditPreset />} />
                 <Route path="task-preset-edit" element={<HubTaskPresetEdit />} />
                 <Route path="tread/:id" element={<HubTread />} />
                 <Route path="task-info/:id" element={<HubTaskInfo />} />

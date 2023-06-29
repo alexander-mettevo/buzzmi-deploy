@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { useFormValidator } from "../../../../../../form-validator/hooks/index.js"
 import ValidationSchema from "../../../../../../form-validator/ValidationSchema.js"
 import HubPresetForm from "../HubPresetForm.jsx"
@@ -24,7 +24,9 @@ const HubAddPreset = () => {
     }
   }
 
-  const { handleSubmit, setValue, values, isValid, register } = useFormValidator(validationSchema, sendRequest)
+  const { handleSubmit, setValue, values, isValid, register } = useFormValidator(validationSchema, sendRequest, {
+    showErrorsOnSubmit: false,
+  })
 
   return (
     <HubPresetForm

@@ -216,7 +216,7 @@ export const addActivityTabs = [
   },
   {
     id: 2,
-    title: "Workouts",
+    title: "My Preset",
   },
 ]
 
