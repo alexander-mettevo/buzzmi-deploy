@@ -6,6 +6,7 @@ const InfoCardMenu = ({ id, showMenu, setShowMenu }) => {
   const menuRef = useRef(null)
 
   const handleMenu = (event) => {
+    event.preventDefault()
     event.stopPropagation()
     if (!menuRef.current.contains(event.target)) {
       setShowMenu(!showMenu)

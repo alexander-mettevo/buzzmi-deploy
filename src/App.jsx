@@ -70,7 +70,7 @@ const App = () => {
                 <Route path="task-preset-edit" element={<HubTaskPresetEdit />} />
                 <Route path="tread/:id" element={<HubTread />} />
                 <Route path="task-info/:id" element={<HubTaskInfo />} />
-                <Route path="preset-preview" element={<HubPresetPreview />} />
+                <Route path="preset-preview/:id" element={<HubPresetPreview />} />
                 <Route path="upgrade" element={<HubSubscription />} />
                 <Route path="finish-account" element={<HubFinishAccount />} />
                 <Route path="own-habit" element={<HubOwnHabit />} />
