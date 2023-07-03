@@ -1,199 +1,208 @@
-import React from 'react';
-import ResizeComponent from "../../../reusable/assets/resizeComponent/ResizeComponent.jsx";
-import HubTasksDesktop from "./hubTasksDesktop/HubTasksDesktop.jsx";
-import HubTasksMobile from "./hubTasksMobile/HubTasksMobile.jsx";
-import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx";
-import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx";
+import ResizeComponent from "../../../reusable/assets/resizeComponent/ResizeComponent.jsx"
+import HubTasksDesktop from "./hubTasksDesktop/HubTasksDesktop.jsx"
+import HubTasksMobile from "./hubTasksMobile/HubTasksMobile.jsx"
+import AdditionalInformation from "../../../reusable/assets/additionalInformation/AdditionalInformation.jsx"
+import MainLayoutContent from "../../../layouts/mainLayout/mainLayoutContent/MainLayoutContent.jsx"
 
-
-const mockItems = [{
-  title: 'Any time of the day',
-  list: [
-    {
-      "image": {
-        "src": "/images/hub/main/gym.png",
-        "alt": "Placeholder"
-      },
-      "type": "link",
-      "to": "/hub/preset-preview",
-      "badges": [
-        {
-          "type": "workouts"
-        },
-      ],
-      "info": {
-        "title": "Strength Traning",
-        "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-      }
-    },
-    {
-      "image": {
-        "src": "/images/hub/main/list.png",
-        "alt": "Placeholder"
-      },
-      "badges": [
-        {
-          "type": "workouts"
-        },
-        {
-          "type": "completed"
-        }
-      ],
-      "info": {
-        "title": "Strength Traning",
-        "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-      }
-    },
-    {
-      "image": {
-        "src": "/images/hub/main/drink.png",
-        "alt": "Placeholder"
-      },
-      "badges": [
-        {
-          "type": "workouts"
-        },
-        {
-          "type": "completed"
-        }
-      ],
-      "info": {
-        "title": "Strength Traning",
-        "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-      }
-    }
-  ]
-},
+const mockItems = [
   {
-    title: 'Any time of the day',
+    title: "Any time of the day",
     list: [
       {
-        "image": {
-          "src": "/images/hub/main/gym.png",
-          "alt": "Placeholder"
+        id: "1",
+        type: "task",
+        image: {
+          src: "/images/hub/main/gym.png",
+          alt: "Placeholder",
         },
-        "badges": [
+        to: "/hub/preset-preview",
+        badges: [
           {
-            "type": "workouts"
+            type: "workouts",
           },
-          {
-            "type": "completed"
-          }
         ],
-        "info": {
-          "title": "Strength Traning",
-          "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-        }
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
       },
       {
-        "image": {
-          "src": "/images/hub/main/list.png",
-          "alt": "Placeholder"
+        id: "1",
+        type: "task",
+        image: {
+          src: "/images/hub/main/list.png",
+          alt: "Placeholder",
         },
-        "badges": [
+        badges: [
           {
-            "type": "workouts"
+            type: "workouts",
           },
           {
-            "type": "completed"
-          }
+            type: "completed",
+          },
         ],
-        "info": {
-          "title": "Strength Traning",
-          "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-        }
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
       },
       {
-        "image": {
-          "src": "/images/hub/main/drink.png",
-          "alt": "Placeholder"
+        id: "1",
+        type: "task",
+        image: {
+          src: "/images/hub/main/drink.png",
+          alt: "Placeholder",
         },
-        "badges": [
+        badges: [
           {
-            "type": "workouts"
+            type: "workouts",
           },
           {
-            "type": "completed"
-          }
+            type: "completed",
+          },
         ],
-        "info": {
-          "title": "Strength Traning",
-          "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-        }
-      }
-    ]
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
+      },
+    ],
   },
   {
-    title: 'Any time of the day',
+    title: "Any time of the day",
     list: [
       {
-        "image": {
-          "src": "/images/hub/main/gym.png",
-          "alt": "Placeholder"
+        id: "1",
+        type: "task",
+        image: {
+          src: "/images/hub/main/gym.png",
+          alt: "Placeholder",
         },
-        "badges": [
+        badges: [
           {
-            "type": "workouts"
+            type: "workouts",
           },
           {
-            "type": "completed"
-          }
+            type: "completed",
+          },
         ],
-        "info": {
-          "title": "Strength Traning",
-          "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-        }
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
       },
       {
-        "image": {
-          "src": "/images/hub/main/list.png",
-          "alt": "Placeholder"
+        id: "1",
+        type: "task",
+        image: {
+          src: "/images/hub/main/list.png",
+          alt: "Placeholder",
         },
-        "badges": [
+        badges: [
           {
-            "type": "workouts"
+            type: "workouts",
           },
           {
-            "type": "completed"
-          }
+            type: "completed",
+          },
         ],
-        "info": {
-          "title": "Strength Traning",
-          "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-        }
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
       },
       {
-        "image": {
-          "src": "/images/hub/main/drink.png",
-          "alt": "Placeholder"
+        image: {
+          src: "/images/hub/main/drink.png",
+          alt: "Placeholder",
         },
-        "badges": [
+        badges: [
           {
-            "type": "workouts"
+            type: "workouts",
           },
           {
-            "type": "completed"
-          }
+            type: "completed",
+          },
         ],
-        "info": {
-          "title": "Strength Traning",
-          "text": "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the"
-        }
-      }
-    ]
-  }]
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
+      },
+    ],
+  },
+  {
+    title: "Any time of the day",
+    list: [
+      {
+        image: {
+          src: "/images/hub/main/gym.png",
+          alt: "Placeholder",
+        },
+        badges: [
+          {
+            type: "workouts",
+          },
+          {
+            type: "completed",
+          },
+        ],
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
+      },
+      {
+        id: "1",
+        type: "task",
+        image: {
+          src: "/images/hub/main/list.png",
+          alt: "Placeholder",
+        },
+        badges: [
+          {
+            type: "workouts",
+          },
+          {
+            type: "completed",
+          },
+        ],
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
+      },
+      {
+        image: {
+          src: "/images/hub/main/drink.png",
+          alt: "Placeholder",
+        },
+        badges: [
+          {
+            type: "workouts",
+          },
+          {
+            type: "completed",
+          },
+        ],
+        info: {
+          title: "Strength Traning",
+          text: "Place your feet and hips apart, and grab a pair of dumbbells. Bend your knees slightly, and hinge at the",
+        },
+      },
+    ],
+  },
+]
 
 const HubTasks = () => {
   return (
-    <MainLayoutContent
-      rightColumnContent={<AdditionalInformation/>}
-    >
+    <MainLayoutContent rightColumnContent={<AdditionalInformation />}>
       <ResizeComponent
-        desktopComponent={<HubTasksDesktop data={mockItems}/>}
-        mobileComponent={<HubTasksMobile data={mockItems}/>}
+        desktopComponent={<HubTasksDesktop data={mockItems} />}
+        mobileComponent={<HubTasksMobile data={mockItems} />}
       />
     </MainLayoutContent>
-  );
-};
+  )
+}
 
-export default HubTasks;
+export default HubTasks

@@ -3,6 +3,7 @@ import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
 import Gallery from "../../../reusable/gallary/Gallery.jsx"
 import AudioPlayer from "../../../reusable/audioPlayer/AudioPlayer.jsx"
 import VideoGallery from "../../../reusable/videoGallery/VideoGallery.jsx"
+import { useParams } from "react-router-dom"
 
 // mock data
 import { infoCardData, tasksData } from "../../../../mock-data/hub/hub.js"
@@ -10,6 +11,8 @@ import { galleryList, videoSrcLink } from "../../../../mock-data/gallery/gallery
 import SmallCardDispatcher from "../../../reusable/cards/smallCard/SmallCardDispatcher.jsx"
 
 const HubPresetPreview = () => {
+  const { id } = useParams()
+
   return (
     <div className="hub">
       <div className="hub__content">
@@ -17,7 +20,7 @@ const HubPresetPreview = () => {
           title="Energetic Morning"
           btnText="Cancel"
           lastItemLink={{
-            href: "/hub/edit-preset",
+            href: `/hub/edit-preset/${id}`,
             title: "Edit",
           }}
         />

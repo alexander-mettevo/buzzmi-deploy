@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import Rank from "../../items/rank/Rank.jsx"
 import LinkTabs from "../../../../reusable/assets/linkTabs/LinkTabs.jsx"
 import FilterList from "../../items/filterList/FilterList.jsx"

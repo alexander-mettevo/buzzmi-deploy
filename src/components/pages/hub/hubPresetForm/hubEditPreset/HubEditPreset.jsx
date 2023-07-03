@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ValidationSchema from "../../../../../../form-validator/ValidationSchema.js"
 import { useFormValidator } from "../../../../../../form-validator/hooks/index.js"
 import HubPresetForm from "../HubPresetForm.jsx"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
@@ -10,6 +10,7 @@ const validationSchema = new ValidationSchema({
 
 const HubEditPreset = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
   const [showInTask, setShowInTask] = useState(false)
   const [error, setError] = useState(null)
 
@@ -18,6 +19,7 @@ const HubEditPreset = () => {
     try {
       //TODO: send request
       console.log("formData", formData)
+      navigate(`/hub/preset-preview/${id}`)
     } catch (e) {
       setError(e)
     }

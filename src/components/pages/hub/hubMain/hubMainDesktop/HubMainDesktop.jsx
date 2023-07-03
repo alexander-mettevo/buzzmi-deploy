@@ -1,4 +1,3 @@
-import React from "react"
 import Rank from "../../items/rank/Rank.jsx"
 import Button from "../../../../reusable/btns/buttons/Button.jsx"
 import { Link } from "react-router-dom"
@@ -8,8 +7,8 @@ import HubAccess from "../items/hubAccess/HubAccess.jsx"
 //TODO: mock data
 const infoList = [
   {
-    id: "dwqdsads",
-    href: "/hub/add-activity",
+    id: "1",
+    type: "task",
     image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
@@ -28,8 +27,8 @@ const infoList = [
     },
   },
   {
-    id: "kuykmt",
-    href: "/hub/add-activity",
+    id: "1",
+    type: "task",
     image: {
       src: "/images/hub/main/list.png",
       alt: "Placeholder",
@@ -45,8 +44,9 @@ const infoList = [
     },
   },
   {
-    id: "fwebtrtt",
-    href: "/hub/add-activity",
+    id: "1",
+    type: "anothe",
+    href: "/hub/finish-account",
     image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
