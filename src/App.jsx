@@ -96,28 +96,34 @@ const App = () => {
             <Route path="/sales/pay" element={<Pay />} />
           </Route>
           <Route element={<BaseLayout />}>
-            <Route path="/auth/forgot-code" element={<ForgotCode />} />
-            <Route path="/auth/forgot-password" element={<ForgotPassword />} />
-            <Route path="/auth/reset-password" element={<ResetPassword />} />
+            <Route path="/auth">
+              <Route path="forgot-code" element={<ForgotCode />} />
+              <Route path="forgot-password" element={<ForgotPassword />} />
+              <Route path="reset-password" element={<ResetPassword />} />
+              <Route path="provide-email" element={<ProvideEmail />} />
+              <Route path="provide-email-code" element={<ProvideEmailCode />} />
+              <Route path="provide-phone" element={<ProvidePhone />} />
+              <Route path="provide-phone-code" element={<ProvidePhoneCode />} />
+              <Route path="bio" element={<BioPage />} />
+              <Route path="create-password" element={<CreatePassword />} />
+            </Route>
+
+            <Route path="/profile">
+              <Route path="chose-role" element={<ChoseRole />} />
+              <Route path="add-creators" element={<AddCreators />} />
+              <Route path="add-interest" element={<Interest />} />
+              <Route path="add-contacts" element={<AddContacts />} />
+              <Route path="add-friends" element={<AddFriends />} />
+              <Route path="add-people" element={<AddPeople />} />
+            </Route>
+
+            <Route path="/sales">
+              <Route path="" element={<Subscription />} />
+              <Route path="v2" element={<SubscriptionV2 />} />
+              <Route path="mobile-pay" element={<MobilePay />} />
+            </Route>
+
             <Route path="/test" element={<Test />} />
-
-            <Route path="/auth/provide-email" element={<ProvideEmail />} />
-            <Route path="/auth/provide-email-code" element={<ProvideEmailCode />} />
-            <Route path="/auth/provide-phone" element={<ProvidePhone />} />
-            <Route path="/auth/provide-phone-code" element={<ProvidePhoneCode />} />
-
-            <Route path="/auth/bio" element={<BioPage />} />
-            <Route path="/auth/create-password" element={<CreatePassword />} />
-
-            <Route path="/profile/chose-role" element={<ChoseRole />} />
-            <Route path="/profile/add-creators" element={<AddCreators />} />
-            <Route path="/profile/add-interest" element={<Interest />} />
-            <Route path="/profile/add-contacts" element={<AddContacts />} />
-            <Route path="/profile/add-friends" element={<AddFriends />} />
-            <Route path="/profile/add-people" element={<AddPeople />} />
-            <Route path="/sales" element={<Subscription />} />
-            <Route path="/sales/v2" element={<SubscriptionV2 />} />
-            <Route path="/sales/mobile-pay" element={<MobilePay />} />
           </Route>
           <Route path="/" element={<Dashboard />} />
         </Route>
