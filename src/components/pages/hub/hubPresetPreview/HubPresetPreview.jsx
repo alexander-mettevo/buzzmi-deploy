@@ -20,7 +20,7 @@ const HubPresetPreview = () => {
           title="Energetic Morning"
           btnText="Cancel"
           lastItemLink={{
-            href: "/hub/edit-preset",
+            href: `/hub/edit-preset/${id}`,
             title: "Edit",
           }}
         />
