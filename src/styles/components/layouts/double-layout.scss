@@ -33,6 +33,13 @@
         padding-top: 0;
         padding-bottom: 0;
       }
+
+      .button {
+        font-weight: 600;
+
+        @include adaptiveValue("font-size", 18, 16);
+        @include adaptiveValue("line-height", 18, 18);
+      }
     }
   }
 
