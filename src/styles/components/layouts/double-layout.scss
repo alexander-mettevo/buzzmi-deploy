@@ -12,6 +12,10 @@
     }
   }
 
+  @media (min-width: $tablet) and (max-width: 1200px) {
+    gap: 80px;
+  }
+
   @media (max-width: $tablet) {
     display: block;
     max-width: 100%;
@@ -19,6 +23,19 @@
 
   &__content {
     flex: 0 0 45%;
+
+    @media (min-width: $tablet) and (max-width: 1200px) {
+      flex: 0 0 40%;
+    }
+
+    @media (min-width: $tablet) and (max-width: 1200px) {
+      .button,
+      .input {
+        min-height: 50px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
   }
 
   &__mobile-support {
