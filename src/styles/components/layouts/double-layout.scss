@@ -1,8 +1,14 @@
 .double-layout {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 80px;
   min-height: calc(100vh - 150px);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet) {
+    padding: 0 20px;
+  }
 
   &__reverse {
     flex-direction: row-reverse;
@@ -12,23 +18,15 @@
     }
   }
 
-  @media (min-width: $tablet) and (max-width: 1200px) {
-    gap: 80px;
-  }
-
   @media (max-width: $tablet) {
     display: block;
     max-width: 100%;
   }
 
   &__content {
-    flex: 0 0 45%;
+    flex: 0 0 40%;
 
-    @media (min-width: $tablet) and (max-width: 1200px) {
-      flex: 0 0 40%;
-    }
-
-    @media (min-width: $tablet) and (max-width: 1200px) {
+    @media (min-width: $tablet) {
       .button,
       .input {
         min-height: 50px;
