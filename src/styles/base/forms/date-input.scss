@@ -9,7 +9,8 @@
 
       @media (max-width: $tablet) {
         left: 16px;
-        top: 12px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }
