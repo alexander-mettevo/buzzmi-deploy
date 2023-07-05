@@ -1,14 +1,11 @@
 .double-layout {
   display: flex;
   justify-content: space-between;
-  gap: 80px;
+  gap: 100px;
   min-height: calc(100vh - 150px);
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-
-  @media (max-width: $tablet) {
-    padding: 0 20px;
-  }
+  padding: 0 20px;
 
   &__reverse {
     flex-direction: row-reverse;
