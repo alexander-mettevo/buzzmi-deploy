@@ -23,7 +23,7 @@
     background-color: transparent !important;
     --rt-opacity: 1;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $mobile) {
       top: 0 !important;
     }
   }
