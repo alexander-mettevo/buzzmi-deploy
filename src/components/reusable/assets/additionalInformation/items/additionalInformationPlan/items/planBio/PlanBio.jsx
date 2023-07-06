@@ -28,10 +28,11 @@ const PlanBio = () => {
         <img src={user?.avatar?.src} alt={user?.avatar?.alt} />
       </div>
       <div className={styles["plan-bio__info"]}>
-        <div className={"h4"}>{user?.name}</div>
-        <div className={styles["plan-bio__verified"]}>
-          <Verified isVerified={user?.isVerified} />
+        <div className={"h4"}>
+          {user?.name} <Verified isVerified={user?.isVerified} />
         </div>
+
+        <div className={styles["plan-bio__verified"]}></div>
       </div>
     </div>
   )
