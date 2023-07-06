@@ -22,7 +22,10 @@
   &__tooltip {
     background-color: transparent !important;
     --rt-opacity: 1;
-    top: 0 !important;
+
+    @media (max-width: $tablet) {
+      top: 0 !important;
+    }
   }
 
   &__wrapper {
