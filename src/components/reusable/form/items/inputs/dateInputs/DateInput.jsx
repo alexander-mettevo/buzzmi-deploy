@@ -25,7 +25,7 @@ const DateInput = ({ label, setValue, errors }) => {
         />
         <CalendarSvg />
       </div>
-      <Tooltip className="date-input__tooltip" clickable anchorSelect=".date-input__field">
+      <Tooltip className="date-input__tooltip" clickable anchorSelect=".date-input__field" wrapper="">
         <div className="date-input__wrapper">
           <Calendar
             className={cn("date-picker date-picker_mode-switch", {
