@@ -1,6 +1,4 @@
-import React, { useState } from "react"
-import ValidationSchema from "../../../../form-validator/ValidationSchema.js"
-import { useFormValidator } from "../../../../form-validator/hooks/index.js"
+import { useState } from "react"
 import MobileSelect from "../../reusable/multiSelect/items/mobileSelect/MobileSelect.jsx"
 
 const options = {
