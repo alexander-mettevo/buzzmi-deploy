@@ -48,6 +48,7 @@ import HubTaskPresetEdit from "./components/pages/hub/hubTaskPresetEdit/HubTaskP
 import HubFinishAccount from "./components/pages/hub/hubFinishAccount/HubFinishAccount.jsx"
 import HubOwnHabit from "./components/pages/hub/hubOwnHabit/HubOwnHabit.jsx"
 import HubAddTask from "./components/pages/hub/hubAddTask/HubAddTask.jsx"
+import InfoMain from "./components/pages/info/InfoMain/InfoMain.jsx"
 
 const App = () => {
   return (
@@ -56,6 +57,9 @@ const App = () => {
         <Route element={<ThemeLayout />}>
           <Route element={<AuthLayout />}>
             <Route element={<MainLayout />}>
+              <Route path="/info">
+                <Route path="" element={<InfoMain />} />
+              </Route>
               <Route path="/hub">
                 <Route path="" element={<HubMain />} />
                 <Route path="add-activity" element={<HubAddActivity />} />

@@ -19,10 +19,18 @@
     display: flex;
     height: 100%;
     margin-top: 20px;
+
+    &_mod {
+      justify-content: center;
+    }
   }
 
   &__mid {
     flex: 1;
+
+    &_mod {
+      max-width: 630px;
+    }
   }
 
   &__logo {

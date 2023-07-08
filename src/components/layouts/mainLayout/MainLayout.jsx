@@ -1,20 +1,20 @@
-import {Outlet} from 'react-router-dom';
-import MainLayoutSidebar from "./mainLayoutSidebar/MainLayoutSidebar.jsx";
-import MainLayoutFooter from "./mainLayoutFooter/MainLayoutFooter.jsx";
+import { Outlet } from "react-router-dom"
+import MainLayoutSidebar from "./mainLayoutSidebar/MainLayoutSidebar.jsx"
+import MainLayoutFooter from "./mainLayoutFooter/MainLayoutFooter.jsx"
 
 const MainLayout = () => {
   return (
     <div className="main-layout main-layout__container">
       <div className="main-layout__wrapper">
-        <MainLayoutSidebar/>
+        <MainLayoutSidebar />
         <div className="main-layout__content">
-          <Outlet/>
+          <Outlet />
         </div>
       </div>
 
-      <MainLayoutFooter/>
+      <MainLayoutFooter />
     </div>
-  );
+  )
 }
 
-export default MainLayout;
+export default MainLayout

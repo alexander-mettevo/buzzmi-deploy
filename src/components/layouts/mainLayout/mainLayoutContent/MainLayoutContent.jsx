@@ -1,18 +1,23 @@
-import React from 'react';
-import MainLayoutRightColumn from "./mainLayoutRightColumn/MainLayoutRightColumn.jsx";
+import MainLayoutRightColumn from "./mainLayoutRightColumn/MainLayoutRightColumn.jsx"
+import cn from "classnames"
 
-const MainLayoutContent = ({children, rightColumnContent}) => {
+const MainLayoutContent = ({ children, rightColumnContent }) => {
   return (
-    <div className='main-layout__row'>
-      <div className='main-layout__mid'>
+    <div
+      className={cn("main-layout__row", {
+        "main-layout__row_mod": !rightColumnContent,
+      })}
+    >
+      <div
+        className={cn("main-layout__mid", {
+          "main-layout__mid_mod": !rightColumnContent,
+        })}
+      >
         {children}
       </div>
-
-        <MainLayoutRightColumn>
-          {rightColumnContent}
-        </MainLayoutRightColumn>
+      {!!rightColumnContent && <MainLayoutRightColumn>{rightColumnContent}</MainLayoutRightColumn>}
     </div>
-  );
-};
+  )
+}
 
-export default MainLayoutContent;
+export default MainLayoutContent

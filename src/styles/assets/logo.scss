@@ -65,3 +65,20 @@
     color: var(--main-opposite-text);
   }
 }
+
+.small-header-logo {
+  svg {
+    @include adaptiveValue("width", 68, 45);
+    @include adaptiveValue("height", 76, 49);
+
+    path:nth-child(1) {
+      fill: var(--dark-main-one-paint);
+    }
+    path:nth-child(2) {
+      fill: var(--dark-main-two-paint);
+    }
+    path:nth-child(3) {
+      fill: var(--dark-main-three-paint);
+    }
+  }
+}
