@@ -2,6 +2,8 @@ import Avatar from "../../../../reusable/assets/avatar/Avatar"
 import Box from "../../../../reusable/cards/box/Box"
 import CustomLink from "../../../../reusable/btns/links/CustomLink"
 import InfoBio from "../../items/InfoBio"
+import InfoDesktopTabs from "../../items/infoDesktopTabs/InfoDesktopTabs"
+import InfoContentTabs from "../../items/infoContentTabs/InfoContentTabs"
 
 const InfoMainDesktop = () => {
   return (
@@ -20,6 +22,8 @@ const InfoMainDesktop = () => {
           </CustomLink>
         </div>
       </Box>
+      <InfoDesktopTabs />
+      <InfoContentTabs />
     </>
   )
 }

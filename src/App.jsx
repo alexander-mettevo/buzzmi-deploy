@@ -58,7 +58,7 @@ const App = () => {
           <Route element={<AuthLayout />}>
             <Route element={<MainLayout />}>
               <Route path="/info">
-                <Route path="" element={<InfoMain />} />
+                <Route path="profile" element={<InfoMain />} />
               </Route>
               <Route path="/hub">
                 <Route path="" element={<HubMain />} />

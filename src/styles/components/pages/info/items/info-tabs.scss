@@ -1,0 +1,67 @@
+.info-tabs {
+  display: flex;
+  align-items: center;
+
+  .react-tabs__tab-list {
+    flex: 1;
+  }
+
+  &__select {
+    text-align: center;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 12px;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+
+      .info-tabs__select-list {
+        display: flex;
+      }
+    }
+  }
+
+  &__select-title {
+    position: relative;
+    padding: 10px 20px 20px 25px;
+
+    &::before {
+      content: "\f078";
+      font-family: "Font Awesome 6 Free";
+      position: absolute;
+      top: 40%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__select-list {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 100%;
+    background: var(--items-bg);
+    box-shadow: 0px 1px 4px 0px rgba(111, 29, 244, 0.12);
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+
+    & > li {
+      padding: 5px 20px;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--bg-secondary);
+      }
+
+      a {
+        white-space: nowrap;
+      }
+    }
+  }
+}
