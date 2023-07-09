@@ -1,3 +1,12 @@
+.info {
+  &__edit-profile-m {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+  }
+}
+
 @import "items/info-top";
 @import "items/info-tabs";
 @import "items/info-section";
