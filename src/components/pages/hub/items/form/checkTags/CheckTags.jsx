@@ -1,4 +1,4 @@
-import React from "react"
+import Button from "../../../../../reusable/btns/buttons/Button.jsx"
 import CheckTag from "./CheckTag.jsx"
 
 const CheckTags = ({ tags, value, setValue, valueName }) => {
@@ -13,10 +13,15 @@ const CheckTags = ({ tags, value, setValue, valueName }) => {
     }
   }
 
+  const handleAddNew = () => {}
+
   return (
     <div className="check-tags">
       {tags?.length > 0 &&
         tags.map((tag) => <CheckTag value={value} key={tag.value} tag={tag} onChange={onTagClick} />)}
+      <Button className="alt-btn button_s d-lg-none check-tags__add-btn" onClick={handleAddNew}>
+        + Add new
+      </Button>
     </div>
   )
 }

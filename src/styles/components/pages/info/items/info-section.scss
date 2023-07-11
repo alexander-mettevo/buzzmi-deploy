@@ -1,0 +1,42 @@
+.info-section {
+  .react-tabs__tab {
+    color: var(--grey, #c0bacb);
+    cursor: pointer;
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .react-tabs__tab--selected {
+    border-bottom: none !important;
+    color: var(--black, #000);
+    outline: none;
+    font-weight: 500;
+  }
+
+  .react-tabs__tab--disabled {
+    cursor: not-allowed;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      height: 15px;
+      width: 15px;
+      background-image: url("../../../public/images/info/lock.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @media (max-width: $mobile) {
+        top: -6px;
+      }
+    }
+  }
+}
