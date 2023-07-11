@@ -9,6 +9,10 @@
     justify-content: center;
   }
 
+  @media (max-width: $mobileSmall) {
+    margin: -5px;
+  }
+
   &--fixed-width {
     width: 264px;
 
@@ -87,7 +91,6 @@
     .swiper-button-next {
       display: none;
     }
-
   }
 
   &__btn {
@@ -125,7 +128,7 @@
 
         &:before,
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           border-radius: 6px;
         }
