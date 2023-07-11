@@ -61,6 +61,18 @@
     transform: translateY(-50%);
     font-size: 24px;
   }
+
+  &__left-icon {
+    input {
+      padding-left: 40px;
+    }
+
+    .search-form__btn {
+      left: 20px;
+      right: auto;
+      font-size: 16px;
+    }
+  }
 }
 
 @import "buttons/buttons";

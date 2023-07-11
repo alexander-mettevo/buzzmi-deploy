@@ -9,7 +9,7 @@ const BackBtnWithTitlePage = ({ title, btnText, lastItemLink }) => {
         <img className="back-btn__icon" src="/images/assets/back.svg" alt="arrow left" />
         <span className="back-btn__text">{btnText}</span>
       </button>
-      <span className="h3">{title}</span>
+      <span className="back-btn__title">{title}</span>
       {lastItemLink && lastItemLink.href && lastItemLink.title && (
         <Link className="back-btn__last-link text-alt-primary" to={lastItemLink.href}>
           {lastItemLink.title}

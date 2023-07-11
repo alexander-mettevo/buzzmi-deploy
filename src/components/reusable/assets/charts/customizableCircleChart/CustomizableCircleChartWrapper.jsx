@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import CustomizableCircleChartButton from "./items/CustomizableCircleChartButton.jsx"
 import CustomizableCircleChart from "./CustomizableCircleChart.jsx"
 import styles from "./customizable-circle.module.scss"

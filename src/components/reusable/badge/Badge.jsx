@@ -1,4 +1,3 @@
-import React from "react"
 import cn from "classnames"
 
 const itemsData = {
@@ -48,7 +47,7 @@ const Badge = ({ type, count, active, onClick, title }) => {
         badge__active: active,
       })}
     >
-      {!!itemsData[type]?.icon && <img src={itemsData[type].icon} alt="icon" className="me-1" />}
+      {!!itemsData[type]?.icon && <img src={itemsData[type].icon} alt="icon" className="me-1 badge__icon" />}
       {!!title ? title : itemsData[type].name}
       {count && <span className="badge_count">({count})</span>}
     </span>
