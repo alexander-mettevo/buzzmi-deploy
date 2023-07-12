@@ -4,7 +4,16 @@ import Input from "../../../../../reusable/form/items/inputs/Input.jsx"
 import Badge from "../../../../../reusable/badge/Badge.jsx"
 import AssetsCards from "../../../../../reusable/cards/assetsCards/AssetsCards.jsx"
 
-const AddName = ({ title, register, placeholder, name, setValue, value, initPopularNames = [] }) => {
+const AddName = ({
+  title,
+  register,
+  placeholder,
+  name,
+  setValue,
+  value,
+  initPopularNames = [],
+  showSuggestedTask = false,
+}) => {
   const [popularNames, setPopularNames] = useState(initPopularNames)
   const [selectedNames, setSelectedNames] = useState("")
   const [suggestTasks, setSuggestTasks] = useState([])
@@ -56,7 +65,7 @@ const AddName = ({ title, register, placeholder, name, setValue, value, initPopu
       <div className="mb-3 mb-lg-4">
         <Input placeholder={placeholder} name={name} register={register} />
       </div>
-      {suggestTasks?.length > 0 && (
+      {showSuggestedTask && suggestTasks?.length > 0 && (
         <div className="mb-3">
           <h6 className="h6 mb-3 mb-lg-4">Suggested Tasks</h6>
           <AssetsCards list={suggestTasks} />

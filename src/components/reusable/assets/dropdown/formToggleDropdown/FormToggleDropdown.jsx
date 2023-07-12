@@ -14,6 +14,7 @@ const FormToggleDropdown = ({
   name,
   values,
   text,
+  miniMode,
 }) => {
   const [isOpen, setIsOpen] = useState(!!defaultValue)
 
@@ -46,6 +47,7 @@ const FormToggleDropdown = ({
       isOpen={isOpen}
       setIsOpen={setIsOpen}
       text={text}
+      miniMode={miniMode}
     >
       {children}
     </DropdownToggleComponent>

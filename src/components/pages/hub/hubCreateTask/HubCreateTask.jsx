@@ -1,17 +1,20 @@
-import React, { useState } from "react"
-import mocData from "./mocData.js"
-import { useFormValidator } from "../../../../../form-validator/hooks/index.js"
-import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
-import HubTaskForm from "../items/form/hubTaskForm/HubTaskForm.jsx"
-import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx"
-import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
+import { useState } from "react"
+import { useFormValidator } from "../../../../../form-validator/hooks/index"
+import ValidationSchema from "../../../../../form-validator/ValidationSchema"
+import HubTaskForm from "./HubTaskForm"
 
-const validationSchema = new ValidationSchema({})
+const data = {
+  initPopularNames: ["Meditate", "Workout", "Drink water", "Dance", "Sleep better"],
+}
 
-const HubCreateTask = () => {
-  const data = mocData
+const validationSchema = new ValidationSchema({
+  name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
+})
+
+const HubAddPreset = () => {
   const [error, setError] = useState(null)
 
+  //TODO example function to send request
   const sendRequest = async (formData) => {
     try {
       //TODO: send request
@@ -21,23 +24,21 @@ const HubCreateTask = () => {
     }
   }
 
-  const { handleSubmit, setValue, values, isValid } = useFormValidator(validationSchema, sendRequest, {
-    defaultValues: {},
+  const { handleSubmit, setValue, values, isValid, register } = useFormValidator(validationSchema, sendRequest, {
+    showErrorsOnSubmit: false,
   })
 
   return (
-    <div className="main-layout__single-container">
-      <BackBtnWithTitlePage title={data?.title} />
-      <HubTaskForm
-        values={values}
-        error={error}
-        handleSubmit={handleSubmit}
-        setValue={setValue}
-        data={data}
-        btnTitle="Add task"
-      />
-    </div>
+    <HubTaskForm
+      error={error}
+      handleSubmit={handleSubmit}
+      setValue={setValue}
+      values={values}
+      isValid={isValid}
+      register={register}
+      data={data}
+    />
   )
 }
 
-export default HubCreateTask
+export default HubAddPreset

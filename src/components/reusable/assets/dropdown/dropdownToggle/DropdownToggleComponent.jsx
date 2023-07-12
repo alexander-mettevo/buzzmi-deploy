@@ -15,6 +15,7 @@ const DropdownToggleComponent = ({
   onEditBtn,
   editBtnText,
   text,
+  miniMode,
 }) => {
   const contentRef = useRef(null)
   const [scrollHeight, setScrollHeight] = useState(0)
@@ -39,7 +40,15 @@ const DropdownToggleComponent = ({
   )
 
   return (
-    <MultiBox icon={icon} info={info} title={title} rightSide={dropdownRightSide} isHideMode={!isOpen} text={text}>
+    <MultiBox
+      icon={icon}
+      info={info}
+      title={title}
+      rightSide={dropdownRightSide}
+      isHideMode={!isOpen}
+      text={text}
+      miniMode={miniMode}
+    >
       <div
         className={`dropdown__content ${isOpen ? "dropdown__content--open" : ""}`}
         style={{ minHeight: isOpen ? `${scrollHeight}px` : 0 }}
