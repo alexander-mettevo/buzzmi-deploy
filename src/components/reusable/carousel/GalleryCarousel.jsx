@@ -38,6 +38,8 @@ const GalleryCarousel = ({ list, overlineText, goToActiveSlide, onSwiperChange }
             className="mySwiper2"
             onSlideChange={onSwiperChange}
             onSwiper={onSwiperChange}
+            followFinger={true}
+            momentumBounceRatio={0.5}
           >
             {list.map((el) => {
               return (
