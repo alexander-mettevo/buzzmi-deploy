@@ -144,6 +144,7 @@ export const tasksData = [
 
 export const mockItems = [
   {
+    link: "/hub/preset-preview/undefined",
     image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
@@ -159,6 +160,7 @@ export const mockItems = [
     },
   },
   {
+    link: "/hub/preset-preview/undefined",
     image: {
       src: "/images/hub/main/list.png",
       alt: "Placeholder",
@@ -174,6 +176,7 @@ export const mockItems = [
     },
   },
   {
+    link: "/hub/preset-preview/undefined",
     image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
@@ -194,6 +197,7 @@ export const presetList = mockItems.map((el) => ({
   to: el.to,
   image: el.image,
   info: el.info,
+  link: el.link,
 }))
 export const mockTags = ["all", "presets", "workouts", "habits", "program", "challenges"]
 export const tabsLastMod = [
