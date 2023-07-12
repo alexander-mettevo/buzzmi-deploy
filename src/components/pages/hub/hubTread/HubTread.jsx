@@ -7,6 +7,7 @@ import PageNavigation from "../../../reusable/pageNavigation/PageNavigation.jsx"
 import ProgressHeader from "./header/ProgressHeader.jsx"
 import { dayList, goalList, infoCardData, pageNav, viewTypeList } from "../../../../mock-data/hub/hub.js"
 import { useParams } from "react-router-dom"
+import Description from "../../../reusable/assets/description/Description.jsx"
 
 const getCurrentType = (list, id) => list.filter((el) => el.id === id)[0]?.text
 
@@ -32,7 +33,7 @@ const HubTread = () => {
           lastItemLink={{ title: "Edit", href: `/hub/edit-task/${id}` }}
         />
         <div className="mb-4">
-          <InfoCard item={infoCardData} />
+          <Description item={infoCardData} />
         </div>
         <ProgressHeader text="2 complated" />
         <div className="mb-4">
