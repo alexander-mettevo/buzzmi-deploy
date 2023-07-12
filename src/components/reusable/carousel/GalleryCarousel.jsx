@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { FreeMode, Navigation, Thumbs } from "swiper/modules"
+import "swiper/css"
 
 const GalleryCarousel = ({ list, overlineText, goToActiveSlide, onSwiperChange }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
