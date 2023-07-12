@@ -1,5 +1,4 @@
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
-import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
 import Gallery from "../../../reusable/gallary/Gallery.jsx"
 import AudioPlayer from "../../../reusable/audioPlayer/AudioPlayer.jsx"
 import VideoGallery from "../../../reusable/videoGallery/VideoGallery.jsx"
@@ -9,6 +8,7 @@ import { useParams } from "react-router-dom"
 import { infoCardData, tasksData } from "../../../../mock-data/hub/hub.js"
 import { galleryList, videoSrcLink } from "../../../../mock-data/gallery/gallery.js"
 import SmallCardDispatcher from "../../../reusable/cards/smallCard/SmallCardDispatcher.jsx"
+import Description from "../../../reusable/assets/description/Description.jsx"
 
 const HubPresetPreview = () => {
   const { id } = useParams()
@@ -26,7 +26,7 @@ const HubPresetPreview = () => {
         />
 
         <div className="mb-4">
-          <InfoCard item={infoCardData} />
+          <Description item={infoCardData} />
         </div>
         <div className="hub__holder">
           <Gallery list={galleryList} isSmall />

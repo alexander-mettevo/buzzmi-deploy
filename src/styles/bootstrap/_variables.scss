@@ -8,8 +8,8 @@
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
   4: $spacer * 1.25,
   5: $spacer * 1.5,
@@ -28,7 +28,7 @@ $spacers: (
   18: $spacer * 4.75,
   19: $spacer * 5,
   20: $spacer * 5.25,
-  21: $spacer * .75,
+  21: $spacer * 0.75,
 ) !default;
 
 // Grid breakpoints
@@ -41,15 +41,14 @@ $grid-breakpoints: (
   xs: 0,
   sm: 500px,
   md: 767.98px,
-  lg: 991.98px,
+  lg: 1049.98px,
   xl: 1178px,
-  xxl: 1400px
+  xxl: 1400px,
 ) !default;
 // scss-docs-end grid-breakpoints
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
-
 
 // Grid containers
 //
@@ -61,7 +60,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px
+  xxl: 1320px,
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -70,7 +69,6 @@ $container-max-widths: (
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
-
 
 $enable-grid-classes: true !default;
 $enable-container-classes: true !default;
