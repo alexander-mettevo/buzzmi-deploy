@@ -5,15 +5,20 @@
     border-radius: 20px !important;
     font-weight: 500;
     font-size: 17px;
-    line-height: 21px;
+    line-height: 20px;
     border: 1px solid var(--input-border) !important;
     transition: all 0.3s ease-in-out;
     margin-bottom: 20px !important;
-    padding: 5px 15px !important;
+    padding: 8px 15px !important;
 
     &:focus-within {
       outline: none;
       box-shadow: var(--input-focus-shadow) !important;
+    }
+
+    @media (max-width: $mobileSmall) {
+      padding: 3px 15px !important;
+      font-size: 12px;
     }
   }
 
