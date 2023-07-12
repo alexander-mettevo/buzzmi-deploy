@@ -9,7 +9,7 @@ import FormToggleDropdown from "../../../../../reusable/assets/dropdown/formTogg
 import MultiBox from "../../../../../reusable/cards/multiBox/MultiBox.jsx"
 import SetGoal from "../setGoal/SetGoal.jsx"
 import SubmitButton from "../../../../../reusable/btns/buttons/submitButton/SubmitButton.jsx"
-import Button from "../../../../../reusable/btns/buttons/Button.jsx"
+import SpecificTime from "../../specificTime/SpecificTime.jsx"
 
 const when = [
   { title: "Morning", value: "morning" },
@@ -29,7 +29,7 @@ const HubTaskForm = ({ values, error, handleSubmit, data, setValue, btnTitle }) 
         name="when"
       >
         <RadioMode setValue={setValue} value={values.when} name="when" variants={when} defaultValue="anyTime" />
-        <Button className="alt-btn button_s d-lg-none specific-time mt-3">Specific time</Button>
+        <SpecificTime values={values.specTime} setValues={(value) => setValue("specTime", value)} />
       </MultiBox>
       <FormToggleDropdown
         setValue={setValue}
