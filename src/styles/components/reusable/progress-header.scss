@@ -6,11 +6,17 @@
   margin: 0 auto 15px;
   display: flex;
   justify-content: center;
-  background: url(../images/assets/header-img.png) no-repeat 50% 50% / 100% 100%;
+  background: url(/images/assets/header-img.png) no-repeat 50% 50% / 100% 100%;
 
   @media (max-width: $mobile) {
     width: 343px;
     height: 138px;
+    padding: 66px 20px 20px;
+  }
+
+  @media (max-width: $mobileSmall) {
+    width: 288px;
+    height: 118px;
     padding: 66px 20px 20px;
   }
 

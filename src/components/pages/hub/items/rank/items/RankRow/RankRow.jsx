@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import CircleChart from "../../../../../../reusable/assets/charts/circleChart/CircleChart.jsx";
+import { useEffect, useState } from "react"
+import CircleChart from "../../../../../../reusable/assets/charts/circleChart/CircleChart.jsx"
 
 const getData = async (setData) => {
   try {
@@ -7,56 +7,53 @@ const getData = async (setData) => {
     const data = {
       progress: 35,
       currentRank: {
-        name: 'Buzz Rookie',
+        name: "Buzz Rookie",
         image: {
-          src: "/images/moc/buzz-rookie.svg"
-        }
+          src: "/images/moc/buzz-rookie.svg",
+        },
       },
       nextRank: {
-        name: 'Social Butterfly',
+        name: "Social Butterfly",
         image: {
-          src: "/images/moc/social-butterfly.svg"
-        }
-      }
+          src: "/images/moc/social-butterfly.svg",
+        },
+      },
     }
 
-    setData(data);
+    setData(data)
   } catch (e) {
-    console.error(e);
+    console.error(e)
   }
 }
 
-const RankRow = ({withAvatar}) => {
-  const [data, setData] = useState({});
+const RankRow = ({ withAvatar }) => {
+  const [data, setData] = useState({})
 
   useEffect(() => {
-    getData(setData);
+    getData(setData)
   }, [])
 
   return (
     <div className="rank-row">
       <div className="rank-row__label">
-        <div>Your current rank</div>
+        <div className="text-r">Your current rank</div>
         <div>
-          <img className="rank-row__img" src={data?.currentRank?.image?.src} alt="current rank icon"/>
+          <img className="rank-row__img" src={data?.currentRank?.image?.src} alt="current rank icon" />
         </div>
-        <div className={'h6'}>{data?.currentRank?.name}</div>
+        <div className="h6">{data?.currentRank?.name}</div>
       </div>
       <div>
-        <CircleChart
-          progress={data.progress}
-          withAvatar={withAvatar}
-        />
+        <CircleChart progress={data.progress} withAvatar={withAvatar} />
       </div>
-        <div  className="rank-row__label">
-          <div>Next Rank</div>
-          <div>
-            <img className="rank-row__img" src={data?.nextRank?.image?.src} alt="current rank icon"/>
-          </div>
-          <div className={'h6'}>{data?.nextRank?.name}</div>
+      <div className="rank-row__label">
+        <div className="text-r">Next Rank</div>
+        <div>
+          <img className="rank-row__img" src={data?.nextRank?.image?.src} alt="current rank icon" />
         </div>
+        <div className="h6">{data?.nextRank?.name}</div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default RankRow;
+export default RankRow

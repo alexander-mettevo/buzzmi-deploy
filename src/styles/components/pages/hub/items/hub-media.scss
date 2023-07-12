@@ -1,0 +1,20 @@
+.hub-media {
+  &__without-video {
+    flex-wrap: wrap;
+
+    & > * {
+      flex: 0 0 100%;
+    }
+
+    .gallery {
+      justify-content: space-between;
+      margin: 0;
+    }
+  }
+
+  &__without-audio {
+    .video-gallery__preview {
+      height: 253px;
+    }
+  }
+}

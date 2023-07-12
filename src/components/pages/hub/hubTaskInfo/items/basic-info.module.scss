@@ -1,0 +1,31 @@
+.basic-info {
+  &__item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--gray);
+    padding: 20px 0;
+
+    @media (max-width: 480px) {
+      padding: 8px 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+
+    @media (max-width: 480px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

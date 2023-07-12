@@ -1,0 +1,172 @@
+.date-input {
+  &__field-wrapper {
+    position: relative;
+
+    svg {
+      position: absolute;
+      left: 21px;
+      top: 16px;
+
+      @media (max-width: $tablet) {
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__field {
+    padding-left: 57px;
+  }
+
+  &__tooltip {
+    background-color: transparent !important;
+    --rt-opacity: 1;
+
+    @media (max-width: $mobileSmall) {
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      // background-color: var(--items-bg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      & > div {
+        width: 100%;
+      }
+    }
+  }
+
+  &__wrapper {
+    max-width: 500px;
+    opacity: 1 !important;
+    color: var(--main-text);
+    background-color: var(--items-bg) !important;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+
+    @media (max-width: 500px) {
+      max-width: 80vw;
+    }
+
+    .calendar {
+      &__header-title {
+        font-size: 13px;
+        line-height: 13px;
+      }
+
+      &__marker {
+        width: 6px;
+        height: 6px;
+        margin-left: -3px;
+      }
+
+      &__btn-text {
+        overflow: hidden;
+        text-indent: -9999px;
+        display: flex;
+
+        .fa-arrow-left,
+        .fa-arrow-right {
+          width: 12px;
+          height: 12px;
+          font-size: 12px;
+          line-height: 12px;
+          text-indent: 0;
+        }
+
+        &--left {
+          .fa-arrow-left {
+            left: 10px;
+
+            &:before {
+              content: "\f053";
+            }
+          }
+        }
+
+        &--right {
+          padding-right: 33px;
+
+          .fa-arrow-right {
+            right: 10px;
+
+            &:before {
+              content: "\f054";
+            }
+          }
+        }
+      }
+
+      &__footer {
+        justify-content: space-between;
+        font-size: 12px;
+        line-height: 12px;
+      }
+    }
+
+    .react-calendar {
+      &__tile {
+        height: 32px;
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 400;
+        margin: 5px;
+        max-width: calc(17.28% - 10px);
+
+        @media (max-width: $mobile) {
+          max-width: calc(30% - 10px);
+        }
+      }
+
+      &__month-view__weekdays__weekday {
+        abbr {
+          font-size: 0;
+          line-height: 0;
+
+          &:first-letter {
+            font-size: 10px;
+            line-height: 14px;
+          }
+        }
+      }
+
+      &__month-view__days {
+        margin: 0 5px;
+      }
+
+      &__navigation__label__labelText {
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 600;
+      }
+
+      &__navigation__label {
+        order: 1;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      &__navigation__prev-button {
+        order: 2;
+      }
+
+      &__navigation__next-button {
+        order: 3;
+        margin-left: 16px;
+      }
+
+      &__navigation__next-button,
+      &__navigation__prev-button {
+        width: 35px;
+        height: 32px;
+        background: var(--light-items-bg);
+        box-shadow: 0 1px 4px rgba(111, 29, 244, 0.12);
+        border-radius: 6px;
+      }
+    }
+  }
+}

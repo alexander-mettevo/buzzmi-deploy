@@ -5,10 +5,10 @@
   display: inline-block;
   border-radius: 20px;
 
-  @include adaptiveValue('padding-top', 60, 0);
-  @include adaptiveValue('padding-bottom', 60, 0);
-  @include adaptiveValue('padding-right', 40, 0);
-  @include adaptiveValue('padding-left', 40, 0);
+  @include adaptiveValue("padding-top", 60, 0);
+  @include adaptiveValue("padding-bottom", 60, 0);
+  @include adaptiveValue("padding-right", 40, 0);
+  @include adaptiveValue("padding-left", 40, 0);
 
   @media (max-width: $mobileSmall) {
     width: 100%;
@@ -28,33 +28,30 @@
   margin: 0 auto;
 
   &_bg {
+  }
 
-}
+  &__row {
+  }
 
-&__row {
-}
+  &__column {
+  }
 
-&__column {
-}
+  &__line {
+  }
 
-&__line {
-}
+  &__input {
+  }
 
-&__input {
-}
+  &__button {
+  }
 
-&__button {
-}
-
-&__error {
-  margin-bottom: 8px;
-}
-
+  &__error {
+    margin-bottom: 8px;
+  }
 }
 
 .search-form {
   position: relative;
-
 
   &__btn {
     display: inline-block;
@@ -65,44 +62,22 @@
     font-size: 24px;
   }
 
+  &__left-icon {
+    input {
+      padding-left: 40px;
+    }
 
+    .search-form__btn {
+      left: 20px;
+      right: auto;
+      font-size: 16px;
+    }
+  }
 }
 
-//</FORM>
-
-// <BUTTONS>
-// Сніппет (HTML): btn
 @import "buttons/buttons";
-
-// <INPUTS>
-// Сніппет (HTML): inp
 @import "input";
 @import "textarea";
-
-// <CHECK>
-// Сніппет (HTML): chk
- @import "checkbox";
-
-// <RADIO>
-// Сніппет (HTML): opt
-// @import "radio";
-
-// <SELECT>
-// Сніппет (HTML): sel
+@import "checkbox";
 @import "select";
-
-// <RATING>
-// Сніппет (HTML): rating
-// @import "rating";
-
-// <QUANTITY>
-// Сніппет (HTML): qa
-// @import "quantity";
-
-// <RANGE>
-// Сніппет (HTML):
-// @import "range";
-
-// <CALENDAR>
-// Сніппет (HTML):
-@import "datepicker";
+@import "date-input";

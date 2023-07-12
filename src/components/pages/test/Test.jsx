@@ -1,37 +1,27 @@
-import React from 'react';
-import ValidationSchema from "../../../../form-validator/ValidationSchema.js";
-import {useFormValidator} from "../../../../form-validator/hooks/index.js";
+import { useState } from "react"
+import MobileSelect from "../../reusable/multiSelect/items/mobileSelect/MobileSelect.jsx"
 
-const validationSchema = new ValidationSchema(
-  {
-    name: [
-      { rule: 'required', message: 'This field is required' },
-      { rule: 'minLength', value: 3, message: 'Minimum length is 3' },
-    ],
-  }
-);
+const options = {
+  title: ["Mr.", "Mrs.", "Ms.", "Dr."],
+  firstName: ["John", "Micheal", "Elizabeth"],
+  secondName: ["Lennon", "Jackson", "Jordan", "Legend", "Taylor"],
+}
+
 const Test = () => {
-  const { values, errors, isValid, handleChange, handleSubmit } = useFormValidator(validationSchema, (formData) => {
-    // Handle form submission, e.g., send data to an API.
-  }, {
-    showErrorsOnSubmit: false,
-  });
+  const [valueGroups, setValueGroups] = useState({
+    title: "Mr.",
+    firstName: "Micheal",
+    secondName: "Jordan",
+  })
 
+  const onChange = (name, value) => {
+    setValueGroups({
+      ...valueGroups,
+      [name]: value,
+    })
+  }
 
+  return <MobileSelect optionGroups={options} valueGroups={valueGroups} onChange={onChange} />
+}
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="fieldName">Field Name:</label>
-        <input className={'input'} id="fieldName" name="name" value={values.name || ''} onChange={handleChange} />
-        {errors.name && <div className="error">{errors.name.join(', ')}</div>}
-      </div>
-
-      <button type="submit" disabled={!isValid}>
-        Submit
-      </button>
-    </form>
-  );
-};
-
-export default Test;
+export default Test

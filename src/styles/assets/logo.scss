@@ -3,41 +3,39 @@
   gap: 17px;
   justify-content: center;
   align-items: center;
-  @include adaptiveValue('margin-bottom', 64, 10);
+  @include adaptiveValue("margin-bottom", 32, 10);
 
   svg {
-    @include adaptiveValue('width', 68, 45);
-    @include adaptiveValue('height', 76, 49);
+    @include adaptiveValue("width", 68, 45);
+    @include adaptiveValue("height", 76, 49);
 
-      path:nth-child(1) {
-        fill: var(--main-one-paint);
-      }
-      path:nth-child(2) {
-        fill: var(--main-two-paint);
-      }
-      path:nth-child(3) {
-        fill: var(--main-three-paint);
-      }
+    path:nth-child(1) {
+      fill: var(--main-one-paint);
+    }
+    path:nth-child(2) {
+      fill: var(--main-two-paint);
+    }
+    path:nth-child(3) {
+      fill: var(--main-three-paint);
+    }
   }
 
   &__text {
-
     .h4 {
-      @include adaptiveValue('font-size', 28, 12);
-      @include adaptiveValue('line-height', 28, 12);
+      @include adaptiveValue("font-size", 28, 12);
+      @include adaptiveValue("line-height", 28, 12);
     }
 
     .h2 {
       background-image: var(--logo-text);
       background-clip: text;
-      font-family: 'Outer-Sans', sans-serif;
+      font-family: "Outer-Sans", sans-serif;
       font-weight: 600;
       color: transparent;
 
-
-      @include adaptiveValue('letter-spacing', 6, 3);
-      @include adaptiveValue('font-size', 45, 33);
-      @include adaptiveValue('line-height', 45, 33);
+      @include adaptiveValue("letter-spacing", 6, 3);
+      @include adaptiveValue("font-size", 45, 33);
+      @include adaptiveValue("line-height", 45, 33);
     }
   }
 }
@@ -61,9 +59,26 @@
   }
 
   span {
-    font-family: 'Outer-Sans', sans-serif;
+    font-family: "Outer-Sans", sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
     color: var(--main-opposite-text);
+  }
+}
+
+.small-header-logo {
+  svg {
+    @include adaptiveValue("width", 68, 45);
+    @include adaptiveValue("height", 76, 49);
+
+    path:nth-child(1) {
+      fill: var(--dark-main-one-paint);
+    }
+    path:nth-child(2) {
+      fill: var(--dark-main-two-paint);
+    }
+    path:nth-child(3) {
+      fill: var(--dark-main-three-paint);
+    }
   }
 }

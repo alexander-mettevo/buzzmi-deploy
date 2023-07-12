@@ -1,0 +1,20 @@
+.repeat-mode {
+  &__desktop-row {
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    & > div:first-child {
+      margin-bottom: 20px;
+      white-space: nowrap;
+    }
+
+    & > div:nth-child(2) {
+      width: 167px;
+    }
+
+    & > div:last-child {
+      width: 250px;
+    }
+  }
+}

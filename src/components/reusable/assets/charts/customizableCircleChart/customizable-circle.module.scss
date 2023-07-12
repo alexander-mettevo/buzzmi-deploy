@@ -1,0 +1,93 @@
+.customizable-circle {
+  position: relative;
+  display: inline-flex;
+  font-family: "SF Pro Display", sans-serif;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > div {
+    position: relative;
+
+    & > div {
+      width: 198px;
+    }
+  }
+
+  &__inner-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    & > div:first-child {
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 800;
+    }
+
+    & > div:last-child {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  &__init-value {
+  }
+
+  &__button {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--chart-bg);
+    opacity: 0.8;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      background-image: var(--primary-text);
+      background-clip: text;
+      color: transparent;
+      font-size: 16px;
+      font-weight: 700;
+
+      &:before {
+        margin-right: -2px;
+        display: inline-block;
+      }
+    }
+
+    &:active,
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__wrapper {
+    max-width: 305px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 370px) {
+      max-width: 255px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 370px) {
+      gap: 0;
+    }
+  }
+}

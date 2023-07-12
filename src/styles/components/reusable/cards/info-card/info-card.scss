@@ -1,5 +1,5 @@
 .box-info-card {
-  @media (max-width: $tablet) {
+  @media (max-width: $mobileSmall) {
     overflow: hidden;
   }
 }
@@ -8,8 +8,8 @@
   transition: all 0.3s ease-in-out;
 
   &__image {
-    @include adaptiveValue('width', 120, 75);
-    @include adaptiveValue('height', 120, 75);
+    @include adaptiveValue("width", 120, 75);
+    @include adaptiveValue("height", 120, 75);
   }
 
   &__text {
@@ -20,8 +20,12 @@
   }
 
   &.show-menu {
-    @media (max-width: $tablet) {
+    @media (max-width: $mobileSmall) {
       transform: translateX(-256px);
+
+      .info-card__content {
+        opacity: 0;
+      }
     }
   }
 

@@ -2,29 +2,39 @@ import React, { useEffect, useState } from "react"
 import HubTask from "./HubTask"
 import HubTaskInput from "./HubTaskInput"
 
-function HubTaskList({ setValues, value = [] }) {
+function HubTaskList({ setValues, value = [], locked, showAddTask = true }) {
   const addTask = (name) => {
-    const newTask = { id: Date.now(), name, completed: false }
-    setValues([...value, newTask])
+    if (setValues) {
+      const newTask = { id: Date.now(), name, completed: false }
+      setValues([...value, newTask])
+    }
   }
 
   const deleteTask = (id) => {
-    setValues(value.filter((task) => task.id !== id))
+    if (setValues) {
+      setValues(value.filter((task) => task.id !== id))
+    }
   }
 
   const editTask = (id, newName) => {
-    setValues(value.map((task) => (task.id === id ? { ...task, name: newName } : task)))
+    if (setValues) {
+      setValues(value.map((task) => (task.id === id ? { ...task, name: newName } : task)))
+    }
   }
 
   const toggleTask = (id) => {
-    setValues(value.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)))
+    if (setValues) {
+      setValues(value.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)))
+    }
   }
 
   // Load tasks from local storage when component mounts
   useEffect(() => {
-    const savedTasks = localStorage.getItem("tasks")
-    if (savedTasks) {
-      setValues(JSON.parse(savedTasks))
+    if (setValues && showAddTask) {
+      const savedTasks = localStorage.getItem("tasks")
+      if (savedTasks) {
+        setValues(JSON.parse(savedTasks))
+      }
     }
   }, [])
 
@@ -35,18 +45,22 @@ function HubTaskList({ setValues, value = [] }) {
 
   return (
     <div className="checklist">
-      {value.map((task) => (
-        <HubTask
-          key={task.id}
-          id={task.id}
-          name={task.name}
-          completed={task.completed}
-          deleteTask={deleteTask}
-          editTask={editTask}
-          toggleTask={toggleTask}
-        />
-      ))}
-      <HubTaskInput addTask={addTask} />
+      {value?.length > 0 ? (
+        value.map((task) => (
+          <HubTask
+            key={task.id}
+            id={task.id}
+            name={task.name}
+            completed={task.completed}
+            deleteTask={locked ? null : deleteTask}
+            editTask={editTask}
+            toggleTask={toggleTask}
+          />
+        ))
+      ) : (
+        <div className="text-center text-s">No assignments</div>
+      )}
+      {showAddTask && <HubTaskInput addTask={addTask} />}
     </div>
   )
 }

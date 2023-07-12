@@ -7,13 +7,36 @@
   position: relative;
   padding: 0 80px;
 
+  &_simple {
+    .back-btn__content {
+      position: static;
+
+      .fa-solid {
+        height: 22px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 800;
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
   @media (max-width: $mobileSmall) {
     padding: 0 20px;
   }
 
   &_with-title {
-    //justify-content: space-between;
     margin-bottom: 20px;
+
+    @media (max-width: $mobile) {
+      padding: 0 20px;
+    }
   }
 
   &_d {
@@ -66,5 +89,19 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .fa-arrow-left {
+    background-image: var(--primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    &,
+    & + span {
+      font-size: 23px;
+      line-height: 22px;
+      font-weight: 600;
+    }
   }
 }

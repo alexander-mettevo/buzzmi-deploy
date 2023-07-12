@@ -1,4 +1,3 @@
-import React from "react"
 import { Route, Routes } from "react-router-dom"
 import Login from "./components/pages/auth/login/Login.jsx"
 import OtherServices from "./components/pages/auth/otherServices/OtherServices.jsx"
@@ -34,15 +33,22 @@ import MainLayout from "./components/layouts/mainLayout/MainLayout.jsx"
 import ThemeLayout from "./components/layouts/themeLayout/ThemeLayout.jsx"
 import HubAddActivity from "./components/pages/hub/hubAddActivity/HubAddActivity.jsx"
 import HubTasks from "./components/pages/hub/hubTasks/HubTasks.jsx"
-import HubAddPreset from "./components/pages/hub/hubAddPreset/HubAddPreset.jsx"
+import HubAddPreset from "./components/pages/hub/hubPresetForm/hubAddPreset/HubAddPreset.jsx"
 import HubStats from "./components/pages/hub/hubStats/HubStats.jsx"
 import HubPresetPreview from "./components/pages/hub/hubPresetPreview/HubPresetPreview.jsx"
 import HubTread from "./components/pages/hub/hubTread/HubTread.jsx"
 import HubLeaderBoard from "./components/pages/hub/hubLeaderBoard/HubLeaderBoard.jsx"
-import HubEditPreset from "./components/pages/hub/hubEditPreset/HubEditPreset.jsx"
+import HubEditPreset from "./components/pages/hub/hubPresetForm/hubEditPreset/HubEditPreset.jsx"
 import HubLeaders from "./components/pages/hub/hubLeaders/HubLeaders.jsx"
 import HubSubscription from "./components/pages/hub/hubUpgrade/HubSubscription.jsx"
 import HubCreateTask from "./components/pages/hub/hubCreateTask/HubCreateTask.jsx"
+import HubTaskInfo from "./components/pages/hub/hubTaskInfo/HubTaskInfo.jsx"
+import HubEditTask from "./components/pages/hub/hubEditTask/HubEditTask.jsx"
+import HubTaskPresetEdit from "./components/pages/hub/hubTaskPresetEdit/HubTaskPresetEdit.jsx"
+import HubFinishAccount from "./components/pages/hub/hubFinishAccount/HubFinishAccount.jsx"
+import HubOwnHabit from "./components/pages/hub/hubOwnHabit/HubOwnHabit.jsx"
+import HubAddTask from "./components/pages/hub/hubAddTask/HubAddTask.jsx"
+import InfoMain from "./components/pages/info/InfoMain/InfoMain.jsx"
 
 const App = () => {
   return (
@@ -51,19 +57,28 @@ const App = () => {
         <Route element={<ThemeLayout />}>
           <Route element={<AuthLayout />}>
             <Route element={<MainLayout />}>
+              <Route path="/info">
+                <Route path="profile" element={<InfoMain />} />
+              </Route>
               <Route path="/hub">
                 <Route path="" element={<HubMain />} />
                 <Route path="add-activity" element={<HubAddActivity />} />
                 <Route path="tasks" element={<HubTasks />} />
                 <Route path="create-task" element={<HubCreateTask />} />
+                <Route path="edit-task/:id" element={<HubEditTask />} />
                 <Route path="stats" element={<HubStats />} />
                 <Route path="leaderboard" element={<HubLeaderBoard />} />
                 <Route path="leaders/:type" element={<HubLeaders />} />
                 <Route path="add-preset" element={<HubAddPreset />} />
-                <Route path="edit-preset" element={<HubEditPreset />} />
-                <Route path="tread" element={<HubTread />} />
-                <Route path="preset-preview" element={<HubPresetPreview />} />
+                <Route path="edit-preset/:id" element={<HubEditPreset />} />
+                <Route path="task-preset-edit" element={<HubTaskPresetEdit />} />
+                <Route path="tread/:id" element={<HubTread />} />
+                <Route path="task-info/:id" element={<HubTaskInfo />} />
+                <Route path="preset-preview/:id" element={<HubPresetPreview />} />
                 <Route path="upgrade" element={<HubSubscription />} />
+                <Route path="finish-account" element={<HubFinishAccount />} />
+                <Route path="own-habit" element={<HubOwnHabit />} />
+                <Route path="add-task" element={<HubAddTask />} />
               </Route>
               <Route path="/notifications" element={<HubMain />} />
               <Route path="/messages" element={<HubMain />} />
@@ -85,28 +100,34 @@ const App = () => {
             <Route path="/sales/pay" element={<Pay />} />
           </Route>
           <Route element={<BaseLayout />}>
-            <Route path="/auth/forgot-code" element={<ForgotCode />} />
-            <Route path="/auth/forgot-password" element={<ForgotPassword />} />
-            <Route path="/auth/reset-password" element={<ResetPassword />} />
+            <Route path="/auth">
+              <Route path="forgot-code" element={<ForgotCode />} />
+              <Route path="forgot-password" element={<ForgotPassword />} />
+              <Route path="reset-password" element={<ResetPassword />} />
+              <Route path="provide-email" element={<ProvideEmail />} />
+              <Route path="provide-email-code" element={<ProvideEmailCode />} />
+              <Route path="provide-phone" element={<ProvidePhone />} />
+              <Route path="provide-phone-code" element={<ProvidePhoneCode />} />
+              <Route path="bio" element={<BioPage />} />
+              <Route path="create-password" element={<CreatePassword />} />
+            </Route>
+
+            <Route path="/profile">
+              <Route path="chose-role" element={<ChoseRole />} />
+              <Route path="add-creators" element={<AddCreators />} />
+              <Route path="add-interest" element={<Interest />} />
+              <Route path="add-contacts" element={<AddContacts />} />
+              <Route path="add-friends" element={<AddFriends />} />
+              <Route path="add-people" element={<AddPeople />} />
+            </Route>
+
+            <Route path="/sales">
+              <Route path="" element={<Subscription />} />
+              <Route path="v2" element={<SubscriptionV2 />} />
+              <Route path="mobile-pay" element={<MobilePay />} />
+            </Route>
+
             <Route path="/test" element={<Test />} />
-
-            <Route path="/auth/provide-email" element={<ProvideEmail />} />
-            <Route path="/auth/provide-email-code" element={<ProvideEmailCode />} />
-            <Route path="/auth/provide-phone" element={<ProvidePhone />} />
-            <Route path="/auth/provide-phone-code" element={<ProvidePhoneCode />} />
-
-            <Route path="/auth/bio" element={<BioPage />} />
-            <Route path="/auth/create-password" element={<CreatePassword />} />
-
-            <Route path="/profile/chose-role" element={<ChoseRole />} />
-            <Route path="/profile/add-creators" element={<AddCreators />} />
-            <Route path="/profile/add-interest" element={<Interest />} />
-            <Route path="/profile/add-contacts" element={<AddContacts />} />
-            <Route path="/profile/add-friends" element={<AddFriends />} />
-            <Route path="/profile/add-people" element={<AddPeople />} />
-            <Route path="/sales" element={<Subscription />} />
-            <Route path="/sales/v2" element={<SubscriptionV2 />} />
-            <Route path="/sales/mobile-pay" element={<MobilePay />} />
           </Route>
           <Route path="/" element={<Dashboard />} />
         </Route>

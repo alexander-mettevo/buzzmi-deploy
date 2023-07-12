@@ -1,15 +1,15 @@
 // Heading text
 
 .h1 {
-  @include adaptiveValue('font-size', 48, 36);
-  @include adaptiveValue('line-height', 59, 44);
+  @include adaptiveValue("font-size", 48, 36);
+  @include adaptiveValue("line-height", 59, 44);
 }
 
 .h2 {
   font-weight: 800;
 
-  @include adaptiveValue('font-size', 40, 24);
-  @include adaptiveValue('line-height', 49, 28);
+  @include adaptiveValue("font-size", 40, 24);
+  @include adaptiveValue("line-height", 49, 28);
 
   @media (max-width: $mobile) {
     font-weight: 700;
@@ -19,29 +19,29 @@
 .h3 {
   font-weight: 800;
 
-  @include adaptiveValue('font-size', 30, 18);
-  @include adaptiveValue('line-height', 37, 22);
+  @include adaptiveValue("font-size", 30, 18);
+  @include adaptiveValue("line-height", 37, 22);
 }
 
 .h4 {
   font-weight: 700;
 
-  @include adaptiveValue('font-size', 22, 15);
-  @include adaptiveValue('line-height', 27, 16);
+  @include adaptiveValue("font-size", 22, 15);
+  @include adaptiveValue("line-height", 27, 16);
 }
 
 .h5 {
   font-weight: 700;
 
-  @include adaptiveValue('font-size', 18, 13);
-  @include adaptiveValue('line-height', 28, 12);
+  @include adaptiveValue("font-size", 18, 13);
+  @include adaptiveValue("line-height", 28, 12);
 }
 
 .h6 {
   font-weight: 600;
 
-  @include adaptiveValue('font-size', 15, 12);
-  @include adaptiveValue('line-height', 18, 14);
+  @include adaptiveValue("font-size", 15, 12);
+  @include adaptiveValue("line-height", 18, 14);
 
   @media (max-width: $mobile) {
     font-weight: 600;
@@ -53,8 +53,8 @@
 .text-b {
   font-weight: 500;
 
-  @include adaptiveValue('font-size', 17, 15);
-  @include adaptiveValue('line-height', 21, 20);
+  @include adaptiveValue("font-size", 17, 15);
+  @include adaptiveValue("line-height", 21, 20);
 }
 
 .text-r {
@@ -62,15 +62,15 @@
   text-transform: none;
   color: var(--alt-text-secondary);
 
-  @include adaptiveValue('font-size', 15, 12);
-  @include adaptiveValue('line-height', 18, 12);
+  @include adaptiveValue("font-size", 15, 12);
+  @include adaptiveValue("line-height", 18, 12);
 }
 
 .text-s {
   font-weight: 300;
 
-  @include adaptiveValue('font-size', 12, 10);
-  @include adaptiveValue('line-height', 15, 14);
+  @include adaptiveValue("font-size", 12, 10);
+  @include adaptiveValue("line-height", 15, 14);
 }
 
 // Assets text
@@ -79,8 +79,8 @@
   text-transform: uppercase;
   font-weight: 700;
 
-  @include adaptiveValue('font-size', 22, 16);
-  @include adaptiveValue('line-height', 20, 20);
+  @include adaptiveValue("font-size", 20, 16);
+  @include adaptiveValue("line-height", 20, 20);
 }
 
 // Color text
@@ -98,23 +98,23 @@
 }
 
 .text-secondary {
-  color: var(--text-secondary)  !important;
+  color: var(--text-secondary) !important;
 }
 
 .text-dark-secondary {
-  color: var(--alt-text-secondary)  !important;
+  color: var(--alt-text-secondary) !important;
 }
 
 .text-error {
-  color: var(--error-color)  !important;
+  color: var(--error-color) !important;
 }
 
 .text-success {
-  color: var(--success-color)  !important;
+  color: var(--success-color) !important;
 }
 
 .text-alert {
-  color: var(--alter-text)  !important;
+  color: var(--alter-text) !important;
 }
 // Position text
 

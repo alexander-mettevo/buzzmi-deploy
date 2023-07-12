@@ -1,49 +1,66 @@
-import React, {useEffect, useRef, useState} from 'react';
-import InfoCardMenuMobile from "./InfoCardMenuMobile.jsx";
-import InfoCardMenuDesktop from "./InfoCardMenuDesktop.jsx";
+import { useEffect, useRef } from "react"
+import InfoCardMenuMobile from "./InfoCardMenuMobile.jsx"
+import InfoCardMenuDesktop from "./InfoCardMenuDesktop.jsx"
 
-const InfoCardMenu = ({id, showMenu, setShowMenu}) => {
-
-  const menuRef = useRef(null);
+const InfoCardMenu = ({ id, showMenu, setShowMenu }) => {
+  const menuRef = useRef(null)
 
   const handleMenu = (event) => {
-    event.stopPropagation();
+    event.preventDefault()
+    event.stopPropagation()
     if (!menuRef.current.contains(event.target)) {
-      setShowMenu(!showMenu);
+      setShowMenu(!showMenu)
     }
   }
 
   useEffect(() => {
     if (showMenu) {
-      document.addEventListener('click', handleMenu);
+      document.addEventListener("click", handleMenu)
     } else {
-      document.removeEventListener('click', handleMenu);
+      document.removeEventListener("click", handleMenu)
     }
     return () => {
-      document.removeEventListener('click', handleMenu);
+      document.removeEventListener("click", handleMenu)
     }
   }, [showMenu])
 
-  const handleCompleteTask = () => {}
+  const handleCompleteTask = () => {
+    alert("complete task")
+    setShowMenu(false)
+  }
 
-  const handleEditTask = () => {}
+  const handleDeleteTask = () => {
+    alert("delete task")
+    setShowMenu(false)
+  }
 
-  const handleDeleteTask = () => {}
+  useEffect(() => {
+    const handleMenu = (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+      if (!menuRef.current.contains(event.target)) {
+        setShowMenu(false)
+      }
+    }
+
+    if (showMenu) {
+      document.addEventListener("click", handleMenu)
+    } else {
+      document.removeEventListener("click", handleMenu)
+    }
+  }, [showMenu])
 
   return (
-    <div className={`menu-card ${showMenu ? 'open' : ''}`}>
+    <div className={`menu-card ${showMenu ? "open" : ""}`}>
       <button onClick={handleMenu}>
-        <img src="/images/assets/info-card/dots_menu.svg" alt="dots menu"/>
+        <img src="/images/assets/info-card/dots_menu.svg" alt="dots menu" />
       </button>
-      <div ref={menuRef} className={`menu-card__wrapper ${showMenu ? 'open' : ''}`}>
-        <InfoCardMenuDesktop
-          handleEditTask={handleCompleteTask}
-          handleCompleteTask={handleEditTask}
-          handleDeleteTask={handleDeleteTask}/>
-        <InfoCardMenuMobile/>
+      <div ref={menuRef} className={`menu-card__wrapper ${showMenu ? "open" : ""}`}>
+        <InfoCardMenuDesktop id={id} handleCompleteTask={handleCompleteTask} handleDeleteTask={handleDeleteTask} />
+        <InfoCardMenuMobile id={id} handleCompleteTask={handleCompleteTask} handleDeleteTask={handleDeleteTask} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default InfoCardMenu;
+export default InfoCardMenu

@@ -4,7 +4,7 @@
   &__wrapper {
     display: none;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $mobileSmall) {
       display: block;
       transform: translateX(30px);
     }
@@ -12,21 +12,28 @@
     &.open {
       display: block;
 
-      @media (max-width: $tablet) {
+      @media (max-width: $mobileSmall) {
         transform: translateX(0);
       }
     }
   }
 
   &.open {
-    @media (max-width: $tablet) {
+    @media (max-width: $mobileSmall) {
       margin-left: 12px;
 
       & > button {
         opacity: 0;
       }
-
     }
+  }
+
+  a {
+    display: block;
+  }
+
+  a > span {
+    opacity: 0.8;
   }
 }
 
@@ -40,7 +47,7 @@
   right: 100%;
   top: 15px;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $mobileSmall) {
     display: none;
   }
 
@@ -53,7 +60,7 @@
     line-height: 15px;
 
     &:hover {
-      background-color: #EAE1FF;
+      background-color: #eae1ff;
     }
   }
 }
@@ -63,7 +70,7 @@
   top: -20px;
   display: none;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $mobileSmall) {
     display: flex;
   }
 
@@ -71,7 +78,7 @@
     padding: 12px 0;
     width: 80px;
     height: 80px;
-    background-color: #F5EEFE;
+    background-color: #f5eefe;
     border-radius: 12px;
     font-weight: 700;
     font-size: 11px;
@@ -80,7 +87,7 @@
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
-      background-color: #EAE1FF;
+      background-color: #eae1ff;
     }
 
     div {
