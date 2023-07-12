@@ -26,7 +26,6 @@
     @media (max-width: $mobile) {
       width: 88px;
       height: 80px;
-      padding: 0 4px;
     }
 
     &,
@@ -87,7 +86,6 @@
     .swiper-button-next {
       display: none;
     }
-
   }
 
   &__btn {
@@ -125,7 +123,7 @@
 
         &:before,
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           border-radius: 6px;
         }
