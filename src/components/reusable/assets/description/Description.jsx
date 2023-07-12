@@ -2,7 +2,6 @@ import { useState } from "react"
 import InfoCard from "../../cards/infoCard/InfoCard"
 
 const Description = ({ item }) => {
-  console.log("Description", item)
   const [data, setData] = useState({
     image: {
       ...item?.image,

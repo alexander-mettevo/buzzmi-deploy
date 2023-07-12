@@ -34,6 +34,22 @@ const InfoCardMenu = ({ id, showMenu, setShowMenu }) => {
     setShowMenu(false)
   }
 
+  useEffect(() => {
+    const handleMenu = (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+      if (!menuRef.current.contains(event.target)) {
+        setShowMenu(false)
+      }
+    }
+
+    if (showMenu) {
+      document.addEventListener("click", handleMenu)
+    } else {
+      document.removeEventListener("click", handleMenu)
+    }
+  }, [showMenu])
+
   return (
     <div className={`menu-card ${showMenu ? "open" : ""}`}>
       <button onClick={handleMenu}>

@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination } from "swiper"
+import { Pagination } from "swiper/modules"
 
 const PageNavigation = ({ list, value, onChange }) => {
   const [swiper, setSwiper] = useState(null)

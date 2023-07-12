@@ -1,5 +1,5 @@
 .box-info-card {
-  @media (max-width: $tablet) {
+  @media (max-width: $mobileSmall) {
     overflow: hidden;
   }
 }
@@ -20,7 +20,7 @@
   }
 
   &.show-menu {
-    @media (max-width: $tablet) {
+    @media (max-width: $mobileSmall) {
       transform: translateX(-256px);
 
       .info-card__content {
