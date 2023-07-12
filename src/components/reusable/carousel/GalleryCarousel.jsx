@@ -32,12 +32,14 @@ const GalleryCarousel = ({ list, overlineText, goToActiveSlide, onSwiperChange }
               nextEl: carouselNextBtn.current,
             }}
             spaceBetween={10}
+            slidesPerView={1}
             thumbs={{ swiper: carouselNav.current }}
-            modules={[FreeMode, Navigation, Thumbs]}
+            modules={[Navigation, Thumbs]}
             className="mySwiper2"
-            freeMode={true}
             onSlideChange={onSwiperChange}
             onSwiper={onSwiperChange}
+            followFinger={true}
+            momentumBounceRatio={0.5}
           >
             {list.map((el) => {
               return (
