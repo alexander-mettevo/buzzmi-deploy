@@ -1,6 +1,5 @@
 import { useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
-import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
 import Calendar from "../../../reusable/calendar/Calendar.jsx"
 import ProgressHeader from "../hubTread/header/ProgressHeader.jsx"
 import PageNavigation from "../../../reusable/pageNavigation/PageNavigation.jsx"
@@ -18,6 +17,8 @@ import HubMedia from "../items/hubMedia/HubMedia.jsx"
 import { useParams } from "react-router-dom"
 import MultiBox from "../../../reusable/cards/multiBox/MultiBox.jsx"
 import { mocData } from "./mocData.js"
+import HubMediaInvert from "../items/hubMedia/HubMediaInvert.jsx"
+import Description from "../../../reusable/assets/description/Description.jsx"
 
 const validationSchema = new ValidationSchema({})
 
@@ -64,14 +65,24 @@ const HubTaskInfo = () => {
         />
         <Form error={error} onSubmit={handleSubmit}>
           <div className="mb-4">
-            <InfoCard item={data.infoCardData} />
+            <Description item={data.infoCardData} />
           </div>
-          <HubMedia
-            title="Treadmill"
-            galleryList={data?.galleryList}
-            videoSrcLink={data?.videoSrcLink}
-            audioSrcLink={data?.audioSrcLink}
-          />
+          <div className="d-md-none">
+            <HubMediaInvert
+              title="Treadmill"
+              galleryList={data?.galleryList}
+              videoSrcLink={data?.videoSrcLink}
+              audioSrcLink={data?.audioSrcLink}
+            />
+          </div>
+          <div className="d-none d-md-block">
+            <HubMedia
+              title="Treadmill"
+              galleryList={data?.galleryList}
+              videoSrcLink={data?.videoSrcLink}
+              audioSrcLink={data?.audioSrcLink}
+            />
+          </div>
           <Box className=" hub-form-box mb-4">
             <CustomizableCircleChartWrapper
               values={values.progressInfo}

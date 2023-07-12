@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import LightBox from "../../lightBox/LightBox.jsx"
 import "swiper/css/effect-fade"
 import GalleryCarousel from "../carousel/GalleryCarousel.jsx"
@@ -18,7 +18,7 @@ const Gallery = ({ list, isSmall }) => {
 
   return list && list.length > 0 ? (
     <>
-      <div className={"gallery mb-8" + (isSmall ? " gallery--fixed-width" : "")}>
+      <div className={"gallery mb-3 mb-md-8" + (isSmall ? " gallery--fixed-width" : "")}>
         {list.map((item) => {
           return (
             <div className="gallery__item" onClick={() => setActiveGalleryItemId(item.id)} key={item.id}>

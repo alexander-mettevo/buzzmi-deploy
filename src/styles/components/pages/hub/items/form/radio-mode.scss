@@ -28,6 +28,13 @@
       @media (max-width: 600px) {
         font-size: 12px;
         line-height: 14px;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 12px;
+        line-height: 14px;
+        white-space: wrap;
       }
     }
   }

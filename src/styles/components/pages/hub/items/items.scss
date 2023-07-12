@@ -1,3 +1,11 @@
+.hub-edit-task {
+  .back-btn__text {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+}
+
 @import "rank";
 @import "hub-access";
 @import "filter-tags";
