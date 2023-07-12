@@ -10,7 +10,7 @@ textarea {
 }
 
 .input-wrapper {
-  @include adaptiveValue('margin-bottom', 18, 24);
+  @include adaptiveValue("margin-bottom", 18, 24);
 }
 
 .input-code-wrapper {
@@ -30,13 +30,12 @@ textarea {
   text-align: center;
   font-weight: 600;
 
-  @include adaptiveValue('font-size', 18, 16);
-  @include adaptiveValue('line-height', 22, 20);
-
+  @include adaptiveValue("font-size", 18, 16);
+  @include adaptiveValue("line-height", 22, 20);
 
   & > div {
     font-weight: 600;
-    @include adaptiveValue('margin-bottom', 14, 10);
+    @include adaptiveValue("margin-bottom", 14, 10);
   }
 
   @media (max-width: $mobileSmall) {
@@ -46,9 +45,9 @@ textarea {
 
 .input-alter-action {
   text-align: center;
-  @include adaptiveValue('font-size', 18, 16);
-  @include adaptiveValue('line-height', 22, 20);
-  @include adaptiveValue('margin-top', 30, 24);
+  @include adaptiveValue("font-size", 18, 16);
+  @include adaptiveValue("line-height", 22, 20);
+  @include adaptiveValue("margin-top", 30, 24);
   font-weight: 600;
   background-image: var(--primary);
   background-clip: text;
@@ -59,7 +58,6 @@ textarea {
   }
 }
 
-
 .input {
   width: 100%;
   display: block;
@@ -69,19 +67,18 @@ textarea {
   transition: all 0.3s ease-in-out;
   position: relative;
 
-  @include adaptiveValue('font-size', 17, 12);
-  @include adaptiveValue('line-height', 21, 14);
+  @include adaptiveValue("font-size", 17, 12);
+  @include adaptiveValue("line-height", 21, 14);
 
   @media (max-width: $mobileSmall) {
     font-weight: 400;
   }
 
-
   &_simple-text {
     padding: 14px 24px;
 
     @media (max-width: $mobileSmall) {
-      padding: 12px 20px;
+      padding: 18px 20px;
     }
   }
 
@@ -91,16 +88,14 @@ textarea {
     font-weight: 700;
     border-radius: 15px;
 
-    @include adaptiveValue('font-size', 22, 18);
-    @include adaptiveValue('width', 40, 32);
-    @include adaptiveValue('height', 50, 40);
+    @include adaptiveValue("font-size", 22, 18);
+    @include adaptiveValue("width", 40, 32);
+    @include adaptiveValue("height", 50, 40);
   }
 
   &__icon {
     color: var(--text-secondary);
   }
-
-
 
   &:focus {
     outline: none;
@@ -156,7 +151,6 @@ textarea {
   }
 }
 
-
 .validation-list {
   text-align: left;
   display: none;
@@ -168,7 +162,7 @@ textarea {
     position: relative;
 
     &:before {
-      content: '';
+      content: "";
       width: 10px;
       height: 10px;
       position: absolute;
@@ -183,7 +177,7 @@ textarea {
       color: var(--error-color);
 
       &:before {
-        background: url('/images/assets/error.svg') center / contain no-repeat;
+        background: url("/images/assets/error.svg") center / contain no-repeat;
       }
     }
 
@@ -191,7 +185,7 @@ textarea {
       color: var(--success-color);
 
       &:before {
-        background: url('/images/assets/success.svg') center / contain no-repeat;
+        background: url("/images/assets/success.svg") center / contain no-repeat;
       }
     }
   }
