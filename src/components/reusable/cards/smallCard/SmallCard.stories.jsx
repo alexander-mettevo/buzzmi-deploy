@@ -46,3 +46,24 @@ Default.args = {
     alt: "Add an activity",
   },
 }
+
+const Template2 = (args) => <SmallCard {...args} />
+export const Badges = Template2.bind({})
+Badges.args = {
+  link: "/hub/add-activity",
+  info: {
+    title: "Profile picture upload",
+  },
+  image: {
+    src: "/images/moc/hub/1.png",
+    alt: "Add an activity",
+  },
+  badges: [
+    {
+      type: "workouts",
+    },
+    {
+      type: "completed",
+    },
+  ],
+}
