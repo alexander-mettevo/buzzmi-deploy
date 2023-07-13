@@ -8,10 +8,9 @@ import FormToggleDropdown from "../../../reusable/assets/dropdown/formToggleDrop
 import PictureUploaderList from "../../../reusable/uploader/pictureUploader/PictureUploaderList.jsx"
 import VideoUploader from "../../../reusable/uploader/videoUploader/VideoUploader.jsx"
 import AudioUploader from "../../../reusable/uploader/audioUploader/AudioUploader.jsx"
-import Checkbox from "../../../reusable/assets/checkbox/Checkbox.jsx"
 import SubmitButton from "../../../reusable/btns/buttons/submitButton/SubmitButton.jsx"
 
-const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, register, data = {} }) => {
+const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, register, data = {}, title }) => {
   const [showInTask, setShowInTask] = useState(false)
 
   useEffect(() => {
@@ -20,11 +19,11 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
 
   return (
     <div className="main-layout__single-container">
-      <BackBtnWithTitlePage title="Add Preset" />
+      <BackBtnWithTitlePage title={title} />
       <Form error={error} onSubmit={handleSubmit} formClassName="hub-form-wrapper">
         <AddName
           setValue={setValue}
-          title="Add preset name"
+          title="Add task name"
           placeholder="Enter a name"
           name="name"
           register={register}
@@ -36,7 +35,7 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
         <MultiBox title="Add description">
           <textarea
             onChange={(e) => setValue("description", e.target.value)}
-            placeholder="Add a short description of the preset"
+            placeholder="Short description of the task in a few words"
             className="textarea"
             value={values.description || ""}
           />
@@ -68,7 +67,7 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
         >
           <AudioUploader defaultValue={values?.audio} setValue={setValue} />
         </FormToggleDropdown>
-        <MultiBox
+        {/* <MultiBox
           icon="/images/assets/forms/task-center.png"
           title="Display in Task Center"
           rightSide={<Checkbox defaultValue={values?.showInTask} setState={setShowInTask} idChecked="showInTask" />}
@@ -79,7 +78,7 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
               When the toggle is on, view tasks as a preset; when off, see individual tasks in the task center.
             </p>
           </div>
-        </MultiBox>
+        </MultiBox> */}
         <div className="d-flex bottom-mobile-button justify-content-center mt-5">
           <SubmitButton isValid={isValid} />
         </div>

@@ -8,13 +8,13 @@ import ValidationSchema from "../../../../../form-validator/ValidationSchema.js"
 import Description from "../../../reusable/assets/description/Description.jsx"
 import HubMediaInvert from "../items/hubMedia/HubMediaInvert.jsx"
 import HubMedia from "../items/hubMedia/HubMedia.jsx"
-import HubEditHabitForm from "./HubEditHabitForm.jsx"
+import HubPreviewHabitForm from "./HubPreviewHabitForm.jsx"
 
 const validationSchema = new ValidationSchema({
   name: [{ rule: "required" }, { rule: "minLength", value: 3 }, { rule: "maxLength", value: 40 }],
 })
 
-const HubEditHabit = () => {
+const HubPreviewHabit = () => {
   let { id } = useParams()
   const data = mocData
   const [error, setError] = useState(null)
@@ -34,11 +34,7 @@ const HubEditHabit = () => {
   return (
     <div className="hub hub-edit-task">
       <div className="hub__content">
-        <BackBtnWithTitlePage
-          title={data.title}
-          btnText="Cancel"
-          lastItemLink={{ href: `/hub/task-info/${id}`, title: "Cancel" }}
-        />
+        <BackBtnWithTitlePage title={data.title} />
         <div className="mb-4">
           <Description item={data.description} />
         </div>
@@ -59,17 +55,16 @@ const HubEditHabit = () => {
           />
         </div>
 
-        <HubEditHabitForm
+        <HubPreviewHabitForm
           values={values}
           error={error}
           handleSubmit={handleSubmit}
           setValue={setValue}
           data={data}
-          btnTitle="Save"
         />
       </div>
     </div>
   )
 }
 
-export default HubEditHabit
+export default HubPreviewHabit

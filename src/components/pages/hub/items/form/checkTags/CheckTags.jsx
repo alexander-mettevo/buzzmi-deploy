@@ -19,7 +19,7 @@ const CheckTags = ({ tags, value, setValue, valueName }) => {
     <div className="check-tags">
       {tags?.length > 0 &&
         tags.map((tag) => <CheckTag value={value} key={tag.value} tag={tag} onChange={onTagClick} />)}
-      <Button className="alt-btn button_s d-lg-none check-tags__add-btn" onClick={handleAddNew}>
+      <Button className="alt-btn button_s check-tags__add-btn" onClick={handleAddNew}>
         + Add new
       </Button>
     </div>

@@ -1,5 +1,4 @@
-import React from "react"
-import Box from "../../../../reusable/cards/box/Box.jsx"
+import MultiBox from "../../../../reusable/cards/multiBox/MultiBox.jsx"
 import styles from "./basic-info.module.scss"
 
 const TopComponent = () => <div className="h4">Basic info</div>
@@ -16,11 +15,11 @@ const ListItem = ({ title, value, iconSrc }) => (
 
 const HubBasicInfo = ({ when, repeat, reminder }) => {
   return (
-    <Box className="mb-4" topComponent={<TopComponent />}>
+    <MultiBox title="Basic info" spaceMode className="mb-4">
       {when && <ListItem value={when} title="When?" iconSrc="/images/hub/main/access/calendar.png" />}
       {repeat && <ListItem value={repeat} title="Repeat" iconSrc="/images/hub/form/repeat.png" />}
       {reminder && <ListItem value={reminder} title="Reminder" iconSrc="/images/hub/form/clock.png" />}
-    </Box>
+    </MultiBox>
   )
 }
 

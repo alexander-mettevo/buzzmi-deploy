@@ -10,7 +10,7 @@ import AddName from "../items/form/addName/AddName"
 import MultiBox from "../../../reusable/cards/multiBox/MultiBox"
 import AudioUploader from "../../../reusable/uploader/audioUploader/AudioUploader"
 
-const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, register, data = {} }) => {
+const HubTaskForm = ({ error, handleSubmit, setValue, values, isValid, register, data = {}, title }) => {
   const [showInTask, setShowInTask] = useState(false)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
 
   return (
     <div className="main-layout__single-container">
-      <BackBtnWithTitlePage title="Add task" />
+      <BackBtnWithTitlePage title={title} />
       <Form error={error} onSubmit={handleSubmit} formClassName="hub-form-wrapper">
         <AddName
           setValue={setValue}
@@ -77,4 +77,4 @@ const HubPresetForm = ({ error, handleSubmit, setValue, values, isValid, registe
   )
 }
 
-export default HubPresetForm
+export default HubTaskForm
