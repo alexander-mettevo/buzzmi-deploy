@@ -230,7 +230,7 @@ const tabs = [
 
 const HubStats = () => {
   const [calendarValue, setCalendarValue] = useState("2023-05-01")
-  const [periodType, setPeriodType] = useState(null)
+  const [periodType, setPeriodType] = useState(0)
   return (
     <>
       <div className="main-layout__row">
@@ -247,7 +247,12 @@ const HubStats = () => {
           </div>
           <LinkTabs list={tabsLast} />
           <UpdateInfo text="Points last synced on Today, 01:30 pm" onBtnClick={() => null} />
-          <PeriodList items={periodList} onClick={(periodValue) => setPeriodType(periodValue)} value={periodType} />
+          <PeriodList
+            ligntMode
+            items={periodList}
+            onClick={(periodValue) => setPeriodType(periodValue)}
+            value={periodType}
+          />
           {/* <div className="box box_big mb-9">
             <Calendar
               onChange={setCalendarValue}

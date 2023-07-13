@@ -15,6 +15,13 @@ $pink-marker-bg: linear-gradient(90deg, #ef8fd5 -0.01%, #eb33cf 100.01%);
     }
   }
 
+  &__info {
+    @media (max-width: $mobile) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
   &__header {
     margin-bottom: 20px;
   }

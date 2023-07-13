@@ -6,7 +6,7 @@
   @media (max-width: $mobile) {
     overflow-y: hidden;
     overflow-x: auto;
-    margin: 0 0 23px;
+    margin: 0 0 13px;
     justify-content: flex-start;
     max-width: calc(100vw - 32px);
     padding-bottom: 10px;
@@ -28,6 +28,18 @@
     }
   }
 
+  &--light {
+    .period-list__btn {
+      @media (max-width: $mobile) {
+        padding: 10px 25px;
+        font-size: 11px;
+      }
+
+      font-weight: 400;
+      color: var(--alt-text-secondary);
+    }
+  }
+
   &__item {
     position: relative;
 
@@ -42,6 +54,15 @@
     }
 
     &--active {
+      .period-list__btn {
+        font-weight: 700;
+        color: var(--main-text);
+
+        @media (max-width: $mobile) {
+          font-size: 13px;
+        }
+      }
+
       &:before {
         background: var(--light-accent);
       }

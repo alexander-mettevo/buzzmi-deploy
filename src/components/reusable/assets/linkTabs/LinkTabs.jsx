@@ -1,8 +1,14 @@
 import { NavLink } from "react-router-dom"
+import cn from "classnames"
 
-const LinkTabs = ({ list, onChange, activeTabId }) => {
+const LinkTabs = ({ list, onChange, activeTabId, lightUnchecked }) => {
   return (
-    <div className="react-tabs__tab-list" role="tablist">
+    <div
+      className={cn(`react-tabs__tab-list`, {
+        "react-tabs__tab-list--light-unchecked": lightUnchecked,
+      })}
+      role="tablist"
+    >
       {list.length > 0 &&
         list.map((item, index) => {
           return !!onChange ? (

@@ -1,6 +1,5 @@
 import { useState } from "react"
 import BackBtnWithTitlePage from "../../../reusable/btns/backBtn/BackBtnWithTitlePage.jsx"
-import InfoCard from "../../../reusable/cards/infoCard/InfoCard.jsx"
 import Calendar from "../../../reusable/calendar/Calendar.jsx"
 import GoalList from "../../../reusable/goalList/GoalList.jsx"
 import PageNavigation from "../../../reusable/pageNavigation/PageNavigation.jsx"
@@ -8,8 +7,22 @@ import ProgressHeader from "./header/ProgressHeader.jsx"
 import { dayList, goalList, infoCardData, pageNav, viewTypeList } from "../../../../mock-data/hub/hub.js"
 import { useParams } from "react-router-dom"
 import Description from "../../../reusable/assets/description/Description.jsx"
+import Box from "../../../reusable/cards/box/Box.jsx"
 
 const getCurrentType = (list, id) => list.filter((el) => el.id === id)[0]?.text
+
+const TopComponent = ({ goal, repeat }) => (
+  <div className="">
+    <div className="d-flex align-items-center mb-21">
+      <div className="h5 me-2">Goal:</div>
+      <div className="text-r calendar__info">{goal}</div>
+    </div>
+    <div className="d-flex align-items-center">
+      <div className="h5 me-2">Repeat:</div>
+      <div className="text-r calendar__info">{repeat}</div>
+    </div>
+  </div>
+)
 
 const HubTread = () => {
   const { id } = useParams()
@@ -39,7 +52,7 @@ const HubTread = () => {
         <div className="mb-4">
           <PageNavigation list={pageNav} value={viewTypeId} onChange={onPageNavChange} />
         </div>
-        <div className="box box_big mb-4">
+        <Box topComponent={<TopComponent goal="1.3 km" repeat="Every 3 days" />} className="box mb-4">
           <Calendar
             value={calendarValue}
             hasFooter
@@ -52,7 +65,7 @@ const HubTread = () => {
             }
           />
           <GoalList list={goalList} />
-        </div>
+        </Box>
       </div>
     </div>
   )
