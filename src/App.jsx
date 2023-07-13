@@ -33,7 +33,6 @@ import MainLayout from "./components/layouts/mainLayout/MainLayout.jsx"
 import ThemeLayout from "./components/layouts/themeLayout/ThemeLayout.jsx"
 import HubAddActivity from "./components/pages/hub/hubAddActivity/HubAddActivity.jsx"
 import HubTasks from "./components/pages/hub/hubTasks/HubTasks.jsx"
-import HubAddPreset from "./components/pages/hub/hubPresetForm/hubAddPreset/HubAddPreset.jsx"
 import HubStats from "./components/pages/hub/hubStats/HubStats.jsx"
 import HubPresetPreview from "./components/pages/hub/hubPresetPreview/HubPresetPreview.jsx"
 import HubTread from "./components/pages/hub/hubTread/HubTread.jsx"
@@ -49,6 +48,7 @@ import HubOwnHabit from "./components/pages/hub/hubOwnHabit/HubOwnHabit.jsx"
 import InfoMain from "./components/pages/info/InfoMain/InfoMain.jsx"
 import HubEditHabit from "./components/pages/hub/hubEditHabit/HubEditHabit.jsx"
 import HubEditTask from "./components/pages/hub/hubEditTask/HubEditTask.jsx"
+import HubPreviewHabit from "./components/pages/hub/hubPreviewHabit/HubPreviewHabit.jsx"
 
 const App = () => {
   return (
@@ -66,10 +66,11 @@ const App = () => {
                 <Route path="tasks" element={<HubTasks />} />
                 <Route path="add-task" element={<HubCreateTask />} />
                 <Route path="edit-habit/:id" element={<HubEditHabit />} />
+                <Route path="preview-habit/:id" element={<HubPreviewHabit />} />
                 <Route path="stats" element={<HubStats />} />
                 <Route path="leaderboard" element={<HubLeaderBoard />} />
                 <Route path="leaders/:type" element={<HubLeaders />} />
-                <Route path="add-preset" element={<HubAddPreset />} />
+                {/* <Route path="add-preset" element={<HubAddPreset />} /> */}
                 <Route path="edit-preset/:id" element={<HubEditPreset />} />
                 <Route path="task-preset-edit" element={<HubTaskPresetEdit />} />
                 <Route path="tread/:id" element={<HubTread />} />

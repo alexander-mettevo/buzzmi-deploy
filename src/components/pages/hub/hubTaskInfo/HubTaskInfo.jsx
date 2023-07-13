@@ -61,7 +61,7 @@ const HubTaskInfo = () => {
         <BackBtnWithTitlePage
           title="Treadmill"
           btnText="Back to stats"
-          lastItemLink={{ href: `/hub/edit-habit/${id}`, title: "Edit task" }}
+          lastItemLink={{ href: `/hub/preview-habit/${id}`, title: "Edit task" }}
         />
         <Form error={error} onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -101,16 +101,14 @@ const HubTaskInfo = () => {
             </MultiBox>
           </div>
 
-          <div className="mb-4">
-            <MultiBox icon="/images/hub/form/check-list.png" title="Checklist">
-              <HubTaskList
-                showAddTask={false}
-                value={values.tasks}
-                setValues={(value) => setValue("tasks", value)}
-                locked={true}
-              />
-            </MultiBox>
-          </div>
+          <MultiBox icon="/images/hub/form/check-list.png" className="mb-4" spaceMode title="Checklist">
+            <HubTaskList
+              showAddTask={false}
+              value={values.tasks}
+              setValues={(value) => setValue("tasks", value)}
+              locked={true}
+            />
+          </MultiBox>
           <ProgressHeader text="2 complated" />
           <div className="mb-4">
             <PageNavigation list={data.pageNav} value={viewTypeId} onChange={onPageNavChange} />
@@ -134,7 +132,7 @@ const HubTaskInfo = () => {
           <HubBasicInfo reminder={data.basicInfo.when} repeat={data.basicInfo.repeat} when={data.basicInfo.reminder} />
           {data.noteData && <HubNote value={data.noteData} />}
           <div className="d-flex justify-content-center mt-5 mt-md-7">
-            <button className="button button_secondary button_m double-secondary px-6 px-lg-14">Delete</button>
+            <button className="button _fw button_secondary button_m double-secondary px-6 px-lg-14">Delete</button>
           </div>
         </Form>
       </div>

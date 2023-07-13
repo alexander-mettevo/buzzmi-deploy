@@ -57,6 +57,7 @@
   &__head-cell {
     @media (max-width: $mobile) {
       width: 23.33%;
+      white-space: nowrap;
     }
   }
 }

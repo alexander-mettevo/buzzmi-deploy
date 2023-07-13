@@ -1,8 +1,12 @@
-import React from "react"
+import cn from "classnames"
 
-const PeriodList = ({ items, value, onClick }) => {
+const PeriodList = ({ items, value, onClick, ligntMode }) => {
   return items && items.length > 0 ? (
-    <div className="period-list">
+    <div
+      className={cn("period-list", {
+        "period-list--light": ligntMode,
+      })}
+    >
       {items.map((period) => {
         return (
           <div

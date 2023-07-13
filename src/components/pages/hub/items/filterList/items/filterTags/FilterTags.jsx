@@ -2,8 +2,8 @@ import { useState } from "react"
 import Badge from "../../../../../../reusable/badge/Badge.jsx"
 import cn from "classnames"
 
-const FilterTags = ({ tags, wrapMode = false }) => {
-  const [selectedTags, setSelectedTags] = useState([])
+const FilterTags = ({ tags, wrapMode = false, defaultValue = [] }) => {
+  const [selectedTags, setSelectedTags] = useState(defaultValue)
 
   const onTagClick = (tag) => {
     if (selectedTags.includes(tag)) {
@@ -22,9 +22,30 @@ const FilterTags = ({ tags, wrapMode = false }) => {
       })}
     >
       {tags?.length > 0 &&
-        tags.map((tag, index) => (
-          <Badge active={selectedTags.includes(tag)} type={tag} key={index} onClick={() => onTagClick(tag)} />
-        ))}
+        tags.map((tag, index) => {
+          if (typeof tag === "string") {
+            return (
+              <Badge
+                className="badge__mid"
+                active={selectedTags.includes(tag)}
+                type={tag}
+                key={index}
+                onClick={() => onTagClick(tag)}
+              />
+            )
+          } else {
+            return (
+              <Badge
+                className="badge__mid"
+                active={selectedTags.includes(tag.title)}
+                count={tag?.count}
+                type={tag.title}
+                key={index}
+                onClick={() => onTagClick(tag.title)}
+              />
+            )
+          }
+        })}
     </div>
   )
 }

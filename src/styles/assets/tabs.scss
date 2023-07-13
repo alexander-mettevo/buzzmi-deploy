@@ -2,6 +2,12 @@
   &__tab-list {
     display: flex;
     border: none;
+
+    &--light-unchecked {
+      .react-tabs__tab {
+        font-weight: 700;
+      }
+    }
   }
 
   &__tab {

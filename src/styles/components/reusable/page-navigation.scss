@@ -9,13 +9,14 @@
     width: 100%;
     display: block;
     text-align: center;
-    font-weight: 500;
+    font-weight: 300;
     padding: 4px;
     user-select: none;
     border-bottom: 2px solid transparent;
     font-size: 17px;
     line-height: 28px;
     transition: color 0.15s linear, border-color 0.15s linear;
+    white-space: nowrap;
 
     @media (max-width: $mobile) {
       line-height: 12px;

@@ -58,6 +58,7 @@ const HubEditPreset = () => {
       values={values}
       isValid={isValid}
       register={register}
+      title="Edit task"
     />
   )
 }

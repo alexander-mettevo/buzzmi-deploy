@@ -37,6 +37,7 @@ const HubAddPreset = () => {
       isValid={isValid}
       register={register}
       data={data}
+      title={"Add preset"}
     />
   )
 }

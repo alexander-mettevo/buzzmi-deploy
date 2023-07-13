@@ -49,7 +49,7 @@ const Badge = ({ type, count, active, onClick, title, className }) => {
     >
       {!!itemsData[type]?.icon && <img src={itemsData[type].icon} alt="icon" className="me-1 badge__icon" />}
       {!!title ? title : itemsData[type].name}
-      {count && <span className="badge_count">({count})</span>}
+      {count && <span className="badge_count"> &nbsp; ({count})</span>}
     </span>
   )
 }
