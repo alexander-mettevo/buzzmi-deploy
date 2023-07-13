@@ -10,6 +10,9 @@
     justify-content: flex-start;
     max-width: calc(100vw - 32px);
     padding-bottom: 10px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__btn {

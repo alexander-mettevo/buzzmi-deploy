@@ -8,7 +8,12 @@
     flex: 0 0 190px;
 
     @media (max-width: 425px) {
-      flex: 0 0 132px;
+      flex: 0 0 142px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
     }
   }
 }

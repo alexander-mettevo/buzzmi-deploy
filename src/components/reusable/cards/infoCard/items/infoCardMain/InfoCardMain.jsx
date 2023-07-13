@@ -6,8 +6,26 @@ import { useSwipeable } from "react-swipeable"
 const InfoCardMain = ({ image, badges, info, type, id }) => {
   const [showMenu, setShowMenu] = useState(false)
 
+  const swipeLeft = () => {
+    setShowMenu(true)
+
+    //create handler if click outside show-menu area then setShowMenu(false)
+    window.addEventListener("click", function (e) {
+      if (!e.target.closest(".show-menu")) {
+        setShowMenu(false)
+      }
+    })
+
+    //create this for swipe another card
+    window.addEventListener("touchstart", function (e) {
+      if (!e.target.closest(".show-menu")) {
+        setShowMenu(false)
+      }
+    })
+  }
+
   const handlers = useSwipeable({
-    onSwipedLeft: (eventData) => setShowMenu(true),
+    onSwipedLeft: (eventData) => swipeLeft(),
     onSwipedRight: (eventData) => setShowMenu(false),
   })
 
@@ -29,7 +47,7 @@ const InfoCardMain = ({ image, badges, info, type, id }) => {
         </div>
         <div>
           <div className={"h4 my-2"}>{info?.title}</div>
-          <div className={"info-card__text text-r"}>{info.text}</div>
+          <div className={"info-card__text"}>{info.text}</div>
         </div>
       </div>
       {type !== null && (
