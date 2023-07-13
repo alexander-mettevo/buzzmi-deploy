@@ -1,46 +1,69 @@
-import SmallCard from "./SmallCard.jsx";
-import {withRouter} from "storybook-addon-react-router-v6";
+import SmallCard from "./SmallCard.jsx"
+import { withRouter } from "storybook-addon-react-router-v6"
 
 export default {
-  title: 'Reusable/Cards/SmallCard',
+  title: "Reusable/Cards/SmallCard",
   component: SmallCard,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     link: {
-      description: 'Link to the page',
+      description: "Link to the page",
       table: {
         type: {
-          summary: 'string',
-        }
-      }
+          summary: "string",
+        },
+      },
     },
     title: {
-      description: 'Title of the card',
+      description: "Title of the card",
       table: {
         type: {
-          summary: 'string',
-        }
-      }
+          summary: "string",
+        },
+      },
     },
-    img: {
-      description: 'Image of the card',
+    image: {
+      description: "Image of the card",
       table: {
         type: {
-          summary: 'object',
-        }
-      }
-    }
+          summary: "object",
+        },
+      },
+    },
   },
   decorators: [withRouter],
 }
 
-const Template = (args) => <SmallCard {...args} />;
-export const Default = Template.bind({});
+const Template = (args) => <SmallCard {...args} />
+export const Default = Template.bind({})
 Default.args = {
-  link: '/hub/add-activity',
-  title: 'Profile picture upload',
-  img: {
-    src: '/images/moc/hub/1.png',
-    alt: 'Add an activity'
-  }
+  link: "/hub/add-activity",
+  info: {
+    title: "Profile picture upload",
+  },
+  image: {
+    src: "/images/moc/hub/1.png",
+    alt: "Add an activity",
+  },
+}
+
+const Template2 = (args) => <SmallCard {...args} />
+export const Badges = Template2.bind({})
+Badges.args = {
+  link: "/hub/add-activity",
+  info: {
+    title: "Profile picture upload",
+  },
+  image: {
+    src: "/images/moc/hub/1.png",
+    alt: "Add an activity",
+  },
+  badges: [
+    {
+      type: "workouts",
+    },
+    {
+      type: "completed",
+    },
+  ],
 }

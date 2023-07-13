@@ -61,7 +61,7 @@ const HubTaskInfo = () => {
         <BackBtnWithTitlePage
           title="Treadmill"
           btnText="Back to stats"
-          lastItemLink={{ href: `/hub/edit-task/${id}`, title: "Edit task" }}
+          lastItemLink={{ href: `/hub/edit-habit/${id}`, title: "Edit task" }}
         />
         <Form error={error} onSubmit={handleSubmit}>
           <div className="mb-4">

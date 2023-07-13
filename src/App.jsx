@@ -43,12 +43,12 @@ import HubLeaders from "./components/pages/hub/hubLeaders/HubLeaders.jsx"
 import HubSubscription from "./components/pages/hub/hubUpgrade/HubSubscription.jsx"
 import HubCreateTask from "./components/pages/hub/hubCreateTask/HubCreateTask.jsx"
 import HubTaskInfo from "./components/pages/hub/hubTaskInfo/HubTaskInfo.jsx"
-import HubEditTask from "./components/pages/hub/hubEditTask/HubEditTask.jsx"
 import HubTaskPresetEdit from "./components/pages/hub/hubTaskPresetEdit/HubTaskPresetEdit.jsx"
 import HubFinishAccount from "./components/pages/hub/hubFinishAccount/HubFinishAccount.jsx"
 import HubOwnHabit from "./components/pages/hub/hubOwnHabit/HubOwnHabit.jsx"
-import HubAddTask from "./components/pages/hub/hubAddTask/HubAddTask.jsx"
 import InfoMain from "./components/pages/info/InfoMain/InfoMain.jsx"
+import HubEditHabit from "./components/pages/hub/hubEditHabit/HubEditHabit.jsx"
+import HubEditTask from "./components/pages/hub/hubEditTask/HubEditTask.jsx"
 
 const App = () => {
   return (
@@ -64,8 +64,8 @@ const App = () => {
                 <Route path="" element={<HubMain />} />
                 <Route path="add-activity" element={<HubAddActivity />} />
                 <Route path="tasks" element={<HubTasks />} />
-                <Route path="create-task" element={<HubCreateTask />} />
-                <Route path="edit-task/:id" element={<HubEditTask />} />
+                <Route path="add-task" element={<HubCreateTask />} />
+                <Route path="edit-habit/:id" element={<HubEditHabit />} />
                 <Route path="stats" element={<HubStats />} />
                 <Route path="leaderboard" element={<HubLeaderBoard />} />
                 <Route path="leaders/:type" element={<HubLeaders />} />
@@ -77,8 +77,8 @@ const App = () => {
                 <Route path="preset-preview/:id" element={<HubPresetPreview />} />
                 <Route path="upgrade" element={<HubSubscription />} />
                 <Route path="finish-account" element={<HubFinishAccount />} />
-                <Route path="own-habit" element={<HubOwnHabit />} />
-                <Route path="add-task" element={<HubAddTask />} />
+                <Route path="edit-task/:id" element={<HubOwnHabit />} />
+                <Route path="own-habit" element={<HubEditTask />} />
               </Route>
               <Route path="/notifications" element={<HubMain />} />
               <Route path="/messages" element={<HubMain />} />

@@ -6,6 +6,11 @@
   }
 }
 
+#task-form {
+  .multi-box__wrapper {
+    // margin-bottom: 0;
+  }
+}
 .hub-form-wrapper {
   display: grid;
   grid-template-columns: 1fr;

@@ -1,7 +1,3 @@
-import React, { useState } from "react"
-import SmallCard from "./SmallCard.jsx"
-import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd"
-import SmallCardListDnD from "./SmallCardListDnD.jsx"
 import SmallCardDispatcher from "./SmallCardDispatcher.jsx"
 
 const SmallCardList = ({ list, dnd, type }) => {

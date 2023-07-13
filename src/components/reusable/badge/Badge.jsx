@@ -39,11 +39,11 @@ const itemsData = {
   },
 }
 
-const Badge = ({ type, count, active, onClick, title }) => {
+const Badge = ({ type, count, active, onClick, title, className }) => {
   return (
     <span
       onClick={() => (onClick ? onClick() : null)}
-      className={cn(`${itemsData[type].className}`, {
+      className={cn(`${itemsData[type].className} ${className && className}`, {
         badge__active: active,
       })}
     >

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import CircleChart from "../../../../../../reusable/assets/charts/circleChart/CircleChart.jsx"
+import cn from "classnames"
 
 const getData = async (setData) => {
   try {
@@ -34,7 +35,11 @@ const RankRow = ({ withAvatar }) => {
   }, [])
 
   return (
-    <div className="rank-row">
+    <div
+      className={cn("rank-row", {
+        "rank-row--with-avatar": withAvatar,
+      })}
+    >
       <div className="rank-row__label">
         <div className="text-r">Your current rank</div>
         <div>

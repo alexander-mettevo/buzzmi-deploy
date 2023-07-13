@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Badge from "../../../../../reusable/badge/Badge.jsx"
 
 const CheckTag = ({ value, tag, onChange }) => {
@@ -12,7 +12,7 @@ const CheckTag = ({ value, tag, onChange }) => {
   return (
     <label>
       <input className="check-tags__checkbox" type="checkbox" checked={checked} onChange={() => onChange(tag.value)} />
-      <Badge type="secondary" active={checked} title={tag.title} />
+      <Badge type="secondary" active={checked} className="badge__tags" title={tag.title} />
     </label>
   )
 }

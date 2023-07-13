@@ -10,7 +10,7 @@ const InfoCardMenuDesktop = ({ id, handleCompleteTask, handleDeleteTask }) => {
         </button>
       </li>
       <li className={"mb-3"}>
-        <Link to={"/hub/edit-task/" + id} className="d-flex align-items-center ЕУЧЕ-">
+        <Link to={"/hub/edit-habit/" + id} className="d-flex align-items-center ЕУЧЕ-">
           <img className="me-2" src="/images/assets/info-card/edit_s.svg" alt="" />
           <span>Edit Task</span>
         </Link>

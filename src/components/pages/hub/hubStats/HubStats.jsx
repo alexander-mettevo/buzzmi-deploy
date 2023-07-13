@@ -7,12 +7,13 @@ import AdditionalInformation from "../../../reusable/assets/additionalInformatio
 import UpdateInfo from "../../../reusable/updateInfo/UpdateInfo.jsx"
 import PeriodList from "../../../reusable/periodList/PeriodList.jsx"
 import { tabsLast } from "../../../../mock-data/hub/hub.js"
+import RankRow from "../items/rank/items/RankRow/RankRow.jsx"
 
 const mockItems = [
   {
-    title: "Any time of the day",
     list: [
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/gym.png",
           alt: "Placeholder",
@@ -30,6 +31,7 @@ const mockItems = [
         },
       },
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/list.png",
           alt: "Placeholder",
@@ -48,6 +50,7 @@ const mockItems = [
         },
       },
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/drink.png",
           alt: "Placeholder",
@@ -68,9 +71,9 @@ const mockItems = [
     ],
   },
   {
-    title: "Any time of the day",
     list: [
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/gym.png",
           alt: "Placeholder",
@@ -89,6 +92,7 @@ const mockItems = [
         },
       },
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/list.png",
           alt: "Placeholder",
@@ -107,6 +111,7 @@ const mockItems = [
         },
       },
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/drink.png",
           alt: "Placeholder",
@@ -127,9 +132,9 @@ const mockItems = [
     ],
   },
   {
-    title: "Any time of the day",
     list: [
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/gym.png",
           alt: "Placeholder",
@@ -148,6 +153,7 @@ const mockItems = [
         },
       },
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/list.png",
           alt: "Placeholder",
@@ -166,6 +172,7 @@ const mockItems = [
         },
       },
       {
+        href: "/hub/tread/1",
         image: {
           src: "/images/hub/main/drink.png",
           alt: "Placeholder",
@@ -210,6 +217,17 @@ const periodList = [
   },
 ]
 
+const tabs = [
+  {
+    href: "/hub",
+    title: "Hub",
+  },
+  {
+    href: "/calendar",
+    title: "Calendar",
+  },
+]
+
 const HubStats = () => {
   const [calendarValue, setCalendarValue] = useState("2023-05-01")
   const [periodType, setPeriodType] = useState(null)
@@ -217,8 +235,15 @@ const HubStats = () => {
     <>
       <div className="main-layout__row">
         <div className="main-layout__mid">
-          <div className="mb-7">
+          <div className="mb-3 d-md-none">
+            <LinkTabs list={tabs} />
+          </div>
+
+          <div className="mb-7 d-none d-md-block">
             <Rank withAvatar />
+          </div>
+          <div className="mb-7 d-md-none">
+            <RankRow withAvatar />
           </div>
           <LinkTabs list={tabsLast} />
           <UpdateInfo text="Points last synced on Today, 01:30 pm" onBtnClick={() => null} />

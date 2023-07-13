@@ -34,7 +34,17 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
 
+    @media (max-width: $mobileSmall) {
+      margin-bottom: 16px;
+    }
+
     &_hide-mode {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &_mini-mode {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;

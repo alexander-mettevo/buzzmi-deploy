@@ -32,7 +32,7 @@ const InfoCardMenuMobile = ({ id, handleCompleteTask, handleDeleteTask }) => {
         </button>
       </li>
       <li className={"me-2"}>
-        <Link to={"/hub/edit-task/" + id} className={"text-center info-mobile-menu__item"}>
+        <Link to={"/hub/edit-habit/" + id} className={"text-center info-mobile-menu__item"}>
           <img src="/images/assets/info-card/edit.svg" alt="" />
           <div>Edit</div>
         </Link>

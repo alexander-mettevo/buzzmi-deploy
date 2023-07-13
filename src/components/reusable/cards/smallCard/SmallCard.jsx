@@ -1,7 +1,8 @@
+import Badge from "../../badge/Badge.jsx"
 import Box from "../box/Box.jsx"
 import { Link } from "react-router-dom"
 
-const SmallCard = ({ id, link, title, img, dnd, checkbox }) => {
+const SmallCard = ({ id, link, info, image, dnd, checkbox, badges }) => {
   const handleCheckbox = (e) => {
     e.stopPropagation()
   }
@@ -24,9 +25,19 @@ const SmallCard = ({ id, link, title, img, dnd, checkbox }) => {
               </>
             )}
             <div className="small-card__img">
-              <img src={img?.src} alt={img?.alt} />
+              <img src={image?.src} alt={image?.alt} />
             </div>
-            <div className="h5">{title}</div>
+            <div className="">
+              <div className="info-card__badges mb-1">
+                {badges?.length > 0 &&
+                  badges.map((badge, index) => (
+                    <span className={"me-2"} key={index + `${badge.type}`}>
+                      <Badge type={badge.type} />
+                    </span>
+                  ))}
+              </div>
+              <div className="h5">{info?.title}</div>
+            </div>
           </div>
           <div className="d-flex align-items-center  text-secondary">
             {!dnd && <span className="text-s small-card__helper">View details</span>}

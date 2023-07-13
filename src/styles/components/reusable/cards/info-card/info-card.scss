@@ -8,8 +8,18 @@
   transition: all 0.3s ease-in-out;
 
   &__image {
-    @include adaptiveValue("width", 120, 75);
-    @include adaptiveValue("height", 120, 75);
+    @include adaptiveValue("width", 120, 80);
+    @include adaptiveValue("height", 120, 80);
+  }
+
+  .h4 {
+    @media (max-width: $mobile) {
+      font-family: Montserrat;
+      font-size: 15px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 20px !important;
+    }
   }
 
   &__text {
@@ -17,6 +27,11 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    @media (max-width: $tablet) {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 
   &.show-menu {

@@ -76,8 +76,10 @@ export const noteData =
 export const tasksData = [
   {
     link: "/hub/task-info/1",
-    title: "Yoga",
-    img: {
+    info: {
+      title: "Yoga",
+    },
+    image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
     },
@@ -85,8 +87,10 @@ export const tasksData = [
   },
   {
     link: "/hub/task-info/1",
-    title: "Cycling",
-    img: {
+    info: {
+      title: "Cycling",
+    },
+    image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
     },
@@ -94,8 +98,10 @@ export const tasksData = [
   },
   {
     link: "/hub/task-info/1",
-    title: "Drink water",
-    img: {
+    info: {
+      title: "Drink water",
+    },
+    image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
     },
@@ -103,8 +109,10 @@ export const tasksData = [
   },
   {
     link: "/hub/task-info/1",
-    title: "Coffee with family",
-    img: {
+    info: {
+      title: "Coffee with family",
+    },
+    image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
     },
@@ -112,8 +120,10 @@ export const tasksData = [
   },
   {
     link: "/hub/task-info/1",
-    title: "Brush teeth",
-    img: {
+    info: {
+      title: "Brush teeth",
+    },
+    image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
     },
@@ -121,8 +131,10 @@ export const tasksData = [
   },
   {
     link: "/hub/task-info/1",
-    title: "Take medicine",
-    img: {
+    info: {
+      title: "Take medicine",
+    },
+    image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
     },
@@ -132,6 +144,7 @@ export const tasksData = [
 
 export const mockItems = [
   {
+    link: "/hub/preset-preview/undefined",
     image: {
       src: "/images/hub/main/gym.png",
       alt: "Placeholder",
@@ -147,6 +160,7 @@ export const mockItems = [
     },
   },
   {
+    link: "/hub/preset-preview/undefined",
     image: {
       src: "/images/hub/main/list.png",
       alt: "Placeholder",
@@ -162,6 +176,7 @@ export const mockItems = [
     },
   },
   {
+    link: "/hub/preset-preview/undefined",
     image: {
       src: "/images/hub/main/drink.png",
       alt: "Placeholder",
@@ -182,6 +197,7 @@ export const presetList = mockItems.map((el) => ({
   to: el.to,
   image: el.image,
   info: el.info,
+  link: el.link,
 }))
 export const mockTags = ["all", "presets", "workouts", "habits", "program", "challenges"]
 export const tabsLastMod = [
@@ -212,11 +228,11 @@ export const addActivityTabs = [
   },
   {
     id: 1,
-    title: "Presets",
+    title: "My tasks",
   },
   {
     id: 2,
-    title: "My Preset",
+    title: "BuzzMi tasks",
   },
 ]
 

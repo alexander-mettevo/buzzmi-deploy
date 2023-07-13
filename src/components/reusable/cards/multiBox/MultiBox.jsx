@@ -2,12 +2,13 @@ import Info from "../../assets/info/Info.jsx"
 import Box from "../box/Box.jsx"
 import cn from "classnames"
 
-const MultiBox = ({ icon, info, children, title, rightSide, isHideMode, text }) => {
+const MultiBox = ({ icon, info, children, title, rightSide, isHideMode, text, miniMode }) => {
   return (
     <Box className="multi-box hub-form-box">
       <div
         className={cn("multi-box__wrapper", {
           "multi-box__wrapper_hide-mode": isHideMode,
+          "multi-box__wrapper_mini-mode": miniMode,
         })}
       >
         <div className="multi-box__title">

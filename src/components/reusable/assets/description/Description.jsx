@@ -24,7 +24,9 @@ const Description = ({ item }) => {
         </div>
         <div className="description__column-m">
           <div className="description__title-m">Description</div>
-          <div className="description__text-m">{item.info.text}</div>
+          <div className="description__text-m">
+            <div>{item.info.text}</div>
+          </div>
         </div>
       </div>
     </>
